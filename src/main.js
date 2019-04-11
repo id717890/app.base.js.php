@@ -1,8 +1,11 @@
 import Vue from 'vue'
 import './plugins/vuetify'
+import './plugins/font-awesome'
+import './init/components'
+// import '@fortawesome/fontawesome-free/css/all.css'
 import App from './App.vue'
 import router from './router'
-import store from './store'
+import { store } from './store'
 import './registerServiceWorker'
 
 Vue.config.productionTip = false
