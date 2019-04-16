@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   data () {
@@ -67,7 +67,7 @@ export default {
     }
   },
   computed: {
-    // ...mapGetters(['getErrors'])
+    ...mapGetters(['getErrors'])
   },
   created () {
     // this.$store.dispatch('clearAllMessages')
@@ -80,7 +80,11 @@ export default {
     },
     signin () {
       if (this.$refs.form.validate()) {
-        this.signUserIn(null)
+        this.signUserIn(this.form)
+          .then(() => this.$router.push('/dashboard'))
+          .catch(() => {
+            // todo show errors from vuex state
+          })
         // this.$refs.form.reset()
       }
     },

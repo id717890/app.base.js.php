@@ -28,6 +28,9 @@ const mutations = {
   [types.CLEAR_ERRORS] (state) {
     state.errors = null
   },
+  [types.CLEAR_MESSAGES] (state) {
+    state.messages = null
+  },
   [types.SET_ERRORS] (state, payload) {
     state.errors = payload
   },

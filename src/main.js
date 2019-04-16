@@ -8,6 +8,9 @@ import router from './router'
 import { store } from './store'
 import './registerServiceWorker'
 
+import Auth from './packages/auth'
+Vue.use(Auth)
+
 Vue.config.productionTip = false
 
 new Vue({

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import * as types from './mutation-types'
 import auth from './auth'
+import notify from './notify'
 
 Vue.use(Vuex)
 
@@ -15,6 +16,7 @@ export const store = new Vuex.Store({
     }
   ],
   modules: {
-    auth
+    auth,
+    notify
   }
 })

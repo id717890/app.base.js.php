@@ -35,6 +35,11 @@ export default new Router({
       path: '/test2',
       name: 'test2',
       component: () => import(/* webpackChunkName: "about" */ './views/Test2.vue')
+    },
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: () => import(/* webpackChunkName: "about" */ './views/Private/Dashboard.vue')
     }
   ]
 })
