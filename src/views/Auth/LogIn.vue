@@ -2,13 +2,18 @@
   <v-container>
     <v-layout>
       <v-flex xs12 md-6 offset-md2 lg4 offset-lg4>
+        <app-notify/>
         <v-form lazy-validation v-model="form.valid" ref="form">
           <v-flex 12>
             <v-text-field label="E-mail" v-model="form.email" required :rules="emailRules"></v-text-field>
             <v-text-field label="Password" type="password" v-model="form.password" required :rules="passwordRules"></v-text-field>
           </v-flex>
           <v-flex 12>
-            <v-btn large :disabled="!form.valid" color="success" @click="signin" ><fai icon="sign-in-alt" class="mr-2" />  Sign In</v-btn>
+            <v-layout justify-space-between>
+              <v-btn large :disabled="!form.valid" color="success" @click="signin" ><fai icon="sign-in-alt" class="mr-2" />  Sign In</v-btn>
+              <v-btn large flat to="/forgot"><fai icon="key" class="mr-2" />  Forgot</v-btn>
+              <v-btn left flat large to="/"><fai icon="home" size="2x" /></v-btn>
+            </v-layout>
           </v-flex>
         </v-form>
       </v-flex>
@@ -69,8 +74,8 @@ export default {
   computed: {
     ...mapGetters(['getErrors'])
   },
-  created () {
-    // this.$store.dispatch('clearAllMessages')
+  mounted () {
+    this.$store.dispatch('clearAllMessages')
     // console.log(this.getOtherErrors)
   },
   methods: {
@@ -78,7 +83,8 @@ export default {
     handleClick () {
       this.showDismissibleAlert = true
     },
-    signin () {
+    signin (e) {
+      e.preventDefault()
       if (this.$refs.form.validate()) {
         this.signUserIn(this.form)
           .then(() => this.$router.push('/dashboard'))

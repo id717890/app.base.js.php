@@ -2,8 +2,8 @@
 import * as types from '../mutation-types'
 
 const state = {
-  errors: null,
-  messages: null
+  errors: [],
+  messages: []
 }
 
 const actions = {
@@ -14,8 +14,8 @@ const actions = {
     commit(types.SET_MESSAGES, payload)
   },
   clearAllMessages ({commit}) {
-    commit(types.SET_ERRORS, null)
-    commit(types.SET_MESSAGES, null)
+    commit(types.CLEAR_ERRORS)
+    commit(types.CLEAR_MESSAGES)
   },
 } 
 
@@ -26,13 +26,13 @@ const getters = {
 
 const mutations = {
   [types.CLEAR_ERRORS] (state) {
-    state.errors = null
+    state.errors = []
   },
   [types.CLEAR_MESSAGES] (state) {
-    state.messages = null
+    state.messages = []
   },
   [types.SET_ERRORS] (state, payload) {
-    state.errors = payload
+    state.errors.push(payload)
   },
   [types.SET_MESSAGES] (state, payload) {
     state.messages = payload

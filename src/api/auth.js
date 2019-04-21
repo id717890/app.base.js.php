@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import config from '../init/config'
-
+import { users } from './data'
 export default {
   checkAdmin: () => {
     return Vue.$http.post('api/auth/checkadmin').then((x) => {
@@ -41,7 +41,7 @@ export default {
       return new Promise((resolve, reject) => {
         let user = users.find(x => x.email === data.email && x.password === data.password)
         if (user) resolve({ status: 200, data: user })
-        else reject(new Error('User not found'))
+        else resolve({ status: 400, data: 'User not found' })
       })
     } else {
       return Vue.$http.post('api/auth/Login', data).then((x) => {
@@ -73,8 +73,3 @@ export default {
     })
   }
 }
-
-const users = [
-  { id: 1, email: 'jusupovz@gmail.com', login: 'login1', password: 'qweqwe', access_token: 'token111', 'expires_in': 864000 },
-  { id: 2, email: 'email2@mail.ru', login: 'login2', password: 'pass', access_token: 'token222', 'expires_in': 864000 }
-]
