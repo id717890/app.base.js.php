@@ -10,8 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Raffle.Dal.Interface\Raffle.Dal.Interface.csproj" />
-    <ProjectReference Include="..\Raffle.Domain.Interface\Raffle.Domain.Interface.csproj" />
+    <ProjectReference Include="..\App.Dal.Interface\App.Dal.Interface.csproj" />
+    <ProjectReference Include="..\App.Domain.Interface\App.Domain.Interface.csproj" />
   </ItemGroup>
 
 </Project>

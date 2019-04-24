@@ -37,11 +37,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Raffle.Dal\Raffle.Dal.csproj" />
-    <ProjectReference Include="..\Raffle.Domain.Interface\Raffle.Domain.Interface.csproj" />
-    <ProjectReference Include="..\Raffle.Domain\Raffle.Domain.csproj" />
-    <ProjectReference Include="..\Raffle.Infrastructure.Interface\Raffle.Infrastructure.Interface.csproj" />
-    <ProjectReference Include="..\Raffle.Infrastructure\Raffle.Infrastructure.csproj" />
+    <ProjectReference Include="..\App.Dal\App.Dal.csproj" />
+    <ProjectReference Include="..\App.Domain.Interface\App.Domain.Interface.csproj" />
+    <ProjectReference Include="..\App.Domain\App.Domain.csproj" />
+    <ProjectReference Include="..\App.Infrastructure.Interface\App.Infrastructure.Interface.csproj" />
+    <ProjectReference Include="..\App.Infrastructure\App.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

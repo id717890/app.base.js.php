@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Raffle.Infrastructure.Interface\Raffle.Infrastructure.Interface.csproj" />
+    <ProjectReference Include="..\App.Infrastructure.Interface\App.Infrastructure.Interface.csproj" />
   </ItemGroup>
 
   <ItemGroup>
