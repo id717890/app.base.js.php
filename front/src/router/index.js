@@ -12,6 +12,8 @@ const router = new Router({
     { path: '/', name: 'home', component: Home },
     { path: '/login', name: 'LogIn', component: () => import('../views/Auth/LogIn.vue') },
     { path: '/forgot', name: 'ForgotPassword', component: () => import('../views/Auth/ForgotPassword.vue') },
+    { path: '/register', name: 'Register', component: () => import('../views/Auth/Register.vue') },
+    // { path: '/resetpassword', name: 'ResetPassword', component: () => import('../views/Auth/ResetPassword.vue') },
     { path: '/about', name: 'about', component: () => import('../views/About.vue') },
     { path: '/test1', name: 'test1', component: () => import('../views/Test1.vue') },
     { path: '/test2', name: 'test2', component: () => import('../views/Test2.vue') },

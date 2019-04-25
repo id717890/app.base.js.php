@@ -68,7 +68,7 @@ namespace Raffle.Dal
                 PasswordHash = hashed
             };
 
-            modelBuilder.Entity<ApplicationUser>().HasData(user);
+            //modelBuilder.Entity<ApplicationUser>().HasData(user);
 
 
 

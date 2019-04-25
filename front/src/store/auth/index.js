@@ -56,16 +56,6 @@ const actions = {
   },
   async signUserIn ({ commit, dispatch }, payload) {
     return new Promise((resolve, reject) => {
-      // if (config.isLocalApp === true) {
-      //   context.si
-      //   let user = 'qweqw-qweqw-qweqw-qweqw'
-      //   let token = 'qweadfasdgjh awehiahawh ekjhakghkasdhg'
-      //   commit(types.SET_USER, user)
-      //   commit(types.SET_TOKEN, token)
-      //   Vue.auth.setToken(token, 144000 * 1000 + Date.now())
-      //   Vue.auth.setUser(user)
-      //   resolve()
-      // } else {
       context.signIn(payload.email, payload.password).then((x) => {
         if (x.status === 200) {
           let token = x.data.access_token
@@ -91,13 +81,14 @@ const actions = {
     return new Promise((resolve, reject) => {
       context.signUp(payload.email, payload.password, payload.passwordConfirm, payload.firstName, payload.lastName).then((x) => {
         if (x.status === 200) {
-          dispatch('setMessages', ['Accont create. Please, confirm your email address.'])
+          dispatch('setMessages', 'Accont create. Please, confirm your email address.')
           resolve()
         } else {
-          dispatch('setErrors', x.response.data)
+          Object.keys(x.response.data).forEach(key => dispatch('setErrors', x.response.data[key]))
           reject(x.response.data)
         }
       }).catch(x => {
+        Object.keys(x.response.data).forEach(key => dispatch('setErrors', x.response.data[key]))
         reject(x.response.data)
       })
     })

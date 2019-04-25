@@ -92,23 +92,7 @@
     ></v-navigation-drawer>
     <v-content>
       <v-container fluid fill-height>
-        <v-layout justify-center align-start>
-          <v-flex xs12>
-            <router-view></router-view>
-            <!-- <v-tooltip right>
-              <v-btn
-                icon
-                large
-                :href="source"
-                target="_blank"
-                slot="activator"
-              >
-                <v-icon large>code</v-icon>
-              </v-btn>
-              <span>Source</span>
-            </v-tooltip> -->
-          </v-flex>
-        </v-layout>
+        <router-view></router-view>
       </v-container>
     </v-content>
     <v-navigation-drawer
@@ -150,7 +134,8 @@ export default {
         { id: 1, text: '', url: '/logoff', icon: 'sign-out-alt', size: '2x', order: 2, showIfAuth: true }
       ],
       menuNotAuth: [
-        { id: 1, text: 'Log In', url: '/login', icon: 'user-tie', size: '1x', order: 2, showIfAuth: true }
+        { id: 1, text: 'Log In', url: '/login', icon: 'user-tie', size: '1x', order: 2, showIfAuth: true },
+        { id: 2, text: 'Register', url: '/register', icon: 'user-tie', size: '1x', order: 2, showIfAuth: true }
       ]
     }
   },

@@ -10,7 +10,7 @@ using Raffle.Dal;
 namespace App.Dal.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190425062144_Init")]
+    [Migration("20190425162619_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -47,15 +47,15 @@ namespace App.Dal.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "0442516d-058e-406f-9ef6-d68e65f363b8",
-                            ConcurrencyStamp = "4b537a5d-5eff-45f7-ae60-83f2c3421d04",
+                            Id = "1a1a0125-1161-4499-9ae2-e2d2a7c653f7",
+                            ConcurrencyStamp = "c59bf1e8-4498-49b6-935d-f0ed76bc92bc",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "7bd442fb-abd2-4d4f-bd1c-b8b0f85c7a1d",
-                            ConcurrencyStamp = "b4b42288-6b7e-486c-8611-88173b01200c",
+                            Id = "93ee2c57-ea2c-4be0-ab20-ebcbbf5809f9",
+                            ConcurrencyStamp = "34d93f47-fcd5-438d-9c73-6240b14c2755",
                             Name = "Client",
                             NormalizedName = "CLIENT"
                         });
@@ -208,27 +208,6 @@ namespace App.Dal.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "qweqwe",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "06333a61-81ee-4262-bece-8534b7e84bb2",
-                            Email = "jusupovz@gmail.com",
-                            EmailConfirmed = true,
-                            FirstName = "Zamir",
-                            IsActive = false,
-                            LastName = "Yusupov",
-                            LockoutEnabled = false,
-                            MiddleName = "Almasovich",
-                            NormalizedEmail = "JUSUPOVZ@GMAIL.COM",
-                            NormalizedUserName = "JUSUPOVZ@GMAIL.COM",
-                            PasswordHash = "GQSApZpZr86g20wk6GO3b+BH56WX6jUbyPPIPRG2Tmw=",
-                            PhoneNumberConfirmed = false,
-                            TwoFactorEnabled = false,
-                            UserName = "jusupovz@gmail.com"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
