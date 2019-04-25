@@ -1,13 +1,5 @@
-Use raffle;
+Use app_base;
 
-drop table GiftDrawUserKeys;
-drop table GiftDrawUsers;
-drop table Orders;
-drop table Customers;
-drop table GiftDraws;
-drop table VoteUsers;
-drop table Votes;
-drop table Gifts;
 drop table AspNetRoleClaims;
 drop table AspNetUserClaims;
 drop table AspNetUserLogins;
@@ -16,3 +8,4 @@ drop table AspNetUserTokens;
 drop table AspNetRoles;
 drop table AspNetUsers;
 drop table __EFMigrationsHistory;
+drop table [Log];

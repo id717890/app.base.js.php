@@ -1,4 +1,4 @@
 export default {
   isLocalApp: true,
-  apiAddress: 'http://localhost/rbt_back/public/'
+  apiAddress: 'https://localhost:44379/'
 }

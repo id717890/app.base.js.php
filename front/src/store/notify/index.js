@@ -35,7 +35,7 @@ const mutations = {
     state.errors.push(payload)
   },
   [types.SET_MESSAGES] (state, payload) {
-    state.messages = payload
+    state.messages.push(payload)
   }
 }
 

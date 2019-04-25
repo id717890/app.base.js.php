@@ -56,7 +56,7 @@ namespace Raffle.Api.Controllers
                 if (user == null) return NotFound(_messageModelBuilder.CreateModel("404", "Пользователь не найден"));
                 user.FirstName = model.FirstName;
                 user.LastName = model.LastName;
-                user.Address = model.Address;
+                //user.Address = model.Address;
                 await _userManager.UpdateAsync(user);
                 return Ok();
             }

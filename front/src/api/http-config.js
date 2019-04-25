@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import axios from 'axios'
+import config from '../init/config'
 
 // console.log(Vue.prototype.$auth.getToken());
 
 const Axios = axios.create({
-  baseURL: 'https://localhost:44379',
+  baseURL: config.apiAddress,
   // baseURL: 'http://localhost/enw/backend/public/',
   headers: {
     // Accept: 'application/json',

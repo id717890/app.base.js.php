@@ -15,26 +15,26 @@ namespace Raffle.Dal
         {
         }
 
-        public DbSet<Gift> Gifts { get; set; }
-        public DbSet<Customer> Customers { get; set; }
-        public DbSet<GiftDraw> GiftDraws { get; set; }
-        public DbSet<Vote> Votes { get; set; }
-        public DbSet<VoteUser> VoteUsers { get; set; }
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<GiftDrawUser> GiftDrawUsers{ get; set; }
-        public DbSet<GiftDrawUserKey> GiftDrawUserKeys { get; set; }
+        //public DbSet<Gift> Gifts { get; set; }
+        //public DbSet<Customer> Customers { get; set; }
+        //public DbSet<GiftDraw> GiftDraws { get; set; }
+        //public DbSet<Vote> Votes { get; set; }
+        //public DbSet<VoteUser> VoteUsers { get; set; }
+        //public DbSet<Order> Orders { get; set; }
+        //public DbSet<GiftDrawUser> GiftDrawUsers{ get; set; }
+        //public DbSet<GiftDrawUserKey> GiftDrawUserKeys { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.ApplyConfiguration(new GiftMap());
-            modelBuilder.ApplyConfiguration(new GiftDrawMap());
-            modelBuilder.ApplyConfiguration(new CustomerMap());
-            modelBuilder.ApplyConfiguration(new VoteMap());
-            modelBuilder.ApplyConfiguration(new VoteUserMap());
-            modelBuilder.ApplyConfiguration(new OrderMap());
-            modelBuilder.ApplyConfiguration(new GiftDrawUserMap());
-            modelBuilder.ApplyConfiguration(new GiftDrawUserKeyMap());
+            //modelBuilder.ApplyConfiguration(new GiftMap());
+            //modelBuilder.ApplyConfiguration(new GiftDrawMap());
+            //modelBuilder.ApplyConfiguration(new CustomerMap());
+            //modelBuilder.ApplyConfiguration(new VoteMap());
+            //modelBuilder.ApplyConfiguration(new VoteUserMap());
+            //modelBuilder.ApplyConfiguration(new OrderMap());
+            //modelBuilder.ApplyConfiguration(new GiftDrawUserMap());
+            //modelBuilder.ApplyConfiguration(new GiftDrawUserKeyMap());
 
 
             //modelBuilder.Entity<GiftDraw>()
@@ -42,22 +42,33 @@ namespace Raffle.Dal
             //    .WithMany(g => g.GiftDraws)
             //    .HasForeignKey(s => s.GiftId);
 
-            var roleAdmin = new IdentityRole { Id = Guid.NewGuid().ToString(), Name = "Superuser", NormalizedName = "SUPERUSER" };
-            var roleStandart = new IdentityRole { Id = Guid.NewGuid().ToString(), Name = "Participant", NormalizedName = "PARTICIPANT" };
+            var roleAdmin = new IdentityRole { Id = Guid.NewGuid().ToString(), Name = "Admin", NormalizedName = "ADMIN" };
+            var roleStandart = new IdentityRole { Id = Guid.NewGuid().ToString(), Name = "Client", NormalizedName = "CLIENT" };
 
             modelBuilder.Entity<IdentityRole>().HasData(roleAdmin, roleStandart);
 
-            //// derive a 256-bit subkey (use HMACSHA1 with 10,000 iterations)
-            //string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
-            //    password: "qweqwe",
-            //    salt: new byte[128 / 8],
-            //    prf: KeyDerivationPrf.HMACSHA1,
-            //    iterationCount: 10000,
-            //    numBytesRequested: 256 / 8));
+            // derive a 256-bit subkey (use HMACSHA1 with 10,000 iterations)
+            string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
+                password: "qweqwe",
+                salt: new byte[128 / 8],
+                prf: KeyDerivationPrf.HMACSHA1,
+                iterationCount: 10000,
+                numBytesRequested: 256 / 8));
 
-            //var user = new ApplicationUser { Email = "jusupovz@gmail.com", UserName = "jusupovz@gmail.com", NormalizedEmail = "JUSUPOVZ@GMAIL.COM", NormalizedUserName = "JUSUPOVZ@GMAIL.COM", EmailConfirmed = true, FirstName = "Zamir", LastName = "Yusupov", PasswordHash = hashed };
+            var user = new ApplicationUser {
+                Id = "qweqwe",
+                Email = "jusupovz@gmail.com",
+                UserName = "jusupovz@gmail.com",
+                NormalizedEmail = "JUSUPOVZ@GMAIL.COM",
+                NormalizedUserName = "JUSUPOVZ@GMAIL.COM",
+                EmailConfirmed = true,
+                FirstName = "Zamir",
+                LastName = "Yusupov",
+                MiddleName = "Almasovich",
+                PasswordHash = hashed
+            };
 
-            //modelBuilder.Entity<ApplicationUser>().HasData(user);
+            modelBuilder.Entity<ApplicationUser>().HasData(user);
 
 
 
@@ -197,33 +208,33 @@ namespace Raffle.Dal
                 IsDeleted = false
             };
 
-            modelBuilder.Entity<Gift>().HasData(gift1, gift2, gift3, gift4, gift5, gift6, gift7, gift8, gift9, gift10, gift11, gift12, gift13);
+            //modelBuilder.Entity<Gift>().HasData(gift1, gift2, gift3, gift4, gift5, gift6, gift7, gift8, gift9, gift10, gift11, gift12, gift13);
 
-            modelBuilder.Entity<GiftDraw>().HasData(
-                new GiftDraw { GiftId = gift12.Id, Id = 1, Price = 6, PriceKey = 2, IsDeleted = false }, // браслет
-                //new GiftDraw { GiftId = gift12.Id, Id = 1, Price = 3000, PriceKey = 100, IsDeleted = false }, // браслет
-                new GiftDraw { GiftId = gift13.Id, Id = 2, Price = 10, PriceKey = 2, IsDeleted = false }, //Телевизор LED
-                //new GiftDraw { GiftId = gift13.Id, Id = 2, Price = 19000, PriceKey = 100, IsDeleted = false }, //Телевизор LED
-                new GiftDraw { GiftId = gift1.Id, Id = 3, Price = 10, PriceKey = 2, IsDeleted = false }, //Apple iPhone X 64
-                //new GiftDraw { GiftId = gift1.Id, Id = 3, Price = 77000, PriceKey = 100, IsDeleted = false }, //Apple iPhone X 64
-                new GiftDraw { GiftId = gift2.Id, Id = 4, Price = 10, PriceKey = 2, IsDeleted = false }, //"Samsung Galaxy Note 8
-                //new GiftDraw { GiftId = gift2.Id, Id = 4, Price = 50000, PriceKey = 100, IsDeleted = false }, //"Samsung Galaxy Note 8
-                new GiftDraw { GiftId = gift3.Id, Id = 5, Price = 12, PriceKey = 2, IsDeleted = false },  //PlayStation 4 Pro
-                //new GiftDraw { GiftId = gift3.Id, Id = 5, Price = 36000, PriceKey = 100, IsDeleted = false },  //PlayStation 4 Pro
-                new GiftDraw { GiftId = gift4.Id, Id = 6, Price = 12, PriceKey = 2, IsDeleted = false },  //Microsoft Xbox One X
-                //new GiftDraw { GiftId = gift4.Id, Id = 6, Price = 39000, PriceKey = 100, IsDeleted = false },  //Microsoft Xbox One X
-                new GiftDraw { GiftId = gift5.Id, Id = 7, Price = 8, PriceKey = 2, IsDeleted = false }  //Apple iPhone 7
-                //new GiftDraw { GiftId = gift5.Id, Id = 7, Price = 47000, PriceKey = 100, IsDeleted = false }  //Apple iPhone 7
-            );
+            //modelBuilder.Entity<GiftDraw>().HasData(
+            //    new GiftDraw { GiftId = gift12.Id, Id = 1, Price = 6, PriceKey = 2, IsDeleted = false }, // браслет
+            //    //new GiftDraw { GiftId = gift12.Id, Id = 1, Price = 3000, PriceKey = 100, IsDeleted = false }, // браслет
+            //    new GiftDraw { GiftId = gift13.Id, Id = 2, Price = 10, PriceKey = 2, IsDeleted = false }, //Телевизор LED
+            //    //new GiftDraw { GiftId = gift13.Id, Id = 2, Price = 19000, PriceKey = 100, IsDeleted = false }, //Телевизор LED
+            //    new GiftDraw { GiftId = gift1.Id, Id = 3, Price = 10, PriceKey = 2, IsDeleted = false }, //Apple iPhone X 64
+            //    //new GiftDraw { GiftId = gift1.Id, Id = 3, Price = 77000, PriceKey = 100, IsDeleted = false }, //Apple iPhone X 64
+            //    new GiftDraw { GiftId = gift2.Id, Id = 4, Price = 10, PriceKey = 2, IsDeleted = false }, //"Samsung Galaxy Note 8
+            //    //new GiftDraw { GiftId = gift2.Id, Id = 4, Price = 50000, PriceKey = 100, IsDeleted = false }, //"Samsung Galaxy Note 8
+            //    new GiftDraw { GiftId = gift3.Id, Id = 5, Price = 12, PriceKey = 2, IsDeleted = false },  //PlayStation 4 Pro
+            //    //new GiftDraw { GiftId = gift3.Id, Id = 5, Price = 36000, PriceKey = 100, IsDeleted = false },  //PlayStation 4 Pro
+            //    new GiftDraw { GiftId = gift4.Id, Id = 6, Price = 12, PriceKey = 2, IsDeleted = false },  //Microsoft Xbox One X
+            //    //new GiftDraw { GiftId = gift4.Id, Id = 6, Price = 39000, PriceKey = 100, IsDeleted = false },  //Microsoft Xbox One X
+            //    new GiftDraw { GiftId = gift5.Id, Id = 7, Price = 8, PriceKey = 2, IsDeleted = false }  //Apple iPhone 7
+            //    //new GiftDraw { GiftId = gift5.Id, Id = 7, Price = 47000, PriceKey = 100, IsDeleted = false }  //Apple iPhone 7
+            //);
 
-            modelBuilder.Entity<Vote>().HasData(
-                new Vote { Id = 1, GiftId = 6, IsDeleted = false, Price = 29999 },
-                new Vote { Id = 2, GiftId = 7, IsDeleted = false, Price = 9999},
-                new Vote { Id = 3, GiftId = 8, IsDeleted = false, Price = 29499},
-                new Vote { Id = 4, GiftId = 9, IsDeleted = false, Price = 24499},
-                new Vote { Id = 5, GiftId = 10, IsDeleted = false, Price = 24999},
-                new Vote { Id = 6, GiftId = 11, IsDeleted = false, Price = 22999}
-            );
+            //modelBuilder.Entity<Vote>().HasData(
+            //    new Vote { Id = 1, GiftId = 6, IsDeleted = false, Price = 29999 },
+            //    new Vote { Id = 2, GiftId = 7, IsDeleted = false, Price = 9999},
+            //    new Vote { Id = 3, GiftId = 8, IsDeleted = false, Price = 29499},
+            //    new Vote { Id = 4, GiftId = 9, IsDeleted = false, Price = 24499},
+            //    new Vote { Id = 5, GiftId = 10, IsDeleted = false, Price = 24999},
+            //    new Vote { Id = 6, GiftId = 11, IsDeleted = false, Price = 22999}
+            //);
         }
     }
 }

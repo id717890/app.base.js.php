@@ -25,10 +25,9 @@ import { mapActions, mapGetters } from 'vuex'
 export default {
   data () {
     return {
-      showDismissibleAlert: false,
       form: {
         valid: true,
-        email: ''
+        email: 'jusupovz@gmail.com'
       },
       emailRules: [
         v => !!v || 'E-mail required',
@@ -43,11 +42,12 @@ export default {
     this.$store.dispatch('clearAllMessages')
   },
   methods: {
-    ...mapActions(['signUserIn']),
-    handleClick () {
-      this.showDismissibleAlert = true
-    },
-    onSubmit (evt) {
+    ...mapActions(['forgotPassword']),
+    onSubmit () {
+      this.forgotPassword({ email: this.form.email })
+        .then(() => {
+          this.$refs.form.reset()
+        })
     }
   }
 }

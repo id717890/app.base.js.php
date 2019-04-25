@@ -9,4 +9,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.1.6" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\App.Infrastructure\App.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,5 +1,5 @@
 import * as types from '../mutation-types'
-import context from '@/api/auth'
+import context from '../../api/auth'
 import Vue from 'vue'
 
 const state = {
@@ -43,10 +43,10 @@ const actions = {
     return new Promise((resolve, reject) => {
       context.forgotPassword(payload.email).then((x) => {
         if (x.status === 200) {
-          dispatch('setMessages', ['На указанный E-mail выслана инструкция для восстановления пароля'])
+          dispatch('setMessages', 'На указанный E-mail выслана инструкция для восстановления пароля')
           resolve()
         } else {
-          dispatch('setErrors', x.response.data)
+          Object.keys(x.response.data).forEach(key => dispatch('setErrors', x.response.data[key]))
           reject(x.response.data)
         }
       }).catch(x => {
