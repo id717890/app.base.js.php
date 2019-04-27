@@ -12,7 +12,7 @@
         </v-flex>
         <v-flex 12>
           <v-layout justify-space-between>
-            <v-btn large :disabled="!form.valid" color="primary" @click="onSubmit" ><fai icon="sign-in-alt" class="mr-2" />  Register</v-btn>
+            <v-btn :loading="loading" large :disabled="!form.valid" color="primary" @click="onSubmit" ><fai icon="sign-in-alt" class="mr-2" />  Register</v-btn>
             <v-btn large flat to="/forgot"><fai icon="key" class="mr-2" />  Forgot</v-btn>
             <v-btn left flat large to="/"><fai icon="home" size="2x" /></v-btn>
           </v-layout>
@@ -28,6 +28,7 @@ import { mapActions } from 'vuex'
 export default {
   data () {
     return {
+      loading: false,
       form: {
         valid: false,
         email: 'jusupovz@gmail.com',
@@ -69,8 +70,10 @@ export default {
       // this.form.firstName = ''
       // this.form.lastName = ''
       this.$refs.form.reset()
+      this.loading = false
     },
     onSubmit (e) {
+      this.loading = true
       this.$store.dispatch('clearAllMessages')
       e.preventDefault()
       if (this.$refs.form.validate()) {
@@ -80,6 +83,7 @@ export default {
           })
           .catch(x => {
             console.log(x)
+            this.loading = false
           })
       }
     }

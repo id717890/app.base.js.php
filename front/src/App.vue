@@ -1,6 +1,6 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer
+    <!-- <v-navigation-drawer
       fixed
       v-model="drawerRight"
       right
@@ -11,14 +11,13 @@
         <v-list-tile @click.stop="right = !right">
           <v-list-tile-action>
             <fai icon="save"></fai>
-            <!-- <v-icon>cube</v-icon> -->
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title>Open Temporary Drawer</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
-    </v-navigation-drawer>
+    </v-navigation-drawer> -->
     <v-toolbar
       color="blue-grey"
       dark
@@ -69,7 +68,7 @@
         <fai icon="align-justify"></fai>
       </v-toolbar-side-icon>
     </v-toolbar>
-    <v-navigation-drawer
+    <!-- <v-navigation-drawer
       fixed
       v-model="drawer"
       app
@@ -84,23 +83,23 @@
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
-    </v-navigation-drawer>
-    <v-navigation-drawer
+    </v-navigation-drawer> -->
+    <!-- <v-navigation-drawer
       temporary
       v-model="left"
       fixed
-    ></v-navigation-drawer>
+    ></v-navigation-drawer> -->
     <v-content>
       <v-container fluid fill-height>
         <router-view></router-view>
       </v-container>
     </v-content>
-    <v-navigation-drawer
+    <!-- <v-navigation-drawer
       right
       temporary
       v-model="right"
       fixed
-    ></v-navigation-drawer>
+    ></v-navigation-drawer> -->
     <v-footer color="blue-grey" class="white--text" app>
       <span>Vuetify</span>
       <v-spacer></v-spacer>

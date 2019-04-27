@@ -37,13 +37,14 @@ namespace Raffle.Api.Controllers
         private readonly IMessageModelBuilder _messageModelBuilder;
         private readonly IConfiguration _config;
         private RoleOptions _roleOptions;
+        private AlertOptions _alertOptions;
 
         private enum TypeMessage
         {
+            Info,
             Success,
-            Primary,
-            Danger,
-            Warning
+            Warning,
+            Error
         }
 
         public AccountController(
@@ -55,7 +56,8 @@ namespace Raffle.Api.Controllers
             ICustomerService customerService,
             IMessageModelBuilder messageModelBuilder,
             IConfiguration config,
-            IOptions<RoleOptions> roleOptions
+            IOptions<RoleOptions> roleOptions,
+            IOptions<AlertOptions> alertOptions
             )
         {
             _userManager = userManager;
@@ -67,6 +69,7 @@ namespace Raffle.Api.Controllers
             _messageModelBuilder = messageModelBuilder;
             _config = config;
             _roleOptions = roleOptions.Value;
+            _alertOptions = alertOptions.Value;
         }
 
         [HttpPost, Route("register")]
@@ -109,13 +112,13 @@ namespace Raffle.Api.Controllers
                 var user = _userManager.FindByIdAsync(userId).Result;
                 if (user == null)
                 {
-                    url = CallbakUrlBuild("Ошибка", "Не удалось определить пользователя", TypeMessage.Danger);
+                    url = CallbakUrlBuild("Ошибка", "Не удалось определить пользователя", TypeMessage.Error);
                     return Redirect(Uri.EscapeUriString(url));
                 }
                 var result = _userManager.ConfirmEmailAsync(user, code).Result;
                 if (!result.Succeeded)
                 {
-                    url = CallbakUrlBuild("Ошибка", "Не удалось определить токен доступа", TypeMessage.Danger);
+                    url = CallbakUrlBuild("Ошибка", "Не удалось определить токен доступа", TypeMessage.Error);
                     return Redirect(Uri.EscapeUriString(url));
                 }
                 url = CallbakUrlBuild("Успешно", "Ваш E-mail успешно подтверждён. Теперь вы можете авторизоваться", TypeMessage.Success);
@@ -194,14 +197,14 @@ namespace Raffle.Api.Controllers
             var webSiteUrl = _config.GetSection("WebSite").Value;
             switch (type)
             {
-                case TypeMessage.Primary:
+                case TypeMessage.Info:
                     typeStr = "primary";
                     break;
                 case TypeMessage.Success:
                     typeStr = "success";
                     break;
-                case TypeMessage.Danger:
-                    typeStr = "danger";
+                case TypeMessage.Error:
+                    typeStr = "error";
                     break;
                 case TypeMessage.Warning:
                     typeStr = "warning";
