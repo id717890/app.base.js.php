@@ -8,6 +8,7 @@ namespace Raffle.Api.ViewModels.Mappings
         public UserModelProfile()
         {
             CreateMap<ApplicationUser, UserViewModel.UserSettings>();
+            CreateMap<ApplicationUser, UserViewModel.UserModel>();
         }
     }
 }

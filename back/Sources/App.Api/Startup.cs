@@ -4,6 +4,10 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using App.Dal.Interface.Services.Abstract;
+using App.Dal.Services;
+using App.Domain.Interface.Services;
+using App.Domain.Services;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -82,6 +86,8 @@ namespace Raffle.Api
             services.AddTransient<IGiftDrawUserService, GiftDrawUserService>();
             services.AddTransient<IGiftRepository, GiftRepository>();
             services.AddTransient<IGiftService, GiftService>();
+            services.AddTransient<IIdentityRepository, IdentityRepository>();
+            services.AddTransient<IAuthService, AuthService>();
             #endregion
 
 

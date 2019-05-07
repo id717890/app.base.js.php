@@ -25,14 +25,14 @@
       app
       clipped-right
     >
-      <v-toolbar-side-icon @click.stop="drawer = !drawer">
+      <!-- <v-toolbar-side-icon @click.stop="drawer = !drawer">
         <fai icon="align-justify"></fai>
-      </v-toolbar-side-icon>
+      </v-toolbar-side-icon> -->
       <v-toolbar-items>
         <v-btn flat to="/" class="ml-2"><fai icon="home" size="2x" class="mr-1"/></v-btn>
         <v-btn flat to="/dashboard" v-if="isAuth"><fai icon="crown" size="2x" class="mr-1"/></v-btn>
       </v-toolbar-items>
-      <v-menu :nudge-width="100">
+      <v-menu :nudge-width="100" v-if="isAuth">
         <template v-slot:activator="{ on }">
           <v-toolbar-title v-on="on">
             <span>Спарвочники</span>
@@ -64,9 +64,9 @@
         </template>
         <v-btn flat @click="Logoff" class="mr-2" v-if="isAuth"><fai icon="sign-out-alt" size="2x" class="mr-1"/></v-btn>
       </v-toolbar-items>
-      <v-toolbar-side-icon @click.stop="drawerRight = !drawerRight">
+      <!-- <v-toolbar-side-icon @click.stop="drawerRight = !drawerRight">
         <fai icon="align-justify"></fai>
-      </v-toolbar-side-icon>
+      </v-toolbar-side-icon> -->
     </v-toolbar>
     <!-- <v-navigation-drawer
       fixed

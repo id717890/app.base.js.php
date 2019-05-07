@@ -67,12 +67,12 @@ const actions = {
           Vue.auth.setUser(user)
           resolve()
         } else {
-          dispatch('setErrors', x.data)
-          reject(x.data)
+          dispatch('setErrors', x.response)
+          reject(x.response)
         }
       }).catch(x => {
-        dispatch('setErrors', x.data)
-        reject(x.data)
+        dispatch('setErrors', x.response)
+        reject(x.response)
       })
       // }
     })
@@ -81,7 +81,7 @@ const actions = {
     return new Promise((resolve, reject) => {
       context.signUp(payload.email, payload.password, payload.passwordConfirm, payload.firstName, payload.lastName).then((x) => {
         if (x.status === 200) {
-          dispatch('setMessages', 'Accont create. Please, confirm your email address.')
+          dispatch('setMessages', 'Account created. Please, confirm your email address.')
           resolve()
         } else {
           Object.keys(x.response.data).forEach(key => dispatch('setErrors', x.response.data[key]))

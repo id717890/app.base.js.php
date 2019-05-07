@@ -30,6 +30,9 @@ const mutations = {
 
 // getters
 const getters = {
+  getUserById: state => id => {
+    return state.allUsers.find(x => x.id === id)
+  }
 }
 
 export default {

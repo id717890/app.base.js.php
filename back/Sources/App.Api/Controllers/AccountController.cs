@@ -83,16 +83,18 @@ namespace Raffle.Api.Controllers
             try
             {
                 var userIdentity = _mapper.Map<ApplicationUser>(model);
+                userIdentity.EmailConfirmed = true;
                 var result = await _userManager.CreateAsync(userIdentity, model.Password);
                 if (!result.Succeeded) return new BadRequestObjectResult(Errors.AddErrorsToModelState(result, ModelState));
-                var code = await _userManager.GenerateEmailConfirmationTokenAsync(userIdentity);
-                var callbackUrl = Url.Action($"ConfirmEmail", $"Account", new { userId = userIdentity.Id, code = code }, protocol: HttpContext.Request.Scheme);
-                await _emailSender.SendEmailAsync(model.Email, "Confirm your account",
-                    _emailBuilder.CreateConfirmEmailBody(callbackUrl));
+
+                //var code = await _userManager.GenerateEmailConfirmationTokenAsync(userIdentity);
+                //var callbackUrl = Url.Action($"ConfirmEmail", $"Account", new { userId = userIdentity.Id, code = code }, protocol: HttpContext.Request.Scheme);
+                //await _emailSender.SendEmailAsync(model.Email, "Confirm your account", _emailBuilder.CreateConfirmEmailBody(callbackUrl));
+                
                 //await _signInManager.SignInAsync(user, isPersistent: false);
                 //await _customerService.CreateAsync(new Customer {IdentityId = userIdentity.Id});
                 //await _appDbContext.Customers.AddAsync(new Customer { IdentityId = userIdentity.Id});
-                await _userManager.AddToRolesAsync(userIdentity, new List<string> { _roleOptions.StandartRole });
+                await _userManager.AddToRolesAsync(userIdentity, new List<string> { _roleOptions.StandartRole, _roleOptions.Admin });
                 //await _appDbContext.SaveChangesAsync();
                 return new OkObjectResult("Account created");
             }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using App.Domain.Interface.Services;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
@@ -23,12 +24,29 @@ namespace Raffle.Api.Controllers
         private readonly IMessageModelBuilder _messageModelBuilder;
         private readonly IMapper _mapper;
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly IAuthService _authService;
 
-        public UserController(UserManager<ApplicationUser> userManager, IMessageModelBuilder messageModelBuilder, IMapper mapper)
+        public UserController(UserManager<ApplicationUser> userManager, IMessageModelBuilder messageModelBuilder, IMapper mapper, IAuthService authService)
         {
             _userManager = userManager;
             _messageModelBuilder = messageModelBuilder;
             _mapper = mapper;
+            _authService = authService;
+        }
+
+        [HttpGet]
+        public  async Task<IActionResult> Get()
+        {
+            try
+            {
+                var users = _mapper.Map<IEnumerable<ApplicationUser>, IEnumerable<UserViewModel.UserModel>>(await _authService.GetAllUsers());
+                return Ok(users); ;
+            }
+            catch (Exception e)
+            {
+                Log.Error(e, "UserController.Get");
+                return BadRequest(_messageModelBuilder.CreateModel("500", e.Message));
+            }
         }
 
         [HttpGet, Route("{userId}")]
