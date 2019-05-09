@@ -38,6 +38,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\App.Dal\App.Dal.csproj" />
+    <ProjectReference Include="..\App.Desktop.Interface\App.Desktop.Interface.csproj" />
     <ProjectReference Include="..\App.Domain.Interface\App.Domain.Interface.csproj" />
     <ProjectReference Include="..\App.Domain\App.Domain.csproj" />
     <ProjectReference Include="..\App.Infrastructure.Interface\App.Infrastructure.Interface.csproj" />

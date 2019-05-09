@@ -1,4 +1,5 @@
-﻿using Raffle.Domain.Interface.Entity;
+﻿using App.Domain.Interface.Entity;
+using Raffle.Domain.Interface.Entity;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

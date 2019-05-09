@@ -1,4 +1,4 @@
-﻿namespace Raffle.Api.Models.Email
+﻿namespace App.Api.Models.Email
 {
     public class ConfirmEmailModel
     {

@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace Raffle.Api.ViewModels
+namespace App.Api.ViewModels
 {
     public class UserViewModel
     {

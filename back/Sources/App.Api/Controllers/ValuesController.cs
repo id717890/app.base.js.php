@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-using Raffle.Api.Helpers;
+using App.Api.Helpers;
 
-namespace Raffle.Api.Controllers
+namespace App.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

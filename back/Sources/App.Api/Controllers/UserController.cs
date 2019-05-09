@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using App.Domain.Interface.Entity;
 using App.Domain.Interface.Services;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
@@ -9,13 +10,11 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Raffle.Api.ViewModels;
-using Raffle.Domain.Interface.Entity;
-using Raffle.Domain.Interface.Services;
+using App.Api.ViewModels;
 using Raffle.Infrastructure.Interface;
 using Serilog;
 
-namespace Raffle.Api.Controllers
+namespace App.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController, Authorize]

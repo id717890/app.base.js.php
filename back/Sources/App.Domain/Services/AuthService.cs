@@ -1,4 +1,5 @@
 ﻿using App.Dal.Interface.Services.Abstract;
+using App.Domain.Interface.Entity;
 using App.Domain.Interface.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Raffle.Domain.Interface.Entity;

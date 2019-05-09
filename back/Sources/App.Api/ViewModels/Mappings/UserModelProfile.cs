@@ -1,7 +1,7 @@
-﻿using AutoMapper;
-using Raffle.Domain.Interface.Entity;
+﻿using App.Domain.Interface.Entity;
+using AutoMapper;
 
-namespace Raffle.Api.ViewModels.Mappings
+namespace App.Api.ViewModels.Mappings
 {
     public class UserModelProfile: Profile
     {

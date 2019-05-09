@@ -3,24 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using App.Domain.Interface.Entity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
-using Raffle.Api.Auth;
-using Raffle.Api.Helpers;
-using Raffle.Api.Models;
-using Raffle.Api.Models.ConfigOptions;
-using Raffle.Api.ViewModels;
+using App.Api.Auth;
+using App.Api.Helpers;
+using App.Api.Models;
+using App.Api.Models.ConfigOptions;
+using App.Api.ViewModels;
 using Raffle.Dal;
 using Raffle.Domain.Interface.Entity;
 using Raffle.Infrastructure.Interface;
 using Raffle.Infrastructure.Interface.Auth;
 using Serilog;
 
-namespace Raffle.Api.Controllers
+namespace App.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

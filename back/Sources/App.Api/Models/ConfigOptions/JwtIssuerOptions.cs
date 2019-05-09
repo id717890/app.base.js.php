@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Raffle.Api.Models.ConfigOptions
+namespace App.Api.Models.ConfigOptions
 {
     public class JwtIssuerOptions
     {

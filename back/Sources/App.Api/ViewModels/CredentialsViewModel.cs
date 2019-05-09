@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FluentValidation.Attributes;
-using Raffle.Api.ViewModels.Validations;
+using App.Api.ViewModels.Validations;
 
-namespace Raffle.Api.ViewModels
+namespace App.Api.ViewModels
 {
     [Validator(typeof(CredentialsViewModelValidator))]
     public class CredentialsViewModel

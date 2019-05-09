@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
-namespace Raffle.Api.ViewModels
+namespace App.Api.ViewModels
 {
     public class RegistrationViewModel
     {

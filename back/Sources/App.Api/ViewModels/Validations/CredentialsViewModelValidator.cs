@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FluentValidation;
 
-namespace Raffle.Api.ViewModels.Validations
+namespace App.Api.ViewModels.Validations
 {
   public class CredentialsViewModelValidator : AbstractValidator<CredentialsViewModel>
   {

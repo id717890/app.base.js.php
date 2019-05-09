@@ -1,4 +1,4 @@
-﻿namespace Raffle.Api.Models.ConfigOptions
+﻿namespace App.Api.Models.ConfigOptions
 {
     public class YandexMoneySecretOptions
     {

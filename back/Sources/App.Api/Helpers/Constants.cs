@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 
-namespace Raffle.Api.Helpers
+namespace App.Api.Helpers
 {
     public static class Constants
     {

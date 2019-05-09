@@ -6,11 +6,11 @@ using MailKit.Net.Smtp;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.Extensions.Options;
 using MimeKit;
-using Raffle.Api.Models.ConfigOptions;
+using App.Api.Models.ConfigOptions;
 using SendGrid;
 using SendGrid.Helpers.Mail;
 
-namespace Raffle.Api.Services
+namespace App.Api.Services
 {
     public class AuthMessageSender : IEmailSender
     {

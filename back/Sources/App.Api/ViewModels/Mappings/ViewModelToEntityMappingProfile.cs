@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using App.Domain.Interface.Entity;
 using AutoMapper;
-using Raffle.Api.Models;
+using App.Api.Models;
 using Raffle.Domain.Interface.Entity;
 
-namespace Raffle.Api.ViewModels.Mappings
+namespace App.Api.ViewModels.Mappings
 {
     public class ViewModelToEntityMappingProfile : Profile
     {

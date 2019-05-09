@@ -1,11 +1,11 @@
 ﻿using Microsoft.Extensions.Options;
-using Raffle.Api.Models.ConfigOptions;
+using App.Api.Models.ConfigOptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Raffle.Api
+namespace App.Api
 {
     public static class Config
     {

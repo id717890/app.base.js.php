@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Policy;
 using System.Threading.Tasks;
 using System.Web;
+using App.Domain.Interface.Entity;
 using AutoMapper;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -12,17 +13,17 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
-using Raffle.Api.Helpers;
-using Raffle.Api.Models;
-using Raffle.Api.Models.ConfigOptions;
-using Raffle.Api.ViewModels;
+using App.Api.Helpers;
+using App.Api.Models;
+using App.Api.Models.ConfigOptions;
+using App.Api.ViewModels;
 using Raffle.Dal;
 using Raffle.Domain.Interface.Entity;
-using Raffle.Domain.Interface.Services;
 using Raffle.Infrastructure.Interface;
 using Serilog;
+using App.Desktop.Interface.Data;
 
-namespace Raffle.Api.Controllers
+namespace App.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -33,7 +34,6 @@ namespace Raffle.Api.Controllers
         private readonly IMapper _mapper;
         private readonly IEmailSender _emailSender;
         private readonly IEmailBuilder _emailBuilder;
-        private readonly ICustomerService _customerService;
         private readonly IMessageModelBuilder _messageModelBuilder;
         private readonly IConfiguration _config;
         private RoleOptions _roleOptions;
@@ -53,7 +53,6 @@ namespace Raffle.Api.Controllers
             ApplicationDbContext appDbContext,
             IEmailSender emailSender,
             IEmailBuilder emailBuilder,
-            ICustomerService customerService,
             IMessageModelBuilder messageModelBuilder,
             IConfiguration config,
             IOptions<RoleOptions> roleOptions,
@@ -65,7 +64,6 @@ namespace Raffle.Api.Controllers
             _appDbContext = appDbContext;
             _emailSender = emailSender;
             _emailBuilder = emailBuilder;
-            _customerService = customerService;
             _messageModelBuilder = messageModelBuilder;
             _config = config;
             _roleOptions = roleOptions.Value;
@@ -216,6 +214,15 @@ namespace Raffle.Api.Controllers
                     break;
             }
             return string.Format(webSiteUrl + "notify?h={0}&m={1}&t={2}", headerText, message, typeStr); ;
+        }
+
+        [HttpGet, Route("GetAllUsers")]
+        public async Task<IEnumerable<DesktopUser>> GetAllUsers ()
+        {
+            var user1 = new DesktopUser() { Id = Guid.NewGuid(), FirstName = "f1" , LastName = "l1"};
+            var user2 = new DesktopUser() { Id = Guid.NewGuid(), FirstName = "f2" , LastName = "l2"};
+            return new DesktopUser[] { user1, user2 };
+            //return new object[] { new { id = "val1", text = "text1" }, new { id = "val2", text = "text2" } };
         }
 
     }

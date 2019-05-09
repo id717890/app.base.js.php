@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 
-namespace Raffle.Api.Middleware
+namespace App.Api.Middleware
 {
     public class ErrorHandlingMiddleware
     {

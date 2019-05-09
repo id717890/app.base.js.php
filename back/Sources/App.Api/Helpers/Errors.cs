@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace Raffle.Api.Helpers
+namespace App.Api.Helpers
 {
   public static class Errors
   {

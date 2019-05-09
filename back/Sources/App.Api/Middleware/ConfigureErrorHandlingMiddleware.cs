@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 
-namespace Raffle.Api.Middleware
+namespace App.Api.Middleware
 {
     public static class ConfigureErrorHandlingMiddleware
     {

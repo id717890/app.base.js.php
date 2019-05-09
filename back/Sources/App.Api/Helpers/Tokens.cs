@@ -2,11 +2,11 @@
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using Raffle.Api.Models;
-using Raffle.Api.Models.ConfigOptions;
+using App.Api.Models;
+using App.Api.Models.ConfigOptions;
 using Raffle.Infrastructure.Interface.Auth;
 
-namespace Raffle.Api.Helpers
+namespace App.Api.Helpers
 {
     public class Tokens
     {

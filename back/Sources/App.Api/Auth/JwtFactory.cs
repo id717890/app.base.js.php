@@ -6,12 +6,12 @@ using System.Security.Claims;
 using System.Security.Principal;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
-using Raffle.Api.Helpers;
-using Raffle.Api.Models;
-using Raffle.Api.Models.ConfigOptions;
+using App.Api.Helpers;
+using App.Api.Models;
+using App.Api.Models.ConfigOptions;
 using Raffle.Infrastructure.Interface.Auth;
 
-namespace Raffle.Api.Auth
+namespace App.Api.Auth
 {
     public class JwtFactory : IJwtFactory
     {

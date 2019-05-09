@@ -2,7 +2,7 @@
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Raffle.Domain.Interface.Entity
+namespace App.Domain.Interface.Entity
 {
     public class ApplicationUser: IdentityUser
     {
