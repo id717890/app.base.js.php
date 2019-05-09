@@ -18,6 +18,7 @@ using App.Desktop.Response;
 using App.Desktop.Interface.View;
 using App.Desktop.Interface.Presenter.LoginPresenter;
 using App.Desktop.Interface.Model;
+using App.Desktop.Interface.Data;
 
 namespace App.Desktop
 {
@@ -32,6 +33,10 @@ namespace App.Desktop
 
         public void Attach(ILoginPresenterCallback presenter)
         {
+            btnSignIn.Click += (sender, e) =>
+            {
+                presenter.Login((DesktopUser)cbUserList.SelectedItem, tbPass.Text);
+            };
         }
 
         public void SetFieldList(ILoginViewModel model)

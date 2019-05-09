@@ -2,6 +2,8 @@
 using App.Desktop.Interface.Model;
 using App.Desktop.Interface.Presenter.LoginPresenter;
 using App.Desktop.Interface.View;
+using App.RR.Request;
+using App.RR.Response;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -28,6 +30,13 @@ namespace App.Desktop.Login
             _view.SetFieldList(_model);
             _view.IsActiveUserList = true;
             _view.Attach(this);
+        }
+
+        public async void Login(DesktopUser user, string password)
+        {
+            var request = new Auth.Login { Email = user.Email, Password = password };
+            var result = await HttpService.PostAsync<DefaultResponse>("api/Auth/LoginDesktopUser", request);
+            var i = 0;
         }
 
         private async Task<IEnumerable<DesktopUser>> GetUsersFromApi2()

@@ -43,6 +43,7 @@
     <ProjectReference Include="..\App.Domain\App.Domain.csproj" />
     <ProjectReference Include="..\App.Infrastructure.Interface\App.Infrastructure.Interface.csproj" />
     <ProjectReference Include="..\App.Infrastructure\App.Infrastructure.csproj" />
+    <ProjectReference Include="..\App.RR\App.RR.csproj" />
   </ItemGroup>
 
 </Project>

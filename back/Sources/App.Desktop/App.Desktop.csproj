@@ -118,6 +118,10 @@
       <Project>{f15704d7-7d5c-47f4-88ee-def31f077a15}</Project>
       <Name>App.Desktop.Interface</Name>
     </ProjectReference>
+    <ProjectReference Include="..\App.RR\App.RR.csproj">
+      <Project>{779861ae-5fa3-4894-baa8-c73be21b3934}</Project>
+      <Name>App.RR</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

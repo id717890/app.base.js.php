@@ -20,6 +20,7 @@ using Raffle.Domain.Interface.Entity;
 using Raffle.Infrastructure.Interface;
 using Raffle.Infrastructure.Interface.Auth;
 using Serilog;
+using App.RR.Response;
 
 namespace App.Api.Controllers
 {
@@ -85,6 +86,43 @@ namespace App.Api.Controllers
             catch (Exception e)
             {
                 Log.Error(e, "AuthController.Login", model);
+                return BadRequest(_messageModelBuilder.CreateModel("500", e.Message));
+            }
+        }
+
+        // POST api/auth/login
+        [HttpPost("LoginDesktopUser")]
+        public async Task<IActionResult> LoginDesktopUser(RR.Request.Auth.Login request)
+        {
+            try
+            {
+                var response = new DefaultResponse();
+                var identity = await GetClaimsIdentity(request.Email, request.Password);
+                if (identity == null)
+                {
+                    response.ErrorCode = 1;
+                    response.Message = "Invalid username or password.";
+                    return BadRequest(response);
+                }
+                var user = _userManager.FindByNameAsync(request.Email).Result;
+                if (user != null)
+                {
+                    if (!_userManager.IsEmailConfirmedAsync(user).Result)
+                    {
+                        return BadRequest(_messageModelBuilder.CreateModel("403", "Email not confirmed!"));
+                    }
+                }
+                var jwt = await Tokens.GenerateJwt(
+                    identity,
+                    _jwtFactory,
+                    request.Email,
+                    _jwtOptions,
+                    new JsonSerializerSettings { Formatting = Formatting.Indented });
+                return new OkObjectResult(response);
+            }
+            catch (Exception e)
+            {
+                Log.Error(e, "AuthController.Login", request);
                 return BadRequest(_messageModelBuilder.CreateModel("500", e.Message));
             }
         }

@@ -22,6 +22,8 @@ using Raffle.Domain.Interface.Entity;
 using Raffle.Infrastructure.Interface;
 using Serilog;
 using App.Desktop.Interface.Data;
+using App.Domain.Interface.Services;
+using App.RR.Response;
 
 namespace App.Api.Controllers
 {
@@ -36,8 +38,10 @@ namespace App.Api.Controllers
         private readonly IEmailBuilder _emailBuilder;
         private readonly IMessageModelBuilder _messageModelBuilder;
         private readonly IConfiguration _config;
+        private readonly IAuthService _authService;
         private RoleOptions _roleOptions;
         private AlertOptions _alertOptions;
+
 
         private enum TypeMessage
         {
@@ -56,7 +60,8 @@ namespace App.Api.Controllers
             IMessageModelBuilder messageModelBuilder,
             IConfiguration config,
             IOptions<RoleOptions> roleOptions,
-            IOptions<AlertOptions> alertOptions
+            IOptions<AlertOptions> alertOptions,
+            IAuthService authService
             )
         {
             _userManager = userManager;
@@ -68,6 +73,7 @@ namespace App.Api.Controllers
             _config = config;
             _roleOptions = roleOptions.Value;
             _alertOptions = alertOptions.Value;
+            _authService = authService;
         }
 
         [HttpPost, Route("register")]
@@ -217,13 +223,22 @@ namespace App.Api.Controllers
         }
 
         [HttpGet, Route("GetAllUsers")]
-        public async Task<IEnumerable<DesktopUser>> GetAllUsers ()
+        public async Task<IActionResult> GetAllUsers ()
         {
-            var user1 = new DesktopUser() { Id = Guid.NewGuid(), FirstName = "f1" , LastName = "l1"};
-            var user2 = new DesktopUser() { Id = Guid.NewGuid(), FirstName = "f2" , LastName = "l2"};
-            return new DesktopUser[] { user1, user2 };
-            //return new object[] { new { id = "val1", text = "text1" }, new { id = "val2", text = "text2" } };
-        }
+            try
+            {
+                return Ok(await _authService.GetAllUsers());
+            }
+            catch (Exception e)
+            {
+                Log.Error(e, "AccountController.GetAllUsers");
+                return BadRequest(_messageModelBuilder.CreateModel("500", e.Message));
+            }
+            //var user1 = new DesktopUser() { Id = Guid.NewGuid(), FirstName = "f1" , LastName = "l1"};
+            //var user2 = new DesktopUser() { Id = Guid.NewGuid(), FirstName = "f2" , LastName = "l2"};
+            //return new DesktopUser[] { user1, user2 };
+            ////return new object[] { new { id = "val1", text = "text1" }, new { id = "val2", text = "text2" } };
+        }       
 
     }
 }
