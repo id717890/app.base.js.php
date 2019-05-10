@@ -1,6 +1,6 @@
 ﻿using App.Desktop.Interface.Data;
 
-namespace App.Desktop.Interface.Presenter.LoginPresenter
+namespace App.Desktop.Interface.Presenter.Login
 {
     public interface ILoginPresenterCallback
     {

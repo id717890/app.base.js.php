@@ -1,5 +1,5 @@
 ﻿using App.Desktop.Interface.Presenter;
-using App.Desktop.Interface.Presenter.LoginPresenter;
+using App.Desktop.Interface.Presenter.Login;
 using Ninject;
 using System;
 using System.Windows.Forms;

@@ -14,9 +14,8 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft;
 using Newtonsoft.Json;
-using App.Desktop.Response;
 using App.Desktop.Interface.View;
-using App.Desktop.Interface.Presenter.LoginPresenter;
+using App.Desktop.Interface.Presenter.Login;
 using App.Desktop.Interface.Model;
 using App.Desktop.Interface.Data;
 
@@ -29,7 +28,15 @@ namespace App.Desktop
             InitializeComponent();
         }
 
-        public bool IsActiveUserList { set => cbUserList.Enabled = value; }
+        public bool IsActiveUserList
+        {
+            set
+            {
+                cbUserList.Enabled = value;
+                tbPass.Enabled = value;
+                btnSignIn.Enabled = value;
+            }
+        }
 
         public void Attach(ILoginPresenterCallback presenter)
         {
@@ -51,6 +58,6 @@ namespace App.Desktop
             }
         }
 
-        
+
     }
 }

@@ -54,14 +54,14 @@
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.Size = new System.Drawing.Size(239, 23);
             this.btnSignIn.TabIndex = 2;
-            this.btnSignIn.Text = "button1";
+            this.btnSignIn.Text = "Вход";
             this.btnSignIn.UseVisualStyleBackColor = true;
             // 
             // LoginView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(266, 130);
+            this.ClientSize = new System.Drawing.Size(266, 131);
             this.Controls.Add(this.btnSignIn);
             this.Controls.Add(this.tbPass);
             this.Controls.Add(this.cbUserList);

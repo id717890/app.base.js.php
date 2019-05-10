@@ -102,7 +102,7 @@ namespace App.Api.Controllers
                 {
                     response.ErrorCode = 1;
                     response.Message = "Invalid username or password.";
-                    return BadRequest(response);
+                    return Ok(response);
                 }
                 var user = _userManager.FindByNameAsync(request.Email).Result;
                 if (user != null)

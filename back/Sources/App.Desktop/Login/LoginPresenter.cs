@@ -1,12 +1,16 @@
 ﻿using App.Desktop.Interface.Data;
 using App.Desktop.Interface.Model;
-using App.Desktop.Interface.Presenter.LoginPresenter;
+using App.Desktop.Interface.Presenter.Login;
+using App.Desktop.Interface.Presenter.MdiContainer;
+using App.Desktop.Interface.Service;
 using App.Desktop.Interface.View;
+using App.Desktop.MdiContainer;
 using App.RR.Request;
 using App.RR.Response;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace App.Desktop.Login
 {
@@ -14,11 +18,16 @@ namespace App.Desktop.Login
     {
         private readonly ILoginView _view;
         private readonly ILoginViewModel _model;
+        private readonly IMdiPresenter _mdiPresenter;
+        private readonly IDialogService _dialogService;
 
-        public LoginPresenter(ILoginView view, ILoginViewModel model)
+
+        public LoginPresenter(ILoginView view, ILoginViewModel model, IMdiPresenter mdiPresenter, IDialogService dialogService)
         {
             _view = view;
             _model = model;
+            _mdiPresenter = mdiPresenter;
+            _dialogService = dialogService;
             _view.IsActiveUserList = false;
         }
 
@@ -36,7 +45,14 @@ namespace App.Desktop.Login
         {
             var request = new Auth.Login { Email = user.Email, Password = password };
             var result = await HttpService.PostAsync<DefaultResponse>("api/Auth/LoginDesktopUser", request);
-            var i = 0;
+            if (result != null && result.IsSuccess )
+            {
+                var login = _view as LoginView;
+                login.Hide();
+                var mdi = _mdiPresenter.Ui as MdiView;
+                if (mdi != null) mdi.Show();
+            }
+            else _dialogService.ShowMessage("Неверный логин или пароль");
         }
 
         private async Task<IEnumerable<DesktopUser>> GetUsersFromApi2()

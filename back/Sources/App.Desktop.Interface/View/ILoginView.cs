@@ -1,5 +1,5 @@
 ﻿using App.Desktop.Interface.Model;
-using App.Desktop.Interface.Presenter.LoginPresenter;
+using App.Desktop.Interface.Presenter.Login;
 using App.Desktop.Interface.View.Abstraction;
 
 namespace App.Desktop.Interface.View
