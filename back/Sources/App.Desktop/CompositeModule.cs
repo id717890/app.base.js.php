@@ -18,6 +18,7 @@ namespace App.Desktop
 
             Bind<IMdiPresenter>().To<MdiPresenter>();
             Bind<IMdiView>().To<MdiView>();
+            Bind<IMdiViewModel>().To<MdiViewModel>();
 
             Bind<ILoginPresenter>().To<LoginPresenter>();
             Bind<ILoginView>().To<LoginView>();

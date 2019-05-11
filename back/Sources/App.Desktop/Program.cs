@@ -1,5 +1,6 @@
 ﻿using App.Desktop.Interface.Presenter;
 using App.Desktop.Interface.Presenter.Login;
+using App.Desktop.Interface.Presenter.MdiContainer;
 using Ninject;
 using System;
 using System.Windows.Forms;
@@ -23,7 +24,10 @@ namespace App.Desktop
             CompositionRoot.Wire(new CompositeModule());
             var presenter = CompositionRoot.Resolve<ILoginPresenter>();
             presenter.Initialize();
-            Application.Run((Form)presenter.Ui);
+            var mdi = CompositionRoot.Resolve<IMdiPresenter>();
+            mdi.Initialize();
+            Application.Run((Form)mdi.Ui);
+            //Application.Run((Form)presenter.Ui);
         }
     }
 }

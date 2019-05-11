@@ -8,5 +8,7 @@ namespace App.Desktop.Interface.Presenter.MdiContainer
 {
     public interface IMdiPresenterCallback
     {
+        void OpenTagViewerForm();
+        void OpenTest();
     }
 }

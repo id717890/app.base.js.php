@@ -1,5 +1,7 @@
-﻿using App.Desktop.Interface.Presenter.MdiContainer;
+﻿using App.Desktop.Interface.Model;
+using App.Desktop.Interface.Presenter.MdiContainer;
 using App.Desktop.Interface.View;
+using App.Desktop.TagViewer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,7 +23,12 @@ namespace App.Desktop.MdiContainer
 
         public void Attach(IMdiPresenterCallback presenter)
         {
-            throw new NotImplementedException();
+            tagViewerView.Click += (sender, e) => presenter.OpenTagViewerForm();
+            testForm.Click += (sender, e) => presenter.OpenTest();
+        }
+
+        public void SetMenu(IMdiViewModel model)
+        {
         }
     }
 }

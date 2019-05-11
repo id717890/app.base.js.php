@@ -30,6 +30,9 @@
         {
             this.menu = new System.Windows.Forms.MenuStrip();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tagViewerView = new System.Windows.Forms.ToolStripMenuItem();
+            this.testForm = new System.Windows.Forms.ToolStripMenuItem();
+            this.form3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,11 +48,33 @@
             // 
             // exitToolStripMenuItem
             // 
+            this.exitToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tagViewerView,
+            this.testForm,
+            this.form3ToolStripMenuItem});
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
+            this.exitToolStripMenuItem.Text = "File";
             // 
-            // MdiContainer
+            // tagViewerView
+            // 
+            this.tagViewerView.Name = "tagViewerView";
+            this.tagViewerView.Size = new System.Drawing.Size(180, 22);
+            this.tagViewerView.Text = "Form1";
+            // 
+            // testForm
+            // 
+            this.testForm.Name = "testForm";
+            this.testForm.Size = new System.Drawing.Size(180, 22);
+            this.testForm.Text = "Form2";
+            // 
+            // form3ToolStripMenuItem
+            // 
+            this.form3ToolStripMenuItem.Name = "form3ToolStripMenuItem";
+            this.form3ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.form3ToolStripMenuItem.Text = "Form3";
+            // 
+            // MdiView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -57,7 +82,7 @@
             this.Controls.Add(this.menu);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menu;
-            this.Name = "MdiContainer";
+            this.Name = "MdiView";
             this.Text = "MdiContainer";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menu.ResumeLayout(false);
@@ -71,5 +96,8 @@
 
         private System.Windows.Forms.MenuStrip menu;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tagViewerView;
+        private System.Windows.Forms.ToolStripMenuItem testForm;
+        private System.Windows.Forms.ToolStripMenuItem form3ToolStripMenuItem;
     }
 }
