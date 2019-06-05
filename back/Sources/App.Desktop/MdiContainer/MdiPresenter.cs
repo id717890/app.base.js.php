@@ -1,5 +1,6 @@
 ﻿using App.Desktop.Interface.Model;
 using App.Desktop.Interface.Presenter.MdiContainer;
+using App.Desktop.Interface.Presenter.TagViewer;
 using App.Desktop.Interface.View;
 using App.Desktop.TagViewer;
 using System.Windows.Forms;
@@ -28,11 +29,17 @@ namespace App.Desktop.MdiContainer
 
         public void OpenTagViewerForm()
         {
-            var tagViewerView = new TagViewerView() { MdiParent = (Form)_view };
-            if (!ViewIsOpen(tagViewerView))
+            var tagViewerPresenter =  CompositionRoot.Resolve<ITagViewerPresenter>();
+            var tagViewerView = tagViewerPresenter.Ui as TagViewerView;
+            if (tagViewerView !=null )
             {
-                tagViewerView.Show();
-            } else tagViewerView.Activate();
+                tagViewerView.MdiParent = (Form)_view;
+                if (!ViewIsOpen(tagViewerView))
+                {
+                    tagViewerView.Show();
+                }
+            }
+            
         }
 
         public void OpenTest()

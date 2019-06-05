@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using App.Domain.Interface.Entity;
 using AutoMapper;
 using App.Api.Models;
-using Raffle.Domain.Interface.Entity;
 
 namespace App.Api.ViewModels.Mappings
 {

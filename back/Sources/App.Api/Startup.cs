@@ -32,14 +32,11 @@ using App.Api.Middleware;
 using App.Api.Models;
 using App.Api.Models.ConfigOptions;
 using App.Api.Services;
-using Raffle.Dal;
-using Raffle.Dal.Interface.Services;
-using Raffle.Dal.Services;
-using Raffle.Domain.Interface.Entity;
 using Raffle.Infrastructure;
 using Raffle.Infrastructure.Interface;
 using Raffle.Infrastructure.Interface.Auth;
 using Serilog;
+using App.Dal;
 
 namespace Raffle.Api
 {

@@ -18,12 +18,12 @@ using App.Api.Models;
 using App.Api.Models.ConfigOptions;
 using App.Api.ViewModels;
 using Raffle.Dal;
-using Raffle.Domain.Interface.Entity;
 using Raffle.Infrastructure.Interface;
 using Serilog;
 using App.Desktop.Interface.Data;
 using App.Domain.Interface.Services;
 using App.RR.Response;
+using App.Dal;
 
 namespace App.Api.Controllers
 {

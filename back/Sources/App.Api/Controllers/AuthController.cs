@@ -16,7 +16,6 @@ using App.Api.Models;
 using App.Api.Models.ConfigOptions;
 using App.Api.ViewModels;
 using Raffle.Dal;
-using Raffle.Domain.Interface.Entity;
 using Raffle.Infrastructure.Interface;
 using Raffle.Infrastructure.Interface.Auth;
 using Serilog;

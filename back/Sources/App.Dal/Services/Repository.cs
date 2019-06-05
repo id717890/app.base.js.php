@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+using App.Domain.Interface.Entity;
 using Microsoft.EntityFrameworkCore;
 using Raffle.Dal.Interface.Services;
-using Raffle.Domain.Interface.Entity;
 
-namespace Raffle.Dal.Services
+namespace App.Dal.Services
 {
     public class Repository<TEntity>: IRepository<TEntity> where TEntity: Entity
     {

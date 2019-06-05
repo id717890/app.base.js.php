@@ -1,11 +1,13 @@
 ﻿using App.Desktop.Interface.Model;
 using App.Desktop.Interface.Presenter.Login;
 using App.Desktop.Interface.Presenter.MdiContainer;
+using App.Desktop.Interface.Presenter.TagViewer;
 using App.Desktop.Interface.Service;
 using App.Desktop.Interface.View;
 using App.Desktop.Login;
 using App.Desktop.MdiContainer;
 using App.Desktop.Service;
+using App.Desktop.TagViewer;
 using Ninject.Modules;
 
 namespace App.Desktop
@@ -14,6 +16,10 @@ namespace App.Desktop
     {
         public override void Load()
         {
+            Bind<ITagViewerPresenter>().To<TagViewerPresenter>();
+            Bind<ITagViewerView>().To<TagViewerView>();
+            Bind<ITagViewerViewModel>().To<TagViewerViewModel>();
+
             Bind<IDialogService>().To<DialogService>();
 
             Bind<IMdiPresenter>().To<MdiPresenter>();

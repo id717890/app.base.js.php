@@ -1,4 +1,4 @@
-﻿namespace Raffle.Domain.Interface.Entity
+﻿namespace App.Domain.Interface.Entity
 {
     public abstract class Entity
     {

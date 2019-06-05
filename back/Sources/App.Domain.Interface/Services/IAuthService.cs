@@ -1,6 +1,5 @@
 ﻿using App.Domain.Interface.Entity;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Raffle.Domain.Interface.Entity;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

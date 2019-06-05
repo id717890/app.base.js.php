@@ -5,8 +5,6 @@ using System.Threading.Tasks;
 using App.Dal.Interface.Services.Abstract;
 using App.Domain.Interface.Entity;
 using Microsoft.EntityFrameworkCore;
-using Raffle.Dal;
-using Raffle.Domain.Interface.Entity;
 
 namespace App.Dal.Services
 {
