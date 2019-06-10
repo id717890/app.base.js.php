@@ -22,12 +22,19 @@ namespace App.Desktop
 
             CompositionRoot.Init(kernel);
             CompositionRoot.Wire(new CompositeModule());
-            var presenter = CompositionRoot.Resolve<ILoginPresenter>();
-            presenter.Initialize();
-            var mdi = CompositionRoot.Resolve<IMdiPresenter>();
-            mdi.Initialize();
-            Application.Run((Form)mdi.Ui);
-            //Application.Run((Form)presenter.Ui);
+            var loginPresenter = CompositionRoot.Resolve<ILoginPresenter>();
+            if (loginPresenter.IsTokenVerifyAsync() == true)
+            {
+                var mdiPresenter = CompositionRoot.Resolve<IMdiPresenter>();
+                mdiPresenter.Initialize();
+                Application.Run((Form)mdiPresenter.Ui);
+            }
+            else
+            {
+                loginPresenter.Initialize();
+                Application.Run((Form)loginPresenter.Ui);
+            }
+            
         }
     }
 }

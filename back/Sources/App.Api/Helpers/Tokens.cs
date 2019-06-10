@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using App.Api.Models;
 using App.Api.Models.ConfigOptions;
 using Raffle.Infrastructure.Interface.Auth;
+using System;
 
 namespace App.Api.Helpers
 {
@@ -19,6 +20,11 @@ namespace App.Api.Helpers
                 expires_in = jwtOptions.ExpirationMinutes * 60
             };
             return JsonConvert.SerializeObject(response, serializerSettings);
+        }
+
+        public static async Task<Tuple<string, string, int>> GenerateJwt(ClaimsIdentity identity, IJwtFactory jwtFactory, string userName, JwtIssuerOptions jwtOptions)
+        {
+            return new Tuple<string, string, int>(identity.Claims.Single(c => c.Type == "id").Value, await jwtFactory.GenerateEncodedToken(userName, identity), jwtOptions.ExpirationMinutes * 60);
         }
     }
 }

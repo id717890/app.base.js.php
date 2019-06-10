@@ -95,7 +95,7 @@ namespace App.Api.Controllers
         {
             try
             {
-                var response = new DefaultResponse();
+                var response = new AuthResponse.TokenResponse();
                 var identity = await GetClaimsIdentity(request.Email, request.Password);
                 if (identity == null)
                 {
@@ -111,12 +111,10 @@ namespace App.Api.Controllers
                         return BadRequest(_messageModelBuilder.CreateModel("403", "Email not confirmed!"));
                     }
                 }
-                var jwt = await Tokens.GenerateJwt(
-                    identity,
-                    _jwtFactory,
-                    request.Email,
-                    _jwtOptions,
-                    new JsonSerializerSettings { Formatting = Formatting.Indented });
+                var jwt = await Tokens.GenerateJwt(identity, _jwtFactory, request.Email, _jwtOptions);
+                response.Id = jwt.Item1;
+                response.Token = jwt.Item2;
+                response.Expiration = jwt.Item3;
                 return new OkObjectResult(response);
             }
             catch (Exception e)
@@ -186,6 +184,20 @@ namespace App.Api.Controllers
             catch (Exception e)
             {
                 Log.Error(e, "AuthController.CheckAdmin");
+                return BadRequest(_messageModelBuilder.CreateModel("500", e.Message));
+            }
+        }
+
+        [HttpPost, Authorize, Route("checkauth")]
+        public async Task<IActionResult> CheckAuth()
+        {
+            try
+            {
+                return Ok(new DefaultResponse());
+            }
+            catch (Exception e)
+            {
+                Log.Error(e, "AuthController.CheckAuth");
                 return BadRequest(_messageModelBuilder.CreateModel("500", e.Message));
             }
         }

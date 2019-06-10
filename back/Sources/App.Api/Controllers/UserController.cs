@@ -39,7 +39,7 @@ namespace App.Api.Controllers
             try
             {
                 var users = _mapper.Map<IEnumerable<ApplicationUser>, IEnumerable<UserViewModel.UserModel>>(await _authService.GetAllUsers());
-                return Ok(users); ;
+                return Ok(users);
             }
             catch (Exception e)
             {

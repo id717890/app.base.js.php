@@ -44,7 +44,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Request\Auth.cs" />
     <Compile Include="Request\Abstraction\BaseRequest.cs" />
+    <Compile Include="Request\DefaultRequest.cs" />
     <Compile Include="Response\Abstraction\BaseResponse.cs" />
+    <Compile Include="Response\AuthResponse.cs" />
     <Compile Include="Response\DefaultResponse.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

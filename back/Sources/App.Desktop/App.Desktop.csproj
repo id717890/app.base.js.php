@@ -72,8 +72,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppSettings.cs" />
     <Compile Include="CompositeModule.cs" />
     <Compile Include="CompositionRoot.cs" />
+    <Compile Include="CurrentUser.cs" />
     <Compile Include="HttpService.cs" />
     <Compile Include="Login\LoginView.cs">
       <SubType>Form</SubType>
