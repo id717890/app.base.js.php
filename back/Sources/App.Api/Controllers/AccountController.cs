@@ -20,9 +20,7 @@ using App.Api.ViewModels;
 using Raffle.Dal;
 using Raffle.Infrastructure.Interface;
 using Serilog;
-using App.Desktop.Interface.Data;
 using App.Domain.Interface.Services;
-using App.RR.Response;
 using App.Dal;
 
 namespace App.Api.Controllers

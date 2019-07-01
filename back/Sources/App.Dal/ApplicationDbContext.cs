@@ -1,5 +1,4 @@
 ﻿using System;
-using App.Dal.Mapping;
 using App.Domain.Interface.Entity;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using Microsoft.AspNetCore.Identity;
@@ -15,9 +14,6 @@ namespace App.Dal
         {
         }
 
-        public DbSet<Tag> Tags { get; set; }
-        public DbSet<TagGroup> TagGroups { get; set; }
-        public DbSet<TagGroupItem> TagGroupItemss { get; set; }
         //public DbSet<Customer> Customers { get; set; }
         //public DbSet<GiftDraw> GiftDraws { get; set; }
         //public DbSet<Vote> Votes { get; set; }
@@ -29,9 +25,6 @@ namespace App.Dal
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.ApplyConfiguration(new TagMap());
-            modelBuilder.ApplyConfiguration(new TagGroupMap());
-            modelBuilder.ApplyConfiguration(new TagGroupItemMap());
 
             //modelBuilder.ApplyConfiguration(new GiftDrawMap());
             //modelBuilder.ApplyConfiguration(new CustomerMap());
@@ -80,18 +73,18 @@ namespace App.Dal
             modelBuilder.Entity<ApplicationUser>().HasData(user);
 
 
-            var tagGroup1 = new TagGroup() { Id = 1, Name = "Затопления", UserId = user.Id, Description = "Все затопления УУМН" };
-            var tagGroup2 = new TagGroup() { Id = 2, Name = "Group 2", UserId = user.Id, Description = "Tag Group 2" };
-            modelBuilder.Entity<TagGroup>().HasData(tagGroup1, tagGroup2);
+            //var tagGroup1 = new TagGroup() { Id = 1, Name = "Затопления", UserId = user.Id, Description = "Все затопления УУМН" };
+            //var tagGroup2 = new TagGroup() { Id = 2, Name = "Group 2", UserId = user.Id, Description = "Tag Group 2" };
+            //modelBuilder.Entity<TagGroup>().HasData(tagGroup1, tagGroup2);
 
-            var tag1 = new Tag() { Id = 1, Name = "AK.SIBNP.R_Uraj.LU_Berez_Krut.KP_729.Win_1.AlarmSink", Description = "РДП Урай. СГП. ЛУ Березовое-Крутое. 729 км. Затопление колодца К2" };
-            var tag2 = new Tag() { Id = 2, Name = "AK.SIBNP.R_Uraj.LU_Berez_Krut.KP_729.Win_2.AlarmSink", Description = "РДП Урай. СГП. ЛУ Березовое-Крутое. 729 км. Затопление колодца К5" };
-            var tag3 = new Tag() { Id = 3, Name = "AK.SIBNP.R_Uraj.LU_SHT.KP_24.Win_3.AlarmSink", Description = "РДП Урай ШК ЛУ Шаим2-Конда КП-24 Узел запорной арматуры. Затопление колодца  B24.2/2" };
-            modelBuilder.Entity<Tag>().HasData(tag1, tag2);
+            //var tag1 = new Tag() { Id = 1, Name = "AK.SIBNP.R_Uraj.LU_Berez_Krut.KP_729.Win_1.AlarmSink", Description = "РДП Урай. СГП. ЛУ Березовое-Крутое. 729 км. Затопление колодца К2" };
+            //var tag2 = new Tag() { Id = 2, Name = "AK.SIBNP.R_Uraj.LU_Berez_Krut.KP_729.Win_2.AlarmSink", Description = "РДП Урай. СГП. ЛУ Березовое-Крутое. 729 км. Затопление колодца К5" };
+            //var tag3 = new Tag() { Id = 3, Name = "AK.SIBNP.R_Uraj.LU_SHT.KP_24.Win_3.AlarmSink", Description = "РДП Урай ШК ЛУ Шаим2-Конда КП-24 Узел запорной арматуры. Затопление колодца  B24.2/2" };
+            //modelBuilder.Entity<Tag>().HasData(tag1, tag2);
 
-            var tagGroupItem1 = new TagGroupItem() { Id = 1, TagGroupId = tagGroup1.Id, TagId = tag1.Id };
-            var tagGroupItem2 = new TagGroupItem() { Id = 2, TagGroupId = tagGroup1.Id, TagId = tag2.Id };
-            modelBuilder.Entity<TagGroupItem>().HasData(tagGroupItem1, tagGroupItem2);
+            //var tagGroupItem1 = new TagGroupItem() { Id = 1, TagGroupId = tagGroup1.Id, TagId = tag1.Id };
+            //var tagGroupItem2 = new TagGroupItem() { Id = 2, TagGroupId = tagGroup1.Id, TagId = tag2.Id };
+            //modelBuilder.Entity<TagGroupItem>().HasData(tagGroupItem1, tagGroupItem2);
 
             //var gift1 = new Gift
             //{
