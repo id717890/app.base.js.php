@@ -48,6 +48,50 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if ($exception instanceof \Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException) {
+            return response()->json([
+                'success' => false,
+                'error' => [
+                    'code' => $exception->getCode(),
+                    'message' => $exception->getMessage()
+                ]
+            ], $exception->getStatusCode());
+
+//            switch (get_class($exception->getPrevious())) {
+//                case \Tymon\JWTAuth\Exceptions\TokenExpiredException::class:
+//                    return response()->json([
+//                        'success' => 'error',
+//                        'error' => [
+//                            'code' => $exception->getCode(),
+//                            'message' => $exception->getMessage()
+//                        ]
+//                    ], $exception->getStatusCode());
+//                case \Tymon\JWTAuth\Exceptions\TokenInvalidException::class:
+//                case \Tymon\JWTAuth\Exceptions\TokenBlacklistedException::class:
+//                    return response()->json([
+//                        'success' => 'error',
+//                        'message' => 'Token is invalid'
+//                    ], $exception->getStatusCode());
+//                case \Tymon\JWTAuth\Exceptions\::class
+//
+//                    :
+//
+//                default:
+//                    break;
+//            }
+        }
+
+        if ($request->ajax() || $request->wantsJson()) {
+            $json = [
+                'success' => false,
+                'error' => [
+                    'code' => $exception->getCode(),
+                    'message' => $exception->getMessage()
+                ]
+            ];
+            $headers = ['Content-Type' => 'application/json; charset=utf-8'];
+            return response()->json($json, 400, $headers, JSON_UNESCAPED_UNICODE);
+        }
         return parent::render($request, $exception);
     }
 }
