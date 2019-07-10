@@ -5,7 +5,9 @@ import { faCoffee, faFlushed, faGrin, faUserTie, faPoll, faDonate, faSignInAlt, 
   faRubleSign, faEnvelope, faExclamationCircle, faFileAlt, faImage, faAward, faPenNib, faRandom, faTrophy,
   faInfoCircle, faPlay, faCheck, faCheckSquare, faPencilAlt, faArrowLeft, faQuestion, faTrashAlt, faRedo,
   faCheckDouble, faMinus, faHome, faSms, faUpload, faComments, faAngleDoubleDown, faAngleDoubleUp, faTimes,
-  faCaretDown, faCaretUp, faAlignJustify, faCrown, faPaperPlane, faAngleDown, faUsersCog, faUserTag, faPlus, faStar } from '@fortawesome/free-solid-svg-icons'
+  faCaretDown, faCaretUp, faAlignJustify, faCrown, faPaperPlane, faAngleDown, faUsersCog, faUserTag, faPlus,
+  faStar, faBold, faItalic, faStrikethrough, faUnderline, faCode, faParagraph, faHeading, faListUl, faListOl,
+  faQuoteRight, faQuoteLeft, faUndo, faGripLines, faCut, faLink } from '@fortawesome/free-solid-svg-icons'
 
 import { faVk, faInstagram, faFacebook, faOdnoklassniki, faGooglePlus, faTwitter, faViber, faTelegram,
   faWhatsapp, faSkype, faReddit } from '@fortawesome/free-brands-svg-icons'
@@ -25,9 +27,9 @@ library.add(
   faSignInAlt, faTrophy, faInfoCircle, faPlay, faCheck, faCheckSquare, faPencilAlt, faArrowLeft, faQuestion,
   faPoll, faTrashAlt, faRedo, faCheckDouble, faMinus, faChartPie, faHome, faSms, faUpload, faComments,
   faDonate, faUserTie, faAngleDoubleDown, faAngleDoubleUp, faTimes, faAlignJustify, faCrown, faPaperPlane,
-  faCoffee, faAngleDown, faUsersCog, faUserTag, faPlus, faStar,
-  faFlushed,
-  faGrin,
+  faCoffee, faAngleDown, faUsersCog, faUserTag, faPlus, faStar, faBold, faItalic, faStrikethrough, faUnderline,
+  faFlushed, faCode, faParagraph, faHeading, faListUl, faListOl, faQuoteRight, faQuoteLeft, faGripLines,
+  faGrin, faUndo, faRedo, faImage, faCut, faLink,
   faUserTie, faVk, faInstagram, faFacebook, faOdnoklassniki, faGooglePlus, faTwitter, faViber,
   faTelegram, faWhatsapp, faSkype, faReddit,
   faCaretUp, faCaretDown

@@ -79,7 +79,7 @@
       <v-list-tile
         v-for="item in items"
         :key="item.title"
-        to="/"
+        :to="item.to"
       >
         <v-list-tile-action>
           <fai icon="star" class="ml-2" />
@@ -137,8 +137,9 @@ export default {
   data () {
     return {
       items: [
-        { title: 'Home', icon: 'dashboard' },
-        { title: 'About', icon: 'question_answer' }
+        { title: 'Home', icon: 'dashboard', to: '/' },
+        { title: 'About', icon: 'question_answer', to: '/dashboard/about' },
+        { title: 'Editor', icon: 'question_answer', to: '/dashboard/editor' }
       ],
       drawer: false,
       drawerRight: false,

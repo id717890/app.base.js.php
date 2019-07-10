@@ -23,6 +23,7 @@ const router = new Router({
       beforeEnter: authGuard,
       component: () => import('../components/LayoutAdmin.vue'),
       children: [
+        { path: 'editor', name: 'Editor', beforeEnter: authGuard, component: () => import('../components/Editor.vue') },
         { path: 'users', name: 'Users', beforeEnter: authGuard, component: () => import('../views/Private/User/List.vue') },
         { path: 'user/create', name: 'CreateUser', beforeEnter: authGuard, component: () => import('../views/Private/User/Create.vue') },
         { path: 'user/edit/:id', name: 'EditUser', beforeEnter: authGuard, component: () => import('../views/Private/User/Edit.vue') },
