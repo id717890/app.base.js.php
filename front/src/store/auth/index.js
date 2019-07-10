@@ -67,7 +67,7 @@ const actions = {
           Vue.auth.setUser(user)
           resolve()
         } else {
-          dispatch('setErrors', x.response)
+          dispatch('setErrors', x.response.data)
           reject(x.response)
         }
       }).catch(x => {

@@ -8,7 +8,9 @@ const state = {
 
 const actions = {
   setErrors ({commit}, payload) {
-    commit(types.SET_ERRORS, payload)
+    if (payload.error !== null && payload.error !== 'undefined' && payload.error.message !== null && payload.error.message !== 'undefined') {
+      commit(types.SET_ERRORS, payload.error.message)
+    } else commit(types.SET_ERRORS, payload)
   },
   setMessages ({commit}, payload) {
     commit(types.SET_MESSAGES, payload)

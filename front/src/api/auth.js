@@ -47,9 +47,6 @@ export default {
       return Vue.$http.post('api/auth/Login', data).then((x) => {
         return x
       }).catch(error => {
-        // console.log('api')
-        // console.log(error.response.data)
-        // console.log(error.response.status)
         return error
       })
     }

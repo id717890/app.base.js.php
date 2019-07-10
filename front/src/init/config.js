@@ -1,4 +1,4 @@
 export default {
   isLocalApp: false,
-  apiAddress: 'https://localhost:44379/'
+  apiAddress: 'http://localhost/app_base_js_php/back/public/'
 }
