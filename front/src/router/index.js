@@ -13,8 +13,11 @@ const router = new Router({
       path: '/',
       name: 'home',
       component: () => import('../components/LayoutGuest.vue'),
+      redirect: '/home',
       children: [
-        { path: 'login', name: 'LogIn', component: () => import('../views/Auth/LogIn.vue') }
+        { path: 'home', name: 'Home', component: () => import('../views/Home.vue') },
+        { path: 'login', name: 'LogIn', component: () => import('../views/Auth/LogIn.vue') },
+        { path: 'about', name: 'about', component: () => import('../views/About.vue') }
       ]
     },
     {
@@ -35,7 +38,6 @@ const router = new Router({
     { path: '/notify', name: 'Notify', component: () => import('../views/Shared/Notify') },
 
     // { path: '/resetpassword', name: 'ResetPassword', component: () => import('../views/Auth/ResetPassword.vue') },
-    { path: '/about', name: 'about', component: () => import('../views/About.vue') },
     { path: '/test1', name: 'test1', component: () => import('../views/Test1.vue') },
     { path: '/test2', name: 'test2', component: () => import('../views/Test2.vue') }
   ]

@@ -7,6 +7,7 @@ use App\User;
 use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Validator, DB, Hash, Mail, Illuminate\Support\Facades\Password;
+use Auth;
 
 class AuthController extends Controller
 {
@@ -62,7 +63,8 @@ class AuthController extends Controller
             return response()->json(['success' => false, 'error' => 'Failed to login, please try again.'], 500);
         }
         // all good so return the token
-        return response()->json(['success' => true, 'data'=> [ 'token' => $token ]]);
+
+        return response()->json(['success' => true, 'access_token' => $token, 'id'=> Auth::user()->id, 'expires_in'=>864000 ]);
     }
 
     /**

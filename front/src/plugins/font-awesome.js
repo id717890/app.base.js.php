@@ -7,10 +7,10 @@ import { faCoffee, faFlushed, faGrin, faUserTie, faPoll, faDonate, faSignInAlt, 
   faCheckDouble, faMinus, faHome, faSms, faUpload, faComments, faAngleDoubleDown, faAngleDoubleUp, faTimes,
   faCaretDown, faCaretUp, faAlignJustify, faCrown, faPaperPlane, faAngleDown, faUsersCog, faUserTag, faPlus,
   faStar, faBold, faItalic, faStrikethrough, faUnderline, faCode, faParagraph, faHeading, faListUl, faListOl,
-  faQuoteRight, faQuoteLeft, faUndo, faGripLines, faCut, faLink } from '@fortawesome/free-solid-svg-icons'
+  faQuoteRight, faQuoteLeft, faUndo, faGripLines, faCut, faLink, faInfo, faStop } from '@fortawesome/free-solid-svg-icons'
 
 import { faVk, faInstagram, faFacebook, faOdnoklassniki, faGooglePlus, faTwitter, faViber, faTelegram,
-  faWhatsapp, faSkype, faReddit } from '@fortawesome/free-brands-svg-icons'
+  faWhatsapp, faSkype, faReddit, faPagelines } from '@fortawesome/free-brands-svg-icons'
 
 // import { fas } from '@fortawesome/free-solid-svg-icons'
 
@@ -29,8 +29,8 @@ library.add(
   faDonate, faUserTie, faAngleDoubleDown, faAngleDoubleUp, faTimes, faAlignJustify, faCrown, faPaperPlane,
   faCoffee, faAngleDown, faUsersCog, faUserTag, faPlus, faStar, faBold, faItalic, faStrikethrough, faUnderline,
   faFlushed, faCode, faParagraph, faHeading, faListUl, faListOl, faQuoteRight, faQuoteLeft, faGripLines,
-  faGrin, faUndo, faRedo, faImage, faCut, faLink,
-  faUserTie, faVk, faInstagram, faFacebook, faOdnoklassniki, faGooglePlus, faTwitter, faViber,
+  faGrin, faUndo, faRedo, faImage, faCut, faLink, faInfo, faSignInAlt, faPagelines, faSignInAlt, faUserTie,
+  faUserTie, faVk, faInstagram, faFacebook, faOdnoklassniki, faGooglePlus, faTwitter, faViber, faStop,
   faTelegram, faWhatsapp, faSkype, faReddit,
   faCaretUp, faCaretDown
 )
