@@ -1,0 +1,91 @@
+.prlx {
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.prlxb1 {
+  background-position: top right;
+  background-image: url('../static/img/SMM_FM_PedBridge_0119_Headshots-3.jpg');  
+  background-size: cover !important
+}
+
+.prlxb2 {
+  background-position: center;
+  background-image: url('../static/img/Handstand+Crop+About+Page.jpg');  
+  background-size: cover !important
+}
+
+.v-parallax.my .v-parallax__image {
+  top: -200px;
+  // transform: translate(-50%, 100px) !important;
+
+}
+
+
+
+
+.parallax {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-perspective: 1px;
+  perspective: 1px;
+  width: 100vw;
+}
+
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.parallax__layer--base {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.parallax__layer--back {
+  -webkit-transform: translateZ(-1px);
+  transform: translateZ(-1px);
+}
+
+.parallax__group {
+  position: relative;
+  height: 100vh;
+  transform-style: preserve-3d;
+}
+
+/* demo styles
+  --------------------------------------------- */
+
+  * {
+    margin:0;
+    padding:0;
+  }
+
+  body {
+    font: 100% / 1.5 Arial;
+  }
+
+  .parallax {
+    font-size: 200%;
+  }
+
+   /* add some padding to force scrollbars */
+  .parallax__layer {
+    padding: 100vh 0;
+  }
+
+   /* centre the content in the parallax layers */
+  .title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
