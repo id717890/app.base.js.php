@@ -19,10 +19,9 @@
       </v-list>
     </v-navigation-drawer> -->
     <v-toolbar
+      app
       class="red lighten-1"
       fixed
-      flat
-      app
       clipped-right
     >
       <v-toolbar-side-icon @click.stop="drawer = !drawer" class="hidden-md-and-up ">

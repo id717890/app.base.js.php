@@ -10,7 +10,7 @@
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia esse consequuntur, sapiente perferendis, sunt dolore cupiditate minus vitae possimus nisi asperiores illo, neque enim dolores corporis pariatur? Quisquam, esse quidem.
           </p>
         </v-flex>
-        <v-flex xs12 md7 style="height: 100vh" >
+        <v-flex xs12 md7 style="height: 100vh; overflow: hidden">
           <img src="../../static/img/SoqSO8UTTrSk5G9R3G7o_Revamped Background.png"  style="height: 100%"  alt="" >
         </v-flex>
       </v-layout>
@@ -36,7 +36,7 @@
     </v-flex>
     <v-flex xs12>
       <v-layout row wrap justify-center align-start class="blue-grey lighten-5 pa-3">
-        <v-card max-width="400" color="pink lighten-3" class="mr-3 mb-2">
+        <v-card max-width="400" color="pink lighten-3 elevation-10" class="mr-3 mb-5">
           <v-card-title>
             <i class="fab fa-2x fa-twitter"></i>
             <span>Отзыв №1</span>
@@ -54,7 +54,7 @@
             <v-list-tile-content>Test</v-list-tile-content>
           </v-card-actions>
         </v-card>
-        <v-card max-width="400" color="purple lighten-3"  class="mr-3 mb-2">
+        <v-card max-width="400" color="purple lighten-3 elevation-10"  class="mr-3 mb-5">
           <v-card-title>
             <i class="fab fa-2x fa-twitter"></i>
             <span>Отзыв №1</span>
@@ -72,7 +72,7 @@
             <v-list-tile-content>Test</v-list-tile-content>
           </v-card-actions>
         </v-card>
-        <v-card max-width="400" color="indigo lighten-1" class="mr-3 mb-2">
+        <v-card max-width="400" color="indigo lighten-1 elevation-10" class="mr-3 mb-5">
           <v-card-title>
             <i class="fab fa-2x fa-twitter"></i>
             <span>Отзыв №1</span>
@@ -89,25 +89,7 @@
             <v-list-tile-content>Test</v-list-tile-content>
           </v-card-actions>
         </v-card>
-        <v-card max-width="400" color="blue darken-1" class="mr-3 mb-2">
-          <v-card-title>
-            <i class="fab fa-2x fa-twitter"></i>
-            <span>Отзыв №1</span>
-          </v-card-title>
-          <v-card-text>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, placeat quis autem vero alias molestiae hic necessitatibus dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, placeat quis autem vero alias molestiae hic necessitatibus dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?
-          </v-card-text>
-          <v-card-actions>
-            <v-list-tile>
-              <v-list-tile-avatar>
-                <v-img class="elevation-6" :src="img"></v-img>
-              </v-list-tile-avatar>
-            </v-list-tile>
-            <v-list-tile-content>Test</v-list-tile-content>
-          </v-card-actions>
-        </v-card>
-        <v-card max-width="400" color="green darken-1" class="mr-3 mb-2">
+        <v-card max-width="400" color="blue darken-1 elevation-10" class="mr-3 mb-5">
           <v-card-title>
             <i class="fab fa-2x fa-twitter"></i>
             <span>Отзыв №1</span>
@@ -125,7 +107,25 @@
             <v-list-tile-content>Test</v-list-tile-content>
           </v-card-actions>
         </v-card>
-        <v-card max-width="400" color="cyan darken-1" class="mr-3 mb-2">
+        <v-card max-width="400" color="green darken-1 elevation-10" class="mr-3 mb-5">
+          <v-card-title>
+            <i class="fab fa-2x fa-twitter"></i>
+            <span>Отзыв №1</span>
+          </v-card-title>
+          <v-card-text>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, placeat quis autem vero alias molestiae hic necessitatibus dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, placeat quis autem vero alias molestiae hic necessitatibus dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?
+          </v-card-text>
+          <v-card-actions>
+            <v-list-tile>
+              <v-list-tile-avatar>
+                <v-img class="elevation-6" :src="img"></v-img>
+              </v-list-tile-avatar>
+            </v-list-tile>
+            <v-list-tile-content>Test</v-list-tile-content>
+          </v-card-actions>
+        </v-card>
+        <v-card max-width="400" color="cyan darken-1 elevation-10" class="mr-3 mb-5">
           <v-card-title>
             <i class="fab fa-2x fa-twitter"></i>
             <span>Отзыв №1</span>
