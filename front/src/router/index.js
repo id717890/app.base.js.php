@@ -12,13 +12,16 @@ const router = new Router({
     {
       path: '/',
       name: 'home',
-      component: () => import('../components/LayoutGuest.vue'),
-      redirect: '/home',
+      component: () => import('../views/Home.vue'),
       children: [
         { path: 'home', name: 'Home', component: () => import('../views/Home.vue') },
-        { path: 'login', name: 'LogIn', component: () => import('../views/Auth/LogIn.vue') },
-        { path: 'about', name: 'about', component: () => import('../views/About.vue') }
+        { path: 'login', name: 'LogIn', component: () => import('../views/Auth/LogIn.vue') }
       ]
+    },
+    {
+      path: '/about',
+      name: 'about',
+      components: () => import('../views/About.vue')
     },
     {
       path: '/dashboard',
