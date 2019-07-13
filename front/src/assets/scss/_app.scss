@@ -1,15 +1,16 @@
 @import 'main.scss';
+@import 'fonts.scss';
 @import 'paralax.scss';
 @import 'home.scss';
-
-@import url('https://fonts.googleapis.com/css?family=Bahianita|Muli&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Bahianita|Muli&display=swap');
 
 $color-black: #000000;
 $color-white: #ffffff;
 $color-grey: #dddddd;
 
 * {
-  font-family: 'Muli', sans-serif;
+  
+  font-family: 'Monsterrat-Reg', sans-serif;
 }
 
 .vh100 {

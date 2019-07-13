@@ -1,22 +1,135 @@
 <template>
   <v-layout column>
     <v-flex xs12>
-      <v-layout row wrap fill-height>
+      <v-layout row wrap fill-height class="bg1">
         <v-flex xs12 md5 align-self-center pl-5 class="h1-left-block pa-5">
-          <h1 class="h1-s1">Время </h1>
-          <h1 class="h1-s1 ml-5">заняться</h1>
-          <h1 class="h1-s1 ml-5 pl-5">собой.</h1>
+          <section class="hidden-sm-and-down">
+            <h1 class="h1-s1">Время </h1>
+            <h1 class="h1-s1 ml-5">заняться</h1>
+            <h1 class="h1-s1 ml-5 pl-5">собой.</h1>
+          </section>
+          <section class="hidden-md-and-up">
+            <h1 class="h1-s1">Время <br> заняться <br> собой. </h1>
+          </section>
           <p style="background: transparent">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia esse consequuntur, sapiente perferendis, sunt dolore cupiditate minus vitae possimus nisi asperiores illo, neque enim dolores corporis pariatur? Quisquam, esse quidem.
           </p>
         </v-flex>
         <v-flex xs12 md7 style="height: 100vh; overflow: hidden">
-          <img src="../../static/img/SoqSO8UTTrSk5G9R3G7o_Revamped Background.png"  style="height: 100%"  alt="" >
+          <v-carousel
+            height="100%"
+            hide-delimiters
+            hide-controls
+            prev-icon="fa fa-arrow-left"
+            next-icon="fa fa-arrow-right"
+      >
+        <v-carousel-item class="h100"
+          v-for="(item,i) in items"
+          :key="i"
+          :src="item.src"
+        ></v-carousel-item>
+      </v-carousel>
+          <!-- <img src="../../static/img/SoqSO8UTTrSk5G9R3G7o_Revamped Background.png"  style="height: 100%"  alt="" > -->
         </v-flex>
       </v-layout>
     </v-flex>
-    <v-flex class="grey lighten-1 elevation-24">
-      <h2 class="display-2 pa-5 text-xs-center">Успевай! Скидка 40% действует до конца августа</h2>
+    <v-flex class="grey lighten-1">
+      <v-layout class="bg1" row wrap>
+        <v-flex xs12>
+          <h2 class="h2-s1 text-xs-center pt-2 mt-5 mb-3">Why it's important <br> to exercise</h2>
+        </v-flex>
+        <v-flex xs12 md8 offset-md2 lg6 offset-lg3 mb-5 style="color: #d19c1d">
+          <v-layout row wrap >
+            <v-flex xs12 md6 lg4 style="display:flex;" pr-3 mb-3 align-center>
+              <i class="fa fa-star fa-3x"></i>
+              <span>Причина №1</span>
+            </v-flex>
+            <v-flex xs12 md6 lg4 style="display:flex;" pr-3 mb-3 align-center>
+              <i class="fa fa-cloud fa-3x"></i>
+              <span>Причина №2</span>
+            </v-flex>
+            <v-flex xs12 md6 lg4 style="display:flex;" pr-3 mb-3 align-center>
+              <i class="fa fa-feather fa-3x"></i>
+              <span>Причина №3</span>
+            </v-flex>
+              <v-flex xs12 md6 lg4 style="display:flex;" pr-3 mb-3 align-center>
+              <i class="fa fa-heart fa-3x"></i>
+              <span>Причина №4</span>
+            </v-flex>
+            <v-flex xs12 md6 lg4 style="display:flex;" pr-3 mb-3 align-center>
+              <i class="fa fa-leaf fa-3x"></i>
+              <span>Причина №5</span>
+            </v-flex>
+            <v-flex xs12 md6 lg4 style="display:flex;" pr-3 mb-3 align-center>
+              <i class="fa fa-american-sign-language-interpreting fa-3x"></i>
+              <span>Причина №6</span>
+            </v-flex>
+          </v-layout>
+        </v-flex>
+      </v-layout>
+    </v-flex>
+    <v-flex xs12>
+      <div class="prlx prlxb3">
+        <v-layout row wrap justify-center align-center class="vh100">
+          <v-flex xs xs12 sm5 md4 lg3 pa-3>
+            <v-card>
+              <v-img
+                aspect-ratio="2.75"
+              ></v-img>
+
+              <v-card-title primary-title>
+                <div>
+                  <h3 class="headline mb-0">Kangaroo Valley Safari</h3>
+                  <div> test </div>
+                </div>
+              </v-card-title>
+
+              <v-card-actions>
+                <v-btn flat color="orange">Share</v-btn>
+                <v-btn flat color="orange">Explore</v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-flex>
+          <v-flex xs xs12 sm5 md4 lg3 pa-3>
+            <v-card>
+              <v-img
+                aspect-ratio="2.75"
+              ></v-img>
+
+              <v-card-title primary-title>
+                <div>
+                  <h3 class="headline mb-0">Kangaroo Valley Safari</h3>
+                  <div> test </div>
+                </div>
+              </v-card-title>
+
+              <v-card-actions>
+                <v-btn flat color="orange">Share</v-btn>
+                <v-btn flat color="orange">Explore</v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-flex>
+          <v-flex xs xs12 sm5 md4 lg3 pa-3>
+            <v-card>
+              <v-img
+                aspect-ratio="2.75"
+              ></v-img>
+
+              <v-card-title primary-title>
+                <div>
+                  <h3 class="headline mb-0">Kangaroo Valley Safari</h3>
+                  <div> test </div>
+                </div>
+              </v-card-title>
+
+              <v-card-actions>
+                <v-btn flat color="orange">Share</v-btn>
+                <v-btn flat color="orange">Explore</v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-flex>
+        </v-layout>
+      </div>
     </v-flex>
     <v-flex xs12>
       <v-carousel
@@ -35,7 +148,7 @@
       <h1 class="text-xs-center">Отзывы</h1>
     </v-flex>
     <v-flex xs12>
-      <v-layout row wrap justify-center align-start class="blue-grey lighten-5 pa-3">
+      <v-layout row wrap justify-center align-start class="blue-grey lighten-5 pa-3"  style="background: rgb(242,242,242)!important">
         <v-card max-width="400" color="pink lighten-3 elevation-10" class="mr-3 mb-5">
           <v-card-title>
             <i class="fab fa-2x fa-twitter"></i>
@@ -144,73 +257,7 @@
         </v-card>
       </v-layout>
     </v-flex>
-    <v-flex xs12>
-      <div class="prlx prlxb3">
-        <v-layout row wrap justify-center align-center class="vh100">
-          <v-flex xs xs12 sm5 md4 lg3 pa-3>
-            <v-card>
-              <v-img
-                src="https://cdn.vuetifyjs.com/images/cards/desert.jpg"
-                aspect-ratio="2.75"
-              ></v-img>
-
-              <v-card-title primary-title>
-                <div>
-                  <h3 class="headline mb-0">Kangaroo Valley Safari</h3>
-                  <div> test </div>
-                </div>
-              </v-card-title>
-
-              <v-card-actions>
-                <v-btn flat color="orange">Share</v-btn>
-                <v-btn flat color="orange">Explore</v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-flex>
-          <v-flex xs xs12 sm5 md4 lg3 pa-3>
-            <v-card>
-              <v-img
-                src="https://cdn.vuetifyjs.com/images/cards/desert.jpg"
-                aspect-ratio="2.75"
-              ></v-img>
-
-              <v-card-title primary-title>
-                <div>
-                  <h3 class="headline mb-0">Kangaroo Valley Safari</h3>
-                  <div> test </div>
-                </div>
-              </v-card-title>
-
-              <v-card-actions>
-                <v-btn flat color="orange">Share</v-btn>
-                <v-btn flat color="orange">Explore</v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-flex>
-          <v-flex xs xs12 sm5 md4 lg3 pa-3>
-            <v-card>
-              <v-img
-                src="https://cdn.vuetifyjs.com/images/cards/desert.jpg"
-                aspect-ratio="2.75"
-              ></v-img>
-
-              <v-card-title primary-title>
-                <div>
-                  <h3 class="headline mb-0">Kangaroo Valley Safari</h3>
-                  <div> test </div>
-                </div>
-              </v-card-title>
-
-              <v-card-actions>
-                <v-btn flat color="orange">Share</v-btn>
-                <v-btn flat color="orange">Explore</v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-flex>
-        </v-layout>
-      </div>
-
-    </v-flex>
+    
   </v-layout>
   <!-- <HelloWorld /> -->
 </template>
