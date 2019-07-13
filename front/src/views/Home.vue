@@ -72,59 +72,68 @@
       <div class="prlx prlxb3">
         <v-layout row wrap justify-center align-center class="vh100">
           <v-flex xs xs12 sm5 md4 lg3 pa-3>
-            <v-card>
+            <v-card class="product elevation-12" color="lime accent-4">
               <v-img
                 aspect-ratio="2.75"
+                :src="require('../../static/img/example1.jpg')"
+                height="400"
               ></v-img>
 
               <v-card-title primary-title>
                 <div>
-                  <h3 class="headline mb-0">Kangaroo Valley Safari</h3>
-                  <div> test </div>
+                  <h3 class="headline mb-0">Программа Fit</h3>
+                  <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque provident, totam vitae quia veniam laboriosam! Officia illo omnis consequuntur minima, accusamus mollitia fugit error maxime unde eum, adipisci ducimus earum!  </div>
                 </div>
               </v-card-title>
 
               <v-card-actions>
-                <v-btn flat color="orange">Share</v-btn>
-                <v-btn flat color="orange">Explore</v-btn>
+                <v-btn large round dark color="deep-orange" style="margin: auto">
+                  <i class="fa fa-shopping-cart fa-2x mr-2"></i>
+                  Buy 99$</v-btn>
               </v-card-actions>
             </v-card>
           </v-flex>
           <v-flex xs xs12 sm5 md4 lg3 pa-3>
-            <v-card>
+            <v-card class="product elevation-12" color="orange darken-1">
               <v-img
                 aspect-ratio="2.75"
+                :src="require('../../static/img/example2.jpg')"
+                height="400"
               ></v-img>
 
               <v-card-title primary-title>
                 <div>
-                  <h3 class="headline mb-0">Kangaroo Valley Safari</h3>
-                  <div> test </div>
+                  <h3 class="headline mb-0">Бесплатная программа </h3>
+                  <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque provident, totam vitae quia veniam laboriosam! Officia illo omnis consequuntur minima, accusamus mollitia fugit error maxime unde eum, adipisci ducimus earum!  </div>
                 </div>
               </v-card-title>
 
               <v-card-actions>
-                <v-btn flat color="orange">Share</v-btn>
-                <v-btn flat color="orange">Explore</v-btn>
+                <v-btn large round dark color="blue darken-3" style="margin: auto">
+                  <i class="fa fa-dumbbell fa-2x mr-2"></i> FREE
+                </v-btn>
               </v-card-actions>
             </v-card>
           </v-flex>
           <v-flex xs xs12 sm5 md4 lg3 pa-3>
-            <v-card>
+            <v-card class="product elevation-12" color="blue darken-2">
               <v-img
                 aspect-ratio="2.75"
+                :src="require('../../static/img/example3.jpg')"
+                height="400"
               ></v-img>
 
               <v-card-title primary-title>
                 <div>
-                  <h3 class="headline mb-0">Kangaroo Valley Safari</h3>
-                  <div> test </div>
+                  <h3 class="headline mb-0">Программа ProFit</h3>
+                  <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque provident, totam vitae quia veniam laboriosam! Officia illo omnis consequuntur minima, accusamus mollitia fugit error maxime unde eum, adipisci ducimus earum!  </div>
                 </div>
               </v-card-title>
 
               <v-card-actions>
-                <v-btn flat color="orange">Share</v-btn>
-                <v-btn flat color="orange">Explore</v-btn>
+                <v-btn large round dark color="deep-orange" style="margin: auto">
+                  <i class="fa fa-shopping-cart fa-2x mr-2"></i>
+                  Buy 299$</v-btn>
               </v-card-actions>
             </v-card>
           </v-flex>
@@ -257,7 +266,6 @@
         </v-card>
       </v-layout>
     </v-flex>
-    
   </v-layout>
   <!-- <HelloWorld /> -->
 </template>
