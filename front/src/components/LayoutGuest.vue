@@ -20,7 +20,7 @@
     </v-navigation-drawer> -->
     <v-toolbar
       app
-      class="red lighten-1"
+      class="teal darken-2"
       fixed
       clipped-right
     >
@@ -52,10 +52,31 @@
         <!-- <v-btn flat :to="menu.url" v-for="menu in menuTopRight" :key="menu.id" :class="menu.class">
           <fai :icon="menu.icon" :size="menu.size" class="mr-1"/>{{menu.text}}
         </v-btn> -->
-        <v-btn flat to="/home"><i class="mr-1 fa fa-home"></i>Home</v-btn>
-        <v-btn flat to="/cource"><i class="mr-1 fa fa-crown"></i>Курсы</v-btn>
-        <v-btn flat to="/article"><i class="mr-1 fab fa-pagelines"></i>Статьи</v-btn>
-        <v-btn flat to="/about"><i class="mr-1 fa fa-info"></i>Обо мне</v-btn>
+        <v-btn flat to="/"><i class="mr-1 fa fa-home fa-2x"></i></v-btn>
+        <v-btn flat to="about"><i class="mr-1 fa fa-info"></i>Обо мне</v-btn>
+        <v-btn flat to="contacts"><i class="mr-1 fa fa-location-arrow"></i>Контакты</v-btn>
+        <v-btn flat to="/article"><i class="mr-1 fab fa-pagelines"></i>Инфморация</v-btn>
+      </v-toolbar-items>
+      <section class="hidden-sm-and-down">
+        <v-menu :nudge-width="100">
+          <template v-slot:activator="{ on }">
+            <v-toolbar-title v-on="on" class="mr-2">
+              <span>Курсы</span>
+              <fai icon="angle-down" class="ml-2" />
+            </v-toolbar-title>
+          </template>
+          <v-list>
+            <v-list-tile @click="$router.push('/freecourse')">
+              <v-list-tile-title><fai icon="dumbbell" class="mr-2" /> Бесплатный челендж "Будь в форме"</v-list-tile-title>
+            </v-list-tile>
+            <v-list-tile @click="$router.push('/courses')">
+              <v-list-tile-title><fai icon="paw" class="mr-2" /> ANIMAL FLOW "Движение жизнь"</v-list-tile-title>
+            </v-list-tile>
+          </v-list>
+        </v-menu>
+      </section>
+      <v-toolbar-items class="hidden-sm-and-down">
+        <v-btn flat to="/dashboard" v-if="isAuth"><i class="mr-1 fa fa-info"></i>ЛК</v-btn>
       </v-toolbar-items>
       <v-toolbar-items class="hidden-sm-and-down">
         <template v-if="!isAuth">
@@ -76,28 +97,12 @@
       temporary
     >
       <v-list dense>
-        <v-list-tile to="/home">
+        <v-list-tile to="/">
           <v-list-tile-action>
             <i class="mr-1 fa fa-home"></i>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>Home</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-        <v-list-tile to="/cource">
-          <v-list-tile-action>
-            <i class="mr-1 fa fa-crown"></i>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Курсы</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-        <v-list-tile to="/article">
-          <v-list-tile-action>
-            <i class="mr-1 fab fa-pagelines"></i>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Статьи</v-list-tile-title>
+            <v-list-tile-title>Главная</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
         <v-list-tile to="/about">
@@ -105,10 +110,52 @@
             <i class="mr-1 fa fa-info"></i>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>Об авторе</v-list-tile-title>
+            <v-list-tile-title>Обо мне</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-list-tile to="/contacts">
+          <v-list-tile-action>
+            <i class="mr-1 fa fa-location-arrow"></i>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Контакты</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-list-tile to="/article">
+          <v-list-tile-action>
+            <i class="mr-1 fab fa-pagelines"></i>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Информация</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
 
+        <v-list-group :prepend-icon="'fa fa-cube'" no-action>
+          <template v-slot:activator>
+            <v-list-tile>
+              <v-list-tile-content>
+                <v-list-tile-title>Курсы</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </template>
+
+          <v-list-tile to="/freecourse">
+            <v-list-tile-content>
+              <v-list-tile-title>Бесплатный челендж "Будь в форме"</v-list-tile-title>
+            </v-list-tile-content>
+            <v-list-tile-action>
+              <fai icon="dumbbell"/>
+            </v-list-tile-action>
+          </v-list-tile>
+          <v-list-tile to="/courses">
+            <v-list-tile-content>
+              <v-list-tile-title>ANIMAL FLOW "Движение жизнь"</v-list-tile-title>
+            </v-list-tile-content>
+            <v-list-tile-action>
+              <fai icon="paw"/>
+            </v-list-tile-action>
+          </v-list-tile>
+        </v-list-group>
         <div v-if="!isAuth" >
           <v-list-tile :to="menu.url" v-for="menu in menuNotAuth" :key="menu.id">
             <v-list-tile-action>
@@ -136,27 +183,31 @@
       fixed
     ></v-navigation-drawer> -->
     <v-content>
-      <v-container fluid class="pa-0">
-        <router-view></router-view>
+      <v-container fluid class="pa-0" fill-height>
+        <router-view name="routerguest"></router-view>
       </v-container>
     </v-content>
+    <div></div>
     <!-- <v-navigation-drawer
       right
       temporary
       v-model="right"
       fixed
     ></v-navigation-drawer> -->
-    <v-footer height="auto"  class="white--text" app dark absolute>
+    <v-footer height="auto" class="white--text footer1" app absolute>
       <v-layout row wrap justify-center fill-height>
         <v-flex xs8>
-      <v-layout row justify-center>
-        <v-flex xs12 class="text-xs-center pa-1" >
-          <i class="fab fa-instagram fa-3x mx-2"></i>
-          <i class="fab fa-facebook fa-3x mx-2"></i>
-          <i class="fab fa-vk fa-3x mx-2"></i>
-          <i class="fab fa-google-plus fa-3x mx-2"></i>
-        </v-flex>
-      </v-layout>
+          <v-layout row wrap justify-center>
+            <v-flex xs12 class="text-xs-center pa-1" >
+              <i class="fab fa-instagram fa-3x mx-2"></i>
+              <i class="fab fa-facebook fa-3x mx-2"></i>
+              <i class="fab fa-vk fa-3x mx-2"></i>
+              <i class="fab fa-google-plus fa-3x mx-2"></i>
+            </v-flex>
+            <v-flex xs12 class="text-xs-center">
+              <img style="" :src="require('../../static/img/yoga3-footer-logo.png')" alt="">
+            </v-flex>
+          </v-layout>
         </v-flex>
         <v-flex xs8 class="text-xs-center">
           <div class=" pt-3 pb-3" style="border-top: 2px solid rgba(255,255,255, 0.1)">&copy;2019 — <strong>All Rights Reserved.</strong></div>

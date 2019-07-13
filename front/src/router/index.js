@@ -11,38 +11,37 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: () => import('../views/Home.vue'),
+      name: 'Home',
+      redirect: { name: 'Home2' },
+      components: {
+        main: () => import('../components/LayoutGuest.vue')
+      },
       children: [
-        { path: 'home', name: 'Home', component: () => import('../views/Home.vue') },
-        { path: 'login', name: 'LogIn', component: () => import('../views/Auth/LogIn.vue') }
+        { path: 'home', name: 'Home2', components: { routerguest: () => import('../views/Home.vue') } },
+        { path: 'about', name: 'about', components: { routerguest: () => import('../views/About.vue') } },
+        { path: 'login', name: 'LogIn', components: { routerguest: () => import('../views/Auth/LogIn.vue') } }
       ]
-    },
-    {
-      path: '/about',
-      name: 'about',
-      components: () => import('../views/About.vue')
     },
     {
       path: '/dashboard',
       name: 'DashboardHome',
       beforeEnter: authGuard,
-      component: () => import('../components/LayoutAdmin.vue'),
+      components: { main: () => import('../components/LayoutAdmin.vue') },
       children: [
-        { path: 'editor', name: 'Editor', beforeEnter: authGuard, component: () => import('../components/Editor.vue') },
-        { path: 'users', name: 'Users', beforeEnter: authGuard, component: () => import('../views/Private/User/List.vue') },
-        { path: 'user/create', name: 'CreateUser', beforeEnter: authGuard, component: () => import('../views/Private/User/Create.vue') },
-        { path: 'user/edit/:id', name: 'EditUser', beforeEnter: authGuard, component: () => import('../views/Private/User/Edit.vue') },
-        { path: 'roles', name: 'Roles', beforeEnter: authGuard, component: () => import('../views/Private/Role.vue') }
+        { path: 'editor', name: 'Editor', beforeEnter: authGuard, component: () => import('../components/Editor.vue') }
+        // { path: 'users', name: 'Users', beforeEnter: authGuard, component: () => import('../views/Private/User/List.vue') },
+        // { path: 'user/create', name: 'CreateUser', beforeEnter: authGuard, component: () => import('../views/Private/User/Create.vue') },
+        // { path: 'user/edit/:id', name: 'EditUser', beforeEnter: authGuard, component: () => import('../views/Private/User/Edit.vue') },
+        // { path: 'roles', name: 'Roles', beforeEnter: authGuard, component: () => import('../views/Private/Role.vue') }
       ]
-    },
-    { path: '/forgot', name: 'ForgotPassword', component: () => import('../views/Auth/ForgotPassword.vue') },
-    { path: '/register', name: 'Register', component: () => import('../views/Auth/Register.vue') },
-    { path: '/notify', name: 'Notify', component: () => import('../views/Shared/Notify') },
+    }
+    // { path: '/forgot', name: 'ForgotPassword', component: () => import('../views/Auth/ForgotPassword.vue') },
+    // { path: '/register', name: 'Register', component: () => import('../views/Auth/Register.vue') },
+    // { path: '/notify', name: 'Notify', component: () => import('../views/Shared/Notify') },
 
-    // { path: '/resetpassword', name: 'ResetPassword', component: () => import('../views/Auth/ResetPassword.vue') },
-    { path: '/test1', name: 'test1', component: () => import('../views/Test1.vue') },
-    { path: '/test2', name: 'test2', component: () => import('../views/Test2.vue') }
+    // // { path: '/resetpassword', name: 'ResetPassword', component: () => import('../views/Auth/ResetPassword.vue') },
+    // { path: '/test1', name: 'test1', component: () => import('../views/Test1.vue') },
+    // { path: '/test2', name: 'test2', component: () => import('../views/Test2.vue') }
   ]
 })
 

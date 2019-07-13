@@ -143,14 +143,14 @@
     <v-flex xs12 md8 offset-md2 lg6 offset-lg3 class="bg1 pa-5">
       <h2 class="h2-s1">Opinions about us</h2>
     </v-flex>
-    <v-flex xs8 md4 align-self-center class="bg1 pa-5" row style="height: 500px">
+    <v-flex xs8 md4 align-self-center class="bg1 pa-1" row style="height: 450px">
       <v-carousel
         class="elevation-0 hidden-md-and-up"
         height="auto"
         delimiter-icon="fa fa-stop"
         prev-icon="fa fa-arrow-left"
         next-icon="fa fa-arrow-right"
-        :cycle="false"
+        :cycle="true"
         hide-delimiters
         hide-controls
       >
@@ -279,7 +279,7 @@
         delimiter-icon="fa fa-stop"
         prev-icon="fa fa-arrow-left"
         next-icon="fa fa-arrow-right"
-        :cycle="false"
+        :cycle="true"
         hide-delimiters
         hide-controls
       >
@@ -434,7 +434,7 @@
                 </p>
               </v-flex>
               <v-flex xs12 sm12 md8 style="z-index: 3" class="pa-3">
-                <v-img style="border-radius: 15px" :src="require('../../static/img/Fran.jpg')" max-height="580" class="elevation-20"></v-img>
+                <v-img style="border-radius: 15px" :src="require('../../static/img/Fran.jpg')" max-height="580" max-width="740" class="elevation-20"></v-img>
               </v-flex>
             </v-layout>
           </v-flex>

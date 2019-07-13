@@ -1,10 +1,9 @@
 <template>
-  <v-parallax class="my"
-    :src="require('../../static/img/Handstand+Crop+About+Page.jpg')"
-  >
-      <h1>Это всего лишь параллакс</h1>
-      <small>Подзаголовок или текст</small>
-  </v-parallax>
+<v-layout align-start>
+<div>
+  <h1>qweqw e qweq weqw eq weqw eqw eqw </h1>
+</div>
+</v-layout>
 
   <!-- <div>
     <div class="prlx prlxb1">

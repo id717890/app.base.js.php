@@ -62,3 +62,11 @@ body {
 .bg1 {
   background: $main-background;
 }
+
+.footer1 {
+  background-image: url('../static/img/yoga3-footer-bg.jpg') !important;  
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  z-index: 3;
+}
