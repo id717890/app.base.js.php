@@ -25,6 +25,31 @@
   background-size: cover !important
 }
 
+.prlxb4 {
+  background-position: center;
+  background-image: url('../static/img/yoga3-green-bg.jpg');  
+  background-size: cover !important
+}
+
+.end-block {
+  background-image: url('../static/img/yoga3-green-bg.jpg');  
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  position: relative;
+  padding: 50px 0;
+}
+
+.end-block::after {
+  content: '';
+  background: $main-background;
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+}
 
 .v-parallax.my .v-parallax__image {
   top: -200px;

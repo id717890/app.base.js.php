@@ -20,3 +20,10 @@
 .product:hover {
   transform: translateY(-10px);
 }
+
+.wrapper-end-img {
+  position: relative;
+  margin-top: -125px;
+  z-index: 4;
+  margin-bottom: 2rem;
+}

@@ -144,7 +144,7 @@
       <h2 class="h2-s1">Opinions about us</h2>
     </v-flex>
     <v-flex xs8 md4 align-self-center class="bg1 pa-5" row style="height: 500px">
-      <v-carousel 
+      <v-carousel
         class="elevation-0 hidden-md-and-up"
         height="auto"
         delimiter-icon="fa fa-stop"
@@ -273,7 +273,7 @@
         </v-card>
         </v-carousel-item>
       </v-carousel>
-      <v-carousel 
+      <v-carousel
         class="elevation-0 hidden-sm-and-down hidden-xl-and-up"
         height="auto"
         delimiter-icon="fa fa-stop"
@@ -420,8 +420,31 @@
       <h1 class="text-xs-center">Отзывы</h1>
     </v-flex> -->
     <v-flex xs12>
-      <v-layout row wrap justify-center align-start class="blue-grey lighten-5 pa-3"  style="background: rgb(242,242,242)!important">
-      </v-layout>
+      <div class="end-block">
+        <v-layout row wrap style="z-index: 2">
+          <v-flex xs12 sm12 md10 offset-md1>
+            <v-layout row wrap style="z-index: 2">
+              <v-flex xs12 sm12 md4 style="z-index: 3" class="text-xs-right pr-5">
+                <h2 class="h2-s1">
+                  Free happy <br> hours for <br> new people
+                </h2>
+                <br>
+                <p>
+                  Curabitur sed iaculis dolor, non congue ligula. Maecenas imperdiet ante eget hendrerit posuere. Nunc urna libero, congue porta nibh a, semper feugiat sem.
+                </p>
+              </v-flex>
+              <v-flex xs12 sm12 md8 style="z-index: 3" class="pa-3">
+                <v-img style="border-radius: 15px" :src="require('../../static/img/Fran.jpg')" max-height="580" class="elevation-20"></v-img>
+              </v-flex>
+            </v-layout>
+          </v-flex>
+        </v-layout>
+      </div>
+    </v-flex>
+    <v-flex class="text-xs-center">
+      <div class="wrapper-end-img">
+        <img style="" :src="require('../../static/img/decor.png')" alt="">
+      </div>
     </v-flex>
   </v-layout>
   <!-- <HelloWorld /> -->
