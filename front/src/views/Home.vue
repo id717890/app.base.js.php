@@ -103,7 +103,7 @@
 
               <v-card-title primary-title>
                 <div>
-                  <h3 class="headline mb-0">Бесплатная программа </h3>
+                  <h3 class="headline mb-0">Free Fit</h3>
                   <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque provident, totam vitae quia veniam laboriosam! Officia illo omnis consequuntur minima, accusamus mollitia fugit error maxime unde eum, adipisci ducimus earum!  </div>
                 </div>
               </v-card-title>

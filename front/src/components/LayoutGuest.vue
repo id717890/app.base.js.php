@@ -22,6 +22,7 @@
       app
       class="teal darken-2"
       fixed
+      dark
       clipped-right
     >
       <v-toolbar-side-icon @click.stop="drawer = !drawer" class="hidden-md-and-up ">
@@ -194,7 +195,7 @@
       v-model="right"
       fixed
     ></v-navigation-drawer> -->
-    <v-footer height="auto" class="white--text footer1" app absolute>
+    <v-footer class="white--text footer1 mt-5" app height="auto" min-height="auto">
       <v-layout row wrap justify-center fill-height>
         <v-flex xs8>
           <v-layout row wrap justify-center>
@@ -211,6 +212,7 @@
         </v-flex>
         <v-flex xs8 class="text-xs-center">
           <div class=" pt-3 pb-3" style="border-top: 2px solid rgba(255,255,255, 0.1)">&copy;2019 — <strong>All Rights Reserved.</strong></div>
+          <v-btn>up</v-btn>
         </v-flex>
       </v-layout>
       <!-- <span>Vuetify</span>
