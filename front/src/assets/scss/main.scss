@@ -6,6 +6,15 @@ html {
   overflow-x: hidden;
   font-family: 'Amatic SC', cursive;
   color: #fff;
+  background: $main-background;
+}
+
+body {
+  background: $main-background;
+}
+
+* {
+  font-family: 'Monsterrat-Reg', sans-serif;
 }
 
 .main-cont {
@@ -51,5 +60,5 @@ html {
 }
 
 .bg1 {
-  background: rgb(242, 242, 242);
+  background: $main-background;
 }
