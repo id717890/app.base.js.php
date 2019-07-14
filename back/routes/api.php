@@ -21,8 +21,15 @@ Route::group(['middleware' => ['jwt.auth']], function() {
     Route::get('test', function(){
         return response()->json(['foo'=>'bar']);
     });
+    Route::get('/user', function (Request $request) {
+        return $request->user();
+    });
 });
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+
+
+Route::group(['middleware' => ['auth', 'role:Admin']], function () {
 });
+
+
+//Route::get('products', ['middleware' => 'auth.role:admin,user', 'uses' => 'ProductController@index', 'as' => 'products']);

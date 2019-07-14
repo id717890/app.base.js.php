@@ -81,7 +81,7 @@ class Handler extends ExceptionHandler
 //            }
         }
 
-        if ($request->ajax() || $request->wantsJson()) {
+        if ($request->ajax() || $request->wantsJson() || $request->json()) {
             $json = [
                 'success' => false,
                 'error' => [
