@@ -261,8 +261,8 @@ export default {
   },
   methods: {
     scrollToTop () {
-      let element = this.$refs['menu']
-      var top = element.offsetTop
+      // let element = this.$refs['menu']
+      // var top = element.offsetTop
       window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
     },
     test () {
