@@ -140,22 +140,12 @@
         </v-layout>
       </div>
     </v-flex>
-    <v-flex xs12 md8 offset-md2 lg6 offset-lg3 class="bg1 pa-5">
+    <v-flex xs12 class="text-xs-center bg1 my-4">
       <h2 class="h2-s1">Opinions about us</h2>
     </v-flex>
-    <v-flex xs8 md4 align-self-center class="bg1 pa-1" row style="height: 450px">
-      <v-carousel
-        class="elevation-0 hidden-md-and-up"
-        height="auto"
-        delimiter-icon="fa fa-stop"
-        prev-icon="fa fa-arrow-left"
-        next-icon="fa fa-arrow-right"
-        :cycle="true"
-        hide-delimiters
-        hide-controls
-      >
-        <v-carousel-item>
-          <v-card max-width="400" color="pink lighten-3 elevation-10" class="mr-3 mb-5">
+    <v-flex xs12 class="bg1 pa-1">
+      <v-layout row wrap justify-center>
+        <v-card max-width="400" color="pink lighten-3 elevation-10" class="mr-3 mb-5">
           <v-card-title>
             <i class="fab fa-2x fa-twitter"></i>
             <span>Отзыв №1</span>
@@ -173,9 +163,7 @@
             <v-list-tile-content>Test</v-list-tile-content>
           </v-card-actions>
         </v-card>
-        </v-carousel-item>
-        <v-carousel-item>
-          <v-card max-width="400" color="cyan darken-1 elevation-10" class="mr-3 mb-5">
+        <v-card max-width="400" color="cyan darken-1 elevation-10" class="mr-3 mb-5">
           <v-card-title>
             <i class="fab fa-2x fa-twitter"></i>
             <span>Отзыв №1</span>
@@ -192,29 +180,7 @@
             <v-list-tile-content>Test</v-list-tile-content>
           </v-card-actions>
         </v-card>
-        </v-carousel-item>
-        <v-carousel-item>
-          <v-card max-width="400" color="green darken-1 elevation-10" class="mr-3 mb-5">
-          <v-card-title>
-            <i class="fab fa-2x fa-twitter"></i>
-            <span>Отзыв №1</span>
-          </v-card-title>
-          <v-card-text>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, placeat quis autem vero alias molestiae hic necessitatibus dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, placeat quis autem vero alias molestiae hic necessitatibus dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?
-          </v-card-text>
-          <v-card-actions>
-            <v-list-tile>
-              <v-list-tile-avatar>
-                <v-img class="elevation-6" :src="img"></v-img>
-              </v-list-tile-avatar>
-            </v-list-tile>
-            <v-list-tile-content>Test</v-list-tile-content>
-          </v-card-actions>
-        </v-card>
-        </v-carousel-item>
-        <v-carousel-item>
-          <v-card max-width="400" color="blue darken-1 elevation-10" class="mr-3 mb-5">
+        <v-card max-width="400" color="green darken-1 elevation-10" class="mr-3 mb-5">
           <v-card-title>
             <i class="fab fa-2x fa-twitter"></i>
             <span>Отзыв №1</span>
@@ -232,14 +198,13 @@
             <v-list-tile-content>Test</v-list-tile-content>
           </v-card-actions>
         </v-card>
-        </v-carousel-item>
-        <v-carousel-item>
-          <v-card max-width="400" color="indigo lighten-1 elevation-10" class="mr-3 mb-5">
+        <v-card max-width="400" color="blue darken-1 elevation-10" class="mr-3 mb-5">
           <v-card-title>
             <i class="fab fa-2x fa-twitter"></i>
             <span>Отзыв №1</span>
           </v-card-title>
           <v-card-text>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, placeat quis autem vero alias molestiae hic necessitatibus dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, placeat quis autem vero alias molestiae hic necessitatibus dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?
           </v-card-text>
           <v-card-actions>
@@ -251,157 +216,7 @@
             <v-list-tile-content>Test</v-list-tile-content>
           </v-card-actions>
         </v-card>
-        </v-carousel-item>
-        <v-carousel-item>
-          <v-card max-width="400" color="purple lighten-3 elevation-10"  class="mr-3 mb-5">
-          <v-card-title>
-            <i class="fab fa-2x fa-twitter"></i>
-            <span>Отзыв №1</span>
-          </v-card-title>
-          <v-card-text>
-            necessitatibus dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, placeat quis autem vero alias molestiae hic necessitatibus dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?
-          </v-card-text>
-          <v-card-actions>
-            <v-list-tile>
-              <v-list-tile-avatar>
-                <v-img class="elevation-6" :src="img"></v-img>
-              </v-list-tile-avatar>
-            </v-list-tile>
-            <v-list-tile-content>Test</v-list-tile-content>
-          </v-card-actions>
-        </v-card>
-        </v-carousel-item>
-      </v-carousel>
-      <v-carousel
-        class="elevation-0 hidden-sm-and-down hidden-xl-and-up"
-        height="auto"
-        delimiter-icon="fa fa-stop"
-        prev-icon="fa fa-arrow-left"
-        next-icon="fa fa-arrow-right"
-        :cycle="true"
-        hide-delimiters
-        hide-controls
-      >
-        <v-carousel-item>
-          <v-layout row>
-            <v-card max-width="400" color="pink lighten-3 elevation-10" class="mr-3 mb-5">
-              <v-card-title>
-                <i class="fab fa-2x fa-twitter"></i>
-                <span>Отзыв №1</span>
-              </v-card-title>
-              <v-card-text>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, placeat quis autem vero alias molestiae hic necessitatibus dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?
-              </v-card-text>
-              <v-card-actions>
-                <v-list-tile>
-                  <v-list-tile-avatar>
-                    <v-img class="elevation-6" :src="img"></v-img>
-                  </v-list-tile-avatar>
-                </v-list-tile>
-                <v-list-tile-content>Test</v-list-tile-content>
-              </v-card-actions>
-            </v-card>
-            <v-card max-width="400" color="cyan darken-1 elevation-10" class="mr-3 mb-5">
-              <v-card-title>
-                <i class="fab fa-2x fa-twitter"></i>
-                <span>Отзыв №1</span>
-              </v-card-title>
-              <v-card-text>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, placeat quis autem vero alias molestiae hic necessitatibus dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?
-              </v-card-text>
-              <v-card-actions>
-                <v-list-tile>
-                  <v-list-tile-avatar>
-                    <v-img class="elevation-6" :src="img"></v-img>
-                  </v-list-tile-avatar>
-                </v-list-tile>
-                <v-list-tile-content>Test</v-list-tile-content>
-              </v-card-actions>
-            </v-card>
-          </v-layout>
-        </v-carousel-item>
-        <v-carousel-item>
-          <v-layout row>
-            <v-card max-width="400" color="green darken-1 elevation-10" class="mr-3 mb-5">
-              <v-card-title>
-                <i class="fab fa-2x fa-twitter"></i>
-                <span>Отзыв №1</span>
-              </v-card-title>
-              <v-card-text>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, placeat quis autem vero alias molestiae hic necessitatibus dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, placeat quis autem vero alias molestiae hic necessitatibus dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?
-              </v-card-text>
-              <v-card-actions>
-                <v-list-tile>
-                  <v-list-tile-avatar>
-                    <v-img class="elevation-6" :src="img"></v-img>
-                  </v-list-tile-avatar>
-                </v-list-tile>
-                <v-list-tile-content>Test</v-list-tile-content>
-              </v-card-actions>
-            </v-card>
-            <v-card max-width="400" color="blue darken-1 elevation-10" class="mr-3 mb-5">
-              <v-card-title>
-                <i class="fab fa-2x fa-twitter"></i>
-                <span>Отзыв №1</span>
-              </v-card-title>
-              <v-card-text>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, placeat quis autem vero alias molestiae hic necessitatibus dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, placeat quis autem vero alias molestiae hic necessitatibus dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?
-              </v-card-text>
-              <v-card-actions>
-                <v-list-tile>
-                  <v-list-tile-avatar>
-                    <v-img class="elevation-6" :src="img"></v-img>
-                  </v-list-tile-avatar>
-                </v-list-tile>
-                <v-list-tile-content>Test</v-list-tile-content>
-              </v-card-actions>
-            </v-card>
-          </v-layout>
-        </v-carousel-item>
-        <v-carousel-item>
-          <v-layout row>
-            <v-card max-width="400" color="indigo lighten-1 elevation-10" class="mr-3 mb-5">
-              <v-card-title>
-                <i class="fab fa-2x fa-twitter"></i>
-                <span>Отзыв №1</span>
-              </v-card-title>
-              <v-card-text>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, placeat quis autem vero alias molestiae hic necessitatibus dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?
-              </v-card-text>
-              <v-card-actions>
-                <v-list-tile>
-                  <v-list-tile-avatar>
-                    <v-img class="elevation-6" :src="img"></v-img>
-                  </v-list-tile-avatar>
-                </v-list-tile>
-                <v-list-tile-content>Test</v-list-tile-content>
-              </v-card-actions>
-            </v-card>
-            <v-card max-width="400" color="purple lighten-3 elevation-10"  class="mr-3 mb-5">
-              <v-card-title>
-                <i class="fab fa-2x fa-twitter"></i>
-                <span>Отзыв №1</span>
-              </v-card-title>
-              <v-card-text>
-                necessitatibus dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, placeat quis autem vero alias molestiae hic necessitatibus dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?
-              </v-card-text>
-              <v-card-actions>
-                <v-list-tile>
-                  <v-list-tile-avatar>
-                    <v-img class="elevation-6" :src="img"></v-img>
-                  </v-list-tile-avatar>
-                </v-list-tile>
-                <v-list-tile-content>Test</v-list-tile-content>
-              </v-card-actions>
-            </v-card>
-          </v-layout>
-        </v-carousel-item>
-      </v-carousel>
+      </v-layout>
     </v-flex>
     <!-- <v-flex xs12 class="bg1" style="height: 500px">
       <v-carousel

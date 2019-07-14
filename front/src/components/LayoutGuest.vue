@@ -20,7 +20,7 @@
     </v-navigation-drawer> -->
     <v-toolbar
       app
-      class="teal darken-2"
+      class="teal darken-2" ref="menu"
       fixed
       dark
       clipped-right
@@ -199,25 +199,27 @@
       <v-layout row wrap justify-center fill-height>
         <v-flex xs8>
           <v-layout row wrap justify-center>
-            <v-flex xs12 class="text-xs-center pa-1" >
-              <i class="fab fa-instagram fa-3x mx-2"></i>
-              <i class="fab fa-facebook fa-3x mx-2"></i>
-              <i class="fab fa-vk fa-3x mx-2"></i>
-              <i class="fab fa-google-plus fa-3x mx-2"></i>
+            <v-flex xs12 class="text-xs-center pa-1" style="vertical-align:middle !important">
+              <v-layout row wrap align-center justify-center>
+                <i class="fab fa-instagram fa-3x mx-2"></i>
+                <i class="fab fa-facebook fa-3x mx-2"></i>
+                <i><img style="max-height: 75px" :src="require('../../static/img/yoga3-footer-logo.png')" alt=""></i>
+                <i class="fab fa-vk fa-3x mx-2"></i>
+                <i class="fab fa-google-plus fa-3x mx-2"></i>
+              </v-layout>
             </v-flex>
-            <v-flex xs12 class="text-xs-center">
+            <!-- <v-flex xs12 class="text-xs-center">
               <img style="" :src="require('../../static/img/yoga3-footer-logo.png')" alt="">
-            </v-flex>
+            </v-flex> -->
           </v-layout>
         </v-flex>
         <v-flex xs8 class="text-xs-center">
-          <div class=" pt-3 pb-3" style="border-top: 2px solid rgba(255,255,255, 0.1)">&copy;2019 — <strong>All Rights Reserved.</strong></div>
-          <v-btn>up</v-btn>
+          <v-layout row nowrap justify-center align-center>
+            <div class=" pt-3 pb-3" style="border-top: 2px solid rgba(255,255,255, 0.1)">&copy;2019 — <strong>All Rights Reserved. EvgeniaKabanova.com</strong></div>
+            <v-btn small flat dark fab @click="scrollToTop"><i class="fa fa-chevron-up"></i></v-btn>
+          </v-layout>
         </v-flex>
       </v-layout>
-      <!-- <span>Vuetify</span>
-      <v-spacer></v-spacer>
-      <span>&copy; 2017</span> -->
     </v-footer>
   </v-app>
 </template>
@@ -258,6 +260,11 @@ export default {
     source: String
   },
   methods: {
+    scrollToTop () {
+      let element = this.$refs['menu']
+      var top = element.offsetTop
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+    },
     test () {
       this.$router.push('/dashboard/users')
     }
