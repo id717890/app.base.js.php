@@ -19,6 +19,7 @@ const router = new Router({
       children: [
         { path: 'home', name: 'Home2', components: { routerguest: () => import('../views/Home.vue') } },
         { path: 'about', name: 'about', components: { routerguest: () => import('../views/About.vue') } },
+        { path: 'product/:id', props: true, name: 'Product', components: { routerguest: () => import('../components/Public/Product.vue') } },
         { path: 'login', name: 'LogIn', components: { routerguest: () => import('../views/Auth/LogIn.vue') } }
       ]
     },

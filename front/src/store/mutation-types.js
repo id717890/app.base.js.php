@@ -1,3 +1,6 @@
+/* PRODUCT */
+export const RECIEVE_PRODUCT = 'RECIEVE_PRODUCT'
+
 /* INFO */
 export const RECIEVE_INFO = 'RECIEVE_INFO'
 

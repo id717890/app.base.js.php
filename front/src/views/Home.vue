@@ -71,69 +71,30 @@
     <v-flex xs12>
       <div class="prlx prlxb3">
         <v-layout row wrap justify-center align-center class="vh100">
-          <v-flex xs xs12 sm5 md4 lg3 pa-3>
-            <v-card class="product elevation-12" color="lime accent-4">
+          <v-flex xs xs12 sm5 md4 lg3 pa-3 v-for="(product, index) in products" :key="product.id">
+            <v-card class="product elevation-12" :color="randColor(index)">
               <v-img
                 aspect-ratio="2.75"
-                :src="require('../../static/img/example1.jpg')"
+                :src="require('../../static/img/' + product.photo)"
                 height="400"
               ></v-img>
 
               <v-card-title primary-title>
                 <div>
-                  <h3 class="headline mb-0">Программа Fit</h3>
-                  <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque provident, totam vitae quia veniam laboriosam! Officia illo omnis consequuntur minima, accusamus mollitia fugit error maxime unde eum, adipisci ducimus earum!  </div>
+                  <h3 class="headline mb-0">{{product.name}}</h3>
+                  <div>{{product.description}}</div>
                 </div>
               </v-card-title>
 
               <v-card-actions>
-                <v-btn large round dark color="deep-orange" style="margin: auto">
+                <v-btn :to="'/product/'+product.id" large round dark color="deep-orange" style="margin: auto" v-if="product.price>0">
                   <i class="fa fa-shopping-cart fa-2x mr-2"></i>
-                  Buy 99$</v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-flex>
-          <v-flex xs xs12 sm5 md4 lg3 pa-3>
-            <v-card class="product elevation-12" color="orange darken-1">
-              <v-img
-                aspect-ratio="2.75"
-                :src="require('../../static/img/example2.jpg')"
-                height="400"
-              ></v-img>
-
-              <v-card-title primary-title>
-                <div>
-                  <h3 class="headline mb-0">Free Fit</h3>
-                  <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque provident, totam vitae quia veniam laboriosam! Officia illo omnis consequuntur minima, accusamus mollitia fugit error maxime unde eum, adipisci ducimus earum!  </div>
-                </div>
-              </v-card-title>
-
-              <v-card-actions>
-                <v-btn large round dark color="blue darken-3" style="margin: auto">
-                  <i class="fa fa-dumbbell fa-2x mr-2"></i> FREE
+                  Buy {{Number(product.price)}}$
                 </v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-flex>
-          <v-flex xs xs12 sm5 md4 lg3 pa-3>
-            <v-card class="product elevation-12" color="blue darken-2">
-              <v-img
-                aspect-ratio="2.75"
-                :src="require('../../static/img/example3.jpg')"
-                height="400"
-              ></v-img>
-
-              <v-card-title primary-title>
-                <div>
-                  <h3 class="headline mb-0">Программа ProFit</h3>
-                  <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque provident, totam vitae quia veniam laboriosam! Officia illo omnis consequuntur minima, accusamus mollitia fugit error maxime unde eum, adipisci ducimus earum!  </div>
-                </div>
-              </v-card-title>
-
-              <v-card-actions>
-                <v-btn large round dark color="deep-orange" style="margin: auto">
+                <v-btn :to="'/product/'+product.id" large round dark color="deep-orange" style="margin: auto" v-else>
                   <i class="fa fa-shopping-cart fa-2x mr-2"></i>
-                  Buy 299$</v-btn>
+                  Try It Free
+                </v-btn>
               </v-card-actions>
             </v-card>
           </v-flex>
@@ -267,10 +228,15 @@
 
 <script>
 // import HelloWorld from '../components/HelloWorld'
-
+import { mapState } from 'vuex'
 export default {
   components: {
     // HelloWorld
+  },
+  computed: {
+    ...mapState({
+      products: state => state.product.products
+    })
   },
   data () {
     return {
@@ -289,6 +255,15 @@ export default {
           src: require('../../static/img/squirrel.jpg')
         }
       ]
+    }
+  },
+  methods: {
+    randColor (index) {
+      switch (index) {
+        case 0: return 'lime accent-4'
+        case 1: return 'orange darken-1'
+        case 2: return 'blue darken-2'
+      }
     }
   }
 }

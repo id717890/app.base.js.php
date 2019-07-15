@@ -28,6 +28,9 @@
       <v-toolbar-side-icon @click.stop="drawer = !drawer" class="hidden-md-and-up ">
         <fai icon="align-justify"></fai>
       </v-toolbar-side-icon>
+      <v-toolbar-title class="white--text">
+        <img style="max-height: 40px" :src="require('../../static/img/yoga3-footer-logo.png')" alt="">
+      </v-toolbar-title>
       <!-- <v-toolbar-items>
         <v-btn flat to="/" class="ml-2"><fai icon="home" size="2x" class="mr-1"/></v-btn>
         <v-btn flat to="/dashboard" v-if="isAuth"><fai icon="crown" size="2x" class="mr-1"/></v-btn>

@@ -4,6 +4,7 @@ import Vuex from 'vuex'
 import auth from './auth'
 import notify from './notify'
 import user from './user'
+import product from './product'
 
 Vue.use(Vuex)
 
@@ -19,6 +20,7 @@ export const store = new Vuex.Store({
   modules: {
     auth,
     notify,
-    user
+    user,
+    product
   }
 })

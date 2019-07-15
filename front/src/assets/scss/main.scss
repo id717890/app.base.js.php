@@ -13,6 +13,14 @@ body {
   background: $main-background;
 }
 
+.img-pos-top .v-image__image {
+  background-position: 0 0 !important;
+}
+
+.img-pos-bot .v-image__image {
+  background-position: bottom center !important;
+}
+
 * {
   font-family: 'Monsterrat-Reg', sans-serif;
 }
@@ -63,10 +71,25 @@ body {
   background: $main-background;
 }
 
+.bg2 {
+  background-image: url('../static/img/sitter2-home-pattern-bg.png');
+  background-position: left top;
+  background-repeat: repeat;
+}
+
 .footer1 {
   background-image: url('../static/img/yoga3-footer-bg.jpg') !important;  
   background-repeat: no-repeat!important;  
   background-position: center bottom!important;  
   background-size: cover!important;  
   z-index: 3;
+}
+
+.h2-s2 {
+  font-size: 48px;
+  line-height: 55px;
+  font-weight: 900;
+  letter-spacing: 0px;
+  font-family: "Nunito", Arial, Tahoma, sans-serif;
+  color: #5f2e7a;
 }
