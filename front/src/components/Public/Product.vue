@@ -4,7 +4,6 @@
       <div class="bg2 pt-5" style="display: block; height: 200px; max-height: 200px;">
         <h2 class="h2-s2 text-xs-center">{{product.name}}</h2>
       </div>
-      <!-- <v-img  max-height="400" class="img-pos-bot"></v-img> -->
     </v-flex>
     <v-flex xs12>
       <v-layout row wrap justify-aroud>
@@ -27,7 +26,6 @@
           <section v-else>
             <h3 class="red--text">* Для покупки или тестирования тренировки нужно авторизоваться</h3>
           </section>
-          
         </v-flex>
       </v-layout>
     </v-flex>

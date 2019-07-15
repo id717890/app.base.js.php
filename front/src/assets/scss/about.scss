@@ -1,0 +1,19 @@
+.about-top-img-wrapper {
+  background-image: url('../static/img/293025-working_out-exercising-fitness_model-women-sports.jpg');
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.about-top-img-wrapper h2 {
+  position: absolute;
+  display: block;
+  bottom: 10%;
+  left: 10%;
+  font-family: sans-serif;
+  color: white;
+  font-size: 5rem;
+}
