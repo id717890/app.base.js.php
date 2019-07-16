@@ -57,8 +57,8 @@
           <fai :icon="menu.icon" :size="menu.size" class="mr-1"/>{{menu.text}}
         </v-btn> -->
         <v-btn flat to="/"><i class="mr-1 fa fa-home fa-2x"></i></v-btn>
-        <v-btn flat to="about"><i class="mr-1 fa fa-info"></i>Обо мне</v-btn>
-        <v-btn flat to="contacts"><i class="mr-1 fa fa-location-arrow"></i>Контакты</v-btn>
+        <v-btn flat to="/about"><i class="mr-1 fa fa-info"></i>Обо мне</v-btn>
+        <v-btn flat to="/contacts"><i class="mr-1 fa fa-location-arrow"></i>Контакты</v-btn>
         <v-btn flat to="/article"><i class="mr-1 fab fa-pagelines"></i>Инфморация</v-btn>
       </v-toolbar-items>
       <section class="hidden-sm-and-down">
@@ -204,11 +204,11 @@
           <v-layout row wrap justify-center>
             <v-flex xs12 class="text-xs-center pa-1" style="vertical-align:middle !important">
               <v-layout row wrap align-center justify-center>
-                <i class="order-xs2 fab fa-instagram fa-3x mx-2"></i>
-                <i class="order-xs3 fab fa-facebook fa-3x mx-2"></i>
-                <i class="order-xs1"><img style="max-height: 75px" :src="require('../../static/img/yoga3-footer-logo.png')" alt=""></i>
-                <i class="order-xs4 fab fa-vk fa-3x mx-2"></i>
-                <i class="order-xs5 fab fa-google-plus fa-3x mx-2"></i>
+                <i class="fab fa-instagram fa-3x mx-2"></i>
+                <i class="fab fa-facebook fa-3x mx-2"></i>
+                <i><img style="max-height: 75px" :src="require('../../static/img/yoga3-footer-logo.png')" alt=""></i>
+                <i class="fab fa-vk fa-3x mx-2"></i>
+                <i class="fab fa-google-plus fa-3x mx-2"></i>
               </v-layout>
             </v-flex>
             <!-- <v-flex xs12 class="text-xs-center">

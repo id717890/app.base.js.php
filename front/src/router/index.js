@@ -17,10 +17,11 @@ const router = new Router({
         main: () => import('../components/LayoutGuest.vue')
       },
       children: [
-        { path: 'home', name: 'Home2', components: { routerguest: () => import('../views/Home.vue') } },
-        { path: 'about', name: 'about', components: { routerguest: () => import('../components/Public/About.vue') } },
-        { path: 'product/:id', props: true, name: 'Product', components: { routerguest: () => import('../components/Public/Product.vue') } },
-        { path: 'login', name: 'LogIn', components: { routerguest: () => import('../views/Auth/LogIn.vue') } }
+        { path: '/home', name: 'Home2', components: { routerguest: () => import('../views/Home.vue') } },
+        { path: '/about', name: 'about', components: { routerguest: () => import('../components/Public/About.vue') } },
+        { path: '/product/:id', props: true, name: 'Product', components: { routerguest: () => import('../components/Public/Product.vue') } },
+        { path: '/login', name: 'LogIn', components: { routerguest: () => import('../views/Auth/LogIn.vue') } },
+        { path: '/contacts', name: 'Contacts', components: { routerguest: () => import('../components/Public/Contacts.vue') } }
       ]
     },
     {
