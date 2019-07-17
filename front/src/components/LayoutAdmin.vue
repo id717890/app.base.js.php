@@ -1,23 +1,5 @@
 <template>
   <v-app id="inspire">
-    <!-- <v-navigation-drawer
-      fixed
-      v-model="drawerRight"
-      right
-      clipped
-      app
-    >
-      <v-list dense>
-        <v-list-tile @click.stop="right = !right">
-          <v-list-tile-action>
-            <fai icon="save"></fai>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Open Temporary Drawer</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer> -->
     <v-toolbar
       fixed
       app
@@ -69,12 +51,20 @@
     </v-toolbar>
     <v-navigation-drawer
       fixed
-      permanent
       v-model="drawer"
       dark
       class="blue-grey darken-3"
       app
     >
+    <v-toolbar flat class="blue-grey darken-4">
+      <v-list>
+        <v-list-tile>
+          <v-list-tile-title class="title">
+            Evgenia Kabanova App
+          </v-list-tile-title>
+        </v-list-tile>
+      </v-list>
+    </v-toolbar>
       <v-list dense class="pt-0">
       <v-list-tile
         v-for="item in items"
@@ -82,46 +72,31 @@
         :to="item.to"
       >
         <v-list-tile-action>
-          <fai icon="star" class="ml-2" />
+          <i :class="'fa '+item.icon"></i>
         </v-list-tile-action>
-
         <v-list-tile-content>
           <v-list-tile-title>{{ item.title }}</v-list-tile-title>
         </v-list-tile-content>
       </v-list-tile>
+      <v-list-tile @click="Logoff">
+        <v-list-tile-action>
+          <i class="fa fa-sign-out-alt"></i>
+        </v-list-tile-action>
+        <v-list-tile-content>
+          <v-list-tile-title>Выход</v-list-tile-title>
+        </v-list-tile-content>
+      </v-list-tile>
     </v-list>
-
-      <!-- <v-list dense>
-        <v-list-tile @click.stop="left = !left">
-          <v-list-tile-action>
-            <v-icon>exit_to_app</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Open Temporary Drawer</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list> -->
     </v-navigation-drawer>
-    <!-- <v-navigation-drawer
-      temporary
-      v-model="left"
-      fixed
-    ></v-navigation-drawer> -->
     <v-content>
       <v-container fluid fill-height>
         <router-view></router-view>
       </v-container>
     </v-content>
-    <!-- <v-navigation-drawer
-      right
-      temporary
-      v-model="right"
-      fixed
-    ></v-navigation-drawer> -->
-    <v-footer color="blue-grey" class="white--text" app>
-      <span>Vuetify</span>
+    <v-footer color="blue-grey darken-4" class="white--text" app>
+      <span>EvgeniaKabanova.com</span>
       <v-spacer></v-spacer>
-      <span>&copy; 2017</span>
+      <span>&copy; 2019</span>
     </v-footer>
   </v-app>
 </template>
@@ -132,16 +107,16 @@ export default {
   mixins: [authMixin],
   name: 'App',
   components: {
-    // HelloWorld
   },
   data () {
     return {
       items: [
-        { title: 'Home', icon: 'dashboard', to: '/' },
-        { title: 'About', icon: 'question_answer', to: '/dashboard/about' },
-        { title: 'Editor', icon: 'question_answer', to: '/dashboard/editor' }
+        { title: 'Home', icon: 'fa-home', to: '/' },
+        { title: 'Информация', icon: 'fa-info', to: '/dashboard/news' },
+        { title: 'Тренировки', icon: 'fa-dumbbell', to: '/dashboard/about' },
+        { title: 'Editor', icon: 'fa-star', to: '/dashboard/editor' }
       ],
-      drawer: false,
+      drawer: true,
       drawerRight: false,
       right: false,
       left: false,

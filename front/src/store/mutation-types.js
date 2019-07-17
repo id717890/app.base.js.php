@@ -1,3 +1,6 @@
+/* NEWS */
+export const SAVE_NEWS = 'SAVE_NEWS'
+
 /* PRODUCT */
 export const RECIEVE_PRODUCT = 'RECIEVE_PRODUCT'
 
