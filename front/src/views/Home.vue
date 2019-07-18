@@ -38,31 +38,31 @@
         <v-flex xs12>
           <h2 class="h2-s1 text-xs-center pt-2 mt-5 mb-3">Why it's important <br> to exercise</h2>
         </v-flex>
-        <v-flex xs12 md8 offset-md2 lg6 offset-lg3 mb-5 style="color: #d19c1d">
+        <v-flex xs12 md8 offset-md2 mb-5 style="color: #d19c1d">
           <v-layout row wrap >
             <v-flex xs12 md6 lg4 style="display:flex;" pr-3 mb-3 align-center>
-              <i class="fa fa-star fa-3x"></i>
-              <span>Причина №1</span>
+              <i class="fa fa-star fa-3x mr-3"></i>
+              <span>Lorem ipsum dolor sit amet</span>
             </v-flex>
             <v-flex xs12 md6 lg4 style="display:flex;" pr-3 mb-3 align-center>
-              <i class="fa fa-cloud fa-3x"></i>
-              <span>Причина №2</span>
+              <i class="fa fa-cloud fa-3x mr-3"></i>
+              <span>Sed ut leo sed eros tristique</span>
             </v-flex>
             <v-flex xs12 md6 lg4 style="display:flex;" pr-3 mb-3 align-center>
-              <i class="fa fa-feather fa-3x"></i>
-              <span>Причина №3</span>
+              <i class="fa fa-feather fa-3x mr-3"></i>
+              <span>Suspendisse euismod tortor</span>
             </v-flex>
               <v-flex xs12 md6 lg4 style="display:flex;" pr-3 mb-3 align-center>
-              <i class="fa fa-heart fa-3x"></i>
-              <span>Причина №4</span>
+              <i class="fa fa-heart fa-3x mr-3"></i>
+              <span>Ut sed tellus pharetra</span>
             </v-flex>
             <v-flex xs12 md6 lg4 style="display:flex;" pr-3 mb-3 align-center>
-              <i class="fa fa-leaf fa-3x"></i>
-              <span>Причина №5</span>
+              <i class="fa fa-leaf fa-3x mr-3"></i>
+              <span>Nullam eu quam in massa</span>
             </v-flex>
             <v-flex xs12 md6 lg4 style="display:flex;" pr-3 mb-3 align-center>
-              <i class="fa fa-american-sign-language-interpreting fa-3x"></i>
-              <span>Причина №6</span>
+              <i class="fa fa-american-sign-language-interpreting fa-3x mr-3"></i>
+              <span>Quanta es omnia des</span>
             </v-flex>
           </v-layout>
         </v-flex>
@@ -101,7 +101,7 @@
         </v-layout>
       </div>
     </v-flex>
-    <v-flex xs12 class="text-xs-center bg1 my-4">
+    <!-- <v-flex xs12 class="text-xs-center bg1 my-4">
       <h2 class="h2-s1">Opinions about us</h2>
     </v-flex>
     <v-flex xs12 class="bg1 pa-1">
@@ -178,6 +178,30 @@
           </v-card-actions>
         </v-card>
       </v-layout>
+    </v-flex> -->
+    <v-flex xs12 class="text-xs-center bg1 my-4">
+      <h2 class="h2-s1">Opinions about us</h2>
+    </v-flex>
+    <v-flex xs12 class="bg1 pa-1">
+      <v-layout row wrap justify-center>
+        <v-card max-width="470" :color="item.color" class="mr-3 mb-5 elevation-5" v-for="item in feedbacks" :key="item.id">
+          <v-card-title>
+            <v-list-tile>
+              <v-list-tile-avatar class="avatar1">
+                <v-img class="elevation-6" :src="item.img"></v-img>
+              </v-list-tile-avatar>
+            </v-list-tile>
+          </v-card-title>
+          <v-card-text style="min-height: 230px">
+            <div class="feed-wrapper">
+              {{item.text}}
+            </div>
+          </v-card-text>
+          <v-card-actions class="px-5">
+            <p style="color: #d19c1d; font-size: 1.2rem"><i class="fa fa-user"></i> {{item.fio}}</p>
+          </v-card-actions>
+        </v-card>
+      </v-layout>
     </v-flex>
     <!-- <v-flex xs12 class="bg1" style="height: 500px">
       <v-carousel
@@ -198,7 +222,7 @@
     <v-flex xs12>
       <div class="end-block">
         <v-layout row wrap style="z-index: 2">
-          <v-flex xs12 sm12 md10 offset-md1>
+          <v-flex xs12 sm12 md10 offset-md1 py-5>
             <v-layout row wrap style="z-index: 2">
               <v-flex xs12 sm12 md4 style="z-index: 3" class="text-xs-right pr-5">
                 <h2 class="h2-s1">
@@ -253,6 +277,43 @@ export default {
         },
         {
           src: require('../../static/img/squirrel.jpg')
+        }
+      ],
+      feedbacks: [
+        {
+          id: 1,
+          fio: 'Milena McKenzie',
+          text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+          img: require('../../static/img/fitness.jpg'),
+          color: 'teal accent-1'
+        },
+        {
+          id: 2,
+          fio: 'Milena McKenzie',
+          text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?',
+          img: require('../../static/img/fitness.jpg'),
+          color: 'teal lighten-4'
+        },
+        {
+          id: 3,
+          fio: 'Milena McKenzie',
+          text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?',
+          img: require('../../static/img/fitness.jpg'),
+          color: 'light-green lighten-4'
+        },
+        {
+          id: 4,
+          fio: 'Milena McKenzie',
+          text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+          img: require('../../static/img/fitness.jpg'),
+          color: 'light-green lighten-4'
+        },
+        {
+          id: 5,
+          fio: 'Milena McKenzie',
+          text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit.',
+          img: require('../../static/img/fitness.jpg'),
+          color: 'teal lighten-4'
         }
       ]
     }

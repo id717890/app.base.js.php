@@ -31,3 +31,15 @@
 .bor {
   border: 1px solid red
 }
+
+.feed-wrapper {
+  background-image: url('../static/img/quites.png');
+  background-repeat: no-repeat;
+  background-position: left top;
+  padding: 20px;
+}
+
+.avatar1 .v-avatar {
+  width: 100px !important;
+  height: 100px !important;
+}
