@@ -15,23 +15,25 @@ class ProductSeeder extends Seeder
 
         DB::table('products')->insert([
             'id' => 1,
-            'name' => 'Standart Fit',
+            'name' => 'ANIMAL FLOW "Движение жизнь"',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-            'price' => 99,
+            'price' => 299,
             'photo' => 'example1.jpg',
+            'icon'=>'fa fa-paw',
             'created_at' => DB::raw('CURRENT_TIMESTAMP'),
             'updated_at' => DB::raw('CURRENT_TIMESTAMP')
         ]);
         DB::table('products')->insert([
             'id' => 2,
-            'name' => 'Free Fit',
+            'name' => 'Бесплатный челендж "Будь в форме"',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
             'price' => 0,
+            'icon'=>'fa fa-dumbbell',
             'photo' => 'example2.jpg',
             'created_at' => DB::raw('CURRENT_TIMESTAMP'),
             'updated_at' => DB::raw('CURRENT_TIMESTAMP')
         ]);
-        DB::table('products')->insert([
+        /* DB::table('products')->insert([
             'id' => 3,
             'name' => 'Pro Fit',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
@@ -40,5 +42,6 @@ class ProductSeeder extends Seeder
             'created_at' => DB::raw('CURRENT_TIMESTAMP'),
             'updated_at' => DB::raw('CURRENT_TIMESTAMP')
         ]);
+		*/
     }
 }

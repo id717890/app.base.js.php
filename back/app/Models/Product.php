@@ -10,7 +10,7 @@ class Product extends Model
 
     protected $table = 'products';
 
-    protected $fillable = array('name', 'price', 'description', 'days');
+    protected $fillable = array('name', 'price', 'description', 'days', 'icon');
 
     protected $hidden = array('created_at','updated_at');
 
