@@ -9,9 +9,9 @@ const state = {
 // actions
 const actions = {
   async saveNews ({ commit, dispatch }, payload) {
-    context.getProducts().then((x) => {
+    context.saveNews(payload).then((x) => {
       if (x.status === 200) {
-        commit(types.RECIEVE_PRODUCT, x.data)
+        commit(types.SAVE_NEWS, x.data)
       } else {
         dispatch('setErrors', x.response.data)
       }
@@ -30,9 +30,9 @@ const mutations = {
 
 // getters
 const getters = {
-  getProductById: state => id => {
-    return state.products.find(x => Number(x.id) === Number(id))
-  }
+  // getProductById: state => id => {
+  //   return state.products.find(x => Number(x.id) === Number(id))
+  // }
 }
 
 export default {
