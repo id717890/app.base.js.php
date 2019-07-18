@@ -8,7 +8,7 @@ export default {
     return moment().format(format)
   },
   getDateFormat (date, format) {
-    console.log(moment(date))
+    // console.log(moment(date))
     return moment(date).format(format)
   }
 }

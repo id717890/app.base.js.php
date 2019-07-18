@@ -19,6 +19,7 @@ const router = new Router({
       children: [
         { path: 'home', name: 'Home2', components: { routerguest: () => import('../views/Home.vue') } },
         { path: 'about', name: 'about', components: { routerguest: () => import('../components/Public/About.vue') } },
+        { path: 'article', name: 'Article', components: { routerguest: () => import('../components/Public/Article/Index.vue') } },
         { path: 'product/:id', props: true, name: 'Product', components: { routerguest: () => import('../components/Public/Product.vue') } },
         { path: 'login', name: 'LogIn', components: { routerguest: () => import('../views/Auth/LogIn.vue') } },
         { path: 'contacts', name: 'Contacts', components: { routerguest: () => import('../components/Public/Contacts.vue') } }
@@ -30,8 +31,9 @@ const router = new Router({
       beforeEnter: authGuard,
       components: { main: () => import('../components/LayoutAdmin.vue') },
       children: [
-        { path: 'news', name: 'NewsAdmin', beforeEnter: authGuard, component: () => import('../components/Private/Admin/News/Index.vue') },
-        { path: 'news/create', name: 'NewsCreate', beforeEnter: authGuard, component: () => import('../components/Private/Admin/News/Create.vue') },
+        { path: 'news', name: 'NewsAdmin', beforeEnter: authGuard, components: { routeradmin: () => import('../components/Private/Admin/News/Index.vue') } },
+        { path: 'news/create', name: 'NewsCreate', beforeEnter: authGuard, components: { routeradmin: () => import('../components/Private/Admin/News/Create.vue') } },
+        { path: 'news/edit/:id', name: 'NewsEdit', beforeEnter: authGuard, components: { routeradmin: () => import('../components/Private/Admin/News/Edit.vue') } },
         { path: 'editor', name: 'Editor', beforeEnter: authGuard, component: () => import('../components/Editor.vue') }
         // { path: 'users', name: 'Users', beforeEnter: authGuard, component: () => import('../views/Private/User/List.vue') },
         // { path: 'user/create', name: 'CreateUser', beforeEnter: authGuard, component: () => import('../views/Private/User/Create.vue') },

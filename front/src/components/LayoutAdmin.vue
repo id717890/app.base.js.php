@@ -9,45 +9,10 @@
       <v-toolbar-side-icon @click.stop="drawer = !drawer">
         <fai icon="align-justify"></fai>
       </v-toolbar-side-icon>
-      <v-toolbar-items>
-        <v-btn flat to="/" class="ml-2"><fai icon="home" size="2x" class="mr-1"/></v-btn>
-        <v-btn flat to="/dashboard" v-if="isAuth"><fai icon="crown" size="2x" class="mr-1"/></v-btn>
-      </v-toolbar-items>
-      <v-menu :nudge-width="100" v-if="isAuth">
-        <template v-slot:activator="{ on }">
-          <v-toolbar-title v-on="on">
-            <span>Спарвочники</span>
-            <fai icon="angle-down" class="ml-2" />
-          </v-toolbar-title>
-        </template>
-        <v-list>
-          <v-list-tile @click="$router.push('/dashboard/roles')">
-            <v-list-tile-title><fai icon="user-tag" class="mr-2" /> Роли</v-list-tile-title>
-          </v-list-tile>
-          <v-list-tile @click="$router.push('/dashboard/users')">
-            <v-list-tile-title><fai icon="users-cog" class="mr-2" /> Пользователи</v-list-tile-title>
-          </v-list-tile>
-        </v-list>
-      </v-menu>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <v-btn flat :to="menu.url" v-for="menu in menuTopRight" :key="menu.id" :class="menu.class">
-          <fai :icon="menu.icon" :size="menu.size" class="mr-1"/>{{menu.text}}
-        </v-btn>
-      </v-toolbar-items>
-      <v-toolbar-items>
-        <template v-if="!isAuth">
-          <v-btn flat :to="menu.url" v-for="menu in menuNotAuth" :key="menu.id">
-            <fai :icon="menu.icon" :size="menu.size" class="mr-1"/>{{menu.text}}
-          </v-btn>
-        </template>
-        <template v-if="isAuth">
-        </template>
         <v-btn flat @click="Logoff" class="mr-2" v-if="isAuth"><fai icon="sign-out-alt" size="2x" class="mr-1"/></v-btn>
       </v-toolbar-items>
-      <!-- <v-toolbar-side-icon @click.stop="drawerRight = !drawerRight">
-        <fai icon="align-justify"></fai>
-      </v-toolbar-side-icon> -->
     </v-toolbar>
     <v-navigation-drawer
       fixed
@@ -65,7 +30,7 @@
         </v-list-tile>
       </v-list>
     </v-toolbar>
-      <v-list dense class="pt-0">
+    <v-list dense class="pt-0">
       <v-list-tile
         v-for="item in items"
         :key="item.title"
@@ -89,8 +54,8 @@
     </v-list>
     </v-navigation-drawer>
     <v-content>
-      <v-container fluid fill-height>
-        <router-view></router-view>
+      <v-container fluid >
+        <router-view name="routeradmin"></router-view>
       </v-container>
     </v-content>
     <v-footer color="blue-grey darken-4" class="white--text" app>

@@ -1,5 +1,8 @@
 <template>
-  <router-view name="main"></router-view>
+  <section>
+    <router-view name="main"></router-view>
+    <modals-container/>
+  </section>
 </template>
 
 <script>
@@ -13,10 +16,11 @@ export default {
     // HelloWorld
   },
   methods: {
-    ...mapActions(['getAllProducts'])
+    ...mapActions(['getAllProducts', 'getAllNews'])
   },
   async created () {
     this.getAllProducts()
+    this.getAllNews()
   }
 }
 </script>

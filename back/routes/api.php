@@ -31,7 +31,10 @@ Route::group(['middleware' => ['jwt.auth']], function() {
 });
 
 Route::group(['middleware' => ['jwt.auth', 'auth.role:admin']], function() {
+    Route::get('news', 'NewsController@index');
     Route::post('news/create', 'NewsController@create');
+    Route::post('news/delete/{id}', 'NewsController@delete');
+    Route::post('news/update', 'NewsController@update');
 });
 
 

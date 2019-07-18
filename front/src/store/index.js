@@ -6,10 +6,11 @@ import notify from './notify'
 import user from './user'
 import product from './product'
 import news from './news'
+import dialog from './dialog'
 
 Vue.use(Vuex)
 
-export const store = new Vuex.Store({
+export default new Vuex.Store({
   plugins: [
     store => {
       store.subscribeAction((action, state) => {
@@ -23,6 +24,7 @@ export const store = new Vuex.Store({
     notify,
     user,
     product,
-    news
+    news,
+    dialog
   }
 })

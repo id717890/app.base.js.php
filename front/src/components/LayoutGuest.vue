@@ -64,7 +64,7 @@
       <section class="hidden-sm-and-down">
         <v-menu :nudge-width="100">
           <template v-slot:activator="{ on }">
-            <v-toolbar-title v-on="on" class="mr-2">
+            <v-toolbar-title v-on="on" class="mx-3">
               <span>Курсы</span>
               <fai icon="angle-down" class="ml-2" />
             </v-toolbar-title>

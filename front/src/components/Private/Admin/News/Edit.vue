@@ -19,12 +19,12 @@
     <v-flex>
       <v-layout row>
         <v-flex xs12 sm10 md8 lg6 xs5>
-          <tteditor @editorChanged="textChanged" :text="null"/>
+          <tteditor @editorChanged="textChanged" :text="news.text" />
         </v-flex>
       </v-layout>
     </v-flex>
     <v-flex xs12>
-      <v-btn class="primary" large @click="save">
+      <v-btn class="primary" large @click="update">
         <i class="fa fa-save fa-2x mr-2"></i>
         Сохранить
       </v-btn>
@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 import TtEditor from '../../../Shared/TipTapEditor'
 export default {
   components: {
@@ -45,6 +45,7 @@ export default {
   },
   data () {
     return {
+      id: this.$route.params.id,
       valid: false,
       title: '',
       image: '',
@@ -55,20 +56,30 @@ export default {
       ]
     }
   },
+  computed: {
+    ...mapGetters(['getNewsById']),
+    news () {
+      return this.getNewsById(this.id)
+    }
+  },
   mounted () {
+    if (this.news !== null && this.news !== undefined && this.news !== 'undefined') {
+      this.title = this.news.title
+      this.image = this.news.image
+      this.text = this.news.text
+    }
   },
   methods: {
     textChanged (event) {
       this.text = event
     },
-    ...mapActions(['saveNews']),
-    save () {
+    ...mapActions(['updateNews']),
+    update () {
       if (this.text === '' || this.text === null || this.title === '' || this.title === null) {
         alert('Заголовок и текст статьи не должны быть пустыми')
       } else {
-        this.saveNews({ 'text': this.text, 'title': this.title, 'image': this.image })
+        this.updateNews({ 'id': this.id, 'text': this.text, 'title': this.title, 'image': this.image })
           .then(() => this.$router.push('/dashboard/news'))
-          // .catch(() => alert('Ошибка при сохранении'))
           .catch(x => console.log(x))
       }
     }

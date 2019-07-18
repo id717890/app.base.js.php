@@ -2,37 +2,64 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Validator;
 
 class NewsController extends Controller
 {
-    public function create(Request $request) {
+    public function index()
+    {
+        return response()->json(News::all(), 200);
+    }
 
-
+    public function update(Request $request)
+    {
         $validator = Validator::make($request->all(), [
             'title' => 'required|max:255',
             'text' => 'required'
         ]);
-
-        return response()->json(Input::all(), 200);
         if ($validator->passes()) {
-            $newUser = new User();
-            $newUser->name = Input::get('name');
-            $newUser->email = Input::get('email');
-            $newUser->password = Hash::make(Input::get('password'));
-            $newUser->save();
-            if (Input::get('isAdmin') === true) $newUser->assignRole('admin'); else $newUser->assignRole('customer');
-            if (Input::get('sites') !== null && $newUser->id !== null && Input::get('isAdmin') === false) {
-                $list = array_unique(Input::get('sites'));
-                $data = [];
-                foreach ($list as $item) {
-                    array_push($data, ['user_id' => $newUser->id, 'site_id' => $item]);
-                }
-                UserSite::insert($data);
-            }
-            return response()->json($newUser->toArray(), 200);
+            $findNews = News::find(Input::get('id'));
+            if ($findNews !== null) {
+                $findNews->title = Input::get('title');
+                $findNews->image = Input::get('image');
+                $findNews->text = Input::get('text');
+                $findNews->save();
+                return response()->json(200);
+            } else return response()->json('ID Not found', 404);
+        } else {
+            return response()->json($validator->errors()->all(), 400);
+        }
+    }
+
+    public function delete($id)
+    {
+        $news = News::find($id);
+        if ($news !== null) {
+            News::destroy($id);
+            return response()->json(200);
+        } else {
+            return response()->json('ID not found', 404);
+        }
+    }
+
+    public function create(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'title' => 'required|max:255',
+            'text' => 'required'
+        ]);
+//        return response()->json(Input::all(), 200);
+        if ($validator->passes()) {
+            $newNews = new News();
+            $newNews->title = Input::get('title');
+            $newNews->image = Input::get('image');
+            $newNews->text = Input::get('text');
+            $newNews->save();
+
+            return response()->json(200);
         } else {
             return response()->json($validator->errors()->all(), 400);
         }

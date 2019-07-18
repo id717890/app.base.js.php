@@ -1,6 +1,7 @@
 import * as types from '../mutation-types'
 import context from '../../api/auth'
 import Vue from 'vue'
+import router from '../../router'
 
 const state = {
   user: null,
@@ -107,6 +108,9 @@ const actions = {
       commit(types.SET_TOKEN, credential.token)
       commit(types.SET_USER, credential.id)
     }
+  },
+  async redirectToSignIn () {
+    router.push('/login')
   }
 }
 
