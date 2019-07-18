@@ -56,7 +56,7 @@
         <!-- <v-btn flat :to="menu.url" v-for="menu in menuTopRight" :key="menu.id" :class="menu.class">
           <fai :icon="menu.icon" :size="menu.size" class="mr-1"/>{{menu.text}}
         </v-btn> -->
-        <v-btn flat to="/"><i class="mr-1 fa fa-home fa-2x"></i></v-btn>
+        <v-btn flat to="/home"><i class="mr-1 fa fa-home fa-2x"></i></v-btn>
         <v-btn flat to="/about"><i class="mr-1 fa fa-info"></i>Обо мне</v-btn>
         <v-btn flat to="/contacts"><i class="mr-1 fa fa-location-arrow"></i>Контакты</v-btn>
         <v-btn flat to="/article"><i class="mr-1 fab fa-pagelines"></i>Инфморация</v-btn>
@@ -70,12 +70,17 @@
             </v-toolbar-title>
           </template>
           <v-list>
-            <v-list-tile @click="$router.push('/freecourse')">
+            <v-list-tile @click="$router.push('/product/'+product.id)" v-for="product in products" :key="product.id">
+              <v-list-tile-title>
+                <i :class="product.icon" class="mr-2"></i>{{product.name}}
+              </v-list-tile-title>
+            </v-list-tile>
+            <!-- <v-list-tile @click="$router.push('/')">
               <v-list-tile-title><fai icon="dumbbell" class="mr-2" /> Бесплатный челендж "Будь в форме"</v-list-tile-title>
             </v-list-tile>
             <v-list-tile @click="$router.push('/courses')">
               <v-list-tile-title><fai icon="paw" class="mr-2" /> ANIMAL FLOW "Движение жизнь"</v-list-tile-title>
-            </v-list-tile>
+            </v-list-tile> -->
           </v-list>
         </v-menu>
       </section>
@@ -101,7 +106,7 @@
       temporary
     >
       <v-list dense>
-        <v-list-tile to="/">
+        <v-list-tile to="/home">
           <v-list-tile-action>
             <i class="mr-1 fa fa-home"></i>
           </v-list-tile-action>
@@ -229,11 +234,17 @@
 
 <script>
 import authMixin from '../mixins/auth'
+import { mapState } from 'vuex'
 export default {
   mixins: [authMixin],
   name: 'App',
   components: {
     // HelloWorld
+  },
+  computed: {
+    ...mapState({
+      products: state => state.product.products
+    })
   },
   data () {
     return {

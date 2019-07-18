@@ -1,5 +1,5 @@
 <template>
-  <v-layout column fill-height>
+  <v-layout column fill-height v-if="product !== null">
     <v-flex xs12>
       <div class="bg2 pt-5" style="display: block; height: 200px; max-height: 200px;">
         <h2 class="h2-s2 text-xs-center">{{product.name}}</h2>
@@ -39,13 +39,22 @@ export default {
   mixins: [authMixin],
   data () {
     return {
-      id: this.$route.params.id
+      id: this.$route.params.id,
+      product: null
     }
   },
   computed: {
-    ...mapGetters(['getProductById']),
-    product () {
-      return this.getProductById(this.id)
+    ...mapGetters(['getProductById'])
+    // product () {
+    //   return this.getProductById(this.id)
+    // }
+  },
+  created () {
+    this.product = this.getProductById(this.id)
+  },
+  watch: {
+    '$route' (to, from) {
+      this.product = this.getProductById(to.params.id)
     }
   }
 }

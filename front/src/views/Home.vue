@@ -71,7 +71,7 @@
     <v-flex xs12>
       <div class="prlx prlxb3">
         <v-layout row wrap justify-center align-center class="vh100">
-          <v-flex xs xs12 sm5 md4 lg3 pa-3 v-for="(product, index) in products" :key="product.id">
+          <v-flex xs xs12 sm6 md5 lg4 pa-3 v-for="(product, index) in products" :key="product.id">
             <v-card class="product elevation-12" :color="randColor(index)">
               <v-img
                 aspect-ratio="2.75"
@@ -184,7 +184,7 @@
     </v-flex>
     <v-flex xs12 class="bg1 pa-1">
       <v-layout row wrap justify-center>
-        <v-card max-width="470" :color="item.color" class="mr-3 mb-5 elevation-5" v-for="item in feedbacks" :key="item.id">
+        <v-card max-width="470" :color="item.color" class="mr-3 mb-5 elevation-5 product" v-for="item in feedbacks" :key="item.id">
           <v-card-title>
             <v-list-tile>
               <v-list-tile-avatar class="avatar1">
