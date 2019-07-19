@@ -78,8 +78,7 @@ export default {
       items: [
         { title: 'Home', icon: 'fa-home', to: '/' },
         { title: 'Информация', icon: 'fa-info', to: '/dashboard/news' },
-        { title: 'Тренировки', icon: 'fa-dumbbell', to: '/dashboard/about' },
-        { title: 'Editor', icon: 'fa-star', to: '/dashboard/editor' }
+        { title: 'Тренировки', icon: 'fa-dumbbell', to: '/dashboard/products' }
       ],
       drawer: true,
       drawerRight: false,

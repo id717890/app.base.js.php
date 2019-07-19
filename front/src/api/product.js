@@ -10,5 +10,12 @@ export default {
       // console.log(error.response.status)
       return error
     })
+  },
+  updateProduct: (data) => {
+    return Vue.$http.post('api/product/update', data).then((x) => {
+      return x
+    }).catch(error => {
+      return error
+    })
   }
 }

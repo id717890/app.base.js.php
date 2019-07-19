@@ -35,12 +35,12 @@ Route::group(['middleware' => ['jwt.auth', 'auth.role:admin']], function() {
     Route::post('news/create', 'NewsController@create');
     Route::post('news/delete/{id}', 'NewsController@delete');
     Route::post('news/update', 'NewsController@update');
+    Route::post('product/update', 'ProductController@update');
 });
 
 
 
 Route::group(['middleware' => ['auth', 'role:Admin']], function () {
-
 });
 
 

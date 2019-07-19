@@ -18,6 +18,21 @@ const actions = {
     }).catch(x => {
       dispatch('setErrors', x.response.data)
     })
+  },
+  async updateProduct ({ commit, dispatch }, payload) {
+    return new Promise((resolve, reject) => {
+      context.updateProduct(payload).then((x) => {
+        if (x.status === 200) {
+          resolve()
+        } else {
+          reject(x.response.data)
+          dispatch('setErrors', x.response.data)
+        }
+      }).catch(x => {
+        reject(x.response.data)
+        dispatch('setErrors', x.response.data)
+      })
+    })
   }
 }
 
