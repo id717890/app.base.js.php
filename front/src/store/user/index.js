@@ -1,5 +1,4 @@
 import context from '@/api/user'
-// import Vue from 'vue'
 import * as types from '../mutation-types'
 
 const state = {

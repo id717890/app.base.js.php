@@ -1,6 +1,5 @@
 import store from '../store'
 import Vue from 'vue'
-// import config from '../init/config'
 
 export default (from, to, next) => {
   let credetnrials = Vue.auth.getCredentials()

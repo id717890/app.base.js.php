@@ -6,7 +6,6 @@ import router from '../../router'
 const state = {
   user: null,
   token: null
-  // isAuth: false
 }
 
 // getters
@@ -125,9 +124,6 @@ const mutations = {
   [types.SET_TOKEN] (state, payload) {
     state.token = payload
   },
-  // [types.SET_ERROR] (state, payload) {
-  //   state.error = payload
-  // },
   [types.SIGN_UP] (state, payload) {
   }
 }
