@@ -2,7 +2,7 @@
   <v-layout column class="bg1">
     <v-flex xs12>
       <v-layout row wrap fill-height class="bg1">
-        <v-flex xs12 md5 align-self-center pl-5 class="h1-left-block pa-5">
+        <v-flex xs12 md5 align-self-center pl-5 class="h1-left-block pa-1">
           <section class="hidden-sm-and-down">
             <h1 class="h1-s1">Время </h1>
             <h1 class="h1-s1 ml-5">заняться</h1>
@@ -12,7 +12,10 @@
             <h1 class="h1-s1">Время <br> заняться <br> собой. </h1>
           </section>
           <p style="background: transparent">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia esse consequuntur, sapiente perferendis, sunt dolore cupiditate minus vitae possimus nisi asperiores illo, neque enim dolores corporis pariatur? Quisquam, esse quidem.
+            Друзья, добро пожаловать на сайт Евгении Кабановой, мастера спорта международного класса, чемпионки мира по спортивной акробатике.
+          </p>
+          <p>
+            Здесь вы найдете полезную информацию о тренировках, сможете пройти бесплатный челлендж, а также купить новую уникальную фитнес-программу «ДВИЖЕНИЕ» с элементами FLOW! Эта программа не только изменит ваш подход к тренировкам, но и изменит вашу жизнь! Старт программы 1 октября 2019!
           </p>
         </v-flex>
         <v-flex xs12 md7 style="height: 100vh; overflow: hidden">
@@ -234,7 +237,7 @@
                 </p>
               </v-flex>
               <v-flex xs12 sm12 md8 style="z-index: 3" class="pa-3">
-                <v-img style="border-radius: 15px" :src="require('../../static/img/Fran.jpg')" max-height="580" max-width="740" class="elevation-20"></v-img>
+                <v-img style="border-radius: 15px" :src="require('../../static/img/key_004_10.jpg')" max-height="580" max-width="740" class="elevation-20"></v-img>
               </v-flex>
             </v-layout>
           </v-flex>
@@ -267,19 +270,16 @@ export default {
       'img': require('../../static/img/yoga-hd-wallpaper_024616754_279.jpg'),
       items: [
         {
-          src: require('../../static/img/SoqSO8UTTrSk5G9R3G7o_Revamped Background.png')
+          src: require('../../static/img/key_001_10.jpg')
         },
         {
-          src: require('../../static/img/karli-kloss-2560x1440-nayk-yoga-pohudenie-relaks-fitnes-11054.jpg')
+          src: require('../../static/img/key_002_10.jpg')
         },
         {
-          src: require('../../static/img/Handstand+Crop+About+Page.jpg')
+          src: require('../../static/img/key_003_10.jpg')
         },
         {
-          src: require('../../static/img/145832.jpg')
-        },
-        {
-          src: require('../../static/img/animalflow.jpg')
+          src: require('../../static/img/key_004_10.jpg')
         }
       ],
       feedbacks: [

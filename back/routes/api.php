@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,18 +20,19 @@ Route::get('product/{id}', 'ProductController@index');
 Route::post('register', 'AuthController@register');
 Route::post('auth/Login', 'AuthController@login');
 Route::post('recover', 'AuthController@recover');
+Route::get('news', 'NewsController@index');
+
 Route::group(['middleware' => ['jwt.auth']], function() {
     Route::get('logout', 'AuthController@logout');
-    Route::get('test', function(){
-        return response()->json(['foo'=>'bar']);
-    });
-    Route::get('/user', function (Request $request) {
-        return $request->user();
-    });
+//    Route::get('test', function(){
+//        return response()->json(['foo'=>'bar']);
+//    });
+//    Route::get('/user', function (Request $request) {
+//        return $request->user();
+//    });
 });
 
 Route::group(['middleware' => ['jwt.auth', 'auth.role:admin']], function() {
-    Route::get('news', 'NewsController@index');
     Route::post('news/create', 'NewsController@create');
     Route::post('news/delete/{id}', 'NewsController@delete');
     Route::post('news/update', 'NewsController@update');
@@ -40,8 +41,8 @@ Route::group(['middleware' => ['jwt.auth', 'auth.role:admin']], function() {
 
 
 
-Route::group(['middleware' => ['auth', 'role:Admin']], function () {
-});
+//Route::group(['middleware' => ['auth', 'role:Admin']], function () {
+//});
 
 
 //Route::get('products', ['middleware' => 'auth.role:admin,user', 'uses' => 'ProductController@index', 'as' => 'products']);

@@ -10,13 +10,13 @@
       <v-flex xs12 sm10 md7 pa-5>
         <h1>Алоха, дружочки!</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-        <p><img :src="require('../../../static/img/example3.jpg')" alt="" class="img-bordered elevation-10" width="300px" style="float: left; margin: 0 10px 10px 0">
+        <p><img :src="require('../../../static/img/key_003_10.jpg')" alt="" class="img-bordered elevation-10" width="300px" style="float: left; margin: 0 10px 10px 0">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum earum quidem voluptatibus perspiciatis, alias optio perferendis iste tempore! </p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum earum quidem voluptatibus perspiciatis, alias optio perferendis iste tempore! Incidunt vel, quis eos inventore exercitationem iusto quae optio doloribus aperiam ipsa.</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum earum quidem voluptatibus perspiciatis, alias optio perferendis iste tempore! Incidunt vel, quis eos inventore exercitationem iusto quae optio doloribus aperiam ipsa.</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum earum quidem voluptatibus perspiciatis, alias optio perferendis iste tempore! </p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum earum quidem voluptatibus perspiciatis, alias optio perferendis iste tempore! Incidunt vel, quis eos inventore exercitationem iusto quae optio doloribus aperiam ipsa.</p>
-        <p><img :src="require('../../../static/img/SoqSO8UTTrSk5G9R3G7o_Revamped Background.png')" alt="" class="img-bordered elevation-10" width="350px" style="float: right; margin: 0 10px 10px 0">
+        <p><img :src="require('../../../static/img/key_004_10.jpg')" alt="" class="img-bordered elevation-10" width="350px" style="float: right; margin: 0 10px 10px 0">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum earum quidem voluptatibus perspiciatis, alias optio perferendis iste tempore! Incidunt vel, quis eos inventore exercitationem iusto quae optio doloribus aperiam ipsa.</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ipsa harum tenetur culpa repudiandae cum corrupti nobis, dolorem, alias praesentium tempore beatae doloribus numquam quae? Repellendus dolor aliquid incidunt doloribus.</p>
         <p class="fa-2x mb-5"><strong>Евгения Кабанова</strong></p>
