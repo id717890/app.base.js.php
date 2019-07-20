@@ -172,11 +172,19 @@ body {
 
 .bg3 {
   background-image: url('../static/img/top-section-bg.png');
-  padding-top: 200px;
+  padding-top: 300px;
   padding-bottom: 100px;
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
+}
+
+.bg4 {
+  background-image: url('../static/img/_24901-574.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  min-height: 100vh;
 }
 
 .footer1 {
@@ -196,6 +204,15 @@ body {
   color: #5f2e7a;
 }
 
+.h2-s3 {
+  position: absolute;
+  color: white;
+  font-family: "Nunito", Arial, Tahoma, sans-serif;
+  font-size: 40px;
+  bottom: 25%;
+  left: 15%;
+}
+
 .img-bordered {
   border: 10px solid white;
 }
@@ -211,3 +228,11 @@ body {
   padding: 5px 15px;
 }
 
+.news img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.feedback {
+  font-size: 0.7rem;
+}

@@ -161,11 +161,11 @@
       </div>
     </editor-menu-bar>
     <editor-content class="editor__content" :editor="editor" />
-    <br>
+    <!-- <br>
           <br>
           {{json}}
           <br>
-          {{html}}
+          {{html}} -->
   </section>
 </template>
 

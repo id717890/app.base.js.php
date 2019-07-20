@@ -59,7 +59,7 @@
         <v-btn flat to="/home"><i class="mr-1 fa fa-home fa-2x"></i></v-btn>
         <v-btn flat to="/about"><i class="mr-1 fa fa-info"></i>Обо мне</v-btn>
         <v-btn flat to="/contacts"><i class="mr-1 fa fa-location-arrow"></i>Контакты</v-btn>
-        <v-btn flat to="/article"><i class="mr-1 fab fa-pagelines"></i>Инфморация</v-btn>
+        <v-btn flat to="/articles"><i class="mr-1 fab fa-pagelines"></i>Инфморация</v-btn>
       </v-toolbar-items>
       <section class="hidden-sm-and-down">
         <v-menu :nudge-width="100">
@@ -130,7 +130,7 @@
             <v-list-tile-title>Контакты</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile to="/article">
+        <v-list-tile to="/articles">
           <v-list-tile-action>
             <i class="mr-1 fab fa-pagelines"></i>
           </v-list-tile-action>

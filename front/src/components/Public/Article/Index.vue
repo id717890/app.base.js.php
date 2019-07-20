@@ -22,7 +22,7 @@
                 <v-card-actions>
                   <span class="silver lighten-4">{{date(item.created_at)}}</span>
                   <v-spacer></v-spacer>
-              <v-btn flat color="orange">Подробнее</v-btn>
+              <v-btn flat color="orange" :to="'/article/'+item.id">Подробнее</v-btn>
             </v-card-actions>
               </v-flex>
             </v-layout>
@@ -31,7 +31,6 @@
         </v-flex>
       </v-layout>
     </v-flex>
-
   </v-layout>
 </template>
 

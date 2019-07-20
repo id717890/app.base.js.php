@@ -180,11 +180,11 @@
       </v-layout>
     </v-flex> -->
     <v-flex xs12 class="text-xs-center bg1 my-4">
-      <h2 class="h2-s1">Opinions about us</h2>
+      <h2 class="h2-s1">Отзывы о нас <i class="fa fa-comment"></i> </h2>
     </v-flex>
     <v-flex xs12 class="bg1 pa-1">
       <v-layout row wrap justify-center>
-        <v-card max-width="470" :color="item.color" class="mr-3 mb-5 elevation-5 product" v-for="item in feedbacks" :key="item.id">
+        <v-card max-width="330" :color="item.color" class="mr-3 mb-5 elevation-5 product feedback" v-for="item in feedbacks" :key="item.id">
           <v-card-title>
             <v-list-tile>
               <v-list-tile-avatar class="avatar1">
@@ -192,13 +192,13 @@
               </v-list-tile-avatar>
             </v-list-tile>
           </v-card-title>
-          <v-card-text style="min-height: 230px">
+          <v-card-text>
             <div class="feed-wrapper">
               {{item.text}}
             </div>
           </v-card-text>
           <v-card-actions class="px-5">
-            <p style="color: #d19c1d; font-size: 1.2rem"><i class="fa fa-user"></i> {{item.fio}}</p>
+            <p style="color: #d19c1d; font-size: 0.7rem"><i class="fa fa-user"></i> {{item.fio}}</p>
           </v-card-actions>
         </v-card>
       </v-layout>
@@ -264,19 +264,22 @@ export default {
   },
   data () {
     return {
-      'img': require('../../static/img/fitness.jpg'),
+      'img': require('../../static/img/yoga-hd-wallpaper_024616754_279.jpg'),
       items: [
         {
-          src: require('../../static/img/bird.jpg')
+          src: require('../../static/img/SoqSO8UTTrSk5G9R3G7o_Revamped Background.png')
         },
         {
-          src: require('../../static/img/planet.jpg')
+          src: require('../../static/img/karli-kloss-2560x1440-nayk-yoga-pohudenie-relaks-fitnes-11054.jpg')
         },
         {
-          src: require('../../static/img/sky.jpg')
+          src: require('../../static/img/Handstand+Crop+About+Page.jpg')
         },
         {
-          src: require('../../static/img/squirrel.jpg')
+          src: require('../../static/img/145832.jpg')
+        },
+        {
+          src: require('../../static/img/animalflow.jpg')
         }
       ],
       feedbacks: [
@@ -285,7 +288,7 @@ export default {
           fio: 'Milena McKenzie',
           text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
           img: require('../../static/img/fitness.jpg'),
-          color: 'teal accent-1'
+          color: 'light-green lighten-4'
         },
         {
           id: 2,
@@ -306,14 +309,14 @@ export default {
           fio: 'Milena McKenzie',
           text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
           img: require('../../static/img/fitness.jpg'),
-          color: 'light-green lighten-4'
+          color: 'teal lighten-4'
         },
         {
           id: 5,
           fio: 'Milena McKenzie',
           text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit.',
           img: require('../../static/img/fitness.jpg'),
-          color: 'teal lighten-4'
+          color: 'light-green lighten-4'
         }
       ]
     }
