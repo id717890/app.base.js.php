@@ -80,17 +80,14 @@ const actions = {
   },
   async signUserUp ({ dispatch }, payload) {
     return new Promise((resolve, reject) => {
-      context.signUp(payload.email, payload.password, payload.passwordConfirm, payload.firstName, payload.lastName).then((x) => {
+      context.signUp(payload).then((x) => {
         if (x.status === 200) {
           dispatch('setMessages', 'Account created. Please, confirm your email address.')
           resolve()
         } else {
-          Object.keys(x.response.data).forEach(key => dispatch('setErrors', x.response.data[key]))
+          dispatch('setErrors', x.response.data)
           reject(x.response.data)
         }
-      }).catch(x => {
-        Object.keys(x.response.data).forEach(key => dispatch('setErrors', x.response.data[key]))
-        reject(x.response.data)
       })
     })
   },

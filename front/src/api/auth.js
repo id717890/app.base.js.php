@@ -51,21 +51,10 @@ export default {
       })
     }
   },
-  signUp: (email, password, passwordConfirm, firstName, lastName) => {
-    const data = {
-      email: email,
-      password: password,
-      passwordConfirm: passwordConfirm,
-      firstName: firstName,
-      lastName: lastName
-    }
-    // console.log(data)
-    return Vue.$http.post('api/account/register', data).then((x) => {
+  signUp: (data) => {
+    return Vue.$http.post('api/register', data).then((x) => {
       return x
     }).catch(error => {
-      // console.log('api')
-      // console.log(error.response.data)
-      // console.log(error.response.status)
       return error
     })
   }

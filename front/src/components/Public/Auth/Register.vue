@@ -4,11 +4,11 @@
       <app-notify/>
       <v-form lazy-validation v-model="form.valid" ref="form">
         <v-flex 12>
+          <v-text-field label="Имя" type="text" v-model="form.firstName" required :rules="textField"></v-text-field>
           <v-text-field label="E-mail" v-model="form.email" required :rules="emailRules"></v-text-field>
-          <v-text-field label="Password" type="password" v-model="form.password" required :rules="passwordRules"></v-text-field>
-          <v-text-field label="Password Confirm" type="password" v-model="form.passwordConfirm" required :rules="passwordConfirmRules"></v-text-field>
-          <v-text-field label="First Name" type="text" v-model="form.firstName" required :rules="textField"></v-text-field>
-          <v-text-field label="Last Name" type="text" v-model="form.lastName" required :rules="textField"></v-text-field>
+          <v-text-field label="Пароль" type="password" v-model="form.password" required :rules="passwordRules"></v-text-field>
+          <v-text-field label="Пароль ещё раз" type="password" v-model="form.passwordConfirm" required :rules="passwordConfirmRules"></v-text-field>
+          <!-- <v-text-field label="Last Name" type="text" v-model="form.lastName" required :rules="textField"></v-text-field> -->
         </v-flex>
         <v-flex 12>
           <v-layout justify-space-between>
@@ -34,8 +34,8 @@ export default {
         email: 'jusupovz@gmail.com',
         password: 'qweqwe',
         passwordConfirm: 'qweqwe',
-        firstName: 'qweqwe',
-        lastName: 'qwe'
+        firstName: 'qweqwe'
+        // lastName: 'qwe'
       },
       emailRules: [
         v => !!v || 'E-mail required',
@@ -77,12 +77,11 @@ export default {
       this.$store.dispatch('clearAllMessages')
       e.preventDefault()
       if (this.$refs.form.validate()) {
-        this.signUserUp(this.form)
+        this.signUserUp({ email: this.form.email, password: this.form.password, passwordConfirm: this.form.passwordConfirm, name: this.form.firstName })
           .then((x) => {
             this.resetForm()
           })
           .catch(x => {
-            console.log(x)
             this.loading = false
           })
       }

@@ -9,8 +9,27 @@ const state = {
 const actions = {
   setErrors ({commit}, payload) {
     if (payload.error !== null && payload.error !== 'undefined' && payload.error.message !== null && payload.error.message !== 'undefined') {
-      commit(types.SET_ERRORS, payload.error.message)
-    } else commit(types.SET_ERRORS, payload)
+      switch (typeof payload.error.message) {
+        case 'string': commit(types.SET_ERRORS, payload.error.message)
+        break
+        case 'object': {
+          Object.keys(payload.error.message).forEach(x => {
+            switch (typeof payload.error.message[x]) {
+              case 'string': commit(types.SET_ERRORS, payload.error.message[x])
+              break
+              case 'object': {
+                if (Array.isArray(payload.error.message[x])) {
+                  payload.error.message[x].forEach(y => commit(types.SET_ERRORS, y))
+                }
+              }
+              break
+            }
+          })
+
+        }
+        break
+      }
+    } 
   },
   setMessages ({commit}, payload) {
     commit(types.SET_MESSAGES, payload)
