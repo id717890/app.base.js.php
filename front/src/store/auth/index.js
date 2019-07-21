@@ -57,7 +57,6 @@ const actions = {
   async signUserIn ({ commit, dispatch }, payload) {
     return new Promise((resolve, reject) => {
       context.signIn(payload.email, payload.password).then((x) => {
-        console.log(x)
         if (x.status === 200) {
           let token = x.data.access_token
           let expiration = x.data.expires_in

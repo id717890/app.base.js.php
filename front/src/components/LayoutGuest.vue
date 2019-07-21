@@ -16,13 +16,13 @@
         <v-btn flat to="/home"><i class="mr-1 fa fa-home fa-2x"></i></v-btn>
         <v-btn flat to="/about"><i class="mr-1 fa fa-info"></i>Обо мне</v-btn>
         <v-btn flat to="/contacts"><i class="mr-1 fa fa-location-arrow"></i>Контакты</v-btn>
-        <v-btn flat to="/articles"><i class="mr-1 fab fa-pagelines"></i>Инфморация</v-btn>
+        <v-btn flat to="/articles"><i class="mr-1 fab fa-pagelines"></i>Новости</v-btn>
       </v-toolbar-items>
       <section class="hidden-sm-and-down">
         <v-menu :nudge-width="100">
           <template v-slot:activator="{ on }">
             <v-toolbar-title v-on="on" class="mx-3">
-              <span>Курсы</span>
+              <span>Программы</span>
               <fai icon="angle-down" class="ml-2" />
             </v-toolbar-title>
           </template>
@@ -83,7 +83,7 @@
             <i class="mr-1 fab fa-pagelines"></i>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>Информация</v-list-tile-title>
+            <v-list-tile-title>Новости</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
 
@@ -91,7 +91,7 @@
           <template v-slot:activator>
             <v-list-tile>
               <v-list-tile-content>
-                <v-list-tile-title>Курсы</v-list-tile-title>
+                <v-list-tile-title>Программы</v-list-tile-title>
               </v-list-tile-content>
             </v-list-tile>
           </template>
@@ -178,7 +178,7 @@ export default {
       left: false,
       menuTopRight: [
         { id: 1, text: '', url: '/', icon: 'home', size: '2x', order: 1, class: 'ml-2', showIfAuth: true },
-        { id: 2, text: 'Курсы', url: '/course', icon: 'crown', size: '1x', order: 1, showIfAuth: true },
+        { id: 2, text: 'Программы', url: '/course', icon: 'crown', size: '1x', order: 1, showIfAuth: true },
         { id: 3, text: 'Статьи', url: '/article', icon: 'pagelines', size: '1x', order: 1, showIfAuth: true },
         { id: 4, text: 'Обо мне', url: '/about', icon: 'info', size: '1x', order: 1, showIfAuth: true }
       ],
