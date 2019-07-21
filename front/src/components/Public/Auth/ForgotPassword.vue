@@ -8,7 +8,7 @@
             <v-text-field label="E-mail" v-model="form.email" required :rules="emailRules"></v-text-field>
           </v-flex>
           <v-flex 12>
-            <v-layout justify-space-between>
+            <v-layout row wrap justify-space-between>
               <v-btn large :disabled="!form.valid" color="primary" @click="onSubmit" ><fai icon="paper-plane" class="mr-2" />  E-mail me</v-btn>
               <v-btn left flat large to="/"><fai icon="home" size="2x" /></v-btn>
             </v-layout>

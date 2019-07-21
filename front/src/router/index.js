@@ -16,13 +16,15 @@ const router = new Router({
         main: () => import('../components/LayoutGuest.vue')
       },
       children: [
-        { path: 'home', name: 'Home2', components: { routerguest: () => import('../views/Home.vue') } },
+        { path: 'home', name: 'Home2', components: { routerguest: () => import('../components/Public/Home.vue') } },
         { path: 'about', name: 'about', components: { routerguest: () => import('../components/Public/About.vue') } },
         { path: 'articles', name: 'Articles', components: { routerguest: () => import('../components/Public/Article/Index.vue') } },
         { path: 'article/:id', name: 'Article', components: { routerguest: () => import('../components/Public/Article/Item.vue') } },
         { path: 'product/:id', props: true, name: 'Product', components: { routerguest: () => import('../components/Public/Product.vue') } },
-        { path: 'login', name: 'LogIn', components: { routerguest: () => import('../views/Auth/LogIn.vue') } },
-        { path: 'contacts', name: 'Contacts', components: { routerguest: () => import('../components/Public/Contacts.vue') } }
+        { path: 'contacts', name: 'Contacts', components: { routerguest: () => import('../components/Public/Contacts.vue') } },
+        { path: 'login', name: 'LogIn', components: { routerguest: () => import('../components/Public/Auth/LogIn.vue') } },
+        { path: 'register', name: 'Register', components: { routerguest: () => import('../components/Public/Auth/Register.vue') } },
+        { path: '/forgot', name: 'ForgotPassword', components: { routerguest: () => import('../components/Public/Auth/ForgotPassword.vue') } }
       ]
     },
     {
@@ -41,8 +43,6 @@ const router = new Router({
         // { path: 'roles', name: 'Roles', beforeEnter: authGuard, component: () => import('../views/Private/Role.vue') }
       ]
     }
-    // { path: '/forgot', name: 'ForgotPassword', component: () => import('../views/Auth/ForgotPassword.vue') },
-    // { path: '/register', name: 'Register', component: () => import('../views/Auth/Register.vue') },
     // { path: '/notify', name: 'Notify', component: () => import('../views/Shared/Notify') },
 
     // // { path: '/resetpassword', name: 'ResetPassword', component: () => import('../views/Auth/ResetPassword.vue') },

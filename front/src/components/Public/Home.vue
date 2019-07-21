@@ -29,8 +29,9 @@
         <v-carousel-item class="h100"
           v-for="(item,i) in items"
           :key="i"
-          :src="item.src"
-        ></v-carousel-item>
+        >
+          <v-img height="100%" :src="item.src" :lazy-src="item.lazy"></v-img>
+        </v-carousel-item>
       </v-carousel>
           <!-- <img src="../../static/img/SoqSO8UTTrSk5G9R3G7o_Revamped Background.png"  style="height: 100%"  alt="" > -->
         </v-flex>
@@ -78,7 +79,7 @@
             <v-card class="product elevation-12" :color="randColor(index)">
               <v-img
                 aspect-ratio="2.75"
-                :src="require('../../static/img/' + product.photo)"
+                :src="require('../../../static/img/' + product.photo)"
                 height="400"
               ></v-img>
 
@@ -237,7 +238,7 @@
                 </p>
               </v-flex>
               <v-flex xs12 sm12 md8 style="z-index: 3" class="pa-3">
-                <v-img style="border-radius: 15px" :src="require('../../static/img/key_004_10.jpg')" max-height="580" max-width="740" class="elevation-20"></v-img>
+                <v-img style="border-radius: 15px" :src="require('../../../static/img/key_004_10.jpg')" max-height="580" max-width="740" class="elevation-20"></v-img>
               </v-flex>
             </v-layout>
           </v-flex>
@@ -246,7 +247,7 @@
     </v-flex>
     <v-flex class="text-xs-center">
       <div class="wrapper-end-img">
-        <img style="" :src="require('../../static/img/decor.png')" alt="">
+        <img style="" :src="require('../../../static/img/decor.png')" alt="">
       </div>
     </v-flex>
   </v-layout>
@@ -267,19 +268,23 @@ export default {
   },
   data () {
     return {
-      'img': require('../../static/img/yoga-hd-wallpaper_024616754_279.jpg'),
+      'img': require('../../../static/img/yoga-hd-wallpaper_024616754_279.jpg'),
       items: [
         {
-          src: require('../../static/img/key_001_10.jpg')
+          src: require('../../../static/img/key_001_10.jpg'),
+          lazy: require('../../../static/img/key_001_10_lazy.jpg')
         },
         {
-          src: require('../../static/img/key_002_10.jpg')
+          src: require('../../../static/img/key_002_10.jpg'),
+          lazy: require('../../../static/img/key_001_10_lazy.jpg')
         },
         {
-          src: require('../../static/img/key_003_10.jpg')
+          src: require('../../../static/img/key_003_10.jpg'),
+          lazy: require('../../../static/img/key_001_10_lazy.jpg')
         },
         {
-          src: require('../../static/img/key_004_10.jpg')
+          src: require('../../../static/img/key_004_10.jpg'),
+          lazy: require('../../../static/img/key_001_10_lazy.jpg')
         }
       ],
       feedbacks: [
@@ -287,35 +292,35 @@ export default {
           id: 1,
           fio: 'Milena McKenzie',
           text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
-          img: require('../../static/img/fitness.jpg'),
+          img: require('../../../static/img/fitness.jpg'),
           color: 'light-green lighten-4'
         },
         {
           id: 2,
           fio: 'Milena McKenzie',
           text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?',
-          img: require('../../static/img/fitness.jpg'),
+          img: require('../../../static/img/fitness.jpg'),
           color: 'teal lighten-4'
         },
         {
           id: 3,
           fio: 'Milena McKenzie',
           text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?',
-          img: require('../../static/img/fitness.jpg'),
+          img: require('../../../static/img/fitness.jpg'),
           color: 'light-green lighten-4'
         },
         {
           id: 4,
           fio: 'Milena McKenzie',
           text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
-          img: require('../../static/img/fitness.jpg'),
+          img: require('../../../static/img/fitness.jpg'),
           color: 'teal lighten-4'
         },
         {
           id: 5,
           fio: 'Milena McKenzie',
           text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit.',
-          img: require('../../static/img/fitness.jpg'),
+          img: require('../../../static/img/fitness.jpg'),
           color: 'light-green lighten-4'
         }
       ]

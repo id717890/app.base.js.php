@@ -1,9 +1,7 @@
 <template>
   <v-app id="inspire">
     <v-toolbar
-      app
       class="teal darken-2" ref="menu"
-      fixed
       dark
       clipped-right
     >
@@ -133,8 +131,7 @@
         <router-view name="routerguest"></router-view>
       </v-container>
     </v-content>
-    <div></div>
-    <v-footer class="white--text footer1 mt-5" app height="auto" min-height="auto">
+    <div class="white--text footer1">
       <v-layout row wrap justify-center fill-height>
         <v-flex xs8>
           <v-layout row wrap justify-center>
@@ -156,7 +153,9 @@
           </v-layout>
         </v-flex>
       </v-layout>
-    </v-footer>
+    </div>
+    <!-- <v-footer class="white--text footer1 mt-5" app height="auto" min-height="auto">
+    </v-footer> -->
   </v-app>
 </template>
 
@@ -166,9 +165,6 @@ import { mapState } from 'vuex'
 export default {
   mixins: [authMixin],
   name: 'App',
-  components: {
-    // HelloWorld
-  },
   computed: {
     ...mapState({
       products: state => state.product.products
