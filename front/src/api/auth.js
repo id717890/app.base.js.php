@@ -2,6 +2,13 @@ import Vue from 'vue'
 import config from '../init/config'
 import { users } from './data'
 export default {
+  confirmation: (code) => {
+    return Vue.$http.get('api/verifyUser/' + code).then((x) => {
+      return x
+    }).catch(error => {
+      return error
+    })
+  },
   checkAdmin: () => {
     return Vue.$http.post('api/auth/checkadmin').then((x) => {
       return x

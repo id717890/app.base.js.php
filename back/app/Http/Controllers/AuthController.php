@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Input;
 use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Validator, DB, Hash, Mail, Illuminate\Support\Facades\Password;
 use Auth;
+
 
 class AuthController extends Controller
 {
@@ -32,8 +34,18 @@ class AuthController extends Controller
         $name = $request->name;
         $email = $request->email;
         $password = $request->password;
-        User::create(['name' => $name, 'email' => $email, 'password' => Hash::make($password)]);
-        return $this->login($request);
+        $user = User::create(['name' => $name, 'email' => $email, 'password' => Hash::make($password)]);
+        $verification_code = str_random(30); //Generate verification code
+        DB::table('user_verifications')->insert(['user_id'=>$user->id,'token'=>$verification_code]);
+        $subject = "Пожалуйста подтвердите Ваш электронный адрес";
+        Mail::send('email.verify', ['name' => $name, 'verification_code' => $verification_code],
+            function($mail) use ($email, $name, $subject){
+                $mail->from(getenv('FROM_EMAIL_ADDRESS'), getenv('FROM_SEO'));
+                $mail->to($email);
+                $mail->subject($subject);
+            });
+        return response()->json(['success'=> true, 'message'=> 'Thanks for signing up! Please check your email to complete your registration.']);
+//        return $this->login($request);
     }
 
     /**
@@ -44,6 +56,7 @@ class AuthController extends Controller
      */
     public function login(Request $request)
     {
+
         $credentials = $request->only('email', 'password');
         $rules = [
             'email' => 'required|email',
@@ -53,6 +66,12 @@ class AuthController extends Controller
         if($validator->fails()) {
             return response()->json(['success'=> false, 'error'=> $validator->messages()]);
         }
+
+        $user = User::where('email', Input::get('email'))->first();
+        if ($user !== null && $user->is_verified === 0) {
+            return response()->json(['success' => false, 'error' => ['code'=> 401, 'message'=>'Ваша учетная запись не подтверждена' ]], 401);
+        }
+
         try {
             // attempt to verify the credentials and create a token for the user
             if (!$token = JWTAuth::attempt($credentials)) {
@@ -111,5 +130,28 @@ class AuthController extends Controller
         return response()->json([
             'success' => true, 'data'=> ['message'=> 'A reset email has been sent! Please check your email.']
         ]);
+    }
+
+    public function verifyUser($verification_code)
+    {
+        $check = DB::table('user_verifications')->where('token',$verification_code)->first();
+        if(!is_null($check)){
+            $user = User::find($check->user_id);
+            if($user->is_verified == 1){
+                return response()->json([
+                    'success'=> true,
+                    'message'=> 'Account already verified..'
+                ]);
+            }
+            $user->is_verified = 1;
+            $user->save();
+//            $user->update(['is_verified' => 1]);
+            DB::table('user_verifications')->where('token',$verification_code)->delete();
+            return response()->json([
+                'success'=> true,
+                'message'=> 'You have successfully verified your email address.'
+            ]);
+        }
+        return response()->json(['success'=> false, 'error'=> ['code'=>1, 'message'=> 'Verification code is invalid.']]);
     }
 }

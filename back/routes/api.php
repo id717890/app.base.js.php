@@ -18,6 +18,7 @@
 Route::get('product', 'ProductController@index');
 Route::get('product/{id}', 'ProductController@index');
 Route::post('register', 'AuthController@register');
+Route::get('verifyUser/{verification_code}', 'AuthController@verifyUser');
 Route::post('auth/Login', 'AuthController@login');
 Route::post('recover', 'AuthController@recover');
 Route::get('news', 'NewsController@index');

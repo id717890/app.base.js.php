@@ -1,5 +1,5 @@
 <template>
-  <v-layout justify-center align-center>
+  <v-layout justify-center align-center py-5>
     <v-flex xs12 md-6 lg4>
       <app-notify/>
       <v-form lazy-validation v-model="form.valid" ref="form">

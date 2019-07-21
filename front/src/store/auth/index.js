@@ -24,6 +24,21 @@ const getters = {
 
 // actions
 const actions = {
+  async confirmation ({ dispatch }, payload) {
+    return new Promise((resolve, reject) => {
+      context.confirmation(payload).then((x) => {
+        if (x.status === 200 && x.data.success === true) {
+          dispatch('setMessages', 'Учетная запись успешно подтверждена, теперь вы можете авторизоваться.')
+          resolve()
+        } else {
+          reject(x)
+        }
+      }).catch(x => {
+        dispatch('setErrors', 'Ошибка при верификации')
+        reject(x)
+      })
+    })
+  },
   async resetPasswordVerifyToken ({ dispatch }, payload) {
     return new Promise((resolve, reject) => {
       context.resetPasswordVerifyToken(payload.userId, payload.code, payload.password, payload.passwordConfirm).then((x) => {
