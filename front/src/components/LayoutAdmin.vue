@@ -9,6 +9,9 @@
       <v-toolbar-side-icon @click.stop="drawer = !drawer">
         <fai icon="align-justify"></fai>
       </v-toolbar-side-icon>
+      <v-toolbar-title class="white--text">
+        <img style="max-height: 40px" :src="require('../../static/img/logo/1.png')" alt="Evgenia Kabanova movement coach">
+      </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
         <v-btn flat @click="Logoff" class="mr-2" v-if="isAuth"><fai icon="sign-out-alt" size="2x" class="mr-1"/></v-btn>
@@ -25,7 +28,7 @@
       <v-list>
         <v-list-tile>
           <v-list-tile-title class="title">
-            Evgenia Kabanova App
+            <i class="fa fa-info ml-4"></i> Личный кабинет
           </v-list-tile-title>
         </v-list-tile>
       </v-list>

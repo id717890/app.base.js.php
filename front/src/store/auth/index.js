@@ -5,7 +5,8 @@ import router from '../../router'
 
 const state = {
   user: null,
-  token: null
+  token: null,
+  role: null
 }
 
 // getters
@@ -76,10 +77,13 @@ const actions = {
           let token = x.data.access_token
           let expiration = x.data.expires_in
           let user = x.data.id
+          let role = x.data.role
           commit(types.SET_USER, user)
           commit(types.SET_TOKEN, token)
+          commit(types.SET_ROLE, role)
           Vue.auth.setToken(token, expiration * 1000 + Date.now())
           Vue.auth.setUser(user)
+          Vue.auth.setRole(role)
           resolve()
         } else {
           dispatch('setErrors', x.response.data)
@@ -89,7 +93,6 @@ const actions = {
         dispatch('setErrors', x.response)
         reject(x.response)
       })
-      // }
     })
   },
   async signUserUp ({ dispatch }, payload) {
@@ -109,6 +112,7 @@ const actions = {
     Vue.auth.logout()
     commit(types.SET_USER, null)
     commit(types.SET_TOKEN, null)
+    commit(types.SET_ROLE, null)
   },
   async autoSignIn ({ commit, dispatch }) {
     let credential = Vue.auth.getCredentials()
@@ -134,6 +138,9 @@ const mutations = {
   },
   [types.SET_TOKEN] (state, payload) {
     state.token = payload
+  },
+  [types.SET_ROLE] (state, payload) {
+    state.role = payload
   },
   [types.SIGN_UP] (state, payload) {
   }

@@ -133,9 +133,9 @@
     </v-content>
     <div class="white--text footer1">
       <v-layout row wrap justify-center fill-height>
-        <v-flex xs8>
+        <v-flex xs12>
           <v-layout row wrap justify-center>
-            <v-flex xs12 class="text-xs-center pa-1" style="vertical-align:middle !important">
+            <v-flex xs12 class="text-xs-center pa-1 hidden-sm-and-down" style="vertical-align:middle !important">
               <v-layout row wrap align-center justify-center>
                 <i class="fab fa-instagram fa-3x mx-2"></i>
                 <i class="fab fa-facebook fa-3x mx-2"></i>
@@ -144,11 +144,26 @@
                 <i class="fab fa-google-plus fa-3x mx-2"></i>
               </v-layout>
             </v-flex>
+            <v-flex xs12 class="text-xs-center pa-1 hidden-md-and-up" style="vertical-align:middle !important">
+              <v-layout row wrap align-center justify-center>
+                <i class="fab fa-instagram fa-2x mx-2"></i>
+                <i class="fab fa-facebook fa-2x mx-2"></i>
+                <i><img style="max-height: 40px" :src="require('../../static/img/yoga3-footer-logo.png')" alt=""></i>
+                <i class="fab fa-vk fa-2x mx-2"></i>
+                <i class="fab fa-google-plus fa-2x mx-2"></i>
+              </v-layout>
+            </v-flex>
           </v-layout>
         </v-flex>
-        <v-flex xs8 class="text-xs-center">
+        <v-flex xs12 class="text-xs-center hidden-sm-and-down">
           <v-layout row nowrap justify-center align-center>
             <div class=" pt-3 pb-3" style="border-top: 2px solid rgba(255,255,255, 0.1)">&copy;2019 — <strong>All Rights Reserved. EvgeniaKabanova.com</strong></div>
+            <v-btn small flat dark fab @click="scrollToTop"><i class="fa fa-chevron-up"></i></v-btn>
+          </v-layout>
+        </v-flex>
+        <v-flex xs12 class="text-xs-center hidden-md-and-up">
+          <v-layout row nowrap justify-center align-center>
+            <div class=" pt-0 pb-0" style="border-top: 2px solid rgba(255,255,255, 0.1)">&copy;2019 — <strong>All Rights Reserved. EvgeniaKabanova.com</strong></div>
             <v-btn small flat dark fab @click="scrollToTop"><i class="fa fa-chevron-up"></i></v-btn>
           </v-layout>
         </v-flex>

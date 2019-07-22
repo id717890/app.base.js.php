@@ -202,7 +202,10 @@
     </v-flex>
     <v-flex xs12 class="bg1 pa-1">
       <v-layout row wrap justify-center>
-        <v-card max-width="330" :color="item.color" class="mr-3 mb-5 elevation-5 product feedback" v-for="item in feedbacks" :key="item.id">
+        <feedbacks4/>
+        <feedbacks3/>
+        <!-- <feedbacks4 class="hidden-md-and-down"/> -->
+        <!-- <v-card max-width="330" :color="item.color" class="mr-3 mb-5 elevation-5 product feedback" v-for="item in feedbacks" :key="item.id">
           <v-card-title>
             <v-list-tile>
               <v-list-tile-avatar class="avatar1">
@@ -218,7 +221,7 @@
           <v-card-actions class="px-5">
             <p style="color: #d19c1d; font-size: 0.7rem"><i class="fa fa-user"></i> {{item.fio}}</p>
           </v-card-actions>
-        </v-card>
+        </v-card> -->
       </v-layout>
     </v-flex>
     <!-- <v-flex xs12 class="bg1" style="height: 500px">
@@ -241,15 +244,16 @@
       <div class="end-block">
         <v-layout row wrap style="z-index: 2">
           <v-flex xs12 sm12 md10 offset-md1 py-5>
-            <v-layout row wrap style="z-index: 2">
-              <v-flex xs12 sm12 md4 style="z-index: 3" class="text-xs-right pr-5">
-                <h2 class="h2-s1">
+            <v-layout row wrap style="z-index: 2" align-center>
+              <v-flex xs12 sm12 md4 style="z-index: 3" class="text-justify px-4">
+                <!-- <h2 class="h2-s1">
                   Free happy <br> hours for <br> new people
-                </h2>
+                </h2> -->
                 <br>
-                <p>
-                  Curabitur sed iaculis dolor, non congue ligula. Maecenas imperdiet ante eget hendrerit posuere. Nunc urna libero, congue porta nibh a, semper feugiat sem.
-                </p>
+                <p class="text-xs-center text-sm-center text-md-center text-lg-center text-xl-center">Друзья, всем привет!</p>
+                <p>Рада видеть вас на моем сайте! Здесь я буду делиться с вами своим опытом в сфере спорта и фитнеса, чтобы помочь вам стать лучшей версией себя!</p>
+                <p>Надеюсь, что буду вам полезна, и буду очень рада вашим достижениям и успехам!</p>
+                <p>Я всегда открыта к диалогу, поэтому, если у вас возникнут вопросы, или вы захотите поделиться со мной своими эмоциями, пишите мне, мои контактные данные указаны в разделе «контакты»!</p>
               </v-flex>
               <v-flex xs12 sm12 md8 style="z-index: 3" class="pa-3">
                 <v-img style="border-radius: 15px" :src="require('../../../static/img/key_004_10.jpg')" max-height="580" max-width="740" class="elevation-20"></v-img>
@@ -269,11 +273,13 @@
 </template>
 
 <script>
-// import HelloWorld from '../components/HelloWorld'
+import Feedbacks4 from './Feedback4'
+import Feedbacks3 from './Feedback3'
 import { mapState } from 'vuex'
 export default {
   components: {
-    // HelloWorld
+    Feedbacks4,
+    Feedbacks3
   },
   computed: {
     ...mapState({
@@ -322,18 +328,18 @@ export default {
         },
         {
           src: require('../../../static/img/key_002_10.jpg'),
-          lazy: require('../../../static/img/key_001_10_lazy.jpg')
+          lazy: require('../../../static/img/key_002_10_lazy.jpg')
         },
         {
           src: require('../../../static/img/key_003_10.jpg'),
-          lazy: require('../../../static/img/key_001_10_lazy.jpg')
+          lazy: require('../../../static/img/key_003_10_lazy.jpg')
         },
         {
           src: require('../../../static/img/key_004_10.jpg'),
-          lazy: require('../../../static/img/key_001_10_lazy.jpg')
+          lazy: require('../../../static/img/key_004_10_lazy.jpg')
         }
       ],
-      feedbacks: [
+      feedbacksAll: [
         {
           id: 1,
           fio: 'Milena McKenzie',

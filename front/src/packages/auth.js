@@ -51,6 +51,9 @@ export default function (Vue) {
     setUser (user) {
       localStorage.setItem('id', user)
     },
+    setRole (role) {
+      localStorage.setItem('role', role)
+    },
     logout () {
       localStorage.removeItem('token')
       localStorage.removeItem('expiration')
