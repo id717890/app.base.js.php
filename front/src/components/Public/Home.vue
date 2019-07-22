@@ -2,21 +2,25 @@
   <v-layout column class="bg1">
     <v-flex xs12>
       <v-layout row wrap fill-height class="bg1">
-        <v-flex xs12 md5 align-self-center pl-5 class="h1-left-block pa-1">
-          <section class="hidden-sm-and-down">
+        <v-flex xs12 md5 align-self-center px-4 class="h1-left-block pa-1">
+          <!-- <section class="hidden-sm-and-down">
             <h1 class="h1-s1">Время </h1>
             <h1 class="h1-s1 ml-5">заняться</h1>
             <h1 class="h1-s1 ml-5 pl-5">собой.</h1>
           </section>
           <section class="hidden-md-and-up">
             <h1 class="h1-s1">Время <br> заняться <br> собой. </h1>
+          </section> -->
+          <section>
+            <img class="logo-home" :src="require('../../../static/img/logo/1.png')" alt="Evgenia Kabanova movement coach">
           </section>
-          <p style="background: transparent">
-            Друзья, добро пожаловать на сайт Евгении Кабановой, мастера спорта международного класса, чемпионки мира по спортивной акробатике.
+          <p class="logo-text">
+            Друзья, добро пожаловать на сайт <strong class="strong2">Евгении Кабановой</strong>, мастера спорта международного класса, чемпионки мира по спортивной акробатике.
           </p>
-          <p>
-            Здесь вы найдете полезную информацию о тренировках, сможете пройти бесплатный челлендж, а также купить новую уникальную фитнес-программу «ДВИЖЕНИЕ» с элементами FLOW! Эта программа не только изменит ваш подход к тренировкам, но и изменит вашу жизнь! Старт программы 1 октября 2019!
+          <p class="logo-text">
+            Здесь вы найдете полезную информацию о тренировках, сможете пройти бесплатный челлендж, а также купить новую уникальную фитнес-программу <strong class="strong2">«ДВИЖЕНИЕ»</strong> с элементами FLOW! Эта программа не только изменит ваш подход к тренировкам, но и изменит вашу жизнь!
           </p>
+          <p class="strong2 text-xs-center" style="color:#DD2C00; font-size: 1.4rem">Старт программы 1 октября 2019!</p>
         </v-flex>
         <v-flex xs12 md7 style="height: 100vh; overflow: hidden">
           <v-carousel
@@ -309,7 +313,7 @@ export default {
           id: 6,
           img: require('../../../static/img/partners/ZamirYusupov.jpg'),
           txt: 'Программист Замир Юсупов'
-        },
+        }
       ],
       items: [
         {

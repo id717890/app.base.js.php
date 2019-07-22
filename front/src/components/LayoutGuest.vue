@@ -9,7 +9,7 @@
         <fai icon="align-justify"></fai>
       </v-toolbar-side-icon>
       <v-toolbar-title class="white--text">
-        <img style="max-height: 40px" :src="require('../../static/img/yoga3-footer-logo.png')" alt="">
+        <img style="max-height: 40px" :src="require('../../static/img/logo/1.png')" alt="Evgenia Kabanova movement coach">
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
