@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-layout>
+    <v-layout py-5>
       <v-flex xs12 md-6 offset-md2 lg4 offset-lg4>
         <app-notify/>
         <v-form lazy-validation v-model="form.valid" ref="form">

@@ -40,11 +40,21 @@
     <v-flex class="grey lighten-1">
       <v-layout class="bg1" row wrap>
         <v-flex xs12>
-          <h2 class="h2-s1 text-xs-center pt-2 mt-5 mb-3">Why it's important <br> to exercise</h2>
+          <h2 class="h2-s1 text-xs-center pt-2 mt-5 mb-3"><i class="far fa-handshake"></i> Партнеры </h2>
         </v-flex>
         <v-flex xs12 md8 offset-md2 mb-5 style="color: #d19c1d">
-          <v-layout row wrap >
-            <v-flex xs12 md6 lg4 style="display:flex;" pr-3 mb-3 align-center>
+          <v-layout row wrap justify-center>
+            <v-flex xs12 md6 lg4 v-for="partner in partners" :key="partner.id" class="text-xs-center pa-3">
+              <div class="partner-wrapper">
+                <div class="partner border grow-and-rotate">
+                  <a href="https://www.utmn.ru/ifk/" target="_blank">
+                    <v-img  width="100%" class="" height="100%" :src="partner.img"></v-img>
+                  </a>
+                </div>
+                <p>{{partner.txt}}</p>
+              </div>
+            </v-flex>
+            <!-- <v-flex xs12 md6 lg4 style="display:flex;" pr-3 mb-3 align-center>
               <i class="fa fa-star fa-3x mr-3"></i>
               <span>Lorem ipsum dolor sit amet</span>
             </v-flex>
@@ -67,7 +77,7 @@
             <v-flex xs12 md6 lg4 style="display:flex;" pr-3 mb-3 align-center>
               <i class="fa fa-american-sign-language-interpreting fa-3x mr-3"></i>
               <span>Quanta es omnia des</span>
-            </v-flex>
+            </v-flex> -->
           </v-layout>
         </v-flex>
       </v-layout>
@@ -269,6 +279,38 @@ export default {
   data () {
     return {
       'img': require('../../../static/img/yoga-hd-wallpaper_024616754_279.jpg'),
+      partners: [
+        {
+          id: 1,
+          img: require('../../../static/img/partners/ifk.jpg'),
+          txt: 'Институт физической культуры ТюмГУ'
+        },
+        {
+          id: 2,
+          img: require('../../../static/img/partners/VladimirChebaldin.jpg'),
+          txt: 'Фотограф Владимир Чебалдин'
+        },
+        {
+          id: 3,
+          img: require('../../../static/img/partners/VladimirOgnev.jpg'),
+          txt: 'Видеограф Владимир Огнев'
+        },
+        {
+          id: 4,
+          img: require('../../../static/img/partners/DanilaProhorenko.jpg'),
+          txt: 'Видеограф Данила Прохоренко'
+        },
+        {
+          id: 5,
+          img: require('../../../static/img/partners/AnastasiaBadarina.jpg'),
+          txt: 'Дизайнер Анастасия Бударина'
+        },
+        {
+          id: 6,
+          img: require('../../../static/img/partners/ZamirYusupov.jpg'),
+          txt: 'Программист Замир Юсупов'
+        },
+      ],
       items: [
         {
           src: require('../../../static/img/key_001_10.jpg'),

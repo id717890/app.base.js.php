@@ -1,7 +1,7 @@
 <template>
   <v-app id="inspire">
     <v-toolbar
-      class="teal darken-2" ref="menu"
+      class="blue darken-2" ref="menu"
       dark
       clipped-right
     >

@@ -1,0 +1,37 @@
+.border
+        {
+            
+            // margin:121px 149px;
+            
+            // width:483px;
+            // height:298px;
+            
+            // background:#676470;
+            // color:#fff;
+            
+            // font-family:Lato;
+            // font-weight:900;
+            // font-size:3.4em;
+            
+            // text-align:center;
+            // line-height:298px;
+            
+            transition:all 0.3s ease;
+            
+        }
+
+.border:hover {
+  box-shadow: inset 0 0 0 0 #c3d3e0,  0 0 0 10px #c3d3e0 !important;
+}
+
+.rotate:hover {
+  -webkit-transform: rotateZ(15deg);
+  -ms-transform: rotateZ(15deg);
+  transform: rotateZ(15deg);
+}
+
+.grow-and-rotate:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1) rotateZ(15deg);
+}
