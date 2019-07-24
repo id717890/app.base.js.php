@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\UserProduct;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Auth;
 
 class ProductController extends Controller
 {
@@ -25,6 +27,12 @@ class ProductController extends Controller
 
     public function get()
     {
-        return response()->json(Product::getFree());
+        $free = Product::getFree();
+        $products = UserProduct::getUserProducts(Auth::user()->id);
+        dd($products);
+        dd($free->merge($products));
+        dd($free->merge($products));
+        array_merge($products, Product::getFree()->toArray());
+        return response()->json(UserProduct::getUserProducts(Auth::user()->id));
     }
 }

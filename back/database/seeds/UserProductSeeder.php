@@ -21,5 +21,14 @@ class UserProductSeeder extends Seeder
             'created_at' => DB::raw('CURRENT_TIMESTAMP'),
             'updated_at' => DB::raw('CURRENT_TIMESTAMP')
         ]);
+
+        DB::table('user_products')->insert([
+            'id' => 2,
+            'user_id' => 1,
+            'product_id' => 1,
+            'price' => 300,
+            'created_at' => DB::raw('CURRENT_TIMESTAMP'),
+            'updated_at' => DB::raw('CURRENT_TIMESTAMP')
+        ]);
     }
 }
