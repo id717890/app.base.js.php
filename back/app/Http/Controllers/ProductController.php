@@ -22,4 +22,9 @@ class ProductController extends Controller
             return response()->json(200);
         } else return response()->json('ID Not found', 404);
     }
+
+    public function get()
+    {
+        return response()->json(Product::getFree());
+    }
 }

@@ -23,8 +23,10 @@
 
 <script>
 import { mapActions } from 'vuex'
+import authMixins from '../../../mixins/auth'
 
 export default {
+  mixins: [authMixins],
   data () {
     return {
       form: {
@@ -54,7 +56,14 @@ export default {
       e.preventDefault()
       if (this.$refs.form.validate()) {
         this.signUserIn(this.form)
-          .then(() => this.$router.push('/dashboard'))
+          .then(() => {
+            console.log(this.isAdmin)
+            if (this.isAdmin === true) {
+              this.$router.push('/dashboard')
+            } else {
+              this.$router.push('/lk')
+            }
+          })
           .catch(() => {
             // todo show errors from vuex state
           })

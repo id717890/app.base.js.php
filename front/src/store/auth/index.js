@@ -20,7 +20,8 @@ const getters = {
   getLoading (state) {
     return state.loading
   },
-  isAuth: state => state.user != null && state.token != null
+  isAuth: state => state.user != null && state.token != null,
+  isAdmin: state => state.role !== null && state.role === 'admin'
 }
 
 // actions

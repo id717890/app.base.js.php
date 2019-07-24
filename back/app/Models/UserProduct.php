@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class UserProduct extends Model
 {
     use Relation\HasMany\Day;
 

@@ -36,7 +36,8 @@
         </v-menu>
       </section>
       <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn flat to="/dashboard" v-if="isAuth"><i class="mr-1 fa fa-info"></i>ЛК</v-btn>
+        <v-btn flat to="/dashboard" v-if="isAuth && isAdmin"><i class="mr-1 fa fa-sun"></i>ЛК</v-btn>
+        <v-btn flat to="/lk" v-if="isAuth && !isAdmin"><i class="mr-1 fa fa-sun"></i>ЛК</v-btn>
       </v-toolbar-items>
       <v-toolbar-items class="hidden-sm-and-down">
         <template v-if="!isAuth">

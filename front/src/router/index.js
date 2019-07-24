@@ -43,6 +43,15 @@ const router = new Router({
         // { path: 'user/edit/:id', name: 'EditUser', beforeEnter: authGuard, component: () => import('../views/Private/User/Edit.vue') },
         // { path: 'roles', name: 'Roles', beforeEnter: authGuard, component: () => import('../views/Private/Role.vue') }
       ]
+    },
+    {
+      path: '/lk',
+      name: 'LkHome',
+      beforeEnter: authGuard,
+      components: { main: () => import('../components/LayoutUser.vue') },
+      children: [
+        { path: 'products', name: 'ProductsUser', beforeEnter: authGuard, components: { routeruser: () => import('../components/Private/User/Products.vue') } }
+      ]
     }
     // { path: '/notify', name: 'Notify', component: () => import('../views/Shared/Notify') },
 
