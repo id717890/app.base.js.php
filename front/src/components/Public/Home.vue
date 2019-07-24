@@ -15,10 +15,10 @@
             <img class="logo-home" :src="require('../../../static/img/logo/1.png')" alt="Evgenia Kabanova movement coach">
           </section>
           <p class="logo-text">
-            Друзья, добро пожаловать на сайт <strong class="strong2">Евгении Кабановой</strong>, мастера спорта международного класса, чемпионки мира по спортивной акробатике.
+            Друзья, добро пожаловать на сайт Евгении Кабановой, мастера спорта международного класса, чемпионки мира по спортивной акробатике.
           </p>
           <p class="logo-text">
-            Здесь вы найдете полезную информацию о тренировках, сможете пройти бесплатный челлендж, а также купить новую уникальную фитнес-программу <strong class="strong2">«ДВИЖЕНИЕ»</strong> с элементами FLOW! Эта программа не только изменит ваш подход к тренировкам, но и изменит вашу жизнь!
+            Здесь вы найдете полезную информацию о тренировках, сможете пройти бесплатный челлендж, <strong class="strong2">а также купить новую уникальную фитнес-программу «ДВИЖЕНИЕ» с элементами FLOW!</strong> Эта программа не только изменит ваш подход к тренировкам, но и изменит вашу жизнь!
           </p>
           <p class="strong2 text-xs-center" style="color:#DD2C00; font-size: 1.4rem">Старт программы 1 октября 2019!</p>
         </v-flex>
@@ -34,7 +34,8 @@
           v-for="(item,i) in items"
           :key="i"
         >
-          <v-img height="100%" :src="item.src" :lazy-src="item.lazy"></v-img>
+          <v-img height="100%" :src="item.src" :lazy-src="item.lazy" class="hidden-sm-and-down"></v-img>
+          <v-img height="100%" :src="item.src" :lazy-src="item.lazy" contain class="hidden-md-and-up"></v-img>
         </v-carousel-item>
       </v-carousel>
           <!-- <img src="../../static/img/SoqSO8UTTrSk5G9R3G7o_Revamped Background.png"  style="height: 100%"  alt="" > -->
@@ -44,14 +45,14 @@
     <v-flex class="grey lighten-1">
       <v-layout class="bg1" row wrap>
         <v-flex xs12>
-          <h2 class="h2-s1 text-xs-center pt-2 mt-5 mb-3"><i class="far fa-handshake"></i> Партнеры </h2>
+          <h2 class="h2-s1 text-xs-center pt-2 mt-5 mb-3"><i class="far fa-handshake"></i> Партнеры фитнес-программы <br>"ДВИЖЕНИЕ"</h2>
         </v-flex>
         <v-flex xs12 md8 offset-md2 mb-5 style="color: #d19c1d">
           <v-layout row wrap justify-center>
             <v-flex xs12 md6 lg4 v-for="partner in partners" :key="partner.id" class="text-xs-center pa-3">
               <div class="partner-wrapper">
                 <div class="partner border grow-and-rotate">
-                  <a href="https://www.utmn.ru/ifk/" target="_blank">
+                  <a :href="partner.url" target="_blank">
                     <v-img  width="100%" class="" height="100%" :src="partner.img"></v-img>
                   </a>
                 </div>
@@ -198,12 +199,14 @@
       </v-layout>
     </v-flex> -->
     <v-flex xs12 class="text-xs-center bg1 my-4">
-      <h2 class="h2-s1">Отзывы о нас <i class="fa fa-comment"></i> </h2>
+      <h2 class="h2-s1">Отзывы <i class="fa fa-comment"></i> </h2>
     </v-flex>
     <v-flex xs12 class="bg1 pa-1">
       <v-layout row wrap justify-center>
         <feedbacks4/>
         <feedbacks3/>
+        <feedbacks2/>
+        <feedbacks1/>
         <!-- <feedbacks4 class="hidden-md-and-down"/> -->
         <!-- <v-card max-width="330" :color="item.color" class="mr-3 mb-5 elevation-5 product feedback" v-for="item in feedbacks" :key="item.id">
           <v-card-title>
@@ -255,8 +258,8 @@
                 <p>Надеюсь, что буду вам полезна, и буду очень рада вашим достижениям и успехам!</p>
                 <p>Я всегда открыта к диалогу, поэтому, если у вас возникнут вопросы, или вы захотите поделиться со мной своими эмоциями, пишите мне, мои контактные данные указаны в разделе «контакты»!</p>
               </v-flex>
-              <v-flex xs12 sm12 md8 style="z-index: 3" class="pa-3">
-                <v-img style="border-radius: 15px" :src="require('../../../static/img/key_004_10.jpg')" max-height="580" max-width="740" class="elevation-20"></v-img>
+              <v-flex xs12 sm12 md8 style="z-index: 3" class="pa-3 text-xs-center">
+                <v-img style="border-radius: 15px; margin:auto" :src="require('../../../static/img/KEY.jpg')" :lazy-src="require('../../../static/img/KEY_lazy.jpg')" max-width="510" class="elevation-20"></v-img>
               </v-flex>
             </v-layout>
           </v-flex>
@@ -275,11 +278,15 @@
 <script>
 import Feedbacks4 from './Feedback4'
 import Feedbacks3 from './Feedback3'
+import Feedbacks2 from './Feedback2'
+import Feedbacks1 from './Feedback1'
 import { mapState } from 'vuex'
 export default {
   components: {
     Feedbacks4,
-    Feedbacks3
+    Feedbacks3,
+    Feedbacks2,
+    Feedbacks1
   },
   computed: {
     ...mapState({
@@ -288,92 +295,60 @@ export default {
   },
   data () {
     return {
-      'img': require('../../../static/img/yoga-hd-wallpaper_024616754_279.jpg'),
       partners: [
-        {
-          id: 1,
-          img: require('../../../static/img/partners/ifk.jpg'),
-          txt: 'Институт физической культуры ТюмГУ'
-        },
         {
           id: 2,
           img: require('../../../static/img/partners/VladimirChebaldin.jpg'),
-          txt: 'Фотограф Владимир Чебалдин'
+          txt: 'Фотограф Владимир Чебалдин',
+          url: 'https://www.instagram.com/v4photo/?hl=ru'
         },
         {
-          id: 3,
-          img: require('../../../static/img/partners/VladimirOgnev.jpg'),
-          txt: 'Видеограф Владимир Огнев'
+          id: 1,
+          img: require('../../../static/img/partners/ifk.jpg'),
+          txt: 'Институт физической культуры ТюмГУ',
+          url: 'https://www.utmn.ru/ifk/'
         },
         {
           id: 4,
           img: require('../../../static/img/partners/DanilaProhorenko.jpg'),
-          txt: 'Видеограф Данила Прохоренко'
+          txt: 'Видеограф Данила Прохоренко',
+          url: 'https://www.instagram.com/danila.pr/?hl=ru'
+        },
+        {
+          id: 3,
+          img: require('../../../static/img/partners/VladimirOgnev.jpg'),
+          txt: 'Видеограф Владимир Огнев',
+          url: 'https://www.instagram.com/vladimirogniov/?hl=ru'
         },
         {
           id: 5,
           img: require('../../../static/img/partners/AnastasiaBadarina.jpg'),
-          txt: 'Дизайнер Анастасия Бударина'
+          txt: 'Дизайнер Анастасия Бударина',
+          url: 'https://www.instagram.com/stasiabu/?hl=ru'
         },
         {
           id: 6,
           img: require('../../../static/img/partners/ZamirYusupov.jpg'),
-          txt: 'Программист Замир Юсупов'
+          txt: 'Программист Замир Юсупов',
+          url: 'https://yusupovz.ru/'
         }
       ],
       items: [
         {
-          src: require('../../../static/img/key_001_10.jpg'),
-          lazy: require('../../../static/img/key_001_10_lazy.jpg')
+          src: require('../../../static/img/mslider/ms1.jpg'),
+          lazy: require('../../../static/img/mslider/ms1_lazy.jpg')
         },
         {
-          src: require('../../../static/img/key_002_10.jpg'),
-          lazy: require('../../../static/img/key_002_10_lazy.jpg')
+          src: require('../../../static/img/mslider/ms2.jpg'),
+          lazy: require('../../../static/img/mslider/ms2_lazy.jpg')
         },
         {
-          src: require('../../../static/img/key_003_10.jpg'),
-          lazy: require('../../../static/img/key_003_10_lazy.jpg')
+          src: require('../../../static/img/mslider/ms3.jpg'),
+          lazy: require('../../../static/img/mslider/ms3_lazy.jpg')
         },
         {
-          src: require('../../../static/img/key_004_10.jpg'),
-          lazy: require('../../../static/img/key_004_10_lazy.jpg')
-        }
-      ],
-      feedbacksAll: [
-        {
-          id: 1,
-          fio: 'Milena McKenzie',
-          text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
-          img: require('../../../static/img/fitness.jpg'),
-          color: 'light-green lighten-4'
-        },
-        {
-          id: 2,
-          fio: 'Milena McKenzie',
-          text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?',
-          img: require('../../../static/img/fitness.jpg'),
-          color: 'teal lighten-4'
-        },
-        {
-          id: 3,
-          fio: 'Milena McKenzie',
-          text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?',
-          img: require('../../../static/img/fitness.jpg'),
-          color: 'light-green lighten-4'
-        },
-        {
-          id: 4,
-          fio: 'Milena McKenzie',
-          text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
-          img: require('../../../static/img/fitness.jpg'),
-          color: 'teal lighten-4'
-        },
-        {
-          id: 5,
-          fio: 'Milena McKenzie',
-          text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit.',
-          img: require('../../../static/img/fitness.jpg'),
-          color: 'light-green lighten-4'
+          src: require('@/../static/img/mslider/ms4.jpg'),
+          lazy: require('@/../static/img/mslider/ms4_lazy.jpg')
         }
       ]
     }

@@ -1,5 +1,9 @@
 @media (min-width: 0)
 {
+  .logo-home {
+    margin: 80px 0 50px;
+  }
+
   .feedback4 {
     display: none;
   }
@@ -8,29 +12,58 @@
     display: none;
   }
 
-  
-  
+  .feedback2 {
+    display: none;
+  }
+
+  .feedback1 {
+    display: block;
+  }
 }
 
 @media (min-width: 600px)
 {
+  .logo-home {
+    margin: 70px 0 50px;
+  }
+
   .feedback4 {
     display: none;
   }
 
   .feedback3 {
+    display: none;
+  }
+
+  .feedback2 {
+    display: block;
+  }
+
+  .feedback1 {
     display: none;
   }
 }
 
 @media (min-width: 960px)
 {
+  .logo-home {
+    margin: 0;
+  }
+
   .feedback4 {
     display: none;
   }
 
   .feedback3 {
     display: block;
+  }
+
+  .feedback2 {
+    display: none;
+  }
+
+  .feedback1 {
+    display: none;
   }
 
   .about-img1 {
@@ -53,6 +86,14 @@
   .feedback3 {
     display: none;
   }
+
+  .feedback2 {
+    display: none;
+  }
+
+  .feedback1 {
+    display: none;
+  }
 }
 
 @media (min-width: 1904px)
@@ -62,6 +103,14 @@
   }
 
   .feedback3 {
+    display: none;
+  }
+
+  .feedback2 {
+    display: none;
+  }
+
+  .feedback1 {
     display: none;
   }
 }

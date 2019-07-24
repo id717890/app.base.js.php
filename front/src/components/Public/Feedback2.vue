@@ -1,8 +1,8 @@
 <template>
-  <v-carousel  height="630" class="feedback3" style="" :cycle="true" hide-delimiters :interval="10000">
+  <v-carousel height="630" class="feedback2" style="" :cycle="true" hide-delimiters :interval="10000">
     <v-carousel-item>
-      <v-layout row>
-        <v-flex xs4 pt-4 pl-5 text-xs-center>
+      <v-layout row justify-center>
+        <v-flex xs6 pt-4 pl-5 text-xs-center>
           <v-card max-width="330" :color="feedbacks[0].color" class="elevation-5 feedback" >
             <v-card-title>
               <v-list-tile>
@@ -19,7 +19,7 @@
             </v-card-actions>
           </v-card>
         </v-flex>
-        <v-flex xs4 pt-4 px-2 text-xs-center>
+        <v-flex xs6 pt-4 pr-5 text-xs-center>
           <v-card max-width="330" :color="feedbacks[1].color" class="elevation-5 feedback" >
             <v-card-title>
               <v-list-tile>
@@ -36,7 +36,11 @@
             </v-card-actions>
           </v-card>
         </v-flex>
-        <v-flex xs4 pt-4 pr-5 text-xs-center>
+      </v-layout>
+    </v-carousel-item>
+    <v-carousel-item>
+      <v-layout row justify-center>
+        <v-flex xs6 pt-4 pl-5 text-xs-center>
           <v-card max-width="330" :color="feedbacks[2].color" class="elevation-5 feedback" >
             <v-card-title>
               <v-list-tile>
@@ -53,11 +57,7 @@
             </v-card-actions>
           </v-card>
         </v-flex>
-      </v-layout>
-    </v-carousel-item>
-    <v-carousel-item>
-      <v-layout row>
-        <v-flex xs4 pt-4 pl-5 text-xs-center>
+        <v-flex xs6 pt-4 pr-5 text-xs-center>
           <v-card max-width="330" :color="feedbacks[3].color" class="elevation-5 feedback" >
             <v-card-title>
               <v-list-tile>
@@ -74,7 +74,11 @@
             </v-card-actions>
           </v-card>
         </v-flex>
-        <v-flex xs4 pt-4 px-3 text-xs-center>
+      </v-layout>
+    </v-carousel-item>
+    <v-carousel-item>
+      <v-layout row justify-center>
+        <v-flex xs6 pt-4 pl-5 text-xs-center>
           <v-card max-width="330" :color="feedbacks[4].color" class="elevation-5 feedback" >
             <v-card-title>
               <v-list-tile>
@@ -91,7 +95,7 @@
             </v-card-actions>
           </v-card>
         </v-flex>
-        <v-flex xs4 pt-4 pr-5 text-xs-center>
+        <v-flex xs6 pt-4 pr-5 text-xs-center>
           <v-card max-width="330" :color="feedbacks[5].color" class="elevation-5 feedback" >
             <v-card-title>
               <v-list-tile>
@@ -111,8 +115,8 @@
       </v-layout>
     </v-carousel-item>
     <v-carousel-item>
-      <v-layout row>
-        <v-flex xs4 offset-xs1 pt-4 pl-5 text-xs-center>
+      <v-layout row justify-center>
+        <v-flex xs6 pt-4 pl-5 text-xs-center>
           <v-card max-width="330" :color="feedbacks[6].color" class="elevation-5 feedback" >
             <v-card-title>
               <v-list-tile>
@@ -129,7 +133,7 @@
             </v-card-actions>
           </v-card>
         </v-flex>
-        <v-flex xs4 offset-xs2 pt-4 pr-5 text-xs-center>
+        <v-flex xs6 pt-4 pr-5 text-xs-center>
           <v-card max-width="330" :color="feedbacks[7].color" class="elevation-5 feedback" >
             <v-card-title>
               <v-list-tile>

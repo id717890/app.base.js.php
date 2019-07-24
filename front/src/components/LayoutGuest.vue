@@ -1,7 +1,7 @@
 <template>
   <v-app id="inspire">
     <v-toolbar
-      class="blue darken-2" ref="menu"
+      class="light-blue darken-3" ref="menu"
       dark
       clipped-right
     >
@@ -9,7 +9,7 @@
         <fai icon="align-justify"></fai>
       </v-toolbar-side-icon>
       <v-toolbar-title class="white--text">
-        <img style="max-height: 40px" :src="require('../../static/img/logo/1.png')" alt="Evgenia Kabanova movement coach">
+        <img style="max-height: 40px" :src="require('../../static/img/logo/2.png')" alt="Evgenia Kabanova movement coach">
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
@@ -131,26 +131,42 @@
         <router-view name="routerguest"></router-view>
       </v-container>
     </v-content>
-    <div class="white--text footer1">
+    <div class="white--text footer2">
       <v-layout row wrap justify-center fill-height>
         <v-flex xs12>
           <v-layout row wrap justify-center>
             <v-flex xs12 class="text-xs-center pa-1 hidden-sm-and-down" style="vertical-align:middle !important">
               <v-layout row wrap align-center justify-center>
-                <i class="fab fa-instagram fa-3x mx-2"></i>
-                <i class="fab fa-facebook fa-3x mx-2"></i>
-                <i><img style="max-height: 75px" :src="require('../../static/img/yoga3-footer-logo.png')" alt=""></i>
-                <i class="fab fa-vk fa-3x mx-2"></i>
-                <i class="fab fa-google-plus fa-3x mx-2"></i>
+                <a href="https://vk.com/evgenia_kabanova" target="_blank" class="vk social">
+                  <i class="fab fa-vk fa-3x mx-2"></i>
+                </a>
+                <a href="https://www.instagram.com/evgenia_kabanova/?hl=ru" target="_blank" class="instagram social">
+                  <i class="fab fa-instagram fa-3x mx-2"></i>
+                </a>
+                <i><img style="max-height: 40px" :src="require('../../static/img/logo/2.png')" alt=""></i>
+                <a href="https://www.facebook.com/evgeniya.kabanova.3" target="_blank" class="fb social">
+                  <i class="fab fa-facebook fa-3x mx-2"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/UCKcpqrRCQ_BaZWNTom6E39g?view_as=subscriber" target="_blank" class="youtube social">
+                  <i class="fab fa-youtube fa-3x mx-2"></i>
+                </a>
               </v-layout>
             </v-flex>
             <v-flex xs12 class="text-xs-center pa-1 hidden-md-and-up" style="vertical-align:middle !important">
               <v-layout row wrap align-center justify-center>
-                <i class="fab fa-instagram fa-2x mx-2"></i>
-                <i class="fab fa-facebook fa-2x mx-2"></i>
-                <i><img style="max-height: 40px" :src="require('../../static/img/yoga3-footer-logo.png')" alt=""></i>
-                <i class="fab fa-vk fa-2x mx-2"></i>
-                <i class="fab fa-google-plus fa-2x mx-2"></i>
+                <a href="https://vk.com/evgenia_kabanova" target="_blank" class="vk social">
+                  <i class="fab fa-vk fa-2x mx-2"></i>
+                </a>
+                <a href="https://www.instagram.com/evgenia_kabanova/?hl=ru" target="_blank" class="instagram social">
+                  <i class="fab fa-instagram fa-2x mx-2"></i>
+                </a>
+                <i><img style="max-height: 40px" :src="require('../../static/img/logo/2.png')" alt=""></i>
+                <a href="https://www.facebook.com/evgeniya.kabanova.3" target="_blank" class="fb social">
+                  <i class="fab fa-facebook fa-2x mx-2"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/UCKcpqrRCQ_BaZWNTom6E39g?view_as=subscriber" target="_blank" class="youtube social">
+                  <i class="fab fa-youtube fa-2x mx-2"></i>
+                </a>
               </v-layout>
             </v-flex>
           </v-layout>

@@ -1,25 +1,29 @@
 <template>
-  <v-layout justify-center align-center py-5>
-    <v-flex xs12 md-6 lg4>
-      <app-notify/>
-      <v-form lazy-validation v-model="form.valid" ref="form">
-        <v-flex 12>
-          <v-text-field label="Имя" type="text" v-model="form.firstName" required :rules="textField"></v-text-field>
-          <v-text-field label="E-mail" v-model="form.email" required :rules="emailRules"></v-text-field>
-          <v-text-field label="Пароль" type="password" v-model="form.password" required :rules="passwordRules"></v-text-field>
-          <v-text-field label="Пароль ещё раз" type="password" v-model="form.passwordConfirm" required :rules="passwordConfirmRules"></v-text-field>
-          <!-- <v-text-field label="Last Name" type="text" v-model="form.lastName" required :rules="textField"></v-text-field> -->
-        </v-flex>
-        <v-flex 12>
-          <v-layout justify-space-between>
-            <v-btn :loading="loading" large :disabled="!form.valid" color="primary" @click="onSubmit" ><fai icon="sign-in-alt" class="mr-2" />  Register</v-btn>
-            <v-btn large flat to="/forgot"><fai icon="key" class="mr-2" />  Forgot</v-btn>
-            <v-btn left flat large to="/"><fai icon="home" size="2x" /></v-btn>
-          </v-layout>
-        </v-flex>
-      </v-form>
-    </v-flex>
-  </v-layout>
+  <v-container>
+    <v-layout justify-center align-center py-5>
+      <v-flex xs12 md-6 lg4>
+        <app-notify/>
+        <v-form lazy-validation v-model="form.valid" ref="form">
+          <v-flex 12>
+            <v-text-field label="Имя" type="text" v-model="form.firstName" required :rules="textField"></v-text-field>
+            <v-text-field label="E-mail" v-model="form.email" required :rules="emailRules"></v-text-field>
+            <v-text-field label="Пароль" type="password" v-model="form.password" required :rules="passwordRules"></v-text-field>
+            <v-text-field label="Пароль ещё раз" type="password" v-model="form.passwordConfirm" required :rules="passwordConfirmRules"></v-text-field>
+            <!-- <v-text-field label="Last Name" type="text" v-model="form.lastName" required :rules="textField"></v-text-field> -->
+          </v-flex>
+          <v-flex 12>
+            <v-layout row nowrap>
+              <v-flex xs12>
+              <v-btn :loading="loading" :disabled="!form.valid" color="primary" @click="onSubmit" ><fai icon="sign-in-alt" class="mr-2" />  Register</v-btn>
+              <v-btn flat to="/forgot"><fai icon="key" class="mr-2" />  Forgot</v-btn>
+              <v-btn flat to="/"><fai icon="home" size="2x" /></v-btn>
+              </v-flex>
+            </v-layout>
+          </v-flex>
+        </v-form>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>
