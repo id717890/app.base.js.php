@@ -50,7 +50,8 @@ const router = new Router({
       beforeEnter: authGuard,
       components: { main: () => import('../components/LayoutUser.vue') },
       children: [
-        { path: 'products', name: 'ProductsUser', beforeEnter: authGuard, components: { routeruser: () => import('../components/Private/User/Products.vue') } }
+        { path: 'products', name: 'ProductsUser', beforeEnter: authGuard, components: { routeruser: () => import('../components/Private/User/Products.vue') } },
+        { path: 'settings', name: 'SettingsUser', beforeEnter: authGuard, components: { routeruser: () => import('../components/Private/User/Settings.vue') } }
       ]
     }
     // { path: '/notify', name: 'Notify', component: () => import('../views/Shared/Notify') },

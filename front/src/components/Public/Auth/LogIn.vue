@@ -9,10 +9,12 @@
             <v-text-field label="Password" type="password" v-model="form.password" required :rules="passwordRules"></v-text-field>
           </v-flex>
           <v-flex 12>
-            <v-layout justify-space-between>
-              <v-btn large :disabled="!form.valid" color="success" @click="signin" ><fai icon="sign-in-alt" class="mr-2" />  Sign In</v-btn>
-              <v-btn large flat to="/forgot"><fai icon="key" class="mr-2" />  Forgot</v-btn>
-              <v-btn left flat large to="/"><fai icon="home" size="2x" /></v-btn>
+            <v-layout row wrap>
+              <v-flex xs12>
+                <v-btn  :disabled="!form.valid" color="success" @click="signin" ><fai icon="sign-in-alt" class="mr-2" />  Sign In</v-btn>
+                <v-btn  flat to="/forgot"><fai icon="key" class="mr-2" />  Forgot</v-btn>
+                <v-btn left flat fab to="/"><fai icon="home" size="2x" /></v-btn>
+              </v-flex>
             </v-layout>
           </v-flex>
         </v-form>

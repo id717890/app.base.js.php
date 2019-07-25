@@ -18,7 +18,7 @@ class ProductSeeder extends Seeder
             'name' => 'Фитнес-программа «ДВИЖЕНИЕ» с элементами FLOW',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
             'price' => 299,
-            'photo' => 'example1.jpg',
+            'photo' => 'program1.jpg',
             'icon'=>'fa fa-paw',
             'created_at' => DB::raw('CURRENT_TIMESTAMP'),
             'updated_at' => DB::raw('CURRENT_TIMESTAMP')
@@ -29,7 +29,7 @@ class ProductSeeder extends Seeder
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
             'price' => 0,
             'icon'=>'fa fa-dumbbell',
-            'photo' => 'example2.jpg',
+            'photo' => 'program2.jpg',
             'created_at' => DB::raw('CURRENT_TIMESTAMP'),
             'updated_at' => DB::raw('CURRENT_TIMESTAMP')
         ]);

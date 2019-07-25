@@ -27,12 +27,21 @@ class ProductController extends Controller
 
     public function get()
     {
-        $free = Product::getFree();
-        $products = UserProduct::getUserProducts(Auth::user()->id);
-        dd($products);
-        dd($free->merge($products));
-        dd($free->merge($products));
-        array_merge($products, Product::getFree()->toArray());
-        return response()->json(UserProduct::getUserProducts(Auth::user()->id));
+        $products = Product::all();
+        $result = [];
+        foreach($products as $product) {
+            $prod = [];
+            $prod['product'] = $product->toArray();
+            $findPayment = UserProduct::where('user_id', Auth::user()->id)->where('product_id', $product->id)->first();
+            if ($product->price == 0) {
+                $prod['days'] = $product->days->toArray();
+            } else if ($product->price != 0 && $findPayment != null) {
+                $prod['days'] = $product->days->toArray();
+            } else if ($product->price != 0 && $findPayment == null) {
+                $prod['days'] = null;
+            }
+            array_push($result, $prod);
+        }
+        return response()->json($result, 200);
     }
 }

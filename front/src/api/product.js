@@ -11,6 +11,13 @@ export default {
       return error
     })
   },
+  getProductsForUser: () => {
+    return Vue.$http.get('api/products/get').then((x) => {
+      return x
+    }).catch(error => {
+      return error
+    })
+  },
   updateProduct: (data) => {
     return Vue.$http.post('api/product/update', data).then((x) => {
       return x

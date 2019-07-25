@@ -16,7 +16,7 @@
               <v-flex xs12>
               <v-btn :loading="loading" :disabled="!form.valid" color="primary" @click="onSubmit" ><fai icon="sign-in-alt" class="mr-2" />  Register</v-btn>
               <v-btn flat to="/forgot"><fai icon="key" class="mr-2" />  Forgot</v-btn>
-              <v-btn flat to="/"><fai icon="home" size="2x" /></v-btn>
+              <v-btn flat fab to="/"><fai icon="home" size="2x" /></v-btn>
               </v-flex>
             </v-layout>
           </v-flex>

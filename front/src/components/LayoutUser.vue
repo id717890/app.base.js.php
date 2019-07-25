@@ -74,13 +74,12 @@ import authMixin from '../mixins/auth'
 export default {
   mixins: [authMixin],
   name: 'App',
-  components: {
-  },
   data () {
     return {
       items: [
         { title: 'Home', icon: 'fa-home', to: '/' },
-        { title: 'Программы', icon: 'fa-dumbbell', to: '/lk/products' }
+        { title: 'Программы', icon: 'fa-dumbbell', to: '/lk/products' },
+        { title: 'Настройки', icon: 'fa-dumbbell', to: '/lk/settings' }
       ],
       drawer: true,
       drawerRight: false,

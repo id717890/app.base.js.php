@@ -1,7 +1,7 @@
 import { mapGetters, mapActions } from 'vuex'
 export default {
   computed: {
-    ...mapGetters(['isAuth'])
+    ...mapGetters(['isAuth','isAdmin'])
   },
   methods: {
     ...mapActions(['logout']),
