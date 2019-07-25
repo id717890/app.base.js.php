@@ -7,6 +7,7 @@ import user from './user'
 import product from './product'
 import news from './news'
 import dialog from './dialog'
+import payment from './payment'
 
 Vue.use(Vuex)
 
@@ -25,6 +26,7 @@ export default new Vuex.Store({
     user,
     product,
     news,
-    dialog
+    dialog,
+    payment
   }
 })

@@ -22,6 +22,8 @@ Route::get('verifyUser/{verification_code}', 'AuthController@verifyUser');
 Route::post('auth/Login', 'AuthController@login');
 Route::post('recover', 'AuthController@recover');
 Route::get('news', 'NewsController@index');
+Route::post('pay/notify', 'PaymentController@notify');
+
 
 Route::group(['middleware' => ['jwt.auth']], function() {
     Route::get('logout', 'AuthController@logout');
