@@ -18,15 +18,16 @@
             Друзья, добро пожаловать на сайт Евгении Кабановой, мастера спорта международного класса, чемпионки мира по спортивной акробатике.
           </p>
           <p class="logo-text">
-            Здесь вы найдете полезную информацию о тренировках, сможете пройти бесплатный челлендж, <strong class="strong2">а также купить новую уникальную фитнес-программу «ДВИЖЕНИЕ» с элементами FLOW!</strong> Эта программа не только изменит ваш подход к тренировкам, но и изменит вашу жизнь!
+            Здесь вы найдете полезную информацию о тренировках, сможете пройти бесплатный челлендж, <strong class="">а также купить новую уникальную фитнес-программу «ДВИЖЕНИЕ» с элементами FLOW!</strong> Эта программа не только изменит ваш подход к тренировкам, но и изменит вашу жизнь!
           </p>
           <p class="strong2 text-xs-center" style="color:#DD2C00; font-size: 1.4rem">Старт программы 1 октября 2019!</p>
         </v-flex>
-        <v-flex xs12 md7 style="height: 100vh; overflow: hidden">
+        <v-flex xs12 md7 style="">
           <v-carousel
-            height="100%"
+            :cycle="false"
+            height="100vh"
+            class="elevation-0"
             hide-delimiters
-            hide-controls
             prev-icon="fa fa-arrow-left"
             next-icon="fa fa-arrow-right"
       >
@@ -34,8 +35,14 @@
           v-for="(item,i) in items"
           :key="i"
         >
-          <v-img height="100%" :src="item.src" :lazy-src="item.lazy" class="hidden-sm-and-down"></v-img>
-          <v-img height="100%" :src="item.src" :lazy-src="item.lazy" contain class="hidden-md-and-up"></v-img>
+          <v-img style="height: 100%" :src="item.src" :lazy-src="item.lazy"  class="hidden-sm-and-down">
+            <!-- <span class="photo-sign">{{item.author}}</span> -->
+            <!-- <span class="photo-text">{{item.text}}</span> -->
+          </v-img>
+          <v-img style="height: 100%" :src="item.src" :lazy-src="item.lazy" contain class="hidden-md-and-up">
+            <!-- <span class="photo-sign">{{item.author}}</span> -->
+            <!-- <span class="photo-text" style="margin: auto">{{item.text}}</span> -->
+          </v-img>
         </v-carousel-item>
       </v-carousel>
           <!-- <img src="../../static/img/SoqSO8UTTrSk5G9R3G7o_Revamped Background.png"  style="height: 100%"  alt="" > -->
@@ -336,19 +343,27 @@ export default {
       items: [
         {
           src: require('../../../static/img/mslider/ms1.jpg'),
-          lazy: require('../../../static/img/mslider/ms1_lazy.jpg')
+          lazy: require('../../../static/img/mslider/ms1_lazy.jpg'),
+          text: 'В здоровом теле - здоровый дух!',
+          author: 'Фотограф Владимир Чебалдин'
         },
         {
           src: require('../../../static/img/mslider/ms2.jpg'),
-          lazy: require('../../../static/img/mslider/ms2_lazy.jpg')
+          lazy: require('../../../static/img/mslider/ms2_lazy.jpg'),
+          text: 'Лучшая одежда это хорошая физическая форма!',
+          author: 'Фотограф Артём Гвоздулин'
         },
         {
           src: require('../../../static/img/mslider/ms3.jpg'),
-          lazy: require('../../../static/img/mslider/ms3_lazy.jpg')
+          lazy: require('../../../static/img/mslider/ms3_lazy.jpg'),
+          text: 'Важно найти свой тип нагрузки. <br> Тогда тренироваться будет легко и в кайф!',
+          author: 'Фотограф Владимир Чебалдин'
         },
         {
           src: require('@/../static/img/mslider/ms4.jpg'),
-          lazy: require('@/../static/img/mslider/ms4_lazy.jpg')
+          lazy: require('@/../static/img/mslider/ms4_lazy.jpg'),
+          text: 'Движение это жизнь!',
+          author: 'Фотограф Артём Гвоздулин'
         }
       ]
     }

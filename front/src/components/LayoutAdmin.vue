@@ -28,7 +28,7 @@
       <v-list>
         <v-list-tile>
           <v-list-tile-title class="title">
-            <i class="fa fa-info ml-4"></i> Личный кабинет
+            <i class="fa fa-solar-panel ml-4"></i> Админка
           </v-list-tile-title>
         </v-list-tile>
       </v-list>
@@ -40,7 +40,7 @@
         :to="item.to"
       >
         <v-list-tile-action>
-          <i :class="'fa '+item.icon"></i>
+          <i :class="item.icon"></i>
         </v-list-tile-action>
         <v-list-tile-content>
           <v-list-tile-title>{{ item.title }}</v-list-tile-title>
@@ -79,9 +79,9 @@ export default {
   data () {
     return {
       items: [
-        { title: 'Home', icon: 'fa-home', to: '/' },
-        { title: 'Новости', icon: 'fa-info', to: '/dashboard/news' },
-        { title: 'Программы', icon: 'fa-dumbbell', to: '/dashboard/products' }
+        { title: 'Главная', icon: 'fa fa-home', to: '/' },
+        { title: 'Новости', icon: 'fab fa-pagelines', to: '/dashboard/news' },
+        { title: 'Программы', icon: 'fa fa-dumbbell', to: '/dashboard/products' }
       ],
       drawer: true,
       drawerRight: false,

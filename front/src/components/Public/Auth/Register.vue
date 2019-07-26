@@ -14,8 +14,7 @@
           <v-flex 12>
             <v-layout row nowrap>
               <v-flex xs12>
-              <v-btn :loading="loading" :disabled="!form.valid" color="primary" @click="onSubmit" ><fai icon="sign-in-alt" class="mr-2" />  Register</v-btn>
-              <v-btn flat to="/forgot"><fai icon="key" class="mr-2" />  Forgot</v-btn>
+              <v-btn :loading="loading" :disabled="!form.valid" color="primary" @click="onSubmit" ><fai icon="sign-in-alt" class="mr-2" />  Регистрация</v-btn>
               <v-btn flat fab to="/"><fai icon="home" size="2x" /></v-btn>
               </v-flex>
             </v-layout>
@@ -35,10 +34,14 @@ export default {
       loading: false,
       form: {
         valid: false,
-        email: 'jusupovz@gmail.com',
-        password: 'qweqwe',
-        passwordConfirm: 'qweqwe',
-        firstName: 'qweqwe'
+        email: null,
+        password: null,
+        passwordConfirm: null,
+        firstName: null
+        // email: 'jusupovz@gmail.com',
+        // password: 'qweqwe',
+        // passwordConfirm: 'qweqwe',
+        // firstName: 'qweqwe'
         // lastName: 'qwe'
       },
       emailRules: [
@@ -88,7 +91,7 @@ export default {
           .catch(x => {
             this.loading = false
           })
-      }
+      } else this.loading = false
     }
   }
 }

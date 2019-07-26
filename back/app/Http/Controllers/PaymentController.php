@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Payment;
+use App\Models\UserProduct;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
 class PaymentController extends Controller
 {
     public function notify() {
-        $secret_key = 'cX8NDkKhU1izhxXlnfhDEmFr'; // секретное слово, которое мы получили в предыдущем шаге.
+        $secret_key = getenv('YANDEX_SECRET'); // секретное слово, которое мы получили в предыдущем шаге.
 
         // возможно некоторые из нижеперечисленных параметров вам пригодятся
         // $_POST['operation_id'] - номер операция
@@ -33,35 +34,37 @@ class PaymentController extends Controller
         $order->label = Input::get('label');
         $order->sha1hash = Input::get('sha1_hash');
         $order->email = Input::get('email');
+
+        $match = explode('@@@',$order->label);
+
+        if(isset($match[0]) && isset($match[1]) && isset($match[2])) {
+            $sha1 = sha1(
+                $order->notification_type. '&' .
+                $order->operation_id. '&' .
+                $order->amount. '&'.
+                $order->currency.'&' .
+                $order->date. '&' .
+                $order->sender. '&' .
+                $order->codepro. '&' .
+                $secret_key. '&' .
+                $order->label
+            );
+
+            $order->yandex_string;
+            $order->sha1hash_server = $sha1;
+
+            if ($sha1 != $order->sha1hash) {
+                $order->errors = 'Sha1 Hash not correct; ';
+            } else {
+                UserProduct::create(['user_id'=>intval($match[0]), 'product_id'=>intval($match[1]), 'price' => intval($match[2])]);
+                $order->errors = null;
+            }
+        } else {
+            $order->errors = "Incorrect label";
+        }
         $order->save();
 
-
-        $sha1 = sha1(
-            $order->notification_type. '&' .
-            $order->operation_id. '&' .
-            $order->amount. '&'.
-            $order->currency.'&' .
-            $order->date. '&' .
-            $order->sender. '&' .
-            $order->codepro. '&' .
-            $secret_key. '&' .
-            $order->label
-        );
-
-        $order->yandex_string;
-        $order->sha1hash_server = $sha1;
-
-        if ($sha1 != $order->sha1hash) {
-            $order->errors = 'Sha1 Hash not correct; ';
-            $order->save();
-        } else {
-            $order->errors = 'OK';
-            $order->save();
-        }
-
-
         return response()->json(200);
-
         if ($sha1 != $_POST['sha1_hash'] ) {
             // тут содержится код на случай, если верификация не пройдена
             exit();

@@ -254,3 +254,24 @@ body {
   text-align: justify;
 }
 
+.photo-sign {
+  position: absolute;
+  left: 15px;
+  bottom: 10px;
+  font-family: 'Courier New Cyr', Courier, monospace;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.photo-text {
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  font-family: 'Courier New Cyr', Courier, monospace;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+.main-carousel {
+  height: 100%;
+}

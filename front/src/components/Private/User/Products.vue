@@ -17,7 +17,7 @@
           :key="product.product.id"
           :value="'prod' + product.product.id"
         >
-          <v-card flat>
+          <v-card >
             <v-card-text>
                 <v-layout row wrap>
                   <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3>
@@ -54,13 +54,13 @@
                     <!--Номер кошелька в системе Яндекс Денег-->
                     <input type="hidden" name="receiver" :value="yandex.receiver">
                     <!--Название платежа, я не нашел, где этот параметр используется, поэтому просто указал адрес своего сайта (длина 50 символов)-->
-                    <input type="hidden" name="formcomment" :value="'Оплата программы ' + product.product.name">
+                    <input type="hidden" name="formcomment" :value="'Оплата ' + product.product.name">
                     <!--Этот параметр передаёт ID плагина, для того, чтобы скрипту было понятно, что потом отсылать пользователю (длина 64 символа)-->
-                    <input type="hidden" name="label" :value="'['+user+']['+product.product.id+']'">
+                    <input type="hidden" name="label" :value="user+'@@@'+product.product.id + '@@@'+product.product.price">
                     <!--Тип формы, может принимать значения shop (универсальное), donate (благотворительная), small (кнопка)-->
                     <input type="hidden" name="quickpay-form" :value="yandex.quickpayForm">
                     <!--Назначение платежа, это покупатель видит на сайте Яндекс Денег при вводе платежного пароля (длина 150 символов)-->
-                    <input type="hidden" name="targets" :value="'Оплата программы ' + product.product.name">
+                    <input type="hidden" name="targets" :value="'Оплата ' + product.product.name">
                     <!--Сумма платежа, валюта - рубли по умолчанию-->
                     <input type="hidden" name="sum" :value="product.product.price" data-type="number">
                     <!--Должен ли Яндекс запрашивать ФИО покупателя-->

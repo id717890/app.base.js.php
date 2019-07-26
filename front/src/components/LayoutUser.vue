@@ -28,7 +28,7 @@
       <v-list>
         <v-list-tile>
           <v-list-tile-title class="title">
-            <i class="fa fa-sun ml-4"></i> ЛК
+            <i class="fa fa-sun ml-4"></i> Кабинет
           </v-list-tile-title>
         </v-list-tile>
       </v-list>
@@ -77,9 +77,9 @@ export default {
   data () {
     return {
       items: [
-        { title: 'Home', icon: 'fa-home', to: '/' },
+        { title: 'Главная', icon: 'fa-home', to: '/' },
         { title: 'Программы', icon: 'fa-dumbbell', to: '/lk/products' },
-        { title: 'Настройки', icon: 'fa-dumbbell', to: '/lk/settings' }
+        { title: 'Настройки', icon: 'fa-cogs', to: '/lk/settings' }
       ],
       drawer: true,
       drawerRight: false,

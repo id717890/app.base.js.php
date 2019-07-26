@@ -15,8 +15,8 @@ class UserSeeder extends Seeder
 
         DB::table('users')->insert([
             'id' => 1,
-            'name' => 'Ййй',
-            'email' => 'jusupovz@gmail.com',
+            'name' => 'Admin',
+            'email' => 'admin@gmail.com',
             'role' => 'admin',
             'is_verified' => true,
             'password' => Hash::make('qweqwe'),
@@ -25,8 +25,8 @@ class UserSeeder extends Seeder
         ]);
         DB::table('users')->insert([
             'id' => 2,
-            'name' => 'йцу',
-            'email' => 'kakashka87@list.ru',
+            'name' => 'User',
+            'email' => 'user@gmail.com',
             'role' => 'user',
             'is_verified' => true,
             'password' => Hash::make('qweqwe'),

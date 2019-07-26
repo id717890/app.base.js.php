@@ -23,6 +23,10 @@
 
 @media (min-width: 600px)
 {
+  .main-carousel {
+    height: auto !important;
+  }
+
   .logo-home {
     margin: 70px 0 50px;
   }
@@ -47,7 +51,7 @@
 @media (min-width: 960px)
 {
   .logo-home {
-    margin: 0;
+    margin: 0 0 50px 0;
   }
 
   .feedback4 {

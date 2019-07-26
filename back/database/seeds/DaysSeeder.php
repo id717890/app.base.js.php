@@ -13,17 +13,29 @@ class DaysSeeder extends Seeder
     {
         DB::table('days')->delete();
 		
-		for ($i = 1; $i<11; $i++) {
+		for ($i = 1; $i<8; $i++) {
 			DB::table('days')->insert([
             'title' => 'День '.$i,
             'day' => $i,
-            'description' => 'Здесь будет описание видео и описание дня №'.$i,
+            'description' => 'Здесь будет видео и описание дня №'.$i,
             'product_id' => 2,
             'url' => 'url1',
             'created_at' => DB::raw('CURRENT_TIMESTAMP'),
             'updated_at' => DB::raw('CURRENT_TIMESTAMP')
 			]);
-		}			
+		}
+
+        for ($i = 1; $i<16; $i++) {
+            DB::table('days')->insert([
+                'title' => 'День '.$i,
+                'day' => $i,
+                'description' => 'Здесь будет видео и описание дня №'.$i,
+                'product_id' => 1,
+                'url' => 'url1',
+                'created_at' => DB::raw('CURRENT_TIMESTAMP'),
+                'updated_at' => DB::raw('CURRENT_TIMESTAMP')
+            ]);
+        }
 
         /*DB::table('days')->insert([
             'id' => 1,
