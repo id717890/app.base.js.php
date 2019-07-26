@@ -3,14 +3,6 @@
     <v-flex xs12>
       <v-layout row wrap fill-height class="bg1">
         <v-flex xs12 md5 align-self-center px-4 class="h1-left-block pa-1">
-          <!-- <section class="hidden-sm-and-down">
-            <h1 class="h1-s1">Время </h1>
-            <h1 class="h1-s1 ml-5">заняться</h1>
-            <h1 class="h1-s1 ml-5 pl-5">собой.</h1>
-          </section>
-          <section class="hidden-md-and-up">
-            <h1 class="h1-s1">Время <br> заняться <br> собой. </h1>
-          </section> -->
           <section>
             <img class="logo-home" :src="require('../../../static/img/logo/1.png')" alt="Evgenia Kabanova movement coach">
           </section>
@@ -25,17 +17,15 @@
         <v-flex xs12 md7 style="">
           <v-carousel
             :cycle="false"
-            height="100vh"
-            class="elevation-0"
+            class="elevation-0 100h"
             hide-delimiters
+            hide-controls
+            height="auto"
             prev-icon="fa fa-arrow-left"
             next-icon="fa fa-arrow-right"
       >
-        <v-carousel-item class="h100"
-          v-for="(item,i) in items"
-          :key="i"
-        >
-          <v-img style="height: 100%" :src="item.src" :lazy-src="item.lazy"  class="hidden-sm-and-down">
+        <v-carousel-item v-for="(item,i) in items" :key="i">
+          <v-img style="height: 100%" :src="item.src" :lazy-src="item.lazy"  class="hidden-sm-and-down bbl">
             <!-- <span class="photo-sign">{{item.author}}</span> -->
             <!-- <span class="photo-text">{{item.text}}</span> -->
           </v-img>

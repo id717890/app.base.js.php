@@ -23,6 +23,10 @@
 
 @media (min-width: 600px)
 {
+  .about-top-photo {
+    max-height: 480px;
+  }
+
   .main-carousel {
     height: auto !important;
   }
@@ -50,6 +54,10 @@
 
 @media (min-width: 960px)
 {
+  .about-top-photo {
+    max-height: 560px;
+  }
+
   .logo-home {
     margin: 0 0 50px 0;
   }
@@ -83,6 +91,10 @@
 }
 
 @media (min-width: 1264px) {
+  .about-top-photo {
+    max-height: 600px;
+  }
+
   .feedback4 {
     display: block;
   }
@@ -102,6 +114,10 @@
 
 @media (min-width: 1904px)
 {
+  .about-top-photo {
+    max-height: 660px;
+  }
+
   .feedback4 {
     display: block;
   }

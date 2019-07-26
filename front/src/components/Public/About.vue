@@ -1,7 +1,7 @@
 <template>
 <v-layout column fill-height>
   <v-flex xs12>
-    <v-img max-height="500" :src="require('../../../static/img/about/about.jpg')" :lazy-src="require('../../../static/img/about/about_lazy.jpg')" aspect-ratio="1.2" :position="'top center'"></v-img>
+    <v-img class="about-top-photo" :src="require('../../../static/img/about/about.jpg')" :lazy-src="require('../../../static/img/about/about_lazy.jpg')" aspect-ratio="1.2" :position="'top center'"></v-img>
     <!-- <div class="about-top-img-wrapper">
       <h2>Обо мне</h2>
     </div> -->
