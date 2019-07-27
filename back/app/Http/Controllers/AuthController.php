@@ -14,7 +14,6 @@ use Illuminate\Foundation\Auth\ResetsPasswords;
 class AuthController extends Controller
 {
     use ResetsPasswords;
-
     /**
      * API Register
      *
@@ -48,6 +47,65 @@ class AuthController extends Controller
             });
         return response()->json(['success'=> true, 'message'=> 'Thanks for signing up! Please check your email to complete your registration.']);
 //        return $this->login($request);
+    }
+
+    /**
+     * API Register
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function resetSendToken(Request $request)
+    {
+        $credentials = $request->only('email');
+        $rules = [
+            'email' => 'required|email'
+        ];
+        $validator = Validator::make($credentials, $rules);
+        if($validator->fails()) {
+            return response()->json(['success'=> false, 'error'=> ['code'=> 404, 'message' => $validator->messages()]], 400);
+        }
+
+        $user = User::where('email', Input::get('email'))->first();
+        if ($user == null) {
+            return response()->json(['success' => false, 'error' => ['code'=> 401, 'message'=>'Пользователь с данным E-mail не найден' ]], 401);
+        }
+        $name = $user->name;
+        $email = $user->email;
+        $reset_code = str_random(30); //Generate reset code
+        DB::table('user_reset')->insert(['user_id'=>$user->id,'token'=>$reset_code]);
+        $subject = "Ссылка для восстановления пароля";
+        Mail::send('email.reset', ['name' => $name, 'reset_code' => $reset_code],
+            function($mail) use ($email, $name, $subject){
+                $mail->from(getenv('FROM_EMAIL_ADDRESS'), getenv('FROM_SEO'));
+                $mail->to($email);
+                $mail->subject($subject);
+            });
+        return response()->json(['success'=> true, 'message'=> 'На Ваш почтовый ящик отправлена ссылка для восстановления пароля.']);
+    }
+
+    /**
+     * API Reset
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function reset(Request $request)
+    {
+        $code = Input::get('code');
+        if (is_null($code)) return response()->json(['success'=> false, 'error'=> ['code'=>1, 'message'=> 'Ссылка для восстановления не действительна.']]);
+        $check = DB::table('user_reset')->where('token',$code)->first();
+        if(!is_null($check)){
+            $user = User::find($check->user_id);
+            $user->password = Hash::make(Input::get('password'));
+            $user->save();
+            DB::table('user_reset')->where('token',$code)->delete();
+            return response()->json([
+                'success'=> true,
+                'message'=> 'You password changed.'
+            ]);
+        }
+        return response()->json(['success'=> false, 'error'=> ['code'=>2, 'message'=> 'Ссылка для восстановления не действительна.']]);
     }
 
     /**

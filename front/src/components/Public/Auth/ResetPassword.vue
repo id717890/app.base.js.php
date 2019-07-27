@@ -1,114 +1,78 @@
 <template>
-  <v-layout justify-center align-start>
+  <v-container>
+    <v-layout py-5>
       <v-flex xs12 md-6 offset-md2 lg4 offset-lg4>
         <app-notify/>
         <v-form lazy-validation v-model="form.valid" ref="form">
           <v-flex 12>
-            <v-text-field label="E-mail" v-model="form.email" required :rules="emailRules"></v-text-field>
-            <v-text-field label="Password" type="password" v-model="form.password" required :rules="passwordRules"></v-text-field>
+            <v-text-field label="Новый пароль" type="password" v-model="form.password" required :rules="passwordRules"></v-text-field>
+            <v-text-field label="Еще раз новый пароль" type="password" v-model="form.passwordConfirm" required :rules="passwordRules"></v-text-field>
           </v-flex>
           <v-flex 12>
             <v-layout justify-space-between>
-              <v-btn large :disabled="!form.valid" color="success" @click="signin" ><fai icon="sign-in-alt" class="mr-2" />  Sign In</v-btn>
-              <v-btn large flat to="/forgot"><fai icon="key" class="mr-2" />  Forgot</v-btn>
-              <v-btn left flat large to="/"><fai icon="home" size="2x" /></v-btn>
+              <v-btn large :disabled="!validated" color="success" @click="onSubmit" ><fai icon="save" class="mr-2" />  Сохранить</v-btn>
             </v-layout>
           </v-flex>
         </v-form>
     </v-flex>
   </v-layout>
-<b-container>
-    <b-row align-h="center">
-      <b-col lg=5 md=12 sm=12 xs=12 class="pt-10">
-        <b-card class="p-3 mb-5 text-dark">
-          <h3 class="mb-4">Новый пароль</h3>
-          <div class="mt-2" v-if="this.getOtherErrors !== null">
-            <div v-for="(error, index) in this.getOtherErrors" :key="index">
-              <b-alert show variant="danger" v-for="(message, indexMessage) in error" :key="indexMessage">{{message}}</b-alert>
-            </div>
-          </div>
-          <b-form @submit="onSubmit">
-            <b-form-group id="passwordGroup" label="Новый пароль:" label-for="password">
-              <b-form-input id="password" type="password" v-model="form.password" required placeholder="Введите новый пароль"></b-form-input>
-              <div class="mt-2" v-if="this.getErrors !== null && this.getErrors.Password !=null">
-                <b-alert class="p-0" show variant="danger" v-for="(error, index) in this.getErrors.Password" :key="index">{{error}}</b-alert>
-              </div>
-            </b-form-group>
-            <b-form-group id="passwprdConfirmGroup" label="Подтверждение нового пароля:" label-for="passwordConfirm">
-              <b-form-input id="passwordConfirm" type="password" v-model="form.passwordConfirm" required placeholder="Введите новый пароль еще раз"></b-form-input>
-              <div class="mt-2" v-if="this.getErrors !== null && this.getErrors.PasswordConfirm !=null">
-                <b-alert class="p-0" show variant="danger" v-for="(error, index) in this.getErrors.PasswordConfirm" :key="index">{{error}}</b-alert>
-              </div>
-            </b-form-group>
-            <fieldset >
-            <div class="d-flex ">
-                <b-button :disabled="!validated" type="submit" variant="success" class="w-100">OK</b-button>
-            </div>
-            </fieldset>
-          </b-form>
-        </b-card>
-      </b-col>
-    </b-row>
-  </b-container>
+  </v-container>
 </template>
 
 <script>
-import {mapActions, mapGetters} from 'vuex'
+import { mapActions } from 'vuex'
 
 export default {
+  props: ['code'],
   data () {
     return {
       form: {
-        userId: '',
         code: '',
         password: '',
         passwordConfirm: ''
-      }
+      },
+      passwordRules: [
+        v => !!v || 'Password required'
+      ]
     }
   },
   computed: {
-    ...mapGetters(['getMessages', 'getErrors']),
-    getOtherErrors () {
-      let newObject = {}
-      const fields = ['Password', 'PasswordConfirm']
-      for (let prop in this.getErrors) {
-        if (!fields.includes(prop)) newObject[prop] = this.getErrors[prop]
-      }
-      return newObject
-    },
+    // getOtherErrors () {
+    //   let newObject = {}
+    //   const fields = ['Password', 'PasswordConfirm']
+    //   for (let prop in this.getErrors) {
+    //     if (!fields.includes(prop)) newObject[prop] = this.getErrors[prop]
+    //   }
+    //   return newObject
+    // },
     validated () {
       return this.form.password === this.form.passwordConfirm && this.form.password.length >= 6
     }
   },
   methods: {
-    ...mapActions(['resetPasswordVerifyToken']),
+    ...mapActions(['reset']),
     resetForm () {
       this.form.password = ''
       this.form.passwordConfirm = ''
-      this.form.userId = ''
       this.form.code = ''
     },
     onSubmit (evt) {
       evt.preventDefault()
-      this.resetPasswordVerifyToken(this.form)
+      this.reset(this.form)
         .then((x) => {
           // this.resetForm()
-          this.$router.push('Message')
-        })
-        .catch(x => {
+          this.$router.push('/login')
         })
     }
   },
+  mounted () {
+    this.form.code = this.code
+  },
   async created () {
     this.$store.dispatch('clearAllMessages')
-    let id = this.$route.query.id
-    let code = this.$route.query.code
-    // console.log(id)
-    // console.log(code)
-    if (id === null || code === null || id === '' || code === '') alert('Некорректная ссылка для восстановления')
+    if (this.code === null || this.code === '') alert('Некорректная ссылка для восстановления')
     else {
-      this.form.userId = id
-      this.form.code = code
+      this.form.code = this.code
     }
   }
 }

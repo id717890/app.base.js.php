@@ -26,6 +26,19 @@ const getters = {
 
 // actions
 const actions = {
+  async reset ({ dispatch }, payload) {
+    return new Promise((resolve, reject) => {
+      context.reset(payload).then((x) => {
+        if (x.status === 200 && x.data.success === true) {
+          dispatch('setMessages', 'Новый пароль успешно сохранен')
+          resolve()
+        } else {
+          dispatch('setErrors', x.data)
+          reject(x)
+        }
+      })
+    })
+  },
   async confirmation ({ dispatch }, payload) {
     return new Promise((resolve, reject) => {
       context.confirmation(payload).then((x) => {

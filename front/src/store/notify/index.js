@@ -8,28 +8,32 @@ const state = {
 
 const actions = {
   setErrors ({commit}, payload) {
-    if (payload.error !== null && payload.error !== 'undefined' && payload.error.message !== null && payload.error.message !== 'undefined') {
-      switch (typeof payload.error.message) {
-        case 'string': commit(types.SET_ERRORS, payload.error.message)
-        break
-        case 'object': {
-          Object.keys(payload.error.message).forEach(x => {
-            switch (typeof payload.error.message[x]) {
-              case 'string': commit(types.SET_ERRORS, payload.error.message[x])
-              break
-              case 'object': {
-                if (Array.isArray(payload.error.message[x])) {
-                  payload.error.message[x].forEach(y => commit(types.SET_ERRORS, y))
+    if (typeof payload === 'string') {
+      commit(types.SET_ERRORS, payload)
+    } else {
+      if (payload.error !== null && payload.error !== 'undefined' && payload.error.message !== null && payload.error.message !== 'undefined') {
+        switch (typeof payload.error.message) {
+          case 'string': commit(types.SET_ERRORS, payload.error.message)
+          break
+          case 'object': {
+            Object.keys(payload.error.message).forEach(x => {
+              switch (typeof payload.error.message[x]) {
+                case 'string': commit(types.SET_ERRORS, payload.error.message[x])
+                break
+                case 'object': {
+                  if (Array.isArray(payload.error.message[x])) {
+                    payload.error.message[x].forEach(y => commit(types.SET_ERRORS, y))
+                  }
                 }
+                break
               }
-              break
-            }
-          })
-
+            })
+  
+          }
+          break
         }
-        break
       }
-    } 
+    }
   },
   setMessages ({commit}, payload) {
     commit(types.SET_MESSAGES, payload)

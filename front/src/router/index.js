@@ -25,7 +25,8 @@ const router = new Router({
         { path: 'login', name: 'LogIn', components: { routerguest: () => import('../components/Public/Auth/LogIn.vue') } },
         { path: 'register', name: 'Register', components: { routerguest: () => import('../components/Public/Auth/Register.vue') } },
         { path: 'confirm/:code', name: 'Confirm', props: { routerguest: true }, components: { routerguest: () => import('../components/Public/Auth/Confirm.vue') } },
-        { path: 'forgot', name: 'ForgotPassword', components: { routerguest: () => import('../components/Public/Auth/ForgotPassword.vue') } }
+        { path: 'forgot', name: 'ForgotPassword', components: { routerguest: () => import('../components/Public/Auth/ForgotPassword.vue') } },
+        { path: 'reset/:code', name: 'ResetPassword', props: { routerguest: true }, components: { routerguest: () => import('../components/Public/Auth/ResetPassword.vue') } }
       ]
     },
     {
