@@ -14,12 +14,12 @@
               <p>{{product.description}}</p>
               <hr class="mb-3"/>
               <section v-if="isAuth">
-                <v-btn :to="'/product/'+product.id" large dark color="red darken-3" style="margin: auto" v-if="product.price>0">
-                  <i class="fa fa-shopping-cart fa-2x mr-2"></i>
-                  Buy {{Number(product.price)}}$
+                <v-btn :to="'/lk/products'" large dark color="red darken-3" style="margin: auto" v-if="product.price>0">
+                  <i class="fab fa-cc-visa fa-2x mr-2"></i>
+                  Купить {{Number(product.price)}} руб.
                 </v-btn>
                 <v-btn to="/lk/products" large dark color="red darken-3" style="margin: auto" v-else>
-                  <i class="fa fa-shopping-cart fa-2x mr-2"></i>
+                  <i class="fa fa-dumbbell fa-2x mr-2"></i>
                   Попробовать бесплатно
                 </v-btn>
               </section>
@@ -43,20 +43,23 @@ export default {
     return {
       id: this.$route.params.id,
       product: null
+      // productOfUser: null
     }
   },
   computed: {
-    ...mapGetters(['getProductById'])
+    ...mapGetters(['getProductById', 'getProductOfUserById'])
     // product () {
     //   return this.getProductById(this.id)
     // }
   },
   created () {
     this.product = this.getProductById(this.id)
+    // this.productOfUser = this.getProductOfUserById(this.id)
   },
   watch: {
     '$route' (to, from) {
       this.product = this.getProductById(to.params.id)
+      // this.productOfUser = this.getProductOfUserById(to.params.id)
     }
   }
 }

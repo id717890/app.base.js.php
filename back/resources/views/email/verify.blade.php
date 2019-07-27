@@ -5,13 +5,13 @@
 </head>
 <body>
 <div>
-    Hi {{ $name }},
+    Привет {{ $name }},
     <br>
-    Thank you for creating an account with us. Don't forget to complete your registration!
+    Спасибо за регистрацию на моём <a href="https://evgeniakabanova.com/" target="_blank">сайте</a>. Не забудь завершить регистрацию!
     <br>
-    Please click on the link below or copy it into the address bar of your browser to confirm your email address:
+    Пожалуйста кликни на ссылку чтобы подтвердить свой email:
     <br>
-    <a href="{{ getenv('WEB_SITE').'/confirm/'.$verification_code}}">Confirm my email address </a>
+    <a href="{{ getenv('WEB_SITE').'/confirm/'.$verification_code}}">Подтвердить мой E-mail</a>
 </div>
 </body>
 </html>

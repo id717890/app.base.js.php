@@ -9,10 +9,12 @@ use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Validator, DB, Hash, Mail, Illuminate\Support\Facades\Password;
 use Auth;
-
+use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class AuthController extends Controller
 {
+    use ResetsPasswords;
+
     /**
      * API Register
      *

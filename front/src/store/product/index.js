@@ -62,6 +62,9 @@ const mutations = {
 const getters = {
   getProductById: state => id => {
     return state.products.find(x => Number(x.id) === Number(id))
+  },
+  getProductOfUserById: state => id => {
+    return state.products.find(x => Number(x.product.id) === Number(id))
   }
 }
 

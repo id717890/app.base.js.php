@@ -76,9 +76,8 @@
                     <!--Куда перенаправлять пользователя после успешной оплаты платежа-->
                     <input type="hidden" name="successURL" :value="yandex.successURL">
                     <v-btn large dark color="red darken-3" style="margin: auto" :type="'submit'">
-                      <i class="fa fa-shopping-cart fa-2x mr-2"></i>
-                      Купить программу {{Number(product.product.price)}}
-                      <i class="fa fa-ruble-sign mr-2"></i>
+                      <i class="fab fa-cc-visa fa-2x mr-2"></i>
+                      Купить программу {{Number(product.product.price)}} руб.
                     </v-btn>
 
                     <!-- <button :disabled="!validCount"  class="btn btn-primary w-100"><fai icon="donate" /> Donate</button> -->

@@ -7,7 +7,7 @@
             <img class="logo-home" :src="require('../../../static/img/logo/1.png')" alt="Evgenia Kabanova movement coach">
           </section>
           <p class="logo-text">
-            Друзья, добро пожаловать на сайт Евгении Кабановой, мастера спорта международного класса, чемпионки мира по спортивной акробатике.
+            Друзья, добро пожаловать на сайт Евгении Кабановой, мастера спорта международного класса, чемпионки мира по спортивной акробатике и сертифицированного инструктора методики ANIMAL FLOW.
           </p>
           <p class="logo-text">
             Здесь вы найдете полезную информацию о тренировках, сможете пройти бесплатный челлендж, <strong class="">а также купить новую уникальную фитнес-программу «ДВИЖЕНИЕ» с элементами FLOW!</strong> Эта программа не только изменит ваш подход к тренировкам, но и изменит вашу жизнь!
@@ -16,7 +16,7 @@
         </v-flex>
         <v-flex xs12 md7 style="">
           <v-carousel
-            :cycle="false"
+            :cycle="true"
             class="elevation-0 100h"
             hide-delimiters
             hide-controls
@@ -103,13 +103,16 @@
               </v-card-title>
 
               <v-card-actions>
-                <v-btn :to="'/product/'+product.id" large round dark color="deep-orange" style="margin: auto" v-if="product.price>0">
-                  <i class="fa fa-shopping-cart fa-2x mr-2"></i>
-                  Buy {{Number(product.price)}}$
+                <v-btn :to="'lk/products'" large round dark color="deep-orange" style="margin: auto" v-if="product.price>0">
+                  <i class="fab fa-cc-visa fa-2x mr-2"></i>
+                  Купить {{Number(product.price)}} руб.
                 </v-btn>
-                <v-btn :to="'/product/'+product.id" large round dark color="deep-orange" style="margin: auto" v-else>
-                  <i class="fa fa-shopping-cart fa-2x mr-2"></i>
-                  Try It Free
+                <v-btn :to="'/lk/products'" large round dark color="deep-orange" style="margin: auto" v-else>
+                  <i class="fa fa-dumbbell fa-2x mr-2"></i>
+                  Протестировать
+                </v-btn>
+                <v-btn small flat :to="'/product/'+product.id"  dark color="deep-orange" style="margin: auto">
+                  Подробнее
                 </v-btn>
               </v-card-actions>
             </v-card>
