@@ -20,7 +20,7 @@ const router = new Router({
         { path: 'about', name: 'about', components: { routerguest: () => import('../components/Public/About.vue') } },
         { path: 'articles', name: 'Articles', components: { routerguest: () => import('../components/Public/Article/Index.vue') } },
         { path: 'article/:id', name: 'Article', components: { routerguest: () => import('../components/Public/Article/Item.vue') } },
-        { path: 'product/:id', props: true, name: 'Product', components: { routerguest: () => import('../components/Public/Product.vue') } },
+        { path: 'product/:id', props: { routerguest: true }, name: 'Product', components: { routerguest: () => import('../components/Public/Product.vue') } },
         { path: 'contacts', name: 'Contacts', components: { routerguest: () => import('../components/Public/Contacts.vue') } },
         { path: 'login', name: 'LogIn', components: { routerguest: () => import('../components/Public/Auth/LogIn.vue') } },
         { path: 'register', name: 'Register', components: { routerguest: () => import('../components/Public/Auth/Register.vue') } },
@@ -48,6 +48,7 @@ const router = new Router({
     {
       path: '/lk',
       name: 'LkHome',
+      redirect: { name: 'ProductsUser' },
       beforeEnter: authGuard,
       components: { main: () => import('../components/LayoutUser.vue') },
       children: [

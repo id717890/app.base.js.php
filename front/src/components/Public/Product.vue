@@ -1,7 +1,7 @@
 <template>
   <v-layout column fill-height v-if="product !== null">
     <v-flex xs12 class="bg4">
-      <v-layout row wrap justify-center>
+      <v-layout row wrap justify-center v-if="product !== null && product !== undefined && product !== 'undefined'">
         <v-flex xs12 sm10 md7 pa-5>
           <h2 class="h2-s2 text-xs-center">{{product.name}}</h2>
         </v-flex>
@@ -29,6 +29,9 @@
             </v-flex>
           </v-layout>
         </v-flex>
+        <v-flex xs12>
+          <component :is="productComponent"></component>
+        </v-flex>
       </v-layout>
     </v-flex>
   </v-layout>
@@ -37,28 +40,41 @@
 <script>
 import { mapGetters } from 'vuex'
 import authMixin from '../../mixins/auth'
+import Challenge from '../Products/Challenge'
+import Flow from '../Products/Flow'
 export default {
   mixins: [authMixin],
+  props: ['id'],
+  components: {
+    'product1': Flow,
+    'product2': Challenge
+  },
   data () {
     return {
-      id: this.$route.params.id,
-      product: null
-      // productOfUser: null
+      // id: this.$route.params.id,
+      // product: null,
+      // productComponent: null
     }
   },
   computed: {
-    ...mapGetters(['getProductById', 'getProductOfUserById'])
-    // product () {
-    //   return this.getProductById(this.id)
-    // }
+    ...mapGetters(['getProductById', 'getProductOfUserById']),
+    product () {
+      return this.getProductById(this.id)
+    },
+    productComponent () {
+      return 'product' + this.id
+    }
   },
-  created () {
-    this.product = this.getProductById(this.id)
+  async created () {
+    // this.productComponent = this.id === 1 ? () => import('../Products/Flow') : () => import('../Products/Challenge')
+    // this.product = this.getProductById(this.id)
     // this.productOfUser = this.getProductOfUserById(this.id)
   },
   watch: {
     '$route' (to, from) {
-      this.product = this.getProductById(to.params.id)
+      // this.productComponent = 'product'+this.id
+      // this.product = this.getProductById(to.params.id)
+      // if (this.id === 1) console.log(1)
       // this.productOfUser = this.getProductOfUserById(to.params.id)
     }
   }
