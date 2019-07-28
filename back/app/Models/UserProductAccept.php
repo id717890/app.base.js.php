@@ -11,7 +11,7 @@ class UserProductAccept extends Model
 
     protected $table = 'user_product_accepts';
 
-    protected $fillable = array('user_id', 'product_id', 'fio', 'age', 'city', 'email', 'phobe');
+    protected $fillable = array('user_id', 'product_id', 'fio', 'age', 'city', 'email', 'phone');
 
     protected $hidden = array('created_at','updated_at');
 }

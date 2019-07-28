@@ -59,7 +59,6 @@ export default {
       if (this.$refs.form.validate()) {
         this.signUserIn(this.form)
           .then(() => {
-            console.log(this.isAdmin)
             if (this.isAdmin === true) {
               this.$router.push('/dashboard')
             } else {

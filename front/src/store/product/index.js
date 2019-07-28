@@ -9,6 +9,17 @@ const state = {
 
 // actions
 const actions = {
+  async acceptProduct ({ commit, dispatch }, payload) {
+    context.accept(payload).then((x) => {
+      if (x.status === 200) {
+        dispatch('getAllProductsForUser')
+      } else {
+        dispatch('setErrors', x.response.data)
+      }
+    }).catch(x => {
+      dispatch('setErrors', x.response.data)
+    })
+  },
   async getAllProductsForUser ({ commit, dispatch }) {
     context.getProductsForUser().then((x) => {
       if (x.status === 200) {
@@ -61,10 +72,12 @@ const mutations = {
 // getters
 const getters = {
   getProductById: state => id => {
-    return state.products.find(x => Number(x.id) === Number(id))
+    if (state.products) return state.products.find(x => Number(x.id) === Number(id))
+    return null
   },
   getProductOfUserById: state => id => {
-    return state.products.find(x => Number(x.product.id) === Number(id))
+    if (state.productsOfUser) return state.productsOfUser.find(x => Number(x.product.id) === Number(id))
+    return null
   }
 }
 

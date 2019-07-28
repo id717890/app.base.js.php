@@ -209,7 +209,7 @@
 
 <script>
 import authMixin from '../mixins/auth'
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 export default {
   mixins: [authMixin],
   name: 'App',
@@ -246,6 +246,7 @@ export default {
     source: String
   },
   methods: {
+    ...mapActions(['getAllProductsForUser']),
     scrollToTop () {
       // let element = this.$refs['menu']
       // var top = element.offsetTop
@@ -253,6 +254,11 @@ export default {
     },
     test () {
       this.$router.push('/dashboard/users')
+    }
+  },
+  async created () {
+    if (this.isAuth) {
+      this.getAllProductsForUser()
     }
   }
 }
