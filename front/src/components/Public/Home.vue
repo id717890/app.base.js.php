@@ -25,7 +25,7 @@
             next-icon="fa fa-arrow-right"
       >
         <v-carousel-item v-for="(item,i) in items" :key="i">
-          <v-img style="height: 100%" :src="item.src" :lazy-src="item.lazy"  class="hidden-sm-and-down bbl">
+          <v-img style="height: 100%" :src="item.src" :lazy-src="item.lazy"  class="hidden-sm-and-down">
             <!-- <span class="photo-sign">{{item.author}}</span> -->
             <!-- <span class="photo-text">{{item.text}}</span> -->
           </v-img>
@@ -42,7 +42,7 @@
     <v-flex class="grey lighten-1">
       <v-layout class="bg1" row wrap>
         <v-flex xs12>
-          <h2 class="h2-s1 text-xs-center pt-2 mt-5 mb-3"><i class="far fa-handshake"></i> Партнеры фитнес-программы <br>"ДВИЖЕНИЕ"</h2>
+          <h2 class="h2-s1 text-xs-center pt-2 mt-5 mb-3"><i class="far fa-handshake"></i> Партнеры фитнес-программы <br>«ДВИЖЕНИЕ»</h2>
         </v-flex>
         <v-flex xs12 md8 offset-md2 mb-5 style="color: #d19c1d">
           <v-layout row wrap justify-center>
@@ -53,7 +53,7 @@
                     <v-img  width="100%" class="" height="100%" :src="partner.img"></v-img>
                   </a>
                 </div>
-                <p>{{partner.txt}}</p>
+                <p v-html="partner.txt"></p>
               </div>
             </v-flex>
             <!-- <v-flex xs12 md6 lg4 style="display:flex;" pr-3 mb-3 align-center>
@@ -96,9 +96,9 @@
               ></v-img>
 
               <v-card-title primary-title>
-                <div>
-                  <h3 class="headline mb-0">{{product.name}}</h3>
-                  <div>{{product.description}}</div>
+                <div style="width: 100%!important">
+                  <h3 class="headline mb-0 text-xs-center white--text"  v-html="product.name"></h3>
+                  <!-- <div>{{product.description}}</div> -->
                 </div>
               </v-card-title>
 
@@ -111,7 +111,7 @@
                   <i class="fa fa-dumbbell fa-2x mr-2"></i>
                   Протестировать
                 </v-btn>
-                <v-btn small flat :to="'/product/'+product.id"  dark color="deep-orange" style="margin: auto">
+                <v-btn small  flat :to="'/product/'+product.id"  dark color="white" style="margin: auto">
                   Подробнее
                 </v-btn>
               </v-card-actions>
@@ -259,18 +259,18 @@
                 <p>Я всегда открыта к диалогу, поэтому, если у вас возникнут вопросы, или вы захотите поделиться со мной своими эмоциями, пишите мне, мои контактные данные указаны в разделе «контакты»!</p>
               </v-flex>
               <v-flex xs12 sm12 md8 style="z-index: 3" class="pa-3 text-xs-center">
-                <v-img class="bottom-photo elevation-20" style="border-radius: 15px; margin:auto" :src="require('../../../static/img/KEY.jpg')" :lazy-src="require('../../../static/img/KEY_lazy.jpg')" max-width="510"></v-img>
+                <v-img class="bottom-photo elevation-20" style="margin:auto" :src="require('../../../static/img/KEY.jpg')" :lazy-src="require('../../../static/img/KEY_lazy.jpg')" max-width="510"></v-img>
               </v-flex>
             </v-layout>
           </v-flex>
         </v-layout>
       </div>
     </v-flex>
-    <v-flex class="text-xs-center">
+    <!-- <v-flex class="text-xs-center">
       <div class="wrapper-end-img">
         <img style="" :src="require('../../../static/img/decor.png')" alt="">
       </div>
-    </v-flex>
+    </v-flex> -->
   </v-layout>
   <!-- <HelloWorld /> -->
 </template>
@@ -299,7 +299,7 @@ export default {
         {
           id: 2,
           img: require('../../../static/img/partners/VladimirChebaldin.jpg'),
-          txt: 'Фотограф Владимир Чебалдин',
+          txt: 'Фотограф<br>Владимир Чебалдин',
           url: 'https://www.instagram.com/v4photo/?hl=ru'
         },
         {
@@ -311,25 +311,25 @@ export default {
         {
           id: 4,
           img: require('../../../static/img/partners/DanilaProhorenko.jpg'),
-          txt: 'Видеограф Данила Прохоренко',
+          txt: 'Видеограф<br>Данила Прохоренко',
           url: 'https://www.instagram.com/danila.pr/?hl=ru'
         },
         {
           id: 3,
           img: require('../../../static/img/partners/VladimirOgnev.jpg'),
-          txt: 'Видеограф Владимир Огнев',
+          txt: 'Видеограф<br>Владимир Огнев',
           url: 'https://www.instagram.com/vladimirogniov/?hl=ru'
         },
         {
           id: 5,
           img: require('../../../static/img/partners/AnastasiaBadarina.jpg'),
-          txt: 'Дизайнер Анастасия Бударина',
+          txt: 'Дизайнер<br>Анастасия Бударина',
           url: 'https://www.instagram.com/stasiabu/?hl=ru'
         },
         {
           id: 6,
           img: require('../../../static/img/partners/ZamirYusupov.jpg'),
-          txt: 'Программист Замир Юсупов',
+          txt: 'Программист<br>Замир Юсупов',
           url: 'https://yusupovz.ru/'
         }
       ],
@@ -364,8 +364,8 @@ export default {
   methods: {
     randColor (index) {
       switch (index) {
-        case 0: return 'lime accent-4'
-        case 1: return 'orange darken-1'
+        case 0: return 'green accent-4'
+        case 1: return 'teal darken-1'
         case 2: return 'blue darken-2'
       }
     }

@@ -1,22 +1,21 @@
 <template>
   <v-app id="inspire">
     <v-toolbar
-      class="light-blue darken-3" ref="menu"
+      class="light-blue darken-3 my-toolbar" ref="menu"
       dark
       clipped-right
     >
-      <v-toolbar-side-icon @click.stop="drawer = !drawer" class="hidden-md-and-up ">
+      <v-toolbar-side-icon @click.stop="drawer = !drawer" class="hidden-md-and-up">
         <fai icon="align-justify"></fai>
       </v-toolbar-side-icon>
-      <v-toolbar-title class="white--text">
+      <v-toolbar-title class="white--text my-logo mr-5">
         <img style="max-height: 40px" :src="require('../../static/img/logo/2.png')" alt="Evgenia Kabanova movement coach">
       </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-toolbar-items class="hidden-sm-and-down">
+      <v-toolbar-items class="hidden-sm-and-down align-self-center">
         <v-btn flat to="/home"><i class="mr-1 fa fa-home fa-2x"></i></v-btn>
         <v-btn flat to="/about"><i class="mr-1 fa fa-info"></i>Обо мне</v-btn>
         <v-btn flat to="/contacts"><i class="mr-1 fa fa-location-arrow"></i>Контакты</v-btn>
-        <v-btn flat to="/articles"><i class="mr-1 fab fa-pagelines"></i>Новости</v-btn>
+        <v-btn flat to="/articles"><i class="mr-1 fab fa-pagelines"></i>Полезная информация</v-btn>
       </v-toolbar-items>
       <section class="hidden-sm-and-down">
         <v-menu :nudge-width="100">

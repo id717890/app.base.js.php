@@ -52,7 +52,7 @@
       <h2 class="text-xs-center mt-5">Челлендж «БУДЬ В ФОРМЕ»</h2>
       <p class="text-xs-center"><strong>План тренировок</strong></p>
     </v-flex>
-    <v-flex xs12 sm5 offset-sm1 md4 offset-md2 pa-3>
+    <v-flex xs12 sm12 md6 pa-3>
       <v-card>
         <v-card-title>
           <h3>Неделя 1</h3>
@@ -72,7 +72,7 @@
         </v-card-text>
       </v-card>
     </v-flex>
-    <v-flex xs12 sm5 md4 pa-3>
+    <v-flex xs12 sm12 md6 pa-3>
       <v-card>
         <v-card-title>
           <h3>Неделя 2</h3>

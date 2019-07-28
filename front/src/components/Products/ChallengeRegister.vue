@@ -1,7 +1,7 @@
 <template>
   <v-layout row wrap>
     <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3 text-xs-center>
-      <h1>Бесплатный челлендж «БУДЬ В ФОРМЕ» (2 недели)</h1>
+      <h1>Бесплатный челлендж <br> «БУДЬ В ФОРМЕ» (2 недели)</h1>
       <p>Старт 15 сентября 2019</p>
       <p>(доступ открыт до 18 сентября)</p>
       <br>

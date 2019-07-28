@@ -3,7 +3,7 @@
     <v-flex xs12 class="bg4">
       <v-layout row wrap v-if="product !== null && product !== undefined && product !== 'undefined'">
         <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3 pa-5>
-          <h2 class="h2-s2 text-xs-center">{{product.name}}</h2>
+          <h2 class="text-xs-center" v-html="product.name"></h2>
         </v-flex>
         <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3>
           <v-img :src="require('../../../static/img/' + product.photo)" class="elevation-16" style="border: 30px solid white;"></v-img>

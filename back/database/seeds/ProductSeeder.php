@@ -15,7 +15,7 @@ class ProductSeeder extends Seeder
 
         DB::table('products')->insert([
             'id' => 1,
-            'name' => 'Фитнес-программа «ДВИЖЕНИЕ» с элементами FLOW',
+            'name' => 'Фитнес-программа «ДВИЖЕНИЕ» <br> с элементами FLOW',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
             'price' => 2,
             'photo' => 'program1.jpg',
@@ -25,7 +25,7 @@ class ProductSeeder extends Seeder
         ]);
         DB::table('products')->insert([
             'id' => 2,
-            'name' => 'Бесплатный челлендж «БУДЬ В ФОРМЕ» (2 недели)',
+            'name' => 'Бесплатный челлендж<br>«БУДЬ В ФОРМЕ» (2 недели)',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
             'price' => 0,
             'icon'=>'fa fa-dumbbell',

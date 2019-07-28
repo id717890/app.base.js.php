@@ -277,3 +277,12 @@ body {
 .bbl {
   border-bottom-left-radius: 10px;
 }
+
+.my-toolbar .v-toolbar__content {
+  justify-content: center;
+}
+
+.my-toolbar .my-logo {
+  // justify-self: start;
+  // margin-right: auto;
+}
