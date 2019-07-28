@@ -259,7 +259,7 @@
                 <p>Я всегда открыта к диалогу, поэтому, если у вас возникнут вопросы, или вы захотите поделиться со мной своими эмоциями, пишите мне, мои контактные данные указаны в разделе «контакты»!</p>
               </v-flex>
               <v-flex xs12 sm12 md8 style="z-index: 3" class="pa-3 text-xs-center">
-                <v-img style="border-radius: 15px; margin:auto" :src="require('../../../static/img/KEY.jpg')" :lazy-src="require('../../../static/img/KEY_lazy.jpg')" max-width="510" class="elevation-20"></v-img>
+                <v-img class="bottom-photo elevation-20" style="border-radius: 15px; margin:auto" :src="require('../../../static/img/KEY.jpg')" :lazy-src="require('../../../static/img/KEY_lazy.jpg')" max-width="510"></v-img>
               </v-flex>
             </v-layout>
           </v-flex>

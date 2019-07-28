@@ -1,7 +1,6 @@
 <template>
   <v-app id="inspire">
     <v-toolbar
-      fixed
       app
       flat
       clipped-right
@@ -61,11 +60,27 @@
         <router-view name="routeruser"></router-view>
       </v-container>
     </v-content>
-    <v-footer color="blue-grey darken-4" class="white--text" app>
+    <div class="white--text blue-grey darken-3" style="z-index:10">
+      <v-layout row wrap justify-center fill-height>
+        <v-flex xs12 class="text-xs-center hidden-sm-and-down">
+          <v-layout row nowrap justify-center align-center>
+            <div class="py-0">&copy;2019 — <strong>All Rights Reserved. EvgeniaKabanova.com</strong></div>
+            <v-btn small flat dark fab @click="scrollToTop"><i class="fa fa-chevron-up"></i></v-btn>
+          </v-layout>
+        </v-flex>
+        <v-flex xs12 class="text-xs-center hidden-md-and-up">
+          <v-layout row nowrap justify-center align-center>
+            <div class="py-0">&copy;2019 — <strong>All Rights Reserved. EvgeniaKabanova.com</strong></div>
+            <v-btn small flat dark fab @click="scrollToTop"><i class="fa fa-chevron-up"></i></v-btn>
+          </v-layout>
+        </v-flex>
+      </v-layout>
+    </div>
+    <!-- <v-footer color="blue-grey darken-4" class="white--text" app>
       <span>EvgeniaKabanova.com</span>
       <v-spacer></v-spacer>
       <span>&copy; 2019</span>
-    </v-footer>
+    </v-footer> -->
   </v-app>
 </template>
 
@@ -105,6 +120,11 @@ export default {
     source: String
   },
   methods: {
+    scrollToTop () {
+      // let element = this.$refs['menu']
+      // var top = element.offsetTop
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+    },
     test () {
       this.$router.push('/dashboard/users')
     }

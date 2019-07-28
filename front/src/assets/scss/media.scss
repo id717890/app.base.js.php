@@ -79,8 +79,8 @@
   }
 
   .about-img1 {
-    max-width: 400px;
-    float: right; margin: 0 0 20px 20px;
+    max-width: 500px;
+    float: right; margin: 0 0 10px 20px;
   }
 
   .about-img3, .about-img2 {
@@ -91,6 +91,10 @@
 }
 
 @media (min-width: 1264px) {
+  .bottom-photo {
+    margin: 0 !important;
+  }
+
   .about-top-photo {
     max-height: 530px;
   }
@@ -114,6 +118,8 @@
 
 @media (min-width: 1904px)
 {
+  
+
   .about-top-photo {
     max-height: 550px;
   }

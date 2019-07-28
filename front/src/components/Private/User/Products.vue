@@ -8,7 +8,7 @@
           color="blue"
           indeterminate
         ></v-progress-circular>
-      </section>  
+      </section>
       <v-tabs show-arrows v-else
         centered
         color="light-blue"

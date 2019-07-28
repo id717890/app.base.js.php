@@ -58,6 +58,7 @@ export default function (Vue) {
       localStorage.removeItem('token')
       localStorage.removeItem('expiration')
       localStorage.removeItem('id')
+      localStorage.removeItem('role')
     }
     // isAuth () {
     //   if (this.getToken()) return true
