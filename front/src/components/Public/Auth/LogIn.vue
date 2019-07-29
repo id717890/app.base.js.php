@@ -11,7 +11,7 @@
           <v-flex 12>
             <v-layout row wrap>
               <v-flex xs12>
-                <v-btn  :disabled="!form.valid" color="success" @click="signin" ><fai icon="sign-in-alt" class="mr-2" />  Вход</v-btn>
+                <v-btn  :disabled="!form.valid" :loading="loading" color="success" @click="signin" ><fai icon="sign-in-alt" class="mr-2" />  Вход</v-btn>
                 <v-btn  flat to="/forgot"><fai icon="key" class="mr-2" />  Восстановить</v-btn>
                 <v-btn left flat fab to="/"><fai icon="home" size="2x" /></v-btn>
               </v-flex>
@@ -31,6 +31,7 @@ export default {
   mixins: [authMixins],
   data () {
     return {
+      loading: false,
       form: {
         valid: true,
         email: null,
@@ -54,6 +55,7 @@ export default {
   methods: {
     ...mapActions(['signUserIn']),
     signin (e) {
+      this.loading = true
       this.$store.dispatch('clearAllMessages')
       e.preventDefault()
       if (this.$refs.form.validate()) {
@@ -65,11 +67,10 @@ export default {
               this.$router.push('/lk')
             }
           })
-          .catch(() => {
-            // todo show errors from vuex state
+          .catch(x => {
+            this.loading = false
           })
-        // this.$refs.form.reset()
-      }
+      } else this.loading = false
     },
     onSubmit (evt) {
       // evt.preventDefault()

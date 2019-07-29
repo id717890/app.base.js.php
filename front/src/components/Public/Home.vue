@@ -97,7 +97,7 @@
 
               <v-card-title primary-title>
                 <div style="width: 100%!important">
-                  <h3 class="headline mb-0 text-xs-center white--text"  v-html="product.name"></h3>
+                  <h3 class="headline mb-0 text-xs-center white--text"  v-html="product.name_html"></h3>
                   <!-- <div>{{product.description}}</div> -->
                 </div>
               </v-card-title>
@@ -259,7 +259,7 @@
                 <p>Я всегда открыта к диалогу, поэтому, если у вас возникнут вопросы, или вы захотите поделиться со мной своими эмоциями, пишите мне, мои контактные данные указаны в разделе «контакты»!</p>
               </v-flex>
               <v-flex xs12 sm12 md8 style="z-index: 3" class="pa-3 text-xs-center">
-                <v-img class="bottom-photo elevation-20" style="margin:auto" :src="require('../../../static/img/KEY.jpg')" :lazy-src="require('../../../static/img/KEY_lazy.jpg')" max-width="510"></v-img>
+                <v-img class="bottom-photo elevation-24 img-bordered" style="margin:auto" :src="require('../../../static/img/KEY.jpg')" :lazy-src="require('../../../static/img/KEY_lazy.jpg')" max-width="510"></v-img>
               </v-flex>
             </v-layout>
           </v-flex>

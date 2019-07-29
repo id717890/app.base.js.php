@@ -63,12 +63,12 @@ class AuthController extends Controller
         ];
         $validator = Validator::make($credentials, $rules);
         if($validator->fails()) {
-            return response()->json(['success'=> false, 'error'=> ['code'=> 404, 'message' => $validator->messages()]], 400);
+            return response()->json(['success'=> false, 'error'=> ['code'=> 404, 'message' => $validator->messages()]], 404);
         }
 
         $user = User::where('email', Input::get('email'))->first();
         if ($user == null) {
-            return response()->json(['success' => false, 'error' => ['code'=> 401, 'message'=>'Пользователь с данным E-mail не найден' ]], 401);
+            return response()->json(['success' => false, 'error' => ['code'=> 404, 'message'=>'Пользователь с данным E-mail не найден' ]], 404);
         }
         $name = $user->name;
         $email = $user->email;

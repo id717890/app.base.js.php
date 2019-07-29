@@ -9,6 +9,13 @@ export default {
       return error
     })
   },
+  resetSendEmail: (data) => {
+    return Vue.$http.post('api/reset1', data).then((x) => {
+      return x
+    }).catch(error => {
+      return error
+    })
+  },
   confirmation: (code) => {
     return Vue.$http.get('api/verifyUser/' + code).then((x) => {
       return x

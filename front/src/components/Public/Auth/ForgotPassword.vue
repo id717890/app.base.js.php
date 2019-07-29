@@ -9,8 +9,8 @@
           </v-flex>
           <v-flex 12>
             <v-layout row wrap justify-space-between>
-              <v-btn large :disabled="!form.valid" color="primary" @click="onSubmit" ><fai icon="paper-plane" class="mr-2" />  E-mail me</v-btn>
-              <v-btn left flat large to="/"><fai icon="home" size="2x" /></v-btn>
+              <v-btn large :loading="loading" :disabled="!form.valid" color="primary" @click="onSubmit" ><fai icon="paper-plane" class="mr-2" />  Восстановить</v-btn>
+              <v-btn left flat fab to="/"><fai icon="home" size="2x" /></v-btn>
             </v-layout>
           </v-flex>
         </v-form>
@@ -25,9 +25,10 @@ import { mapActions, mapGetters } from 'vuex'
 export default {
   data () {
     return {
+      loading: false,
       form: {
         valid: true,
-        email: 'jusupovz@gmail.com'
+        email: null
       },
       emailRules: [
         v => !!v || 'E-mail required',
@@ -43,11 +44,19 @@ export default {
   },
   methods: {
     ...mapActions(['forgotPassword']),
-    onSubmit () {
-      this.forgotPassword({ email: this.form.email })
-        .then(() => {
-          this.$refs.form.reset()
-        })
+    onSubmit (e) {
+      this.loading = true
+      this.$store.dispatch('clearAllMessages')
+      e.preventDefault()
+      if (this.$refs.form.validate()) {
+        this.forgotPassword({ email: this.form.email })
+          .then(() => {
+            this.$refs.form.reset()
+          })
+          .catch(x => {
+            this.loading = false
+          })
+      } else this.loading = false
     }
   }
 }

@@ -71,16 +71,14 @@ const actions = {
   },
   async forgotPassword ({ dispatch }, payload) {
     return new Promise((resolve, reject) => {
-      context.forgotPassword(payload.email).then((x) => {
-        if (x.status === 200) {
+      context.resetSendEmail(payload).then((x) => {
+        if (x.status === 200 && x.data.success === true) {
           dispatch('setMessages', 'На указанный E-mail выслана инструкция для восстановления пароля')
           resolve()
         } else {
-          Object.keys(x.response.data).forEach(key => dispatch('setErrors', x.response.data[key]))
-          reject(x.response.data)
+          dispatch('setErrors', x.response.data)
+          reject(x)
         }
-      }).catch(x => {
-        reject(x.response.data)
       })
     })
   },

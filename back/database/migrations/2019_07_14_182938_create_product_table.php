@@ -17,8 +17,8 @@ class CreateProductTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name')->nullable(false);
+            $table->string('name_html')->nullable(false);
             $table->string('photo')->nullable(false);
-            $table->text('description')->nullable(false);
             $table->string('icon')->nullable(true);
             $table->decimal('price', 15,2)->nullabel(false)->default(0);
             $table->timestamps();
