@@ -18,6 +18,7 @@ class CreateDayTable extends Migration
             $table->integer('product_id')->unsigned();
             $table->string('title');
             $table->string('url');
+            $table->string('youtube_id');
             $table->text('description');
             $table->integer('day');
             $table->timestamps();

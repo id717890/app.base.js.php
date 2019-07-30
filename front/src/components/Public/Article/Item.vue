@@ -2,7 +2,7 @@
   <v-layout row wrap justify-center align-center v-if="newsa !== null && newsa !== undefined && newsa !== 'undefined'">
     <v-flex xs12 sm12 md8 lg6 xl5 pa-0>
       <v-img class="img-news-item" :src="newsa.image" max-height="70vh">
-        <h3 class="h2-s3"><i class="fas fa-quote-left"></i> {{newsa.title}} <i class="fas fa-quote-right"></i></h3>
+        <h3 class="news-title"><i class="fas fa-quote-left"></i> {{newsa.title}} <i class="fas fa-quote-right"></i></h3>
       </v-img>
     </v-flex>
     <v-flex xs12></v-flex>

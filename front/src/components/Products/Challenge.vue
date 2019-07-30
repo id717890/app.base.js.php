@@ -1,13 +1,13 @@
 <template>
   <v-layout row wrap pa-3>
-    <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3 text-xs-center>
+    <v-flex xs12 sm10 offset-sm1 md8 offset-md2 text-xs-center>
       <h1>Бесплатный челлендж «БУДЬ В ФОРМЕ»</h1>
       <p>
         Продолжительность челленджа: 2 недели (10 тренировок, 4 выходных)
       </p>
       <br>
     </v-flex>
-    <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3 class="text-justify">
+    <v-flex xs12 sm10 offset-sm1 md8 offset-md2 class="text-justify">
       <p>
         Друзья, всем привет! Добро пожаловать на мой бесплатный челлендж «БУДЬ В ФОМЕ»! Этот челлендж – отличная возможность начать тренироваться регулярно и в кайф!
       </p>
@@ -92,14 +92,36 @@
         </v-card-text>
       </v-card>
     </v-flex>
-    <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3>
+    <v-flex xs12 sm10 offset-sm1 md8 offset-md2 >
       <p>
         Чтобы начать тренировку, нужно перейти по ссылке на видео.
       </p>
       <p>
         Рекомендую придерживаться именно такого плана тренировок на время проведения челленджа.
       </p>
-
+    </v-flex>
+    <v-flex xs12 sm10 offset-sm1 md8 offset-md2 v-if="product !== null && product !== undefined && product !== 'undefined'">
+      <v-layout row wrap>
+        <v-flex xs12>
+          <v-expansion-panel expand>
+            <v-expansion-panel-content
+              v-for="(day,i) in product.days"
+              :key="i"
+            >
+              <template v-slot:header>
+                <div>{{day.title}}</div>
+              </template>
+              <v-card class="grey lighten-4">
+                <v-card-text>
+                  <iframe width="100%" height="315" :src="'https://www.youtube.com/embed/'+ day.youtube_id" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </v-card-text>
+              </v-card>
+            </v-expansion-panel-content>
+          </v-expansion-panel>
+        </v-flex>
+      </v-layout>
+    </v-flex>
+    <v-flex xs12 sm10 offset-sm1 md8 offset-md2 >
       <h3 class="mt-5">Рекомендации по питанию:</h3>
       <p>
         Это не секрет, что тренировки – это форма и качество тела и лишь 20% успеха, а питание – это объемы тела и 80% успеха. Поэтому, если у вас есть цель похудеть, то вам необходимо будет в комплексе с тренировками следить за своим питанием. Тут самое главное это баланс калорий:
@@ -135,7 +157,7 @@
         Выбери свой курс и иди к цели! БУДЬ В ФОРМЕ!
       </p>
     </v-flex>
-    <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3>
+    <v-flex xs12 sm10 offset-sm1 md8 offset-md2>
       <v-img class="img-bordered elevation-16 mt-3 mb-5" :src="require('../../../static/img/program2_1.jpg')" style="border: 30px solid white;"></v-img>
     </v-flex>
   </v-layout>
@@ -143,6 +165,10 @@
 
 <script>
 export default {
+  props: ['product'],
+  async created () {
+    console.log(this.product)
+  },
   data () {
     return {
       week1: [

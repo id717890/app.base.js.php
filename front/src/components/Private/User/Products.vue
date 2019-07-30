@@ -31,12 +31,12 @@
                 <v-flex xs12>
                   <v-layout row wrap v-if="product.product !== null && product.product !== undefined && product.product !== 'undefined'">
                     <v-flex xs12 pa-5>
-                      <h2 class="text-xs-center">{{product.product.name}}</h2>
+                      <h2 class="text-xs-center" v-html="product.product.name"></h2>
                     </v-flex>
                     <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3>
                       <v-img :src="require('../../../../static/img/' + product.product.photo)" class="elevation-16" style="border: 30px solid white;"></v-img>
                     </v-flex>
-                    <v-flex xs12 py-5 text-xs-center>
+                    <v-flex xs12 py-5>
                       <form v-if="product.days === null" target="_blank" method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
                         <!--Номер кошелька в системе Яндекс Денег-->
                         <input type="hidden" name="receiver" :value="yandex.receiver">
@@ -69,7 +69,7 @@
 
                         <!-- <button :disabled="!validCount"  class="btn btn-primary w-100"><fai icon="donate" /> Donate</button> -->
                       </form>
-                      <component v-else :is="productComponent(product.product.id)"></component>
+                      <component v-else :is="productComponent(product.product.id)" :product="product"></component>
                     </v-flex>
                   </v-layout>
                 </v-flex>
