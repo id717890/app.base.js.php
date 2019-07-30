@@ -29,10 +29,11 @@ export default function (Vue) {
       }
       let token = localStorage.getItem('token')
       let id = localStorage.getItem('id')
+      let role = localStorage.getItem('role')
       if (!token) {
         return null
       }
-      return { token, id }
+      return { token, id, role }
     },
     isExpired () {
       let expiration = localStorage.getItem('expiration')

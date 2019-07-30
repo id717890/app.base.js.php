@@ -133,6 +133,7 @@ const actions = {
     } else {
       commit(types.SET_TOKEN, credential.token)
       commit(types.SET_USER, credential.id)
+      commit(types.SET_ROLE, credential.role)
     }
   },
   async redirectToSignIn () {
