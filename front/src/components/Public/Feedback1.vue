@@ -84,6 +84,13 @@ export default {
           img: require('../../../static/img/feedbacks/f8.jpg'),
           text: require('../../../static/img/feedbacks/f8-text.jpg'),
           color: 'white'
+        },
+        {
+          id: 9,
+          fio: '@vasha_brats',
+          img: require('../../../static/img/feedbacks/f9.jpg'),
+          text: require('../../../static/img/feedbacks/f9-text.jpg'),
+          color: 'white'
         }
       ]
     }

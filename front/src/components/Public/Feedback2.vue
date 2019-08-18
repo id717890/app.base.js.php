@@ -152,6 +152,27 @@
         </v-flex>
       </v-layout>
     </v-carousel-item>
+    <v-carousel-item>
+      <v-layout row justify-center>
+        <v-flex xs6 pt-4 pl-5 text-xs-center>
+          <v-card max-width="330" :color="feedbacks[8].color" class="elevation-5 feedback" >
+            <v-card-title>
+              <v-list-tile>
+                <v-list-tile-avatar class="avatar1">
+                  <v-img class="elevation-6 avatar" :src="feedbacks[8].img"></v-img>
+                </v-list-tile-avatar>
+              </v-list-tile>
+            </v-card-title>
+            <v-card-text>
+              <v-img :src="feedbacks[8].text"></v-img>
+            </v-card-text>
+            <v-card-actions class="pl-5">
+              <p style="color: #d19c1d; font-size: 0.7rem"><i class="fa fa-user"></i> {{feedbacks[8].fio}}</p>
+            </v-card-actions>
+          </v-card>
+        </v-flex>
+      </v-layout>
+    </v-carousel-item>
   </v-carousel>
 </template>
 
@@ -214,6 +235,13 @@ export default {
           fio: '@timonya',
           img: require('../../../static/img/feedbacks/f8.jpg'),
           text: require('../../../static/img/feedbacks/f8-text.jpg'),
+          color: 'white'
+        },
+        {
+          id: 9,
+          fio: '@vasha_brats',
+          img: require('../../../static/img/feedbacks/f9.jpg'),
+          text: require('../../../static/img/feedbacks/f9-text.jpg'),
           color: 'white'
         }
       ]

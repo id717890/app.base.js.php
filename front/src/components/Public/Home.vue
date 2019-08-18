@@ -1,31 +1,16 @@
 <template>
   <v-layout column class="bg1">
     <v-flex xs12>
-      <v-layout row wrap fill-height class="bg1">
-        <v-flex xs12 md5 align-self-center px-4 class="h1-left-block pa-1">
-          <section>
-            <img class="logo-home" :src="require('../../../static/img/logo/1.png')" alt="Evgenia Kabanova movement coach">
-          </section>
-          <p class="logo-text">
-            Друзья, добро пожаловать на сайт Евгении Кабановой, мастера спорта международного класса, чемпионки мира по спортивной акробатике и сертифицированного инструктора методики ANIMAL FLOW.
-          </p>
-          <p class="logo-text">
-            Здесь вы найдете полезную информацию о тренировках, сможете пройти бесплатный челлендж, <strong class="">а также купить новую уникальную фитнес-программу «ДВИЖЕНИЕ» с элементами FLOW!</strong> Эта программа не только изменит ваш подход к тренировкам, но и изменит вашу жизнь!
-          </p>
-          <p class="strong2 text-xs-center" style="color:#DD2C00; font-size: 1.4rem">Старт программы 1 октября 2019!</p>
-        </v-flex>
-        <v-flex xs12 md7 style="">
-          <v-carousel
+      <v-carousel
             :cycle="true"
             class="elevation-0 100h"
             hide-delimiters
             hide-controls
             height="auto"
             prev-icon="fa fa-arrow-left"
-            next-icon="fa fa-arrow-right"
-      >
+            next-icon="fa fa-arrow-right">
         <v-carousel-item v-for="(item,i) in items" :key="i">
-          <v-img style="height: 100%" :src="item.src" :lazy-src="item.lazy"  class="hidden-sm-and-down">
+          <v-img style="height: 100%" :src="item.src" :lazy-src="item.lazy" class="hidden-sm-and-down">
             <!-- <span class="photo-sign">{{item.author}}</span> -->
             <!-- <span class="photo-text">{{item.text}}</span> -->
           </v-img>
@@ -35,7 +20,17 @@
           </v-img>
         </v-carousel-item>
       </v-carousel>
-          <!-- <img src="../../static/img/SoqSO8UTTrSk5G9R3G7o_Revamped Background.png"  style="height: 100%"  alt="" > -->
+    </v-flex>
+    <v-flex>
+      <v-layout row wrap fill-height class="bg1">
+        <v-flex xs12 sm10 offset-sm1 md8 offset-md2  align-self-center px-4 class="h1-left-block pa-1 mt-5">
+          <p class="logo-text">
+            Друзья, добро пожаловать на сайт Евгении Кабановой, мастера спорта международного класса, чемпионки мира по спортивной акробатике и сертифицированного инструктора методики ANIMAL FLOW.
+          </p>
+          <p class="logo-text">
+            Здесь вы найдете полезную информацию о тренировках, сможете пройти бесплатный челлендж, <strong class="">а также купить новую уникальную фитнес-программу «ДВИЖЕНИЕ» с элементами FLOW!</strong> Эта программа не только изменит ваш подход к тренировкам, но и изменит вашу жизнь!
+          </p>
+          <p class="strong2 text-xs-center" style="color:#DD2C00; font-size: 1.4rem">Старт программы 1 октября 2019!</p>
         </v-flex>
       </v-layout>
     </v-flex>
@@ -98,7 +93,7 @@
               <v-card-title primary-title>
                 <div style="width: 100%!important">
                   <h3 class="headline mb-0 text-xs-center white--text"  v-html="product.name_html"></h3>
-                  <!-- <div>{{product.description}}</div> -->
+                  <div class="text-xs-center white--text mt-4 mb-3">{{product.description}}</div>
                 </div>
               </v-card-title>
 
