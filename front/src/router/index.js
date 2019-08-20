@@ -14,6 +14,7 @@ const router = new Router({
       redirect: { name: 'Home2' },
       components: {
         main: () => import('../components/LayoutGuest.vue')
+        // routerguest: () => import('../components/Public/Home.vue') }
       },
       children: [
         { path: 'home', name: 'Home2', components: { routerguest: () => import('../components/Public/Home.vue') } },

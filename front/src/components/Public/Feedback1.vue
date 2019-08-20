@@ -1,5 +1,5 @@
 <template>
-  <v-carousel height="630" class="feedback1" style="" :cycle="true" hide-delimiters :interval="10000">
+  <v-carousel height="630" class="feedback1 elevation-0" style="" :cycle="true" hide-delimiters :interval="10000">
     <v-carousel-item v-for="feedback in feedbacks" :key="feedback.id">
       <v-layout row justify-center>
         <v-flex xs12 pt-4 px-5 text-xs-center>
