@@ -37,7 +37,7 @@
                       <v-img :src="require('../../../../static/img/' + product.product.photo)" class="elevation-16" style="border: 30px solid white;"></v-img>
                     </v-flex>
                     <v-flex xs12 py-5>
-                      <form v-if="product.days === null" target="_blank" method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
+                      <form v-if="product.days === null" method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
                         <!--Номер кошелька в системе Яндекс Денег-->
                         <input type="hidden" name="receiver" :value="yandex.receiver">
                         <!--Название платежа, я не нашел, где этот параметр используется, поэтому просто указал адрес своего сайта (длина 50 символов)-->

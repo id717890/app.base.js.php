@@ -108,6 +108,20 @@ class AuthController extends Controller
         return response()->json(['success'=> false, 'error'=> ['code'=>2, 'message'=> 'Ссылка для восстановления не действительна.']]);
     }
 
+    public function resetLk()
+    {
+        $user = User::find(Input::get('user'));
+        if (!$user) {
+            return response()->json(['success' => false, 'error' =>['code'=>1, 'message'=> 'User was not found.']], 404);
+        }
+        $user->password = Hash::make(Input::get('password'));
+        $user->save();
+        return response()->json([
+            'success'=> true,
+            'message'=> 'You password changed.'
+        ]);
+    }
+
     /**
      * API Login, on success return JWT Auth token
      *

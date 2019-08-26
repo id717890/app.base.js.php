@@ -238,12 +238,27 @@
     <!-- <v-flex xs12 class="red lighten-5 pa-3">
       <h1 class="text-xs-center">Отзывы</h1>
     </v-flex> -->
+    <v-flex xs12 class="hidden-md-and-up">
+      <v-layout row wrap style="z-index: 2">
+        <v-flex xs12 pt-0 pb-5 mb-4>
+          <v-layout row wrap style="z-index: 2" align-center>
+            <v-flex xs12 style="z-index: 3" class="text-justify px-4">
+              <br>
+              <p class="text-xs-center text-sm-center text-md-center text-lg-center text-xl-center">Друзья, всем привет!</p>
+              <p>Рада видеть вас на моем сайте! Здесь я буду делиться с вами своим опытом в сфере спорта и фитнеса, чтобы помочь вам стать лучшей версией себя!</p>
+              <p>Надеюсь, что буду вам полезна, и буду очень рада вашим достижениям и успехам!</p>
+              <p>Я всегда открыта к диалогу, поэтому, если у вас возникнут вопросы, или вы захотите поделиться со мной своими эмоциями, пишите мне, мои контактные данные указаны в разделе «контакты»!</p>
+            </v-flex>
+          </v-layout>
+        </v-flex>
+      </v-layout>
+    </v-flex>
     <v-flex xs12>
       <div class="end-block">
         <v-layout row wrap style="z-index: 2">
-          <v-flex xs12 sm12 md10 offset-md1 py-5>
+          <v-flex xs12 sm12 md10 offset-md1 py-3>
             <v-layout row wrap style="z-index: 2" align-center>
-              <v-flex xs12 sm12 md4 style="z-index: 3" class="text-justify px-4">
+              <v-flex xs12 sm12 md4 style="z-index: 3" class="text-justify px-4 hidden-sm-and-down">
                 <!-- <h2 class="h2-s1">
                   Free happy <br> hours for <br> new people
                 </h2> -->
