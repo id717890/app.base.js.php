@@ -167,7 +167,7 @@
 export default {
   props: ['product'],
   async created () {
-    console.log(this.product)
+    // console.log(this.product)
   },
   data () {
     return {

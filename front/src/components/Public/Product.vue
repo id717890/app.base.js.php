@@ -26,7 +26,7 @@
           </section>
         </v-flex>
         <v-flex xs12>
-          <component :is="productComponent"></component>
+          <component :is="productComponent" :product="productOfUser"></component>
         </v-flex>
       </v-layout>
     </v-flex>
@@ -57,6 +57,9 @@ export default {
     ...mapGetters(['getProductById', 'getProductOfUserById']),
     product () {
       return this.getProductById(this.id)
+    },
+    productOfUser () {
+      return this.getProductOfUserById(this.id)
     },
     productIsAccepted () {
       if (!this.isAuth) {

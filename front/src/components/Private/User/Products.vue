@@ -36,7 +36,7 @@
                     <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3>
                       <v-img :src="require('../../../../static/img/' + product.product.photo)" class="elevation-16" style="border: 30px solid white;"></v-img>
                     </v-flex>
-                    <v-flex xs12 py-5>
+                    <v-flex xs12 py-5 text-xs-center>
                       <form v-if="product.days === null" method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
                         <!--Номер кошелька в системе Яндекс Денег-->
                         <input type="hidden" name="receiver" :value="yandex.receiver">
@@ -70,6 +70,42 @@
                         <!-- <button :disabled="!validCount"  class="btn btn-primary w-100"><fai icon="donate" /> Donate</button> -->
                       </form>
                       <component v-else :is="productComponent(product.product.id)" :product="product"></component>
+<v-btn large dark color="red darken-3" style="margin: auto" @click.stop="dialog = true">
+                          <i class="fab fa-cc-visa fa-2x mr-2"></i>
+                          Купить программу!! {{Number(product.product.price)}} руб.
+                        </v-btn>
+                        <v-dialog
+      v-model="dialog"
+      max-width="600"
+    >
+      <v-card>
+        <v-card-title class="headline">Use Google's location service?</v-card-title>
+        <v-card-text>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/1qVdKhGXc2A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <!-- Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running. -->
+        </v-card-text>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+
+          <v-btn
+            color="green darken-1"
+            flat="flat"
+            @click="dialog = false"
+          >
+            Disagree
+          </v-btn>
+
+          <v-btn
+            color="green darken-1"
+            flat="flat"
+            @click="dialog = false"
+          >
+            Agree
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
                     </v-flex>
                   </v-layout>
                 </v-flex>
@@ -144,6 +180,7 @@ export default {
   },
   data () {
     return {
+      dialog: false,
       payData: {
         formcomment: '',
         label: '',
