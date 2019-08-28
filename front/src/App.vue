@@ -1,4 +1,5 @@
 <template>
+  <!-- <section @contextmenu.prevent="handler"> -->
   <section>
     <router-view name="main"></router-view>
     <modals-container/>
@@ -16,7 +17,9 @@ export default {
     // HelloWorld
   },
   methods: {
-    ...mapActions(['getAllProducts', 'getAllNews'])
+    ...mapActions(['getAllProducts', 'getAllNews']),
+    handler () {
+    }
   },
   async created () {
     this.getAllProducts()

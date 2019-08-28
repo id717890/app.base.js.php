@@ -2,7 +2,7 @@
     <!-- <h1>Здесь будет регистрация на FLOW</h1> -->
     <!-- <iframe src="https://drive.google.com/file/d/1E5JGf4CIe5rj7B1GPohG2-gkR2Gm888G/preview" width="640" height="480"></iframe> -->
     <v-flex class="d-block">
-      <video-player  class="video-player-box"
+      <!-- <video-player  class="video-player-box"
                  ref="videoPlayer"
                  :options="playerOptions"
                  :playsinline="true"
@@ -18,17 +18,17 @@
                  @canplaythrough="onPlayerCanplaythrough($event)"
                  @statechanged="playerStateChanged($event)"
                  @ready="playerReadied">
-  </video-player>
+  </video-player> -->
     </v-flex>
 </template>
 
 <script>
-import 'video.js/dist/video-js.css'
-import { videoPlayer } from 'vue-video-player'
+// import 'video.js/dist/video-js.css'
+// import { videoPlayer } from 'vue-video-player'
 
 export default {
   components: {
-    videoPlayer
+    // videoPlayer
   },
   data () {
     return {
@@ -48,12 +48,12 @@ export default {
     }
   },
   mounted () {
-    console.log('this is current player instance object', this.player)
+    // console.log('this is current player instance object', this.player)
   },
   computed: {
-    player () {
-      return this.$refs.videoPlayer.player
-    }
+    // player () {
+    // return this.$refs.videoPlayer.player
+    // }
   },
   methods: {
     onPlayerLoadeddata () {

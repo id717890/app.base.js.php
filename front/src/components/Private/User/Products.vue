@@ -70,7 +70,7 @@
                         <!-- <button :disabled="!validCount"  class="btn btn-primary w-100"><fai icon="donate" /> Donate</button> -->
                       </form>
                       <component v-else :is="productComponent(product.product.id)" :product="product"></component>
-<v-btn large dark color="red darken-3" style="margin: auto" @click.stop="dialog = true">
+<!-- <v-btn large dark color="red darken-3" style="margin: auto" @click.stop="dialog = true">
                           <i class="fab fa-cc-visa fa-2x mr-2"></i>
                           Купить программу!! {{Number(product.product.price)}} руб.
                         </v-btn>
@@ -82,7 +82,6 @@
         <v-card-title class="headline">Use Google's location service?</v-card-title>
         <v-card-text>
           <iframe width="560" height="315" src="https://www.youtube.com/embed/1qVdKhGXc2A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <!-- Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running. -->
         </v-card-text>
 
         <v-card-actions>
@@ -105,7 +104,7 @@
           </v-btn>
         </v-card-actions>
       </v-card>
-    </v-dialog>
+    </v-dialog> -->
                     </v-flex>
                   </v-layout>
                 </v-flex>

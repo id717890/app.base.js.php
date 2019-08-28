@@ -22,6 +22,7 @@ class CreateProductTable extends Migration
             $table->string('photo')->nullable(false);
             $table->string('icon')->nullable(true);
             $table->decimal('price', 15,2)->nullabel(false)->default(0);
+            $table->decimal('price2', 15,2)->nullabel(false)->default(0);
             $table->timestamps();
         });
     }

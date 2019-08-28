@@ -97,18 +97,34 @@
                 </div>
               </v-card-title>
 
-              <v-card-actions>
+              <v-card-actions class="hidden-sm-and-down">
                 <v-btn :to="'lk/products'" large round dark color="deep-orange" style="margin: auto" v-if="product.price>0">
                   <i class="fab fa-cc-visa fa-2x mr-2"></i>
-                  Купить {{Number(product.price)}} руб.
+                  Купить
                 </v-btn>
                 <v-btn :to="'/lk/products'" large round dark color="deep-orange" style="margin: auto" v-else>
                   <i class="fa fa-dumbbell fa-2x mr-2"></i>
-                  Протестировать
+                  Регистрация
                 </v-btn>
                 <v-btn small  flat :to="'/product/'+product.id"  dark color="white" style="margin: auto">
                   Подробнее
                 </v-btn>
+              </v-card-actions>
+
+              <v-card-actions class="hidden-md-and-up">
+                <v-layout column>
+                  <v-btn class="w100 mb-2" :to="'lk/products'" large round dark color="deep-orange" style="margin: auto" v-if="product.price>0">
+                  <i class="fab fa-cc-visa fa-2x mr-2"></i>
+                  Купить
+                </v-btn>
+                <v-btn class="w100 mb-2" :to="'/lk/products'" large round dark color="deep-orange" style="margin: auto" v-else>
+                  <i class="fa fa-dumbbell fa-2x mr-2"></i>
+                  Регистрация
+                </v-btn>
+                <v-btn class="w100"  flat :to="'/product/'+product.id"  dark color="white" style="margin: auto">
+                  Подробнее
+                </v-btn>
+                </v-layout>
               </v-card-actions>
             </v-card>
           </v-flex>
