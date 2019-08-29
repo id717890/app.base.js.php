@@ -36,40 +36,8 @@
                     <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3>
                       <v-img :src="require('../../../../static/img/' + product.product.photo)" class="elevation-16" style="border: 30px solid white;"></v-img>
                     </v-flex>
-                    <v-flex xs12 py-5 text-xs-center>
-                      <form v-if="product.days === null" method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
-                        <!--Номер кошелька в системе Яндекс Денег-->
-                        <input type="hidden" name="receiver" :value="yandex.receiver">
-                        <!--Название платежа, я не нашел, где этот параметр используется, поэтому просто указал адрес своего сайта (длина 50 символов)-->
-                        <input type="hidden" name="formcomment" :value="'Оплата ' + product.product.name">
-                        <!--Этот параметр передаёт ID плагина, для того, чтобы скрипту было понятно, что потом отсылать пользователю (длина 64 символа)-->
-                        <input type="hidden" name="label" :value="user+'@@@'+product.product.id + '@@@'+product.product.price">
-                        <!--Тип формы, может принимать значения shop (универсальное), donate (благотворительная), small (кнопка)-->
-                        <input type="hidden" name="quickpay-form" :value="yandex.quickpayForm">
-                        <!--Назначение платежа, это покупатель видит на сайте Яндекс Денег при вводе платежного пароля (длина 150 символов)-->
-                        <input type="hidden" name="targets" :value="'Оплата ' + product.product.name">
-                        <!--Сумма платежа, валюта - рубли по умолчанию-->
-                        <input type="hidden" name="sum" :value="product.product.price" data-type="number">
-                        <!--Должен ли Яндекс запрашивать ФИО покупателя-->
-                        <input type="hidden" name="need-fio" :value="yandex.needFio">
-                        <!--Должен ли Яндекс запрашивать email покупателя-->
-                        <input type="hidden" name="need-email" :value="yandex.needEmail">
-                        <!--Должен ли Яндекс запрашивать телефон покупателя-->
-                        <input type="hidden" name="need-phone" :value="yandex.needPhone">
-                        <!--Должен ли Яндекс запрашивать адрес покупателя-->
-                        <input type="hidden" name="need-address" :value="yandex.needAddress">
-                        <!--Метод оплаты, PC - Яндекс Деньги, AC - банковская карта-->
-                        <input type="hidden" name="paymentType" :value="payData.paymentType" />
-                        <!--Куда перенаправлять пользователя после успешной оплаты платежа-->
-                        <input type="hidden" name="successURL" :value="yandex.successURL">
-                        <v-btn large dark color="red darken-3" style="margin: auto" :type="'submit'">
-                          <i class="fab fa-cc-visa fa-2x mr-2"></i>
-                          Купить программу {{Number(product.product.price)}} руб.
-                        </v-btn>
-
-                        <!-- <button :disabled="!validCount"  class="btn btn-primary w-100"><fai icon="donate" /> Donate</button> -->
-                      </form>
-                      <component v-else :is="productComponent(product.product.id)" :product="product"></component>
+                    <v-flex xs12 py-5>
+                      <component  :is="productComponent(product.product.id)" :product="product"></component>
 <!-- <v-btn large dark color="red darken-3" style="margin: auto" @click.stop="dialog = true">
                           <i class="fab fa-cc-visa fa-2x mr-2"></i>
                           Купить программу!! {{Number(product.product.price)}} руб.

@@ -12,29 +12,30 @@
           <!-- <p>{{product.description}}</p> -->
           <!-- <hr class="mb-3"/> -->
           <section v-if="isAuth">
-              <v-btn class="mr-3" large dark color="blue darken-3" style="margin: auto" @click.stop="introDialog = true" v-if="id == 1">
+              <!-- <v-btn class="mr-3" large dark color="blue darken-3" style="margin: auto" @click.stop="introDialog = true" v-if="id == 1">
                 <i class="fa fa-video fa-2x mr-2"></i>
                 Intro
-              </v-btn>
-              <v-btn :to="'/lk/products'" large dark color="red darken-3" style="margin: auto" v-if="product.price>0">
+              </v-btn> -->
+              <!-- <v-btn :to="'/lk/products'" large dark color="red darken-3" style="margin: auto" v-if="product.price>0">
                 <i class="fab fa-cc-visa fa-2x mr-2"></i>
                 Купить {{Number(product.price)}} руб.
-              </v-btn>
-              <v-btn to="/lk/products" large dark color="red darken-3" style="margin: auto" v-else>
+              </v-btn> -->
+              <v-btn to="/lk/products" large dark color="red darken-3" style="margin: auto" v-if="product.price === 0">
                 <i class="fa fa-dumbbell fa-2x mr-2"></i>
                 Попробовать бесплатно
               </v-btn>
           </section>
           <section v-else>
-            <v-btn class="mr-3" large dark color="blue darken-3" style="margin: auto" @click.stop="introDialog = true" v-if="id == 1">
+            <!-- <v-btn class="mr-3" large dark color="blue darken-3" style="margin: auto" @click.stop="introDialog = true" v-if="id == 1">
               <i class="fa fa-video fa-2x mr-2"></i>
               Intro
-            </v-btn>
+            </v-btn> -->
             <h3 class="red--text">* Для покупки или тестирования программы нужно авторизоваться</h3>
           </section>
         </v-flex>
         <v-flex xs12>
-          <component :is="productComponent" :product="productOfUser"></component>
+          <component :is="productComponent" v-if="isAuth" :product="productOfUser"></component>
+          <component :is="productComponent" v-else :product="product"></component>
         </v-flex>
       </v-layout>
     </v-flex>
@@ -88,7 +89,7 @@ import Challenge from '../Products/Challenge'
 import ChallengeRegister from '../Products/ChallengeRegister'
 import FlowRegister from '../Products/FlowRegister'
 import Flow from '../Products/Flow'
-import 'video.js/dist/video-js.css'
+// import 'video.js/dist/video-js.css'
 import { videoPlayer } from 'vue-video-player'
 
 export default {

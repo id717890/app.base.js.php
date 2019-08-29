@@ -20,6 +20,22 @@ const actions = {
       dispatch('setErrors', x.response.data)
     })
   },
+  async acceptProductWithPrice ({ commit, dispatch }, payload) {
+    return new Promise((resolve, reject) => {
+      context.accept(payload).then((x) => {
+        if (x.status === 200) {
+          dispatch('getAllProductsForUser')
+          resolve()
+        } else {
+          dispatch('setErrors', x.response.data)
+          reject(x.response.data)
+        }
+      }).catch(x => {
+        dispatch('setErrors', x.response.data)
+        reject(x.response.data)
+      })
+    })
+  },
   async getAllProductsForUser ({ commit, dispatch }) {
     context.getProductsForUser().then((x) => {
       if (x.status === 200) {
