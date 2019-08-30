@@ -13,8 +13,8 @@
       </v-toolbar-title>
       <v-toolbar-items class="hidden-sm-and-down align-self-center">
         <v-btn flat to="/home"><i class="mr-1 fa fa-home fa-2x"></i></v-btn>
-        <v-btn flat to="/about"><i class="mr-1 fa fa-info"></i>Обо мне</v-btn>
-        <v-btn flat to="/contacts"><i class="mr-1 fa fa-location-arrow"></i>Контакты</v-btn>
+        <v-btn flat to="/about"><i class="mr-1 fa fa-address-book"></i>Обо мне</v-btn>
+        <v-btn flat to="/contacts"><i class="mr-1 fa fa-phone"></i>Контакты</v-btn>
         <v-btn flat to="/articles"><i class="mr-1 fab fa-pagelines"></i>Полезная информация</v-btn>
       </v-toolbar-items>
       <section class="hidden-sm-and-down">
@@ -64,7 +64,7 @@
         </v-list-tile>
         <v-list-tile to="/about">
           <v-list-tile-action>
-            <i class="mr-1 fa fa-info"></i>
+            <i class="mr-1 fa fa-address-book"></i>
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title>Обо мне</v-list-tile-title>
@@ -72,7 +72,7 @@
         </v-list-tile>
         <v-list-tile to="/contacts">
           <v-list-tile-action>
-            <i class="mr-1 fa fa-location-arrow"></i>
+            <i class="mr-1 fa fa-phone"></i>
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title>Контакты</v-list-tile-title>
@@ -169,6 +169,9 @@
               </v-layout>
             </v-flex>
             <v-flex xs12 class="text-xs-center pa-1 hidden-md-and-up" style="vertical-align:middle !important">
+              <i><img style="max-height: 40px" :src="require('../../static/img/logo/2.png')" alt=""></i>
+            </v-flex>
+            <v-flex xs12 class="text-xs-center pa-1 hidden-md-and-up mb-1 mt-0" style="vertical-align:middle !important">
               <v-layout row wrap align-center justify-center>
                 <a href="https://vk.com/evgenia_kabanova" target="_blank" class="vk social">
                   <i class="fab fa-vk fa-2x mx-2"></i>
@@ -176,7 +179,7 @@
                 <a href="https://www.instagram.com/evgenia_kabanova/?hl=ru" target="_blank" class="instagram social">
                   <i class="fab fa-instagram fa-2x mx-2"></i>
                 </a>
-                <i><img style="max-height: 40px" :src="require('../../static/img/logo/2.png')" alt=""></i>
+                <!-- <i><img style="max-height: 40px" :src="require('../../static/img/logo/2.png')" alt=""></i> -->
                 <a href="https://www.facebook.com/evgeniya.kabanova.3" target="_blank" class="fb social">
                   <i class="fab fa-facebook fa-2x mx-2"></i>
                 </a>

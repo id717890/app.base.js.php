@@ -15,27 +15,20 @@
     <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3 text-xs-center mt-4 v-if="isAuth">
       <v-layout row nowrap justify-center>
       <v-select :items="prices" item-text="text" item-value="value" v-model="selectedPrice" label="Цена"></v-select>
-      <v-btn large :disabled="!form.valid" color="red darken-3" dark @click="clickB" :loading="loading">
+      <v-btn large :disabled="!form.valid" color="red darken-3" dark @click="clickToBuy" :loading="loading">
         <i class="fab fa-cc-visa fa-2x mr-3"></i>
         Купить
       </v-btn>
       </v-layout>
     </v-flex>
     <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3 text-xs-center mt-4>
+      <!-- <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/XkAJUvX2UZ8?modestbranding=1;controls=2;showinfo=0;modestbranding=1;rel=0" frameborder="0"  modestbranding="1" allowfullscreen></iframe> -->
       <video-player  class="video-player-box video-intro"
         ref="videoPlayer"
         :options="introOptions"
         :playsinline="true"
         customEventName="customstatechangedeventname"
-        @play="onPlayerPlay($event)"
-        @pause="onPlayerPause($event)"
-        @ended="onPlayerEnded($event)"
-        @waiting="onPlayerWaiting($event)"
-        @loadeddata="onPlayerLoadeddata($event)"
-        @canplay="onPlayerCanplay($event)"
-        @canplaythrough="onPlayerCanplaythrough($event)"
-        @statechanged="playerStateChanged($event)"
-        @ready="playerReadied">
+        >
       </video-player>
     </v-flex>
     <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3>
@@ -97,22 +90,18 @@
           <v-text-field label="Город" v-model="form.city" required :rules="fieldRules"></v-text-field>
           <v-text-field label="E-mail" v-model="form.email" required :rules="emailRules"></v-text-field>
           <v-text-field label="Телефон" v-model="form.phone" required :rules="fieldRules"></v-text-field>
-          <v-select :items="prices" item-text="text" item-value="value" v-model="selectedPrice" label="Цена"></v-select>
+          <!-- <v-select :items="prices" item-text="text" item-value="value" v-model="selectedPrice" label="Цена"></v-select> -->
           <v-checkbox v-model="form.accept" :rules="acceptRules" label="Даю согласие на хранение и обработку моих персональных данных" required></v-checkbox>
         </v-flex>
         <v-flex xs12 text-xs-center>
           <section v-if="isAuth">
             <v-layout row nowrap justify-center>
-              <v-btn large :disabled="!form.valid" color="red darken-3" dark ref="mybtn" type="submit" :loading="loading">
+              <v-select :items="prices" item-text="text" item-value="value" v-model="selectedPrice" label="Цена"></v-select>
+              <v-btn large :disabled="!form.valid" color="red darken-3" dark ref="submitForm" type="submit" :loading="loading">
                 <i class="fab fa-cc-visa fa-2x mr-3"></i>
                 Купить
               </v-btn>
             </v-layout>
-
-            <!-- <v-btn :disabled="!form.valid" large color="primary" @click="registerToProgram" :loading="loading">
-            <i class="fa fa-star fa-2x mr-3"></i>
-              Зарегистрироваться
-            </v-btn> -->
           </section>
           <section v-else>
             <h3 class="red--text mb-4">* Для покупки или регистрации в программе нужно авторизоваться</h3>
@@ -125,16 +114,11 @@
 
 <script>
 import authMixin from '../../mixins/auth'
+import videoMixin from '../../mixins/videoplayer'
 import { mapState, mapActions } from 'vuex'
-// import 'video.js/dist/video-js.css'
-import { videoPlayer } from 'vue-video-player'
-
 export default {
-  mixins: [authMixin],
+  mixins: [authMixin, videoMixin],
   props: ['product'],
-  components: {
-    videoPlayer
-  },
   data () {
     return {
       loading: false,
@@ -153,24 +137,25 @@ export default {
         playbackRates: [0.7, 1.0, 1.5, 2.0],
         sources: [{
           type: 'video/mp4',
-          src: 'https://cloclo3.datacloudmail.ru/weblink/view/4dWP/zwNx5wDej?etag=4F01E21DA5816076E5E6B777EB879CE03B91024A&key=629e10c956f5d60f30ccd37aa71ebb6bdf5c77e3'
+          src: 'https://www.dropbox.com/s/85s1a6t37u9hdzy/Intro.mp4?dl=1'
+          // src: 'https://getfile.dokpub.com/yandex/get/https://yadi.sk/i/U_jexcSCCleBmw'
           // src: 'https://drive.google.com/uc?export=download&confirm=j5PF&id=1xzhouvWc8Uememn_gvdvKTfhkcNWu2ms'
         }],
         poster: '/static/images/author.jpg'
       },
       form: {
         valid: false,
-        // fio: null,
-        // age: null,
-        // city: null,
-        // email: null,
-        // phone: null,
-        fio: 'qwe',
+        fio: null,
         age: null,
-        city: 'qwe',
-        email: 'qwe@qwe',
-        phone: 'qwe',
-        accept: true,
+        city: null,
+        email: null,
+        phone: null,
+        // fio: 'qwe',
+        // age: null,
+        // city: 'qwe',
+        // email: 'qwe@qwe',
+        // phone: 'qwe',
+        accept: false,
         productId: 1
       },
       fieldRules: [
@@ -182,24 +167,8 @@ export default {
       emailRules: [
         v => !!v || 'E-mail должен быть заполнен',
         v => /.+@.+/.test(v) || 'Поле должно содержать E-mail'
-      ],
-      playerOptions: {
-        // videojs options
-        muted: true,
-        height: '360',
-        language: 'en',
-        playbackRates: [0.7, 1.0, 1.5, 2.0],
-        sources: [{
-          type: 'video/mp4',
-          src: 'https://drive.google.com/uc?export=download&confirm=2wnC&id=1vgtY2oMps3JrTYlpb5AdhGAH00ReFHLN'
-          // src: 'https://drive.google.com/uc?export=download&confirm=j5PF&id=1xzhouvWc8Uememn_gvdvKTfhkcNWu2ms'
-        }],
-        poster: '/static/images/author.jpg'
-      }
+      ]
     }
-  },
-  mounted () {
-    // console.log('this is current player instance object', this.player)
   },
   computed: {
     prices () {
@@ -211,18 +180,14 @@ export default {
     ...mapState({
       yandex: state => state.payment.yandex,
       user: state => state.auth.user
-    }),
-    player () {
-      return this.$refs.videoPlayer.player
-    }
+    })
   },
   async created () {
-    // this.getAllProductsForUser()
   },
   methods: {
-    ...mapActions(['getAllProductsForUser', 'acceptProductWithPrice', 'clearAllMessages']),
-    clickB () {
-      this.$refs.mybtn.$el.click()
+    ...mapActions(['acceptProductWithPrice', 'clearAllMessages']),
+    clickToBuy () {
+      this.$refs.submitForm.$el.click()
     },
     buy (e) {
       e.preventDefault()
@@ -234,35 +199,6 @@ export default {
         this.acceptProductWithPrice(this.form)
           .then(() => this.$refs.form.$el.submit())
       } else this.loading = false
-    },
-    onPlayerLoadeddata () {
-    },
-    onPlayerCanplay () {
-    },
-    onPlayerCanplaythrough () {
-    },
-    handler (e) {
-      console.log('context')
-      e.preventDefault()
-    },
-    // listen event
-    onPlayerPlay (player) {
-      // console.log('player play!', player)
-    },
-    onPlayerPause (player) {
-      // console.log('player pause!', player)
-    },
-    // ...player event
-
-    // or listen state event
-    playerStateChanged (playerCurrentState) {
-      // console.log('player current update state', playerCurrentState)
-    },
-    // player is ready
-    playerReadied (player) {
-      console.log('the player is readied', player)
-      // you can use it to do something...
-      // player.[methods]
     }
   }
 }

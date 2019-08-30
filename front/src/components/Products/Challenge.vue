@@ -158,7 +158,7 @@
       </p>
     </v-flex>
     <v-flex xs12 sm10 offset-sm1 md8 offset-md2>
-      <v-img class="img-bordered elevation-16 mt-3 mb-5" :src="require('../../../static/img/program2_1.jpg')" style="border: 30px solid white;"></v-img>
+      <v-img class="img-bordered elevation-16 mt-3 mb-5" :src="require('../../../static/img/program2_1.jpg')" style="border: 18px solid white;"></v-img>
     </v-flex>
   </v-layout>
 </template>
