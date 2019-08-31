@@ -95,7 +95,8 @@ export default {
       items: [
         { title: 'Главная', icon: 'fa fa-home', to: '/' },
         { title: 'Новости', icon: 'fab fa-pagelines', to: '/dashboard/news' },
-        { title: 'Программы', icon: 'fa fa-dumbbell', to: '/dashboard/products' }
+        // { title: 'Программы', icon: 'fa fa-dumbbell', to: '/dashboard/products' },
+        { title: 'Участники', icon: 'fa fa-users', to: '/dashboard/members' }
       ],
       drawer: true,
       drawerRight: false,

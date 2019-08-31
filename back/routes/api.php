@@ -25,6 +25,8 @@ Route::post('reset1', 'AuthController@resetSendToken');
 Route::post('reset2', 'AuthController@reset');
 Route::get('news', 'NewsController@index');
 Route::post('pay/notify', 'PaymentController@notify');
+Route::get('prices', 'ProductController@getPrices');
+Route::get('products/members', 'ProductController@getMembers');
 
 
 Route::group(['middleware' => ['jwt.auth']], function() {

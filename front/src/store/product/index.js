@@ -4,11 +4,35 @@ import * as types from '../mutation-types'
 
 const state = {
   products: [],
-  productsOfUser: null
+  productsOfUser: null,
+  prices: null,
+  members: null
 }
 
 // actions
 const actions = {
+  async getMembers ({ commit, dispatch }) {
+    context.getMembers().then((x) => {
+      if (x.status === 200) {
+        commit(types.RECIEVE_PRODUCT_MEMBERS, x.data)
+      } else {
+        dispatch('setErrors', x.response.data)
+      }
+    }).catch(x => {
+      dispatch('setErrors', x.response.data)
+    })
+  },
+  async getProductPrices ({ commit, dispatch }) {
+    context.getPrices().then((x) => {
+      if (x.status === 200) {
+        commit(types.RECIEVE_PRODUCT_PRICES, x.data)
+      } else {
+        dispatch('setErrors', x.response.data)
+      }
+    }).catch(x => {
+      dispatch('setErrors', x.response.data)
+    })
+  },
   async acceptProduct ({ commit, dispatch }, payload) {
     context.accept(payload).then((x) => {
       if (x.status === 200) {
@@ -77,6 +101,12 @@ const actions = {
 
 // mutations
 const mutations = {
+  [types.RECIEVE_PRODUCT_MEMBERS] (state, payload) {
+    state.members = payload
+  },
+  [types.RECIEVE_PRODUCT_PRICES] (state, payload) {
+    state.prices = payload
+  },
   [types.RECIEVE_PRODUCT] (state, payload) {
     state.products = payload
   },

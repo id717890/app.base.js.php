@@ -23,5 +23,6 @@ new Vue({
   render: h => h(App),
   async created () {
     this.$store.dispatch('autoSignIn')
+    this.$store.dispatch('getProductPrices')
   }
 }).$mount('#app')

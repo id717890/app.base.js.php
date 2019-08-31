@@ -1,5 +1,5 @@
 <template>
-  <v-layout row wrap>
+  <v-layout row wrap mb-4>
     <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3 text-xs-center>
       <h1>Фитнес-программа «ДВИЖЕНИЕ»<br>с элементами FLOW</h1>
       <p>Старт 1 октября 2019</p>
@@ -122,7 +122,7 @@ export default {
   data () {
     return {
       loading: false,
-      selectedPrice: 2,
+      selectedPrice: null,
       payData: {
         formcomment: '',
         label: '',
@@ -171,18 +171,24 @@ export default {
     }
   },
   computed: {
-    prices () {
-      return [
-        { text: '2500 руб.', value: 2 },
-        { text: '5000 руб.', value: 2.1 }
-      ]
-    },
+    // prices () {
+    //   return [
+    //     { text: '2500 руб.', value: 2 },
+    //     { text: '5000 руб.', value: 2.1 }
+    //   ]
+    // },
     ...mapState({
       yandex: state => state.payment.yandex,
-      user: state => state.auth.user
+      user: state => state.auth.user,
+      prices: state => state.product.prices
     })
   },
   async created () {
+  },
+  mounted () {
+    if (this.prices !== null && this.prices !== undefined && this.prices !== 'undefined') {
+      this.selectedPrice = this.prices[0]
+    }
   },
   methods: {
     ...mapActions(['acceptProductWithPrice', 'clearAllMessages']),

@@ -9,6 +9,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Auth;
+use DB;
 
 class ProductController extends Controller
 {
@@ -76,5 +77,41 @@ class ProductController extends Controller
             'phone'=>$phone
         ]);
         return response()->json(200);
+    }
+
+    public function getPrices () {
+        return response()->json([
+            ['value' => 2500, 'text' => '2500 р.'],
+            ['value' => 5000, 'text' => '5000 р.']
+        ], 200);
+    }
+
+    public function getMembers () {
+        $challenge = DB::select('
+        SELECT
+        upa.*
+        FROM `user_product_accepts` as upa
+        LEFT JOIN user_products up ON up.user_id = upa.user_id and up.product_id = upa.product_id
+        where upa.product_id = 2
+        ');
+
+        $flow = DB::select('
+        SELECT
+        upa.*,
+        CASE
+          WHEN up.price = 2500 THEN "blue"
+          WHEN up.price = 5000 THEN "pink"
+          ELSE "grey loghten2"
+        END AS color,
+        up.price
+        FROM `user_product_accepts` as upa
+        LEFT JOIN user_products up ON up.user_id = upa.user_id and up.product_id = upa.product_id
+        where upa.product_id = 1
+        ');
+//        dd($challenge);
+        return response()->json([
+            'challenge' => $challenge,
+            'flow' => $flow
+        ], 200, ['Content-Type'=>'application/json; charset=UTF-8'], JSON_UNESCAPED_UNICODE);
     }
 }
