@@ -81,8 +81,8 @@ class ProductController extends Controller
 
     public function getPrices () {
         return response()->json([
-            ['value' => 2500, 'text' => '2500 р.'],
-            ['value' => 5000, 'text' => '5000 р.']
+            ['value' => 2, 'text' => '2500 р.'],
+            ['value' => 2.1, 'text' => '5000 р.']
         ], 200);
     }
 
@@ -90,7 +90,7 @@ class ProductController extends Controller
         $challenge = DB::select('
         SELECT
         upa.*
-        FROM `user_product_accepts` as upa
+        FROM user_product_accepts as upa
         LEFT JOIN user_products up ON up.user_id = upa.user_id and up.product_id = upa.product_id
         where upa.product_id = 2
         ');
@@ -99,12 +99,12 @@ class ProductController extends Controller
         SELECT
         upa.*,
         CASE
-          WHEN up.price = 2500 THEN "blue"
-          WHEN up.price = 5000 THEN "pink"
+          WHEN up.price = 2 THEN "blue"
+          WHEN up.price = 2.1 THEN "pink"
           ELSE "grey loghten2"
         END AS color,
         up.price
-        FROM `user_product_accepts` as upa
+        FROM user_product_accepts as upa
         LEFT JOIN user_products up ON up.user_id = upa.user_id and up.product_id = upa.product_id
         where upa.product_id = 1
         ');

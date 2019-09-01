@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Source\IMailerService;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Input;
@@ -14,6 +15,16 @@ use Illuminate\Foundation\Auth\ResetsPasswords;
 class AuthController extends Controller
 {
     use ResetsPasswords;
+
+    private $mailerService;
+
+    public function __construct(
+        IMailerService $mailerService
+    )
+    {
+        $this->mailerService = $mailerService;
+    }
+
     /**
      * API Register
      *
@@ -39,12 +50,16 @@ class AuthController extends Controller
         $verification_code = str_random(30); //Generate verification code
         DB::table('user_verifications')->insert(['user_id'=>$user->id,'token'=>$verification_code]);
         $subject = "Пожалуйста подтвердите Ваш электронный адрес";
+
+//        $t = $this->mailerService->EmailConfirmRegistration($email, $name, $verification_code, null);
+
         Mail::send('email.verify', ['name' => $name, 'verification_code' => $verification_code],
             function($mail) use ($email, $name, $subject){
                 $mail->from(getenv('FROM_EMAIL_ADDRESS'), getenv('FROM_SEO'));
                 $mail->to($email);
                 $mail->subject($subject);
             });
+//        return response()->json(['success'=> true, 'message'=> $t]);
         return response()->json(['success'=> true, 'message'=> 'Thanks for signing up! Please check your email to complete your registration.']);
 //        return $this->login($request);
     }

@@ -56,7 +56,7 @@ class PaymentController extends Controller
             if ($sha1 != $order->sha1hash) {
                 $order->errors = 'Sha1 Hash not correct; ';
             } else {
-                UserProduct::create(['user_id'=>intval($match[0]), 'product_id'=>intval($match[1]), 'price' => intval($match[2])]);
+                UserProduct::create(['user_id'=>intval($match[0]), 'product_id'=>intval($match[1]), 'price' => floatval($match[2])]);
                 $order->errors = null;
             }
         } else {

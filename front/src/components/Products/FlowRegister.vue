@@ -23,7 +23,7 @@
     </v-flex>
     <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3 text-xs-center mt-4>
       <!-- <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/XkAJUvX2UZ8?modestbranding=1;controls=2;showinfo=0;modestbranding=1;rel=0" frameborder="0"  modestbranding="1" allowfullscreen></iframe> -->
-      <video-player  class="video-player-box video-intro"
+      <video-player  class="video-player-box video-intro video-wrapper"
         ref="videoPlayer"
         :options="introOptions"
         :playsinline="true"
@@ -141,7 +141,7 @@ export default {
           // src: 'https://getfile.dokpub.com/yandex/get/https://yadi.sk/i/U_jexcSCCleBmw'
           // src: 'https://drive.google.com/uc?export=download&confirm=j5PF&id=1xzhouvWc8Uememn_gvdvKTfhkcNWu2ms'
         }],
-        poster: '/static/images/author.jpg'
+        poster: require('../../../static/img/player/intro.jpg')
       },
       form: {
         valid: false,
@@ -187,7 +187,7 @@ export default {
   },
   mounted () {
     if (this.prices !== null && this.prices !== undefined && this.prices !== 'undefined') {
-      this.selectedPrice = this.prices[0]
+      this.selectedPrice = this.prices[0].value
     }
   },
   methods: {
@@ -196,6 +196,7 @@ export default {
       this.$refs.submitForm.$el.click()
     },
     buy (e) {
+      // console.log(this.selectedPrice)
       e.preventDefault()
       this.clearAllMessages()
       this.loading = true

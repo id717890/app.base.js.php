@@ -1,3 +1,10 @@
-.video-intro, .video-intro .video-js {
+.video-intro, .video-intro .video-js,
+.video-wrapper, .video-wrapper .video-js
+{
   width: 100%;
+}
+
+.video-wrapper .vjs-big-play-button {
+  left: 42%;
+  top: 44%;
 }
