@@ -14,6 +14,7 @@ class CreatePaymentTable extends Migration
     public function up()
     {
         Schema::create('payments', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->text('operation_id')->nullable(true);
             $table->text('notification_type')->nullable(true);

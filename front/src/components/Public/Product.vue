@@ -39,46 +39,6 @@
         </v-flex>
       </v-layout>
     </v-flex>
-    <v-dialog v-model="introDialog" max-width="580" min-height="auto">
-      <v-card>
-        <!-- <v-card-title class="headline">Use Google's location service?</v-card-title> -->
-        <v-card-text>
-          <video-player  class="video-player-box video-intro"
-            ref="videoPlayer"
-            :options="introOptions"
-            :playsinline="true"
-            customEventName="customstatechangedeventname"
-            @play="onPlayerPlay($event)"
-            @pause="onPlayerPause($event)"
-            @ended="onPlayerEnded($event)"
-            @waiting="onPlayerWaiting($event)"
-            @loadeddata="onPlayerLoadeddata($event)"
-            @canplay="onPlayerCanplay($event)"
-            @canplaythrough="onPlayerCanplaythrough($event)"
-            @statechanged="playerStateChanged($event)"
-            @ready="playerReadied">
-          </video-player>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn
-            color="green darken-1"
-            flat="flat"
-            @click="dialog = false"
-          >
-            Цена №1
-          </v-btn>
-
-          <v-btn
-            color="green darken-1"
-            flat="flat"
-            @click="dialog = false"
-          >
-            Цена №2
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
   </v-layout>
 </template>
 
@@ -89,8 +49,6 @@ import Challenge from '../Products/Challenge'
 import ChallengeRegister from '../Products/ChallengeRegister'
 import FlowRegister from '../Products/FlowRegister'
 import Flow from '../Products/Flow'
-// import 'video.js/dist/video-js.css'
-import { videoPlayer } from 'vue-video-player'
 
 export default {
   mixins: [authMixin],
@@ -99,57 +57,13 @@ export default {
     'product1': Flow,
     'product1Register': FlowRegister,
     'product2': Challenge,
-    'product2Register': ChallengeRegister,
-    'videoPlayer': videoPlayer
+    'product2Register': ChallengeRegister
   },
   data () {
     return {
-      introDialog: false,
-      introOptions: {
-        // videojs options
-        muted: false,
-        height: '308',
-        language: 'en',
-        playbackRates: [0.7, 1.0, 1.5, 2.0],
-        sources: [{
-          type: 'video/mp4',
-          src: 'https://cloclo3.datacloudmail.ru/weblink/view/4dWP/zwNx5wDej?etag=4F01E21DA5816076E5E6B777EB879CE03B91024A&key=629e10c956f5d60f30ccd37aa71ebb6bdf5c77e3'
-          // src: 'https://drive.google.com/uc?export=download&confirm=j5PF&id=1xzhouvWc8Uememn_gvdvKTfhkcNWu2ms'
-        }],
-        poster: '/static/images/author.jpg'
-      }
     }
   },
   methods: {
-    onPlayerLoadeddata () {
-    },
-    onPlayerCanplay () {
-    },
-    onPlayerCanplaythrough () {
-    },
-    handler (e) {
-      console.log('context')
-      e.preventDefault()
-    },
-    // listen event
-    onPlayerPlay (player) {
-      console.log('player play!', player)
-    },
-    onPlayerPause (player) {
-      // console.log('player pause!', player)
-    },
-    // ...player event
-
-    // or listen state event
-    playerStateChanged (playerCurrentState) {
-      // console.log('player current update state', playerCurrentState)
-    },
-    // player is ready
-    playerReadied (player) {
-      console.log('the player is readied', player)
-      // you can use it to do something...
-      // player.[methods]
-    }
   },
   computed: {
     ...mapGetters(['getProductById', 'getProductOfUserById']),
@@ -174,9 +88,6 @@ export default {
       } else {
         return 'product' + this.id + 'Register'
       }
-    },
-    player () {
-      return this.$refs.videoPlayer.player
     }
   },
   async created () {

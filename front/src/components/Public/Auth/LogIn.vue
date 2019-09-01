@@ -14,6 +14,11 @@
                 <v-btn  :disabled="!form.valid" :loading="loading" color="success" @click="signin" ><fai icon="sign-in-alt" class="mr-2" />  Вход</v-btn>
                 <v-btn  flat to="/forgot"><fai icon="key" class="mr-2" />  Восстановить</v-btn>
                 <v-btn left flat fab to="/"><fai icon="home" size="2x" /></v-btn>
+                <v-btn left flat fab @click="login1">kaka</v-btn>
+                <v-btn left flat fab @click="login2">jus</v-btn>
+                <v-btn left flat fab @click="login3">jusa</v-btn>
+                <v-btn left flat fab @click="loginAdmin">adm</v-btn>
+                <v-btn left flat fab @click="loginUser">usr</v-btn>
               </v-flex>
             </v-layout>
           </v-flex>
@@ -54,6 +59,26 @@ export default {
   },
   methods: {
     ...mapActions(['signUserIn']),
+    login1 () {
+      this.form.email = 'kakashka87@list.ru'
+      this.form.password = 'qweqwe'
+    },
+    login2 () {
+      this.form.email = 'jus_za@mail.ru'
+      this.form.password = 'qweqwe'
+    },
+    login3 () {
+      this.form.email = 'jusupovaz@mail.ru'
+      this.form.password = 'qweqwe'
+    },
+    loginAdmin () {
+      this.form.email = 'admin@gmail.com'
+      this.form.password = 'qweqwe'
+    },
+    loginUser () {
+      this.form.email = 'user@gmail.com'
+      this.form.password = 'qweqwe'
+    },
     signin (e) {
       this.loading = true
       this.$store.dispatch('clearAllMessages')

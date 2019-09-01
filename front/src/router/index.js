@@ -33,6 +33,7 @@ const router = new Router({
     {
       path: '/dashboard',
       name: 'DashboardHome',
+      redirect: { name: 'Members' },
       beforeEnter: authGuard,
       components: { main: () => import('../components/LayoutAdmin.vue') },
       children: [

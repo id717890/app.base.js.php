@@ -11,7 +11,7 @@ class UserProduct extends Model
 
     protected $table = 'user_products';
 
-    protected $fillable = array('user_id', 'product_id', 'price');
+    protected $fillable = array('user_id', 'product_id', 'payment_id', 'price');
 
     protected $hidden = array('created_at','updated_at');
 
