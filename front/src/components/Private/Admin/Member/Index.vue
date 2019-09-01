@@ -39,6 +39,7 @@
                 class="elevation-1"
                 hide-actions
                 :search="search"
+                :pagination.sync="pagination"
               >
                 <template v-slot:items="props" >
                   <tr @click="props.expanded = !props.expanded">
@@ -46,6 +47,7 @@
                     <td>{{ props.item.fio }}</td>
                     <td>{{ props.item.phone }}</td>
                     <td>{{ props.item.email }}</td>
+                    <td :title="date(props.item.created_at, 'DD.MM.YYYY HH:mm:ss')">{{ date(props.item.created_at, 'DD.MM.YYYY') }}</td>
                   </tr>
                   <!-- <td><v-img :src="props.item.image"></v-img></td>
                   <td>{{ date(props.item.created_at, 'DD.MM.YYYY')  }}</td>
@@ -61,7 +63,6 @@
                     <v-card-text>
                       <p><b>Город:</b> {{props.item.city}}</p>
                       <p><b>Возраст:</b> {{props.item.age}}</p>
-                      <p><b>Время регистрации:</b> {{date(props.item.created_at)}}</p>
                     </v-card-text>
                   </v-card>
                 </template>
@@ -77,6 +78,7 @@
                 class="elevation-1"
                 hide-actions
                 :search="search"
+                :pagination.sync="pagination"
               >
                 <template v-slot:items="props" >
                   <tr @click="props.expanded = !props.expanded">
@@ -84,6 +86,7 @@
                     <td>{{ props.item.fio }}</td>
                     <td>{{ props.item.phone }}</td>
                     <td>{{ props.item.email }}</td>
+                    <td :title="date(props.item.created_at, 'DD.MM.YYYY HH:mm:ss')">{{ date(props.item.created_at, 'DD.MM.YYYY') }}</td>
                     <td :class="props.item.color + ' white--text'">
                       {{ props.item.price !== null ? Number(props.item.price) : '-'}}
                     </td>
@@ -94,7 +97,9 @@
                     <v-card-text>
                       <p><b>Город:</b> {{props.item.city}}</p>
                       <p><b>Возраст:</b> {{props.item.age}}</p>
-                      <p><b>Время регистрации:</b> {{date(props.item.created_at)}}</p>
+                      <p v-if="props.item.operation_id !== null">
+                        <b>Operation ID:</b> {{props.item.operation_id}}  &nbsp;/&nbsp; <b>Date:</b> {{date(props.item.date, 'DD.MM.YYYY HH:mm:ss')}} &nbsp;/ &nbsp; <b>Дебет:</b> {{props.item.amount}} руб.
+                      </p>
                     </v-card-text>
                   </v-card>
                 </template>
@@ -117,6 +122,10 @@ export default {
   data () {
     return {
       search: null,
+      pagination: {
+        sortBy: 'created_at',
+        descending: true
+      },
       products: [
         { id: 1, name: 'Прграмма "Движение"', icon: 'fa fa-paw' },
         { id: 2, name: 'Бесплатный челлендж', icon: 'fa fa-dumbbell' }
@@ -125,7 +134,8 @@ export default {
         { text: '#', value: '', width: '70', sortable: false },
         { text: 'ФИО', value: 'fio' },
         { text: 'Телефон', value: 'phone' },
-        { text: 'E-mail', value: 'email' }
+        { text: 'E-mail', value: 'email' },
+        { text: 'Дата', value: 'created_at', width: '70' }
         // { text: 'Image', value: 'image', sortable: false, width: '150' },
         // { text: 'Created At', value: 'created_at', width: '150' },
       ],
@@ -134,7 +144,8 @@ export default {
         { text: 'ФИО', value: 'fio' },
         { text: 'Телефон', value: 'phone' },
         { text: 'E-mail', value: 'email' },
-        { text: 'Цена', value: 'price', width: '120' }
+        { text: 'Дата', value: 'created_at', width: '70' },
+        { text: 'Оплачено', value: 'price', width: '120' }
       ]
     }
   },
@@ -145,8 +156,8 @@ export default {
   },
   methods: {
     ...mapActions(['getMembers']),
-    date (e) {
-      return moment.getDateFormat(e, 'DD.MM.YYYY HH:mm:ss')
+    date (e, format) {
+      return moment.getDateFormat(e, format)
     }
   },
   async created () {

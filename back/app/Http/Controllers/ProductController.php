@@ -93,11 +93,12 @@ class ProductController extends Controller
         FROM user_product_accepts as upa
         LEFT JOIN user_products up ON up.user_id = upa.user_id and up.product_id = upa.product_id
         where upa.product_id = 2
+        order by upa.created_at asc
         ');
 
         $flow = DB::select('
         SELECT
-        upa.*,
+        upa.*, p.operation_id, p.date, p.amount,
         CASE
           WHEN up.price = 2 THEN "blue"
           WHEN up.price = 2.1 THEN "pink"
@@ -106,6 +107,7 @@ class ProductController extends Controller
         up.price
         FROM user_product_accepts as upa
         LEFT JOIN user_products up ON up.user_id = upa.user_id and up.product_id = upa.product_id
+        LEFT JOIN payments p ON p.id = up.payment_id
         where upa.product_id = 1
         ');
 //        dd($challenge);
