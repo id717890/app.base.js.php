@@ -133,11 +133,12 @@ const actions = {
       })
     })
   },
-  async logout ({ commit }) {
+  async logout ({ commit, dispatch }) {
     Vue.auth.logout()
     commit(types.SET_USER, null)
     commit(types.SET_TOKEN, null)
     commit(types.SET_ROLE, null)
+    dispatch('clearAllAfterLogout')
   },
   async autoSignIn ({ commit, dispatch }) {
     let credential = Vue.auth.getCredentials()

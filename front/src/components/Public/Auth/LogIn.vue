@@ -14,11 +14,11 @@
                 <v-btn  :disabled="!form.valid" :loading="loading" color="success" @click="signin" ><fai icon="sign-in-alt" class="mr-2" />  Вход</v-btn>
                 <v-btn  flat to="/forgot"><fai icon="key" class="mr-2" />  Восстановить</v-btn>
                 <v-btn left flat fab to="/"><fai icon="home" size="2x" /></v-btn>
-                <v-btn left flat fab @click="login1">kaka</v-btn>
+                <!-- <v-btn left flat fab @click="login1">kaka</v-btn>
                 <v-btn left flat fab @click="login2">jus</v-btn>
                 <v-btn left flat fab @click="login3">jusa</v-btn>
                 <v-btn left flat fab @click="loginAdmin">adm</v-btn>
-                <v-btn left flat fab @click="loginUser">usr</v-btn>
+                <v-btn left flat fab @click="loginUser">usr</v-btn> -->
               </v-flex>
             </v-layout>
           </v-flex>

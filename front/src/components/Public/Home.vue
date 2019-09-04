@@ -357,6 +357,12 @@ export default {
           img: require('../../../static/img/partners/ZamirYusupov.jpg'),
           txt: 'Программист<br>Замир Юсупов',
           url: 'https://yusupovz.ru/'
+        },
+        {
+          id: 7,
+          img: require('../../../static/img/partners/sport72.jpg'),
+          txt: 'СПОРТ 72',
+          url: 'http://sport-72.ru/'
         }
       ],
       items: [

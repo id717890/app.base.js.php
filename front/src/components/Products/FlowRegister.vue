@@ -22,7 +22,6 @@
       </v-layout>
     </v-flex>
     <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3 text-xs-center mt-4>
-      <!-- <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/XkAJUvX2UZ8?modestbranding=1;controls=2;showinfo=0;modestbranding=1;rel=0" frameborder="0"  modestbranding="1" allowfullscreen></iframe> -->
       <video-player  class="video-player-box video-intro video-wrapper"
         ref="videoPlayer"
         :options="introOptions"
@@ -137,6 +136,7 @@ export default {
         playbackRates: [0.7, 1.0, 1.5, 2.0],
         sources: [{
           type: 'video/mp4',
+          // src: 'https://s148man.storage.yandex.net/rdisk/cb0eb44d76be8350df383f53b79ac25ad13b30aca9b6436ecb43721a95ff6dda/5d6d4b5d/lwbbln4jVLFQENHpeeg8w_BYtYdJpwNX1grPFKQ4oaBupOwBrd-WtJdUpF1uRaL2de-nMPDL08wVrgY0okQvXQ==?uid=536727340&filename=Intro.mp4&disposition=attachment&hash=&limit=0&content_type=video%2Fquicktime&owner_uid=536727340&fsize=321722526&hid=3895759b2f029ce4b72b6e130872845b&media_type=video&tknv=v2&etag=f8faf8440f5749242373dd2dc162518f&rtoken=eh5XmPWhncyN&force_default=yes&ycrid=na-0a2af6bb862728a16d63a59474c88e06-downloader7e&ts=59194f333d140&s=f8209a6f064b8f0e85359280e023f0bae13c07054c3dfd980884465b1e795e77&pb=U2FsdGVkX19TRLtDYoP7XHeUC5VCBYFxgTIVPY8F2m6L0fkzoN1o9pD5gAhzVd7drhYjZ5p-FrwYzs1kjHXQzcuZ7aN0Gyo1Z-VHlt5Ib5U'
           src: 'https://www.dropbox.com/s/85s1a6t37u9hdzy/Intro.mp4?dl=1'
           // src: 'https://getfile.dokpub.com/yandex/get/https://yadi.sk/i/U_jexcSCCleBmw'
           // src: 'https://drive.google.com/uc?export=download&confirm=j5PF&id=1xzhouvWc8Uememn_gvdvKTfhkcNWu2ms'

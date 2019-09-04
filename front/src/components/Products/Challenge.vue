@@ -109,7 +109,7 @@
               :key="i"
             >
               <template v-slot:header>
-                <div>{{day.title}}</div>
+                <div><i :class="day.description + ' mr-2'"></i> {{day.title}}</div>
               </template>
               <v-card class="grey lighten-4">
                 <v-card-text>

@@ -26,7 +26,6 @@ Route::post('reset2', 'AuthController@reset');
 Route::get('news', 'NewsController@index');
 Route::post('pay/notify', 'PaymentController@notify');
 Route::get('prices', 'ProductController@getPrices');
-Route::get('products/members', 'ProductController@getMembers');
 
 
 Route::group(['middleware' => ['jwt.auth']], function() {
@@ -44,6 +43,7 @@ Route::group(['middleware' => ['jwt.auth', 'auth.role:admin']], function() {
     Route::post('news/delete/{id}', 'NewsController@delete');
     Route::post('news/update', 'NewsController@update');
     Route::post('product/update', 'ProductController@update');
+    Route::get('products/members', 'ProductController@getMembers');
 });
 
 
@@ -51,6 +51,7 @@ Route::group(['middleware' => ['jwt.auth', 'auth.role:admin,user']], function() 
     Route::get('products/get', 'ProductController@get');
     Route::post('product/acceptProduct', 'ProductController@acceptProduct');
     Route::post('resetLk', 'AuthController@resetLk');
+    Route::post('product/getTraining', 'ProductController@getTraining');
 });
 
 
