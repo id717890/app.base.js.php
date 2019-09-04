@@ -52,6 +52,7 @@ export default {
         this.forgotPassword({ email: this.form.email })
           .then(() => {
             this.$refs.form.reset()
+            this.loading = false
           })
           .catch(x => {
             this.loading = false

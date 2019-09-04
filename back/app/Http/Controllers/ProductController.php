@@ -46,6 +46,7 @@ class ProductController extends Controller
 
             $findAcception = UserProductAccept::where('user_id', Auth::user()->id)->where('product_id', $product->id)->first();
             $prod['accept'] = $findAcception != null ? true : false;
+            $prod['is_available'] = $product->price >= 999999 ? false : true;
             array_push($result, $prod);
         }
         return response()->json($result, 200);

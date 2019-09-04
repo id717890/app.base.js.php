@@ -12,7 +12,7 @@
         <li>5000 р. (разбор ваших видео + онлайн консультации)</li>
       </ul>
     </v-flex>
-    <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3 text-xs-center mt-4 v-if="isAuth">
+    <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3 text-xs-center mt-4 v-if="isAuth && product.is_available !== null  && product.is_available !== undefined  && product.is_available !== 'undefined'  && product.is_available === true">
       <v-layout row nowrap justify-center>
       <v-select :items="prices" item-text="text" item-value="value" v-model="selectedPrice" label="Цена"></v-select>
       <v-btn large :disabled="!form.valid" color="red darken-3" dark @click="clickToBuy" :loading="loading">
@@ -21,14 +21,18 @@
       </v-btn>
       </v-layout>
     </v-flex>
+    <v-flex  xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3 text-xs-center mt-4 v-if="product.is_available === null  || product.is_available === undefined || product.is_available === 'undefined' || product.is_available === false">
+      <h3 class="pink--text">Продажа фитнес-программы "ДВИЖЕНИЕ" начнётся в ближайшее время.</h3>
+    </v-flex>
     <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3 text-xs-center mt-4>
-      <video-player  class="video-player-box video-intro video-wrapper"
+      <!-- <video-player  class="video-player-box video-intro video-wrapper"
         ref="videoPlayer"
         :options="introOptions"
         :playsinline="true"
         customEventName="customstatechangedeventname"
         >
-      </video-player>
+      </video-player> -->
+      <iframe scrolling="no" allowfullscreen="" gesture="media" allow="autoplay; encrypted-media" style="width: 100%; height: 350px; border-width: 0px; display: block;" src="https://yastatic.net/yandex-video-player-iframe-api-bundles/1.0-573/index.html?post_message_config=true&amp;stream_url=https%3A%2F%2Fstreaming.disk.yandex.net%2Fhls%2FU2FsdGVkX1-Gm3cK6Zm5Qj7HDepbY0V1jAYG0vzoP2y55jZMuHhtPjjVsC7MpB2gKmO3EcGD5rNDKxqIesX330_ENMc859zWOuKUba-HiEJqc9114SiiMjCjNKsIbCG7pyeL-BJj-s8-pE3rWYTySTiWsSeu39DgO4x8xd7zj895z2OVbZfYFmKi-EbZ71jMzueGyaqZLA2ouYNrZhBOSX9lDkF4KfB5Dn4c6yN5ErSs5d3BYKPGrl1RwqdK4Jdy6Q6PsaJIfVO9gEosd0DRu2qcy5pSUqbex82Ecy99NSf-jPbXmVz7jyrCQz6qeRnG%2F591c9d135db58%2Fa4fc5d943c93c7867c1d9cd26b2241e2251a5bdebd7023ac19261cebfd035522%2Fmaster-playlist.m3u8&amp;volume=100&amp;muted=false&amp;auto_quality=false&amp;report=false&amp;report_url=https%3A%2F%2Fyandex.ru%2Fsupport%2Fteletranslation%2Fform.html&amp;preview=https%3A%2F%2Fdownloader.disk.yandex.ru%2Fpreview%2F57f5065663baa5f869bcf320d53da8148f852b97bd050042fee8d4996cdce146%2F5d6fa913%2FsXquPWtG1xWi1tVde_ZatGd2IrsS4JK2Emnjq6Nc4OBsF5qeeYy0ODtYeoWElCh3SxoGRtf8o_jte_qjJ013oQ%253D%253D%3Fuid%3D0%26filename%3DIntro.mov%26disposition%3Dinline%26hash%3D%26limit%3D0%26content_type%3Dimage%252Fjpeg%26owner_uid%3D0%26tknv%3Dv2%26size%3D1920x1080&amp;host=yadi.sk&amp;additional_params=%7B%22from%22%3A%22other%22%2C%22vsid%22%3A%222920c015a449b7db0b50ac46d91f40707ca79fb2611db674000b76db71e06212%22%7D&amp;vsid=2920c015a449b7db0b50ac46d91f40707ca79fb2611db674000b76db71e06212"></iframe>
     </v-flex>
     <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3>
       <h3 class="mt-4">Что включено в программу:</h3>
@@ -92,7 +96,7 @@
           <!-- <v-select :items="prices" item-text="text" item-value="value" v-model="selectedPrice" label="Цена"></v-select> -->
           <v-checkbox v-model="form.accept" :rules="acceptRules" label="Даю согласие на хранение и обработку моих персональных данных" required></v-checkbox>
         </v-flex>
-        <v-flex xs12 text-xs-center>
+        <v-flex xs12 text-xs-center v-if="product.is_available !== null  && product.is_available !== undefined  && product.is_available !== 'undefined'  && product.is_available === true">
           <section v-if="isAuth">
             <v-layout row nowrap justify-center>
               <v-select :items="prices" item-text="text" item-value="value" v-model="selectedPrice" label="Цена"></v-select>
@@ -105,6 +109,9 @@
           <section v-else>
             <h3 class="red--text mb-4">* Для покупки или регистрации в программе нужно авторизоваться</h3>
           </section>
+        </v-flex>
+        <v-flex xs12 text-xs-center v-else>
+          <h3 class="pink--text">Продажа фитнес-программы "ДВИЖЕНИЕ" начнётся в ближайшее время.</h3>
         </v-flex>
       </v-form>
     </v-flex>
