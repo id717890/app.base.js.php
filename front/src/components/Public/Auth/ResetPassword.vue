@@ -60,8 +60,8 @@ export default {
       evt.preventDefault()
       this.reset(this.form)
         .then((x) => {
-          // this.resetForm()
-          this.$router.push('/login')
+          this.resetForm()
+          // this.$router.push('/login')
         })
     }
   },

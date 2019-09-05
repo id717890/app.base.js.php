@@ -19,7 +19,6 @@ const actions = {
     context.getTraining().then((x) => {
       if (x.status === 200) {
         commit(types.RECIEVE_PRODUCT_FLOW, x.data)
-        console.log(x.data)
       } else {
         dispatch('setErrors', x.response.data)
       }
