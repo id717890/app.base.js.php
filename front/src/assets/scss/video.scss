@@ -12,3 +12,21 @@
  .ytp-chrome-top {
   display: none !important
 }
+
+.hidedrive {
+  background-image: url('../static/img/paw2.png');
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 80px; 
+  height: 80px; 
+  position: absolute; 
+  opacity: 1; 
+  right: -5px; 
+  top: -5px;
+}
+
+.video-wrapper {
+  width: 100%; 
+  position: relative;
+}

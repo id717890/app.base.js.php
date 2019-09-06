@@ -51,7 +51,7 @@
             <v-expansion-panel expand v-if="trainings !== null">
               <v-expansion-panel-content v-for="item in trainings" :key="item.id">
                 <template v-slot:header>
-                  <div><i :class="item.icon+' mr-3 ' + item.color+'--text'"></i>{{item.title}}</div>
+                  <div @click="clickToHeader(item)"><i :class="item.icon+' mr-3 ' + item.color+'--text'"></i>{{item.title}}</div>
                 </template>
                 <v-card class="grey lighten-4 text-xs-center">
                   <!-- <v-card-text>
@@ -61,14 +61,9 @@
                   </div>
                   </v-card-text> -->
                   <v-card-text>
-                    <div v-if="item.yadisk" v-html="item.yadisk"></div>
-      <!-- <iframe width="100%" height="350" src="https://www.youtube-nocookie.com/embed/XkAJUvX2UZ8?modestbranding=1;controls=2;showinfo=0;modestbranding=1;rel=0;autohide=1" frameborder="0"  modestbranding="1" allowfullscreen></iframe> -->
-                    <!-- <video-player v-if="item.url_video !== ''"  class="video-player-box video-intro video-wrapper"
-                      :options="videoOption(item.url_video)"
-                      :playsinline="true"
-                      >
-                    </video-player>-->
-                    <h2 v-else>Здесь будет видео</h2>
+                    <!-- <v-progress-linear :indeterminate="true" :ref="'myloader' + item.id"></v-progress-linear> -->
+                    <div :ref="'videowrapper_' + item.id"></div>
+                    <!-- <h2 v-else>Здесь будет видео</h2> -->
                   </v-card-text>
                   <v-card-text v-if="item.url_file !== null"><a :href="item.url_file"><i class="far fa-file-pdf"></i> Скачать файл "{{item.title}}"</a></v-card-text>
                 </v-card>
@@ -195,7 +190,7 @@
 <script>
 import authMixin from '../../mixins/auth'
 import videoMixin from '../../mixins/videoplayer'
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions, mapGetters } from 'vuex'
 export default {
   props: ['product'],
   mixins: [authMixin, videoMixin],
@@ -261,7 +256,8 @@ export default {
       user: state => state.auth.user,
       prices: state => state.product.prices,
       trainings: state => state.product.paid_content
-    })
+    }),
+    ...mapGetters(['getTrainingById'])
   },
   mounted () {
     if (this.prices !== null && this.prices !== undefined && this.prices !== 'undefined') {
@@ -273,6 +269,27 @@ export default {
   },
   methods: {
     ...mapActions(['getTraining']),
+    getTrainingByIdComponent (id) {
+      return this.getTrainingById(id)
+    },
+    clickToHeader (item) {
+      let source = this.getTrainingByIdComponent(item.id)
+      if (source !== null) {
+        if (this.$refs['videowrapper_' + item.id][0].innerHTML === '') {
+          this.$refs['videowrapper_' + item.id][0].innerHTML = `
+            <div  class="video-wrapper">
+                <iframe src="` + source.yadisk + `"   width="100%" height="100%" frameborder="0" scrolling="no" seamless="" allowfullscreen="1"></iframe>
+                <div class="hidedrive">&nbsp;</div>
+            </div>`
+        }
+      }
+      // console.log(item)
+      // console.log(this.$refs['myloader' + item.id][0].$el)
+      // console.log(this.$refs['videowrapper_' + item.id])
+      // this.$refs['videowrapper_' + item.id][0].innerHTML = 'sdasd'
+      // this.$refs['myloader' + item.id][0].$el.classList.add('d-none')
+      // this.$refs['loader' + item.id].addClass('is-valid')
+    },
     videoOption (url) {
       return {
         muted: false,
