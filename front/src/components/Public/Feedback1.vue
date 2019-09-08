@@ -3,7 +3,7 @@
     <v-carousel-item v-for="feedback in feedbacks" :key="feedback.id">
       <v-layout row justify-center>
         <v-flex xs12 pt-4 px-5 text-xs-center>
-          <v-card max-width="330" :color="feedback.color" class="elevation-5 feedback" >
+          <v-card max-width="330" :color="feedback.color" class="elevation-5 feedback">
             <v-card-title>
               <v-list-tile>
                 <v-list-tile-avatar class="avatar1">

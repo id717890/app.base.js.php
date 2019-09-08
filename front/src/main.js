@@ -4,6 +4,7 @@ import './plugins/font-awesome'
 import './init/components'
 import '@fortawesome/fontawesome-free/css/all.css'
 import 'video.js/dist/video-js.css'
+import 'aos/dist/aos.css'
 import App from './App.vue'
 import router from './router'
 import store from './store'
@@ -11,6 +12,8 @@ import './registerServiceWorker'
 import AxiosConfig from './api/http-config'
 import VueJsModal from 'vue-js-modal'
 import Auth from './packages/auth'
+import AOS from 'aos'
+AOS.init()
 Vue.use(Auth)
 Vue.$http = AxiosConfig
 

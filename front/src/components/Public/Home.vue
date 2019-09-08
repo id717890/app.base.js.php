@@ -24,31 +24,31 @@
     <v-flex>
       <v-layout row wrap fill-height class="bg1">
         <v-flex xs12 sm10 offset-sm1 md8 offset-md2  align-self-center px-4 class="h1-left-block pa-1 mt-5">
-          <p class="logo-text">
+          <p class="logo-text" data-aos="fade-up">
             Друзья, добро пожаловать на сайт Евгении Кабановой, мастера спорта международного класса, чемпионки мира по спортивной акробатике и сертифицированного инструктора методики ANIMAL FLOW.
           </p>
-          <p class="logo-text">
+          <p class="logo-text" data-aos="fade-up" data-aos-delay="100">
             Здесь вы найдете полезную информацию о тренировках, сможете пройти бесплатный челлендж, <strong class="">а также купить новую уникальную фитнес-программу «ДВИЖЕНИЕ» с элементами FLOW!</strong> Эта программа не только изменит ваш подход к тренировкам, но и изменит вашу жизнь!
           </p>
-          <p class="strong2 text-xs-center" style="color:#DD2C00; font-size: 1.4rem">Старт программы 1 октября 2019!</p>
+          <p data-aos="fade-up" data-aos-delay="200" class="strong2 text-xs-center" style="color:#DD2C00; font-size: 1.4rem">Старт программы 1 октября 2019!</p>
         </v-flex>
       </v-layout>
     </v-flex>
     <v-flex class="grey lighten-1">
       <v-layout class="bg1" row wrap>
-        <v-flex xs12>
+        <v-flex xs12  data-aos="zoom-in"  data-aos-delay="200">
           <h2 class="h2-s1 text-xs-center pt-2 mt-5 mb-3"><i class="far fa-handshake"></i> Партнеры фитнес-программы <br>«ДВИЖЕНИЕ»</h2>
         </v-flex>
         <v-flex xs12 md8 offset-md2 mb-5 style="color: #d19c1d">
           <v-layout row wrap justify-center>
             <v-flex xs12 md6 lg4 v-for="partner in partners" :key="partner.id" class="text-xs-center pa-3">
-              <div class="partner-wrapper">
+              <div class="partner-wrapper" :data-aos-delay="delayRand(500, 1500)" :data-aos="effectZoomRand()">
                 <div class="partner border grow-and-rotate">
                   <a :href="partner.url" target="_blank">
                     <v-img  width="100%" class="" height="100%" :src="partner.img"></v-img>
                   </a>
                 </div>
-                <p v-html="partner.txt"></p>
+                <p v-html="partner.txt" :data-aos-delay="delayRand(1500, 1800)" data-aos="flip-up"></p>
               </div>
             </v-flex>
             <!-- <v-flex xs12 md6 lg4 style="display:flex;" pr-3 mb-3 align-center>
@@ -83,7 +83,7 @@
       <div class="prlx prlxb3">
         <v-layout row wrap justify-center align-center class="vh100">
           <v-flex xs xs12 sm6 md5 lg4 pa-3 v-for="(product, index) in products" :key="product.id">
-            <v-card class="product elevation-12" :color="randColor(index)">
+            <v-card class="product elevation-12" :color="randColor(index)" data-aos="zoom-in">
               <v-img
                 aspect-ratio="2.75"
                 :src="require('../../../static/img/' + product.photo)"
@@ -97,7 +97,7 @@
                 </div>
               </v-card-title>
 
-              <v-card-actions class="hidden-sm-and-down">
+              <v-card-actions class="hidden-sm-and-down" data-aos="zoom-in">
                 <v-btn :to="'lk/products'" large round dark color="deep-orange" style="margin: auto" v-if="product.price>0">
                   <i class="fab fa-cc-visa fa-2x mr-2"></i>
                   Купить
@@ -111,7 +111,7 @@
                 </v-btn>
               </v-card-actions>
 
-              <v-card-actions class="hidden-md-and-up">
+              <v-card-actions class="hidden-md-and-up" data-aos="zoom-in">
                 <v-layout column>
                   <v-btn class="w100 mb-2" :to="'lk/products'" large round dark color="deep-orange" style="margin: auto" v-if="product.price>0">
                   <i class="fab fa-cc-visa fa-2x mr-2"></i>
@@ -210,9 +210,9 @@
       </v-layout>
     </v-flex> -->
     <v-flex xs12 class="text-xs-center bg1 my-4">
-      <h2 class="h2-s1">Отзывы <i class="fa fa-comment"></i> </h2>
+      <h2 class="h2-s1" data-aos="flip-up">Отзывы <i class="fa fa-comment"></i> </h2>
     </v-flex>
-    <v-flex xs12 class="bg1 pa-1">
+    <v-flex xs12 class="bg1 pa-1" data-aos="zoom-out">
       <v-layout row wrap justify-center>
         <feedbacks4/>
         <feedbacks3/>
@@ -260,10 +260,10 @@
           <v-layout row wrap style="z-index: 2" align-center>
             <v-flex xs12 style="z-index: 3" class="text-justify px-4">
               <br>
-              <p class="text-xs-center text-sm-center text-md-center text-lg-center text-xl-center">Друзья, всем привет!</p>
-              <p>Рада видеть вас на моем сайте! Здесь я буду делиться с вами своим опытом в сфере спорта и фитнеса, чтобы помочь вам стать лучшей версией себя!</p>
-              <p>Надеюсь, что буду вам полезна, и буду очень рада вашим достижениям и успехам!</p>
-              <p>Я всегда открыта к диалогу, поэтому, если у вас возникнут вопросы, или вы захотите поделиться со мной своими эмоциями, пишите мне, мои контактные данные указаны в разделе «контакты»!</p>
+              <p class="text-xs-center text-sm-center text-md-center text-lg-center text-xl-center" data-aos="flip-up">Друзья, всем привет!</p>
+              <p data-aos="flip-up" data-aos-delay="500">Рада видеть вас на моем сайте! Здесь я буду делиться с вами своим опытом в сфере спорта и фитнеса, чтобы помочь вам стать лучшей версией себя!</p>
+              <p data-aos="flip-up" data-aos-delay="800">Надеюсь, что буду вам полезна, и буду очень рада вашим достижениям и успехам!</p>
+              <p data-aos="flip-up" data-aos-delay="1100">Я всегда открыта к диалогу, поэтому, если у вас возникнут вопросы, или вы захотите поделиться со мной своими эмоциями, пишите мне, мои контактные данные указаны в разделе «контакты»!</p>
             </v-flex>
           </v-layout>
         </v-flex>
@@ -279,13 +279,13 @@
                   Free happy <br> hours for <br> new people
                 </h2> -->
                 <br>
-                <p class="text-xs-center text-sm-center text-md-center text-lg-center text-xl-center">Друзья, всем привет!</p>
-                <p>Рада видеть вас на моем сайте! Здесь я буду делиться с вами своим опытом в сфере спорта и фитнеса, чтобы помочь вам стать лучшей версией себя!</p>
-                <p>Надеюсь, что буду вам полезна, и буду очень рада вашим достижениям и успехам!</p>
-                <p>Я всегда открыта к диалогу, поэтому, если у вас возникнут вопросы, или вы захотите поделиться со мной своими эмоциями, пишите мне, мои контактные данные указаны в разделе «контакты»!</p>
+                <p class="text-xs-center text-sm-center text-md-center text-lg-center text-xl-center" data-aos="flip-up">Друзья, всем привет!</p>
+                <p data-aos="flip-up" data-aos-delay="500">Рада видеть вас на моем сайте! Здесь я буду делиться с вами своим опытом в сфере спорта и фитнеса, чтобы помочь вам стать лучшей версией себя!</p>
+                <p data-aos="flip-up" data-aos-delay="800">Надеюсь, что буду вам полезна, и буду очень рада вашим достижениям и успехам!</p>
+                <p data-aos="flip-up" data-aos-delay="1100">Я всегда открыта к диалогу, поэтому, если у вас возникнут вопросы, или вы захотите поделиться со мной своими эмоциями, пишите мне, мои контактные данные указаны в разделе «контакты»!</p>
               </v-flex>
               <v-flex xs12 sm12 md8 style="z-index: 3" class="pa-3 text-xs-center">
-                <v-img class="bottom-photo elevation-24 img-bordered" style="margin:auto" :src="require('../../../static/img/KEY.jpg')" :lazy-src="require('../../../static/img/KEY_lazy.jpg')" max-width="510"></v-img>
+                <v-img data-aos="fade-in" class="bottom-photo elevation-24 img-bordered" style="margin:auto" :src="require('../../../static/img/KEY.jpg')" :lazy-src="require('../../../static/img/KEY_lazy.jpg')" max-width="510"></v-img>
               </v-flex>
             </v-layout>
           </v-flex>
@@ -306,8 +306,10 @@ import Feedbacks4 from './Feedback4'
 import Feedbacks3 from './Feedback3'
 import Feedbacks2 from './Feedback2'
 import Feedbacks1 from './Feedback1'
+import aosMixin from '../../mixins/aos'
 import { mapState } from 'vuex'
 export default {
+  mixins: [aosMixin],
   components: {
     Feedbacks4,
     Feedbacks3,
