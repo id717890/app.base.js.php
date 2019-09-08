@@ -34,7 +34,7 @@
                       <h2 class="text-xs-center" v-html="product.product.name"></h2>
                     </v-flex>
                     <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3>
-                      <!-- <v-img :src="require('../../../../static/img/' + product.product.photo)" class="elevation-16" style="border: 30px solid white;"></v-img> -->
+                      <v-img :src="require('../../../../static/img/' + product.product.photo)" class="elevation-16" style="border: 30px solid white;"></v-img>
                     </v-flex>
                     <v-flex xs12 py-5>
                       <component  :is="productComponent(product.product.id)" :product="product"></component>
