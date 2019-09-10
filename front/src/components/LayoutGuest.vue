@@ -12,15 +12,15 @@
         <img style="max-height: 40px" :src="require('../../static/img/logo/2.png')" alt="Evgenia Kabanova movement coach">
       </v-toolbar-title>
       <v-toolbar-items class="hidden-sm-and-down align-self-center">
-        <v-btn flat to="/home"><i class="mr-1 fa fa-home fa-2x"></i></v-btn>
-        <v-btn flat to="/about"><i class="mr-1 fa fa-address-book"></i>Обо мне</v-btn>
-        <v-btn flat to="/contacts"><i class="mr-1 fa fa-phone"></i>Контакты</v-btn>
-        <v-btn flat to="/articles"><i class="mr-1 fab fa-pagelines"></i>Полезная информация</v-btn>
+        <v-btn flat to="/home" class="sm-btn-menu"><i class="mr-1 fa fa-home fa-2x"></i></v-btn>
+        <v-btn flat to="/about" class="px-2"><i class="mr-1 fa fa-address-book"></i>Обо мне</v-btn>
+        <v-btn flat to="/contacts" class="px-2"><i class="mr-1 fa fa-phone"></i>Контакты</v-btn>
+        <v-btn flat to="/articles" class="px-2"><i class="mr-1 fab fa-pagelines"></i>Полезная информация</v-btn>
       </v-toolbar-items>
       <section class="hidden-sm-and-down">
         <v-menu :nudge-width="100">
           <template v-slot:activator="{ on }">
-            <v-toolbar-title v-on="on" class="mx-3">
+            <v-toolbar-title v-on="on" class="mx-1">
               <span>Программы</span>
               <fai icon="angle-down" class="ml-2" />
             </v-toolbar-title>
@@ -35,8 +35,8 @@
         </v-menu>
       </section>
       <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn flat to="/dashboard" v-if="isAuth && isAdmin"><i class="mr-1 fa fa-sun"></i>Админка</v-btn>
-        <v-btn flat to="/lk" v-if="isAuth && !isAdmin"><i class="mr-1 fa fa-sun"></i>Кабинет</v-btn>
+        <v-btn flat to="/dashboard" v-if="isAuth && isAdmin" class="px-2"><i class="mr-1 fa fa-sun"></i>Админка</v-btn>
+        <v-btn flat to="/lk" v-if="isAuth && !isAdmin" class="px-2"><i class="mr-1 fa fa-sun"></i>Кабинет</v-btn>
       </v-toolbar-items>
       <v-toolbar-items class="hidden-sm-and-down">
         <template v-if="!isAuth">
@@ -44,7 +44,7 @@
             <fai :icon="menu.icon" :size="menu.size" class="mr-1"/>{{menu.text}}
           </v-btn>
         </template>
-        <v-btn flat @click="Logoff" class="mr-2" v-if="isAuth"><fai icon="sign-out-alt" size="2x" class="mr-1"/></v-btn>
+        <v-btn flat @click="Logoff" class="mr-2 sm-btn-menu" v-if="isAuth"><fai icon="sign-out-alt" size="2x" class="mr-1"/></v-btn>
       </v-toolbar-items>
     </v-toolbar>
     <v-navigation-drawer
