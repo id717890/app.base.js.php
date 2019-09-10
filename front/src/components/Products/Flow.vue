@@ -255,11 +255,16 @@ export default {
       if (source !== null) {
         if (this.$refs['videowrapper_' + item.id][0].innerHTML === '') {
           setTimeout(() => {
-            this.$refs['videowrapper_' + item.id][0].innerHTML = `
-            <div  class="video-wrapper">
-                <iframe src="` + source.yadisk + `"   width="100%" height="100%" frameborder="0" scrolling="no" seamless="" allowfullscreen="1"></iframe>
-                <div class="hidedrive">&nbsp;</div>
-            </div>`
+            console.log(source.googledisk)
+            if (source.googledisk !== null) {
+              this.$refs['videowrapper_' + item.id][0].innerHTML = `
+                <div  class="video-wrapper">
+                    <iframe src="` + source.googledisk + `"   width="100%" height="100%" frameborder="0" scrolling="no" seamless="" allowfullscreen="1"></iframe>
+                    <div class="hidedrive">&nbsp;</div>
+                </div>`
+            } else {
+              this.$refs['videowrapper_' + item.id][0].innerHTML = `<div  class="video-wrapper">` + source.yadisk + `</div>`
+            }
             this.$refs['myloader' + item.id][0].$el.classList.add('d-none')
           }, 1700)
         }

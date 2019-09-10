@@ -11,7 +11,7 @@ class NewsController extends Controller
 {
     public function index()
     {
-        return response()->json(News::all(), 200);
+        return response()->json(News::orderByDesc('created_at')->get(), 200, ['Content-Type' => 'application/json; charset=UTF-8'], JSON_UNESCAPED_UNICODE);
     }
 
     public function update(Request $request)
