@@ -30,7 +30,7 @@
               <v-layout column fill-height v-if="product.product !== null">
                 <v-flex xs12>
                   <v-layout row wrap v-if="product.product !== null && product.product !== undefined && product.product !== 'undefined'">
-                    <v-flex xs12 pa-5>
+                    <v-flex xs12 sm12 md10 offset-md1 lg8 offset-lg2 text-xs-center pt-4 pb-5>
                       <h2 class="text-xs-center" v-html="product.product.name"></h2>
                     </v-flex>
                     <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3>
