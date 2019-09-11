@@ -124,7 +124,8 @@ export default {
       search: null,
       pagination: {
         sortBy: 'created_at',
-        descending: true
+        descending: true,
+        rowsPerPage: -1
       },
       products: [
         { id: 1, name: 'Прграмма "Движение"', icon: 'fa fa-paw' },
