@@ -8,6 +8,21 @@ use Illuminate\Support\Facades\Input;
 
 class FeedbackController extends Controller
 {
+    public function saveUserFeedback()
+    {
+        try {
+            $newFeedback = new Feedback();
+            $newFeedback->name = Input::get('name');
+            $newFeedback->email = Input::get('email');
+            $newFeedback->text_user = Input::get('text_user');
+            $newFeedback->is_show = false;
+            $newFeedback->save();
+            return response()->json(200);
+        } catch (\Exception $e) {
+            return response()->json('Ошибка сохранения нового отзывы', 500);
+        }
+    }
+
     public function saveAdminFeedback()
     {
         try {

@@ -8,10 +8,28 @@ const state = {
 
 // actions
 const actions = {
+  async saveUserFeedback ({ commit, dispatch }, payload) {
+    // console.log(payload)
+    dispatch('clearAllMessages')
+    return new Promise((resolve, reject) => {
+      context.saveUserFeedback(payload).then((x) => {
+        if (x.status === 200) {
+          dispatch('setMessages', 'Ваш отзыв успешно отправлен!')
+          resolve()
+        } else {
+          reject(x.response.data)
+          dispatch('setErrors', x.response.data)
+        }
+      }).catch(x => {
+        reject(x.response.data)
+        dispatch('setErrors', x.response.data)
+      })
+    })
+  },
   async saveAdminFeedback ({ commit, dispatch }, payload) {
     // console.log(payload)
+    dispatch('clearAllMessages')
     return new Promise((resolve, reject) => {
-      dispatch('clearAllMessages')
       context.saveAdminFeedback(payload).then((x) => {
         if (x.status === 200) {
           commit(types.SAVE_ADMIN_FEEDBACK, payload)
@@ -27,6 +45,7 @@ const actions = {
     })
   },
   async getAdminFeedbacks ({ commit, dispatch }) {
+    dispatch('clearAllMessages')
     context.getAdminFeedbacks().then((x) => {
       if (x.status === 200) {
         commit(types.RECIEVE_ADMIN_FEEDBACKS, x.data)

@@ -7,6 +7,13 @@ export default {
       return error
     })
   },
+  saveUserFeedback: (data) => {
+    return Vue.$http.post('api/feedback/user/save', data).then((x) => {
+      return x
+    }).catch(error => {
+      return error
+    })
+  },
   getAdminFeedbacks: () => {
     return Vue.$http.get('api/feedback/admin').then((x) => {
       return x

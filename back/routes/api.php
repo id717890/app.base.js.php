@@ -27,6 +27,7 @@ Route::get('news', 'NewsController@index');
 Route::post('pay/notify', 'PaymentController@notify');
 Route::get('prices', 'ProductController@getPrices');
 Route::get('feedback/user', 'FeedbackController@getUserFeedbacks');
+Route::post('feedback/user/save', 'FeedbackController@saveUserFeedback');
 
 
 Route::group(['middleware' => ['jwt.auth']], function() {
