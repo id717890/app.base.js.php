@@ -30,10 +30,11 @@ export default function (Vue) {
       let token = localStorage.getItem('token')
       let id = localStorage.getItem('id')
       let role = localStorage.getItem('role')
+      let name = localStorage.getItem('name')
       if (!token) {
         return null
       }
-      return { token, id, role }
+      return { token, id, role, name }
     },
     isExpired () {
       let expiration = localStorage.getItem('expiration')
@@ -55,11 +56,15 @@ export default function (Vue) {
     setRole (role) {
       localStorage.setItem('role', role)
     },
+    setName (name) {
+      localStorage.setItem('name', name)
+    },
     logout () {
       localStorage.removeItem('token')
       localStorage.removeItem('expiration')
       localStorage.removeItem('id')
       localStorage.removeItem('role')
+      localStorage.removeItem('name')
     }
     // isAuth () {
     //   if (this.getToken()) return true

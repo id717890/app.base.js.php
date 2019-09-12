@@ -51,7 +51,15 @@
               <li>Выкладывайте свои flow в соц. сети с хештегом #movementislife</li>
             </ol>
             <v-alert :value="true" color="error" icon="fa fa-exclamation-triangle" outline class="mt-5 mb-2">
-              Внимание! Если у Вас не воспроизводится видео, нужно очистить файлы cookie браузера и перезагрузить страницу.
+              <p>Внимание! Если у Вас не воспроизводится видео или долго идет загрузка, нужно очистить файлы cookie и кэш браузера, затем перезагрузить страницу.</p>
+              <p>Инструкции для очистки cookie и кэша Вашего браузера:</p>
+              <ul>
+                <li ><a class="red--text" href="https://support.google.com/accounts/answer/32050?co=GENIE.Platform%3DDesktop&hl=ru&oco=1" target="_blank">Google Chrome</a></li>
+                <li ><a class="red--text" href="https://firefox-browsers.ru/udalit-kuki-v-mozilla-firefox.html" target="_blank">Mozilla Firefox</a></li>
+                <li ><a class="red--text" href="https://operaru.ru/faq/how-to-clear-cookies-in-opera" target="_blank">Opera</a></li>
+                <li ><a class="red--text" href="https://browser.yandex.ru/help/personal-data-protection/cookies.html" target="_blank">Yandex</a></li>
+                <li ><a class="red--text" href="https://support.apple.com/ru-ru/HT201265" target="_blank">Safari</a></li>
+              </ul>
             </v-alert>
             <!-- <h3 class="">Заполняя следующую форму регистрации, вы даете согласие:</h3>
             <ul class="">
@@ -233,7 +241,7 @@ export default {
       yandex: state => state.payment.yandex,
       user: state => state.auth.user,
       prices: state => state.product.prices,
-      trainings: state => state.product.paid_content
+      trainings: state => state.training.listOfTrainings
     }),
     ...mapGetters(['getTrainingById'])
   },
@@ -255,7 +263,7 @@ export default {
       if (source !== null) {
         if (this.$refs['videowrapper_' + item.id][0].innerHTML === '') {
           setTimeout(() => {
-            console.log(source.googledisk)
+            // console.log(source.googledisk)
             if (source.googledisk !== null) {
               this.$refs['videowrapper_' + item.id][0].innerHTML = `
                 <div  class="video-wrapper">
@@ -266,7 +274,7 @@ export default {
               this.$refs['videowrapper_' + item.id][0].innerHTML = `<div  class="video-wrapper">` + source.yadisk + `</div>`
             }
             this.$refs['myloader' + item.id][0].$el.classList.add('d-none')
-          }, 1700)
+          }, 1000)
         }
       }
       // console.log(item)

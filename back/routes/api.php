@@ -54,7 +54,7 @@ Route::group(['middleware' => ['jwt.auth', 'auth.role:admin,user']], function() 
     Route::get('products/get', 'ProductController@get');
     Route::post('product/acceptProduct', 'ProductController@acceptProduct');
     Route::post('resetLk', 'AuthController@resetLk');
-    Route::post('product/getTraining', 'ProductController@getTraining');
+//    Route::post('product/getTraining', 'ProductController@getTraining');
 });
 
 

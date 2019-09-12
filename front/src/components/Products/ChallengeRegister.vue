@@ -7,10 +7,13 @@
       <br>
       <h3>Регистрация</h3>
       <section v-if="isAuth">
-        <v-btn :disabled="!form.valid" large color="primary" @click="registerToProgram" :loading="loading">
-        <i class="fa fa-star fa-2x mr-3"></i>
-          Зарегистрироваться
-        </v-btn>
+        <section v-if="product.is_available !== null  && product.is_available !== undefined  && product.is_available !== 'undefined'  && product.is_available === true">
+          <v-btn :disabled="!form.valid" large color="primary" @click="registerToProgram" :loading="loading">
+          <i class="fa fa-star fa-2x mr-3"></i>
+            Зарегистрироваться
+          </v-btn>
+        </section>
+        <h3 v-else class="red--text mb-4">* Регистрация на бесплатный челлендж закрыта</h3>
       </section>
       <section v-else>
         <h3 class="red--text mb-4">* Для покупки или регистрации в программе нужно авторизоваться</h3>
@@ -54,12 +57,11 @@
         <li>Вы несете полную ответственность за свое здоровье во время выполнения программы челленджа</li>
         <!-- <li>Будем общаться и поддерживать друг друга в общем чате</li> -->
       </ul>
-
       <p>
         <i class="fa fa-exclamation-circle fa-2x" style="color: red"></i> Все материалы данного сайта являются интеллектуальной собственностью и предназначены только для личного пользования. Копирование, тиражирование и коммерческое использование без согласия автора запрещены!
       </p>
     </v-flex>
-    <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3 py-5>
+    <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3 py-5 v-if="product.is_available !== null  && product.is_available !== undefined  && product.is_available !== 'undefined'  && product.is_available === true">
       <v-form lazy-validation v-model="form.valid" ref="form">
         <v-flex xs12>
           <app-notify></app-notify>
@@ -85,6 +87,9 @@
         </v-flex>
       </v-form>
     </v-flex>
+    <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3 py-5 v-else>
+      <h3 class="red--text mb-4">* Регистрация на бесплатный челлендж закрыта</h3>
+    </v-flex>
   </v-layout>
 </template>
 
@@ -93,6 +98,7 @@ import authMixin from '../../mixins/auth'
 import { mapActions } from 'vuex'
 export default {
   mixins: [authMixin],
+  props: ['product'],
   data () {
     return {
       loading: false,
