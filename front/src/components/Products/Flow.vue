@@ -60,7 +60,6 @@
                 <li ><a class="red--text" href="https://browser.yandex.ru/help/personal-data-protection/cookies.html" target="_blank">Yandex</a></li>
                 <li ><a class="red--text" href="https://support.apple.com/ru-ru/HT201265" target="_blank">Safari</a></li>
               </ul>
-
             </v-alert>
             <!-- <h3 class="">Заполняя следующую форму регистрации, вы даете согласие:</h3>
             <ul class="">
@@ -242,7 +241,7 @@ export default {
       yandex: state => state.payment.yandex,
       user: state => state.auth.user,
       prices: state => state.product.prices,
-      trainings: state => state.product.paid_content
+      trainings: state => state.training.listOfTrainings
     }),
     ...mapGetters(['getTrainingById'])
   },

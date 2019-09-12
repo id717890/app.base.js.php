@@ -15,17 +15,17 @@ const actions = {
   async clearAllAfterLogout ({ commit }) {
     commit(types.CLEAR_PRODUCTS_AFTER_LOGOUT)
   },
-  async getTraining ({ commit, dispatch }) {
-    context.getTraining().then((x) => {
-      if (x.status === 200) {
-        commit(types.RECIEVE_PRODUCT_FLOW, x.data)
-      } else {
-        dispatch('setErrors', x.response.data)
-      }
-    }).catch(x => {
-      dispatch('setErrors', x.response.data)
-    })
-  },
+  // async getTraining ({ commit, dispatch }) {
+  //   context.getTraining().then((x) => {
+  //     if (x.status === 200) {
+  //       commit(types.RECIEVE_PRODUCT_FLOW, x.data)
+  //     } else {
+  //       dispatch('setErrors', x.response.data)
+  //     }
+  //   }).catch(x => {
+  //     dispatch('setErrors', x.response.data)
+  //   })
+  // },
   async getMembers ({ commit, dispatch }) {
     context.getMembers().then((x) => {
       if (x.status === 200) {
@@ -119,9 +119,9 @@ const mutations = {
   [types.CLEAR_PRODUCTS_AFTER_LOGOUT] (state) {
     state.paid_content = null
   },
-  [types.RECIEVE_PRODUCT_FLOW] (state, payload) {
-    state.paid_content = payload
-  },
+  // [types.RECIEVE_PRODUCT_FLOW] (state, payload) {
+  //   state.paid_content = payload
+  // },
   [types.RECIEVE_PRODUCT_MEMBERS] (state, payload) {
     state.members = payload
   },

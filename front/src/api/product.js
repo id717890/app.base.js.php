@@ -1,13 +1,13 @@
 import Vue from 'vue'
 // import config from '../init/config'
 export default {
-  getTraining: () => {
-    return Vue.$http.post('api/product/getTraining').then((x) => {
-      return x
-    }).catch(error => {
-      return error
-    })
-  },
+  // getTraining: () => {
+  //   return Vue.$http.post('api/product/getTraining').then((x) => {
+  //     return x
+  //   }).catch(error => {
+  //     return error
+  //   })
+  // },
   getMembers: () => {
     return Vue.$http.get('api/products/members').then((x) => {
       return x

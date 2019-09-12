@@ -28,6 +28,7 @@ const getters = {
 // actions
 const actions = {
   async reset ({ dispatch }, payload) {
+    dispatch('clearAllMessages')
     return new Promise((resolve, reject) => {
       context.reset(payload).then((x) => {
         if (x.status === 200 && x.data.success === true) {

@@ -240,8 +240,8 @@ class ProductController extends Controller
     public function getPrices()
     {
         return response()->json([
-            ['value' => 2, 'text' => '2500 р.'],
-            ['value' => 2.1, 'text' => '5000 р.']
+            ['value' => 2500, 'text' => '2500 р.'],
+            ['value' => 5000, 'text' => '5000 р.']
         ], 200);
     }
 

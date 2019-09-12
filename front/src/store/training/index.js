@@ -201,8 +201,6 @@ const state = {
 
 // actions
 const actions = {
-  async getTrainingVideo ({ commit }) {
-  }
 }
 
 // mutations
