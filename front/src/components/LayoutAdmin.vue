@@ -97,6 +97,7 @@ export default {
         { title: 'Новости', icon: 'fab fa-pagelines', to: '/dashboard/news' },
         // { title: 'Программы', icon: 'fa fa-dumbbell', to: '/dashboard/products' },
         { title: 'Участники', icon: 'fa fa-users', to: '/dashboard/members' },
+        { title: 'Отзывы', icon: 'fa fa-comments', to: '/dashboard/feedbacks' },
         { title: 'Настройки', icon: 'fa fa-cogs', to: '/dashboard/settings' }
       ],
       drawer: true,

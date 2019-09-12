@@ -44,6 +44,30 @@
   padding: 20px;
 }
 
+.feed-wrapper2 {
+  background-image: url('../static/img/quites.png');
+  background-repeat: no-repeat;
+  background-position: 10px 0;
+}
+
+.img-quote-end {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  transform:scale(-1, 1);
+}
+
+// .feed-wrapper2::after {
+//   background-image: url('../static/img/quites.png');
+//   background-repeat: no-repeat;
+//   background-position: 100% top;
+//   content: '';
+//   position: absolute;
+//   display: block;
+//   height: 40px;
+//   width: 40px;
+// }
+
 .avatar1 .v-avatar {
   width: 100px !important;
   height: 100px !important;
