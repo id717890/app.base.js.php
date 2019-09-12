@@ -27,7 +27,7 @@
       <v-list>
         <v-list-tile>
           <v-list-tile-title class="title">
-            <i class="fa fa-sun ml-4"></i> Кабинет
+            <i class="fa fa-sun ml-4"></i> {{userName}}
           </v-list-tile-title>
         </v-list-tile>
       </v-list>
@@ -86,6 +86,7 @@
 
 <script>
 import authMixin from '../mixins/auth'
+import { mapState } from 'vuex'
 export default {
   mixins: [authMixin],
   name: 'App',
@@ -118,6 +119,11 @@ export default {
   },
   props: {
     source: String
+  },
+  computed: {
+    ...mapState({
+      userName: state => state.auth.name
+    })
   },
   methods: {
     scrollToTop () {

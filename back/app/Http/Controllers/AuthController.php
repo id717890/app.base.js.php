@@ -172,7 +172,7 @@ class AuthController extends Controller
         }
         // all good so return the token
 
-        return response()->json(['success' => true, 'access_token' => $token, 'id'=> Auth::user()->id, 'expires_in'=>864000, 'role'=>Auth::user()->role ]);
+        return response()->json(['success' => true, 'access_token' => $token, 'id'=> Auth::user()->id, 'expires_in'=>864000, 'role'=>Auth::user()->role, 'name'=> Auth::user()->name ]);
     }
 
     /**
