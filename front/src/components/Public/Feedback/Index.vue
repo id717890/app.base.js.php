@@ -1,7 +1,7 @@
 <template>
   <v-layout align-start justify-center row wrap>
     <v-flex xs12>
-      <v-img class="about-top-photo" :src="require('../../../../static/img/feedback.jpg')" max-height="400" :lazy-src="require('../../../../static/img/feedback.jpg')" aspect-ratio="1.2" :position="'bottom center'">
+      <v-img class="about-top-photo" :src="require('../../../../static/img/feedback2.jpg')" max-height="400" :lazy-src="require('../../../../static/img/feedback.jpg')" aspect-ratio="1.2" :position="'top center'">
         <v-layout fill-height column align-center justify-space-around>
           <h2 class="h2-s2"><i class="fas fa-quote-left mr-3"></i><i class="fa fa-comments"></i> Отзывы <i class="fas fa-quote-right ml-2"></i></h2>
           <v-btn :disabled="feedbacks === null" large color="light-blue darken-3" dark style="height: auto !important" class="pa-4" @click="toggleCommentForm(true)"><i class="fa fa-2x fa-plus mr-3"></i> Оставить отзыв <i class="fa fa-2x fa-comment ml-3"></i></v-btn>
@@ -27,12 +27,13 @@
               <v-text-field label="Имя" type="text" v-model="form.name" required :rules="textField"></v-text-field>
               <v-text-field label="E-mail" v-model="form.email" required :rules="emailRules"></v-text-field>
               <!-- <v-text-field label="Тескт" type="text" v-model="form.text" required :rules="textField"></v-text-field> -->
-              <v-textarea required :rows="2" outline label="Отзыв пользователя:" v-model="form.text" :rules="feedbackUserRules"></v-textarea>
+              <!-- <v-textarea required :rows="2" outline label="Отзыв пользователя:" v-model="form.text" :rules="feedbackUserRules"></v-textarea> -->
+              <textarea-emoji-picker v-model="form.text"/>
             </v-flex>
             <v-flex 12>
               <v-layout row nowrap>
                 <v-flex xs12 class="text-xs-center">
-                  <v-btn large :loading="loading" :disabled="!form.valid" color="primary" @click="addComment" ><i class="fa fa-comment-alt fa-2x mr-3"></i>  ОК</v-btn>
+                  <v-btn large :loading="loading" :disabled="!form.valid" color="success" @click="addComment" ><i class="fa fa-comment-alt fa-2x mr-3"></i>  ОК</v-btn>
                   <v-btn large :loading="loading" color="grey" dark @click="toggleCommentForm(false)"> <i class="fa fa-times fa-2x mr-3"></i> Отмена</v-btn>
                 </v-flex>
               </v-layout>
@@ -64,7 +65,9 @@
 <script>
 import { mapActions, mapState } from 'vuex'
 import moment from '../../../packages/moment'
+import TextareaEmojiPicker from '../../Shared/TextareaEmojiPicker'
 export default {
+  components: { TextareaEmojiPicker },
   data () {
     return {
       loading: false,
@@ -72,7 +75,7 @@ export default {
       form: {
         valid: false,
         email: null,
-        text: null,
+        text: '',
         name: null
       },
       emailRules: [
