@@ -35,6 +35,7 @@
         </v-menu>
       </section>
       <v-toolbar-items class="hidden-sm-and-down">
+        <v-btn flat to="/feedbacks" class="px-2"><i class="mr-1 fa fa-comments"></i>Отзывы</v-btn>
         <v-btn flat to="/dashboard" v-if="isAuth && isAdmin" class="px-2"><i class="mr-1 fa fa-sun"></i>Админка</v-btn>
         <v-btn flat to="/lk" v-if="isAuth && !isAdmin" class="px-2"><i class="mr-1 fa fa-sun"></i>Кабинет</v-btn>
       </v-toolbar-items>
@@ -105,6 +106,14 @@
             </v-list-tile-action>
           </v-list-tile>
         </v-list-group>
+        <v-list-tile to="/feedbacks">
+          <v-list-tile-action>
+            <i class="mr-1 fa fa-comments"></i>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Отзывы</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
         <v-list-tile to="/dashboard" v-if="isAuth && isAdmin">
           <v-list-tile-action>
             <i class="fa fa-sun"></i>

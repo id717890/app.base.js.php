@@ -1,8 +1,8 @@
 <template>
-  <v-layout row wrap color="red"  style="background: #f2f2f2">
+  <v-layout row wrap color="red"  style="background: #f2f2ff">
     <v-flex xs12>
       <div class="bg3 text-xs-center">
-        <h2 class="h2-s2"><i class="fab fa-pagelines"></i> Новости</h2>
+        <h2 class="h2-s2"><i class="fab fa-pagelines"></i> Полезная информация</h2>
       </div>
     </v-flex>
     <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3 class="mb-5 pb-3">

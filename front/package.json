@@ -15,6 +15,7 @@
     "aos": "^3.0.0-beta.6",
     "axios": "^0.18.0",
     "core-js": "^2.6.5",
+    "emoji-mart-vue": "^2.6.6",
     "moment": "^2.24.0",
     "register-service-worker": "^1.6.2",
     "tiptap": "^1.23.1",

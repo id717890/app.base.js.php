@@ -26,6 +26,8 @@ Route::post('reset2', 'AuthController@reset');
 Route::get('news', 'NewsController@index');
 Route::post('pay/notify', 'PaymentController@notify');
 Route::get('prices', 'ProductController@getPrices');
+Route::get('feedback/user', 'FeedbackController@getUserFeedbacks');
+Route::post('feedback/user/save', 'FeedbackController@saveUserFeedback');
 
 
 Route::group(['middleware' => ['jwt.auth']], function() {
@@ -44,6 +46,8 @@ Route::group(['middleware' => ['jwt.auth', 'auth.role:admin']], function() {
     Route::post('news/update', 'NewsController@update');
     Route::post('product/update', 'ProductController@update');
     Route::get('products/members', 'ProductController@getMembers');
+    Route::get('feedback/admin', 'FeedbackController@getAdminFeedbacks');
+    Route::post('feedback/admin/save', 'FeedbackController@saveAdminFeedback');
 });
 
 

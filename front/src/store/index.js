@@ -9,6 +9,7 @@ import news from './news'
 import dialog from './dialog'
 import payment from './payment'
 import training from './training'
+import feedback from './feedback'
 
 Vue.use(Vuex)
 
@@ -29,6 +30,7 @@ export default new Vuex.Store({
     news,
     dialog,
     payment,
-    training
+    training,
+    feedback
   }
 })

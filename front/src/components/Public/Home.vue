@@ -209,10 +209,10 @@
         </v-card>
       </v-layout>
     </v-flex> -->
-    <v-flex xs12 class="text-xs-center bg1 my-4">
+    <v-flex xs12 class="text-xs-center bg1 mt-0 mb-5" style="max-height: 70px">
       <h2 class="h2-s1" data-aos="flip-up">Отзывы <i class="fa fa-comment"></i> </h2>
     </v-flex>
-    <v-flex xs12 class="bg1 pa-1" data-aos="zoom-out">
+    <v-flex xs12 class="bg1 pa-1" >
       <v-layout row wrap justify-center>
         <feedbacks4/>
         <feedbacks3/>
