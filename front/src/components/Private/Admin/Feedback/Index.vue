@@ -76,6 +76,7 @@
                 <v-form lazy-validation :v-model="true" ref="form">
                  <v-card-text>
                   <v-textarea :rows="2" outline label="Отзыв пользователя:" v-model="text_user_field" :rules="feedbackUserRules"></v-textarea>
+                  <!-- <textarea-emoji-picker v-model="text_admin_field"/> -->
                   <v-textarea :rows="2" outline label="Комментарий администратора:" v-model="text_admin_field"></v-textarea>
                   <v-checkbox v-model="is_show_field" label="On/Off"></v-checkbox>
                   <v-btn large class="primary" @click="saveFeedback(props)"><i class="fa fa-save fa-2x mr-2"></i>Сохранить</v-btn>

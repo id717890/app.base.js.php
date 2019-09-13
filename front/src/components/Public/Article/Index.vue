@@ -1,5 +1,5 @@
 <template>
-  <v-layout row wrap color="red"  style="background: #f2f2f2">
+  <v-layout row wrap color="red"  style="background: #f2f2ff">
     <v-flex xs12>
       <div class="bg3 text-xs-center">
         <h2 class="h2-s2"><i class="fab fa-pagelines"></i> Полезная информация</h2>

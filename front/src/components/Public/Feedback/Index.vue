@@ -1,7 +1,7 @@
 <template>
   <v-layout align-start justify-center row wrap>
     <v-flex xs12>
-      <v-img class="about-top-photo" :src="require('../../../../static/img/feedback2.jpg')" max-height="400" :lazy-src="require('../../../../static/img/feedback.jpg')" aspect-ratio="1.2" :position="'top center'">
+      <v-img class="about-top-photo" :src="require('../../../../static/img/feedback2.jpg')" max-height="410" :lazy-src="require('../../../../static/img/feedback.jpg')" aspect-ratio="1.2" :position="'top center'">
         <v-layout fill-height column align-center justify-space-around>
           <h2 class="h2-s2"><i class="fas fa-quote-left mr-3"></i><i class="fa fa-comments"></i> Отзывы <i class="fas fa-quote-right ml-2"></i></h2>
           <v-btn :disabled="feedbacks === null" large color="light-blue darken-3" dark style="height: auto !important" class="pa-4" @click="toggleCommentForm(true)"><i class="fa fa-2x fa-plus mr-3"></i> Оставить отзыв <i class="fa fa-2x fa-comment ml-3"></i></v-btn>
@@ -42,16 +42,23 @@
         </v-flex>
         <v-flex xs12 v-for="(feedback, index) in feedbacks" :key="feedback.id" class="mb-3">
           <v-card color="light-blue lighten-4" :class="index % 2 === 0 ? 'mr-5 mb-3' : 'ml-5 mb-3'">
-            <v-card-title><i class="fa fa-comment mr-3"></i>{{feedback.name}} <v-spacer></v-spacer><i class="caption grey--text lighten-5">{{date(feedback.created_at, 'DD.MM.YY hh:mm')}}</i></v-card-title>
-            <v-card-text class="feed-wrapper2">
+            <v-card-title class="py-1"><i class="fa fa-comment mr-3"></i>{{feedback.name}} <v-spacer></v-spacer><i class="caption grey--text lighten-5">{{date(feedback.created_at, 'DD.MM.YY hh:mm')}}</i></v-card-title>
+            <v-card-text class="feed-wrapper2 pl-4 py-2 text-justify">
               {{ feedback.text_user }}
             </v-card-text>
           </v-card>
           <v-card color="blue-grey lighten-5" :class="index % 2 === 0 ? 'mr-5 mb-3' : 'ml-5 mb-3'" v-if="feedback.text_admin !== null && feedback.text_admin !== ''">
-            <v-card-title><i class="fa fa-retweet mr-3"></i> Евгения Кабанова</v-card-title>
-            <v-card-text class="feed-wrapper2">
+            <v-card-title class="py-1"><i class="fa fa-retweet mr-3"></i> Евгения Кабанова</v-card-title>
+            <v-card-text class="feed-wrapper2 pl-4 py-2">
               {{ feedback.text_admin }}
             </v-card-text>
+          </v-card>
+        </v-flex>
+        <v-flex xs12 v-if="feedbacks === null || feedbacks === null || feedbacks === null || feedbacks.length === 0">
+          <v-card class="pa-5">
+            <v-card-tex class="text-xs-center">
+              <h3><i class="fa fa-comments fa-2x"></i> Отзывы отсутствуют</h3>
+            </v-card-tex>
           </v-card>
         </v-flex>
       </v-layout>

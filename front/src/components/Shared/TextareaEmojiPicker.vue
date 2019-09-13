@@ -1,6 +1,6 @@
 <template>
   <div class="textarea-emoji-picker">
-    <picker v-show="showEmojiPicker" title="Pick your emoji..." emoji="point_up" @select="addEmoji"/>
+    <picker v-show="showEmojiPicker" title="Pick your emoji..." emoji="point_up" @select="addEmoji" :set="'twitter'" :exclude="exclude"/>
               <span
       class="emoji-trigger"
       :class="{ 'triggered': showEmojiPicker }"
@@ -18,6 +18,7 @@
           class="textarea"
           :value="value"
           @input="$emit('input', $event.target.value)"
+          rows="3"
         >
     </textarea>
   </div>
@@ -28,7 +29,8 @@ export default {
   components: { Picker },
   data () {
     return {
-      showEmojiPicker: false
+      showEmojiPicker: false,
+      exclude: ['places', 'flags', 'symbols', 'objects']
     }
   },
   props: {
@@ -63,12 +65,13 @@ export default {
 }
 .textarea-emoji-picker {
   position: relative;
-  width: 400px;
+  width: 100%;
   margin: 0 auto;
 }
 .textarea {
   width: 100%;
-  min-height: 300px;
+  min-height: 80px;
+  height: 80px;
   outline: none;
   box-shadow: none;
   padding: 10px 28px 10px 10px;
@@ -99,5 +102,9 @@ export default {
 }
 .emoji-trigger.triggered path {
   fill: darken(#FEC84A, 15%);
+}
+
+.emoji-mart {
+  z-index: 10;
 }
 </style>
