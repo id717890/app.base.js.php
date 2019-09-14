@@ -1,7 +1,7 @@
 <template>
   <v-layout align-start justify-center row wrap>
     <v-flex xs12>
-      <v-img class="about-top-photo" :src="require('../../../../static/img/feedback2.jpg')" max-height="410" :lazy-src="require('../../../../static/img/feedback.jpg')" aspect-ratio="1.2" :position="'top center'">
+      <v-img class="about-top-photo" :src="require('../../../../static/img/feedback2.jpg')" max-height="410" :lazy-src="require('../../../../static/img/feedback2_lazy.jpg')" aspect-ratio="1.2" :position="'top center'">
         <v-layout fill-height column align-center justify-space-around>
           <h2 class="h2-s2"><i class="fas fa-quote-left mr-3"></i><i class="fa fa-comments"></i> Отзывы <i class="fas fa-quote-right ml-2"></i></h2>
           <v-btn :disabled="feedbacks === null" large color="light-blue darken-3" dark style="height: auto !important" class="pa-4" @click="toggleCommentForm(true)"><i class="fa fa-2x fa-plus mr-3"></i> Оставить отзыв <i class="fa fa-2x fa-comment ml-3"></i></v-btn>

@@ -21,7 +21,7 @@
         </v-carousel-item>
       </v-carousel>
     </v-flex>
-    <v-flex>
+    <v-flex xs12>
       <v-layout row wrap fill-height class="bg1">
         <v-flex xs12 sm10 offset-sm1 md8 offset-md2  align-self-center px-4 class="h1-left-block pa-1 mt-5">
           <p class="logo-text" data-aos="fade-up">
@@ -34,7 +34,7 @@
         </v-flex>
       </v-layout>
     </v-flex>
-    <v-flex class="grey lighten-1">
+    <v-flex class="grey lighten-1"  xs12>
       <v-layout class="bg1" row wrap>
         <v-flex xs12  data-aos="zoom-in"  data-aos-delay="200">
           <h2 class="h2-s1 text-xs-center pt-2 mt-5 mb-3"><i class="far fa-handshake"></i> Партнеры фитнес-программы <br>«ДВИЖЕНИЕ»</h2>
@@ -51,30 +51,6 @@
                 <p v-html="partner.txt" :data-aos-delay="delayRand(1500, 1800)" data-aos="flip-up"></p>
               </div>
             </v-flex>
-            <!-- <v-flex xs12 md6 lg4 style="display:flex;" pr-3 mb-3 align-center>
-              <i class="fa fa-star fa-3x mr-3"></i>
-              <span>Lorem ipsum dolor sit amet</span>
-            </v-flex>
-            <v-flex xs12 md6 lg4 style="display:flex;" pr-3 mb-3 align-center>
-              <i class="fa fa-cloud fa-3x mr-3"></i>
-              <span>Sed ut leo sed eros tristique</span>
-            </v-flex>
-            <v-flex xs12 md6 lg4 style="display:flex;" pr-3 mb-3 align-center>
-              <i class="fa fa-feather fa-3x mr-3"></i>
-              <span>Suspendisse euismod tortor</span>
-            </v-flex>
-              <v-flex xs12 md6 lg4 style="display:flex;" pr-3 mb-3 align-center>
-              <i class="fa fa-heart fa-3x mr-3"></i>
-              <span>Ut sed tellus pharetra</span>
-            </v-flex>
-            <v-flex xs12 md6 lg4 style="display:flex;" pr-3 mb-3 align-center>
-              <i class="fa fa-leaf fa-3x mr-3"></i>
-              <span>Nullam eu quam in massa</span>
-            </v-flex>
-            <v-flex xs12 md6 lg4 style="display:flex;" pr-3 mb-3 align-center>
-              <i class="fa fa-american-sign-language-interpreting fa-3x mr-3"></i>
-              <span>Quanta es omnia des</span>
-            </v-flex> -->
           </v-layout>
         </v-flex>
       </v-layout>
@@ -131,85 +107,7 @@
         </v-layout>
       </div>
     </v-flex>
-    <!-- <v-flex xs12 class="text-xs-center bg1 my-4">
-      <h2 class="h2-s1">Opinions about us</h2>
-    </v-flex>
-    <v-flex xs12 class="bg1 pa-1">
-      <v-layout row wrap justify-center>
-        <v-card max-width="400" color="pink lighten-3 elevation-10" class="mr-3 mb-5">
-          <v-card-title>
-            <i class="fab fa-2x fa-twitter"></i>
-            <span>Отзыв №1</span>
-          </v-card-title>
-          <v-card-text>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, placeat quis autem vero alias molestiae hic necessitatibus dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?
-          </v-card-text>
-          <v-card-actions>
-            <v-list-tile>
-              <v-list-tile-avatar>
-                <v-img class="elevation-6" :src="img"></v-img>
-              </v-list-tile-avatar>
-            </v-list-tile>
-            <v-list-tile-content>Test</v-list-tile-content>
-          </v-card-actions>
-        </v-card>
-        <v-card max-width="400" color="cyan darken-1 elevation-10" class="mr-3 mb-5">
-          <v-card-title>
-            <i class="fab fa-2x fa-twitter"></i>
-            <span>Отзыв №1</span>
-          </v-card-title>
-          <v-card-text>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, placeat quis autem vero alias molestiae hic necessitatibus dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?
-          </v-card-text>
-          <v-card-actions>
-            <v-list-tile>
-              <v-list-tile-avatar>
-                <v-img class="elevation-6" :src="img"></v-img>
-              </v-list-tile-avatar>
-            </v-list-tile>
-            <v-list-tile-content>Test</v-list-tile-content>
-          </v-card-actions>
-        </v-card>
-        <v-card max-width="400" color="green darken-1 elevation-10" class="mr-3 mb-5">
-          <v-card-title>
-            <i class="fab fa-2x fa-twitter"></i>
-            <span>Отзыв №1</span>
-          </v-card-title>
-          <v-card-text>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, placeat quis autem vero alias molestiae hic necessitatibus dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, placeat quis autem vero alias molestiae hic necessitatibus dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?
-          </v-card-text>
-          <v-card-actions>
-            <v-list-tile>
-              <v-list-tile-avatar>
-                <v-img class="elevation-6" :src="img"></v-img>
-              </v-list-tile-avatar>
-            </v-list-tile>
-            <v-list-tile-content>Test</v-list-tile-content>
-          </v-card-actions>
-        </v-card>
-        <v-card max-width="400" color="blue darken-1 elevation-10" class="mr-3 mb-5">
-          <v-card-title>
-            <i class="fab fa-2x fa-twitter"></i>
-            <span>Отзыв №1</span>
-          </v-card-title>
-          <v-card-text>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, placeat quis autem vero alias molestiae hic necessitatibus dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, placeat quis autem vero alias molestiae hic necessitatibus dolore harum eum molestias omnis voluptates quas error nemo quaerat ex impedit. Saepe?
-          </v-card-text>
-          <v-card-actions>
-            <v-list-tile>
-              <v-list-tile-avatar>
-                <v-img class="elevation-6" :src="img"></v-img>
-              </v-list-tile-avatar>
-            </v-list-tile>
-            <v-list-tile-content>Test</v-list-tile-content>
-          </v-card-actions>
-        </v-card>
-      </v-layout>
-    </v-flex> -->
-    <v-flex xs12 class="text-xs-center bg1 mt-0 mb-5" style="max-height: 70px">
+    <v-flex xs12 class="text-xs-center bg1 mt-0 mb-3 mt-5" style="max-height: 70px">
       <h2 class="h2-s1" data-aos="flip-up">Отзывы <i class="fa fa-comment"></i> </h2>
     </v-flex>
     <v-flex xs12 class="bg1 pa-1" >
@@ -218,42 +116,8 @@
         <feedbacks3/>
         <feedbacks2/>
         <feedbacks1/>
-        <!-- <feedbacks4 class="hidden-md-and-down"/> -->
-        <!-- <v-card max-width="330" :color="item.color" class="mr-3 mb-5 elevation-5 product feedback" v-for="item in feedbacks" :key="item.id">
-          <v-card-title>
-            <v-list-tile>
-              <v-list-tile-avatar class="avatar1">
-                <v-img class="elevation-6" :src="item.img"></v-img>
-              </v-list-tile-avatar>
-            </v-list-tile>
-          </v-card-title>
-          <v-card-text>
-            <div class="feed-wrapper">
-              {{item.text}}
-            </div>
-          </v-card-text>
-          <v-card-actions class="px-5">
-            <p style="color: #d19c1d; font-size: 0.7rem"><i class="fa fa-user"></i> {{item.fio}}</p>
-          </v-card-actions>
-        </v-card> -->
       </v-layout>
     </v-flex>
-    <!-- <v-flex xs12 class="bg1" style="height: 500px">
-      <v-carousel
-        delimiter-icon="fa fa-stop"
-        prev-icon="fa fa-arrow-left"
-        next-icon="fa fa-arrow-right"
-      >
-        <v-carousel-item
-          v-for="(item,i) in items"
-          :key="i"
-          :src="item.src"
-        ></v-carousel-item>
-      </v-carousel>
-    </v-flex> -->
-    <!-- <v-flex xs12 class="red lighten-5 pa-3">
-      <h1 class="text-xs-center">Отзывы</h1>
-    </v-flex> -->
     <v-flex xs12 class="hidden-md-and-up">
       <v-layout row wrap style="z-index: 2">
         <v-flex xs12 pt-0 pb-5 mb-4>
@@ -275,9 +139,6 @@
           <v-flex xs12 sm12 md10 offset-md1 py-3>
             <v-layout row wrap style="z-index: 2" align-center>
               <v-flex xs12 sm12 md4 style="z-index: 3" class="text-justify px-4 hidden-sm-and-down">
-                <!-- <h2 class="h2-s1">
-                  Free happy <br> hours for <br> new people
-                </h2> -->
                 <br>
                 <p class="text-xs-center text-sm-center text-md-center text-lg-center text-xl-center" data-aos="flip-up">Друзья, всем привет!</p>
                 <p data-aos="flip-up" data-aos-delay="500">Рада видеть вас на моем сайте! Здесь я буду делиться с вами своим опытом в сфере спорта и фитнеса, чтобы помочь вам стать лучшей версией себя!</p>
@@ -292,13 +153,7 @@
         </v-layout>
       </div>
     </v-flex>
-    <!-- <v-flex class="text-xs-center">
-      <div class="wrapper-end-img">
-        <img style="" :src="require('../../../static/img/decor.png')" alt="">
-      </div>
-    </v-flex> -->
   </v-layout>
-  <!-- <HelloWorld /> -->
 </template>
 
 <script>

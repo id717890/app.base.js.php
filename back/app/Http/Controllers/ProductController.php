@@ -260,8 +260,8 @@ class ProductController extends Controller
         SELECT
         upa.*, p.operation_id, p.date, p.amount,
         CASE
-          WHEN up.price = 2 THEN "blue"
-          WHEN up.price = 2.1 THEN "pink"
+          WHEN up.price = 2500 THEN "blue"
+          WHEN up.price = 5000 THEN "pink"
           ELSE "grey loghten2"
         END AS color,
         up.price
