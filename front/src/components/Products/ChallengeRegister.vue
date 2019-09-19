@@ -5,8 +5,8 @@
       <p>Старт 15 сентября 2019</p>
       <p>(доступ открыт до 18 сентября)</p>
       <br>
-      <h3>Регистрация</h3>
-      <section v-if="isAuth">
+      <!--<h3>Регистрация</h3>
+       <section v-if="isAuth">
         <section v-if="product.is_available !== null  && product.is_available !== undefined  && product.is_available !== 'undefined'  && product.is_available === true">
           <v-btn :disabled="!form.valid" large color="primary" @click="registerToProgram" :loading="loading">
           <i class="fa fa-star fa-2x mr-3"></i>
@@ -17,7 +17,7 @@
       </section>
       <section v-else>
         <h3 class="red--text mb-4">* Для покупки или регистрации в программе нужно авторизоваться</h3>
-      </section>
+      </section> -->
     </v-flex>
     <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3 class="text-justify">
       <p>
@@ -50,18 +50,17 @@
         <li>В рамках челленджа будет проходить конкурс, победитель которого получит бесплатный доступ к новой программе «ДВИЖЕНИЕ» с элементами FLOW! Эта программа научит вас контролировать свое тело, сделает вас сильнее, гибче, выносливее и полностью изменит ваш подход к тренировкам! Условия конкурса вы найдете на странице челленджа после регистрации.</li>
       </ul>
 
-      <h3>Заполняя следующую форму регистрации, вы даете согласие:</h3>
+      <!-- <h3>Заполняя следующую форму регистрации, вы даете согласие:</h3>
       <ul>
         <li>На обработку своих персональных данных</li>
         <li>На добровольное участие в челлендже</li>
         <li>Вы несете полную ответственность за свое здоровье во время выполнения программы челленджа</li>
-        <!-- <li>Будем общаться и поддерживать друг друга в общем чате</li> -->
-      </ul>
+      </ul> -->
       <p class="mb-3">
         <i class="fa fa-exclamation-circle fa-2x" style="color: red"></i> Все материалы данного сайта являются интеллектуальной собственностью и предназначены только для личного пользования. Копирование, тиражирование и коммерческое использование без согласия автора запрещены!
       </p>
     </v-flex>
-    <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3 py-5 v-if="product.is_available !== null  && product.is_available !== undefined  && product.is_available !== 'undefined'  && product.is_available === true">
+    <!-- <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3 py-5 v-if="product.is_available !== null  && product.is_available !== undefined  && product.is_available !== 'undefined'  && product.is_available === true">
       <v-form lazy-validation v-model="form.valid" ref="form">
         <v-flex xs12>
           <app-notify></app-notify>
@@ -86,10 +85,10 @@
           </section>
         </v-flex>
       </v-form>
-    </v-flex>
-    <!-- <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3 py-5 v-else>
-      <h3 class="red--text mb-4">* Регистрация на бесплатный челлендж закрыта</h3>
     </v-flex> -->
+    <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3 py-5>
+      <h3 class="red--text mb-4">* Регистрация на бесплатный челлендж закрыта</h3>
+    </v-flex>
   </v-layout>
 </template>
 
@@ -132,6 +131,9 @@ export default {
       if (this.$refs.form.validate()) {
         this.form.user = this.getUser
         this.acceptProduct(this.form)
+          .catch(() => {
+            this.loading = false
+          })
       } else this.loading = false
     }
   }

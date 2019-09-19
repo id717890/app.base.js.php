@@ -223,9 +223,10 @@ class ProductController extends Controller
         if (!isset($findUser)) return response()->json(['success' => false, 'error' => ['code' => 1, 'message' => 'Пользователь не найден']], 404);
 
         $findProduct = Product::find($product);
-        if (!isset($findProduct)) return response()->json(['success' => false, 'error' => ['code' => 1, 'message' => 'Программа не найдена']], 404);
+        if (!isset($findProduct)) return response()->json(['success' => false, 'error' => ['code' => 2, 'message' => 'Программа не найдена']], 404);
 
-        $accept = UserProductAccept::create([
+        if ($product == 2) return response()->json(['success' => false, 'error' => ['code' => 3, 'message' => 'Регистрация на челлендж закрыта!']], 404);
+        UserProductAccept::create([
             'user_id' => $user,
             'product_id' => $product,
             'fio' => $fio,
