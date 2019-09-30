@@ -22,7 +22,7 @@
       </v-layout>
     </v-flex>
     <v-flex  xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3 text-xs-center mt-4 v-if="product.is_available === null  || product.is_available === undefined || product.is_available === 'undefined' || product.is_available === false">
-      <h3 class="pink--text">Продажа фитнес-программы "ДВИЖЕНИЕ" начнётся в ближайшее время.</h3>
+      <!-- <h3 class="pink--text">Продажа фитнес-программы "ДВИЖЕНИЕ" начнётся в ближайшее время.</h3> -->
     </v-flex>
     <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3 text-xs-center mt-4>
       <!-- <video-player  class="video-player-box video-intro video-wrapper"
@@ -58,7 +58,6 @@
         <li>18 функциональных тренировок + flow в конце каждой тренировки</li>
         <li>8 тренировок на мобильность</li>
       </ul>
-
       <h3 class="">Что нужно для участия:</h3>
       <ul class="">
         <li>30 минут свободного времени в день</li>
@@ -67,15 +66,14 @@
         <li>Базовая физическая подготовка</li>
         <li>Желание работать над собой и стать лучшей версией себя</li>
       </ul>
-
+    </v-flex>
+    <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3 py-5 v-if="product !== null && product !== undefined && product !== 'undefined' && product.product !== null && product.product !== undefined && product.product !== 'undefined'">
       <h3 class="">Заполняя следующую форму регистрации, вы даете согласие:</h3>
       <ul class="">
         <li>На обработку своих персональных данных</li>
         <li>На добровольное участие в программе</li>
         <li>Вы несете полную ответственность за свое здоровье во время выполнения программы</li>
       </ul>
-    </v-flex>
-    <v-flex xs12 sm10 offset-sm1 md8 offset-md2 lg6 offset-lg3 py-5 v-if="product !== null && product !== undefined && product !== 'undefined' && product.product !== null && product.product !== undefined && product.product !== 'undefined'">
       <v-form v-if="product.days === null" lazy-validation v-model="form.valid" ref="form" method="POST" @submit="buy" action="https://money.yandex.ru/quickpay/confirm.xml">
         <v-flex xs12>
           <app-notify></app-notify>
@@ -128,7 +126,7 @@
           </section>
         </v-flex>
         <v-flex xs12 text-xs-center v-else>
-          <h3 class="pink--text">Продажа фитнес-программы "ДВИЖЕНИЕ" начнётся в ближайшее время.</h3>
+          <!-- <h3 class="pink--text">Продажа фитнес-программы "ДВИЖЕНИЕ" начнётся в ближайшее время.</h3> -->
         </v-flex>
       </v-form>
     </v-flex>
