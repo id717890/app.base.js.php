@@ -129,7 +129,8 @@ const actions = {
     return new Promise((resolve, reject) => {
       context.signUp(payload).then((x) => {
         if (x.status === 200) {
-          dispatch('setMessages', 'Account created. Please, confirm your email address.')
+          dispatch('setMessages', 'Аккаунт создан. Пожалуйста, подтвердите его пройдя по ссылке которая отправлена на почту.')
+          dispatch('setMessages', 'Если Вы используете почту Gmail, письмо может попасть в раздел "Спам"')
           resolve()
         } else {
           dispatch('setErrors', x.response.data)

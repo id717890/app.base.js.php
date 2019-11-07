@@ -5,7 +5,8 @@
         <v-layout row wrap>
           <v-flex xs12 sm12 md10 offset-md1 lg8 offset-lg2 text-xs-center>
             <h1>Фитнес-программа «ДВИЖЕНИЕ»<br>с элементами FLOW</h1>
-            <p>Старт 1 октября 2019</p>
+            <h3 class="red--text mb-4">* Для покупки программы нужно зарегистрироваться на сайте</h3>
+            <!-- <p>Старт 1 октября 2019</p> -->
             <br>
           </v-flex>
           <v-flex xs12 sm12 md10 offset-md1 lg8 offset-lg2 text-xs-center mt-4>
@@ -188,7 +189,7 @@
                 </v-layout>
               </section>
               <section v-else>
-                <h3 class="red--text mb-4">* Для покупки или регистрации в программе нужно авторизоваться</h3>
+                <!-- <h3 class="red--text mb-4">* Для покупки или регистрации в программе нужно авторизоваться</h3> -->
               </section>
             </v-flex>
             <v-flex xs12 text-xs-center v-else>
