@@ -23,7 +23,7 @@ const state = {
       'color': 'teal',
       'url_viedo': null,
       'url_file': 'https://www.dropbox.com/s/cfvupim668i1brr/%D0%A2%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%201.pdf?dl=1',
-      'googledisk': 'https://drive.google.com/file/d/1uwjaalfdXK-B3yrIA29eBlRLiFxrEPcN/preview',
+      'googledisk': 'https://drive.google.com/file/d/1jPnLfnu3kmiZ0JBVBDntMOoDHIJiy_y1/preview',
       'loading': true,
       'yadisk': null
     },
@@ -34,7 +34,7 @@ const state = {
       'color': 'teal',
       'url_viedo': null,
       'url_file': 'https://www.dropbox.com/s/yfcei4nfzr2scdw/%D0%A2%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%202.pdf?dl=1',
-      'googledisk': 'https://drive.google.com/file/d/1lVgOpuMw8EMIpT9LZWghteBrRvpynzne/preview',
+      'googledisk': 'https://drive.google.com/file/d/1sEvWGHk9tAYfPXfCohz3lTqVskx5bfjg/preview',
       'loading': true,
       'yadisk': null
     },
@@ -45,7 +45,7 @@ const state = {
       'color': 'teal',
       'url_viedo': null,
       'url_file': 'https://www.dropbox.com/s/pfwxj79eguqksrw/%D0%A2%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%203.pdf?dl=1',
-      'googledisk': 'https://drive.google.com/file/d/1G46u3lWvKZW_FdG32gJXPIRr81-p6WTw/preview',
+      'googledisk': 'https://drive.google.com/file/d/17OIYCcSeRwVIK90BP-5IT0aq8nPEkIb5/preview',
       'loading': true,
       'yadisk': null
     },
@@ -56,7 +56,7 @@ const state = {
       'color': 'teal',
       'url_viedo': null,
       'url_file': 'https://www.dropbox.com/s/eijhe2upat3ox54/%D0%A2%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%204.pdf?dl=1',
-      'googledisk': 'https://drive.google.com/file/d/1C4hm02gJeUQg_3R7O5uksigLBXxmUvCN/preview',
+      'googledisk': 'https://drive.google.com/file/d/1bW7vhyF395iWHhDDN4gqHcQVd6oXjpyc/preview',
       'loading': true,
       'yadisk': null
     },
@@ -67,7 +67,7 @@ const state = {
       'color': 'teal',
       'url_viedo': null,
       'url_file': 'https://www.dropbox.com/s/1pbn3pxk1jwadjz/%D0%A2%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%205.pdf?dl=1',
-      'googledisk': 'https://drive.google.com/file/d/1b1T2hlU-BT7GXI3klaJJr7c_fPwghefB/preview',
+      'googledisk': 'https://drive.google.com/file/d/1GIfv8CItUvmqlZO1i8VzqrRswwA4AgM9/preview',
       'loading': true,
       'yadisk': null
     },
@@ -78,7 +78,7 @@ const state = {
       'color': 'teal',
       'url_viedo': null,
       'url_file': 'https://www.dropbox.com/s/2ntg5u0l7wh4fc2/%D0%A2%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%206.pdf?dl=1',
-      'googledisk': 'https://drive.google.com/file/d/1VQn5jxR-BiSa-nfGue_wLX0a1r7jBuWZ/preview',
+      'googledisk': 'https://drive.google.com/file/d/1EXr4aYQd6IhF13GhWux4LylqaIdQcr5L/preview',
       'loading': true,
       'yadisk': null
     },
@@ -232,7 +232,7 @@ const state = {
       'color': 'teal',
       'url_viedo': null,
       'url_file': 'https://www.dropbox.com/s/pn92jn6crrawey2/%D0%A2%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%2021.pdf?dl=1',
-      'googledisk': 'https://drive.google.com/file/d/1tfim3Hd1xBCf9iI3ITMKBEa9UTyIpThC/preview',
+      'googledisk': 'https://drive.google.com/file/d/1c4e33vn-5o83yUMrvMNeyFmiW1JEiD8Q/preview',
       'loading': true,
       'yadisk': null
     },
@@ -243,7 +243,7 @@ const state = {
       'color': 'teal',
       'url_viedo': null,
       'url_file': 'https://www.dropbox.com/s/08t1z68ixkdeayl/%D0%A2%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%2022.pdf?dl=1',
-      'googledisk': 'https://drive.google.com/file/d/19iLVsJEaCKx7GYk2Ir5Zn-I0J7fmw3mS/preview',
+      'googledisk': 'https://drive.google.com/file/d/1qJvRxXaQi8-zccYgFHycP0Vtr1WwMhsb/preview',
       'loading': true,
       'yadisk': null
     },
@@ -254,7 +254,7 @@ const state = {
       'color': 'teal',
       'url_viedo': null,
       'url_file': 'https://www.dropbox.com/s/df6zc32uxr5xmf2/%D0%A2%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%2023.pdf?dl=1',
-      'googledisk': 'https://drive.google.com/file/d/1vFwINM03B8_rNBzlTv72SX2yAIe8Hg4x/preview',
+      'googledisk': 'https://drive.google.com/file/d/13F9BdFPUDdqoV_e5IYkKssgCBW2W-xOV/preview',
       'loading': true,
       'yadisk': null
     },
@@ -265,7 +265,7 @@ const state = {
       'color': 'teal',
       'url_viedo': null,
       'url_file': 'https://www.dropbox.com/s/jhku7qwt12zwsg8/%D0%A2%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%2024.pdf?dl=1',
-      'googledisk': 'https://drive.google.com/file/d/1M6Uvnu3OdOBqSAauS1qPtZxcTNnICstf/preview',
+      'googledisk': 'https://drive.google.com/file/d/1tum5v2S1YiqNqZbS_TBvpx3NcPRjv7ix/preview',
       'loading': true,
       'yadisk': null
     },
@@ -276,7 +276,7 @@ const state = {
       'color': 'teal',
       'url_viedo': null,
       'url_file': 'https://www.dropbox.com/s/ak5pig7gemfopua/%D0%A2%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%2025.pdf?dl=1',
-      'googledisk': 'https://drive.google.com/file/d/1aV1DKZfCj5DA6hBZSb5fIzNbD80Ariif/preview',
+      'googledisk': 'https://drive.google.com/file/d/1oN7PDd1u3ZC0Kd98bFi9EZYEJN_sf4aX/preview',
       'loading': true,
       'yadisk': null
     },
@@ -287,7 +287,7 @@ const state = {
       'color': 'teal',
       'url_viedo': null,
       'url_file': 'https://www.dropbox.com/s/xtgfxjhll17sooq/%D0%A2%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%2026.pdf?dl=1',
-      'googledisk': 'https://drive.google.com/file/d/1bfERqth-RDMqZGwx3t7FBxk6xAgAVSdr/preview',
+      'googledisk': 'https://drive.google.com/file/d/1Ezh0ZCRBEClqVHNpnqSR_9sqwF6gjCDb/preview',
       'loading': true,
       'yadisk': null
     },
@@ -299,7 +299,7 @@ const state = {
       'url_viedo': null,
       'url_file': null,
       // 'googledisk': null,
-      'googledisk': 'https://drive.google.com/file/d/1do4_wBSDm35oeMYvRDDQNxaEnU-6n1-5/preview'
+      'googledisk': 'https://drive.google.com/file/d/1TFkaVxkqeEVnvsWz-iTETuidIqtmV6S5/preview'
       // 'loading': true, 'yadisk': '<iframe scrolling="no" allowfullscreen="" gesture="media" allow="autoplay; encrypted-media" style="width: 100%; height: 100%; border-width: 0px; display: block;" src="https://yastatic.net/yandex-video-player-iframe-api-bundles/1.0-573/index.html?post_message_config=true&amp;stream_url=https%3A%2F%2Fstreaming.disk.yandex.net%2Fhls%2FU2FsdGVkX1_MkDu_-XhV6luJC9PLC-JYlzwhqyFoSq7DAZfHJX9oCqiWRlN9eNdQwma23XwXY2jEykGyQv-hiXLRDt8dSyn9Xf_G_kFrxgIEygBvLIQgSz-bdAw2_gPxuKpKU9pzcjYffjXrSuszF6Oj0nCpExeR7TGpew210mRpbKXhhiZam7as4bVeWG4I2OY8MTVjFXhAf_8WL91n14tzWVsBKkzoqUKO-zOjjaeAxAcOeFzuqIYGAxtV-DP0wWd_mb0L4lNBUphfiADTdzb4BQeTjqbAauUKtNFB6GCd2V59lO6qEOlz0MEiAmC4%2F59249e92b9df8%2F6235e554c738cd1bc3756fbe43479e90b2ce24b362d1c3b12c237022d3a68e69%2Fmaster-playlist.m3u8&amp;volume=100&amp;muted=false&amp;auto_quality=false&amp;report=false&amp;report_url=https%3A%2F%2Fyandex.ru%2Fsupport%2Fteletranslation%2Fform.html&amp;preview=https%3A%2F%2Fdownloader.disk.yandex.ru%2Fpreview%2F4a9ef8201258925d203a2bb1a412dd6a867a4d122ddd9b0e9a06851405f13bc5%2F5d780e21%2FS_aWmOuuzEMsWEZD-Gx-new5uDkyWJmSMGtkrlijyLVaj1RLn1I5b9pgiz6rp5LfMShnWrzCbISBzh7ONsJvpg%253D%253D%3Fuid%3D0%26filename%3Drastyazka.mov%26disposition%3Dinline%26hash%3D%26limit%3D0%26content_type%3Dimage%252Fjpeg%26owner_uid%3D0%26tknv%3Dv2%26size%3D1920x1080&amp;host=yadi.sk&amp;additional_params=%7B%22from%22%3A%22other%22%2C%22vsid%22%3A%22d2642ab6cc4eb66541bd5ded103ccf3845a3031dc2b161f16ba50a651d0761be%22%7D&amp;vsid=d2642ab6cc4eb66541bd5ded103ccf3845a3031dc2b161f16ba50a651d0761be"></iframe>'
     }
   ]
