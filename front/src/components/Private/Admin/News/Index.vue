@@ -6,25 +6,26 @@
       </v-btn>
     </v-flex>
     <v-flex xs12>
-      <v-data-table
-        :headers="headers"
-        :items="news"
-        class="elevation-1"
-        hide-actions
-      >
+      <v-data-table :headers="headers" :items="news" class="elevation-1" :items-per-page="21" hide-actions>
         <template v-slot:items="props">
           <td>{{ props.item.title }}</td>
-          <td><v-img :src="props.item.image"></v-img></td>
-          <td>{{ date(props.item.created_at, 'DD.MM.YYYY')  }}</td>
+          <td>
+            <v-img :src="props.item.image"></v-img>
+          </td>
+          <td>{{ date(props.item.created_at, 'DD.MM.YYYY') }}</td>
           <td>
             <section>
-              <v-btn class="ma-0" flat title="Удалить" icon color="error" @click="callConfirmDialog2(props.item)"><i class="fa fa-trash-alt"></i></v-btn>
-              <v-btn class="ma-0" flat title="Редактировать" icon color="success" :to="'/dashboard/news/edit/'+props.item.id"><i class="fa fa-pencil-alt"></i></v-btn>
+              <v-btn class="ma-0" flat title="Удалить" icon color="error" @click="callConfirmDialog2(props.item)">
+                <i class="fa fa-trash-alt"></i>
+              </v-btn>
+              <v-btn class="ma-0" flat title="Редактировать" icon color="success" :to="'/dashboard/news/edit/' + props.item.id">
+                <i class="fa fa-pencil-alt"></i>
+              </v-btn>
             </section>
           </td>
         </template>
         <template v-slot:no-data>
-            <h4 class="text-xs-center">Нет данных</h4>
+          <h4 class="text-xs-center">Нет данных</h4>
         </template>
       </v-data-table>
     </v-flex>
@@ -47,7 +48,7 @@ import ConfirmDialogModal from '../../../Dialog/ConfirmDialog'
 import moment from '../../../../packages/moment'
 
 export default {
-  data () {
+  data() {
     return {
       removedNews: null,
       headers: [
@@ -59,17 +60,22 @@ export default {
     }
   },
   methods: {
-    date (e) {
+    date(e) {
       return moment.getDateFormat(e, 'DD.MM.YYYY')
     },
     ...mapActions(['resetConfirmDialogResult', 'deleteNews', 'getAllNews']),
-    callConfirmDialog2 (item) {
+    callConfirmDialog2(item) {
       this.removedNews = item
-      this.$modal.show(ConfirmDialogModal, { question: 'Удалить запись?' }, settings, {
-        'closed': this.confirmDeleteDialog
-      })
+      this.$modal.show(
+        ConfirmDialogModal,
+        { question: 'Удалить запись?' },
+        settings,
+        {
+          closed: this.confirmDeleteDialog
+        }
+      )
     },
-    confirmDeleteDialog () {
+    confirmDeleteDialog() {
       if (this.confirmDialogResult === true) {
         this.resetConfirmDialogResult()
         this.deleteNews(this.removedNews)
@@ -77,7 +83,7 @@ export default {
       }
     }
   },
-  async mounted () {
+  async mounted() {
     this.getAllNews()
   },
   computed: {
@@ -89,6 +95,4 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

@@ -12,7 +12,9 @@ const state = {
 
 // actions
 const actions = {
-  async clearAllAfterLogout ({ commit }) {
+  async clearAllAfterLogout({
+    commit
+  }) {
     commit(types.CLEAR_PRODUCTS_AFTER_LOGOUT)
   },
   // async getTraining ({ commit, dispatch }) {
@@ -26,7 +28,10 @@ const actions = {
   //     dispatch('setErrors', x.response.data)
   //   })
   // },
-  async getMembers ({ commit, dispatch }) {
+  async getMembers({
+    commit,
+    dispatch
+  }) {
     context.getMembers().then((x) => {
       if (x.status === 200) {
         commit(types.RECIEVE_PRODUCT_MEMBERS, x.data)
@@ -37,7 +42,10 @@ const actions = {
       dispatch('setErrors', x.response.data)
     })
   },
-  async getProductPrices ({ commit, dispatch }) {
+  async getProductPrices({
+    commit,
+    dispatch
+  }) {
     context.getPrices().then((x) => {
       if (x.status === 200) {
         commit(types.RECIEVE_PRODUCT_PRICES, x.data)
@@ -48,7 +56,10 @@ const actions = {
       dispatch('setErrors', x.response.data)
     })
   },
-  async acceptProduct ({ commit, dispatch }, payload) {
+  async acceptProduct({
+    commit,
+    dispatch
+  }, payload) {
     return new Promise((resolve, reject) => {
       context.accept(payload).then((x) => {
         if (x.status === 200) {
@@ -64,7 +75,10 @@ const actions = {
       })
     })
   },
-  async acceptProductWithPrice ({ commit, dispatch }, payload) {
+  async acceptProductWithPrice({
+    commit,
+    dispatch
+  }, payload) {
     return new Promise((resolve, reject) => {
       context.accept(payload).then((x) => {
         if (x.status === 200) {
@@ -80,7 +94,10 @@ const actions = {
       })
     })
   },
-  async getAllProductsForUser ({ commit, dispatch }) {
+  async getAllProductsForUser({
+    commit,
+    dispatch
+  }) {
     context.getProductsForUser().then((x) => {
       if (x.status === 200) {
         commit(types.RECIEVE_USER_PRODUCTS, x.data)
@@ -91,7 +108,10 @@ const actions = {
       dispatch('setErrors', x.response.data)
     })
   },
-  async getAllProducts ({ commit, dispatch }) {
+  async getAllProducts({
+    commit,
+    dispatch
+  }) {
     context.getProducts().then((x) => {
       if (x.status === 200) {
         commit(types.RECIEVE_PRODUCT, x.data)
@@ -102,7 +122,10 @@ const actions = {
       dispatch('setErrors', x.response.data)
     })
   },
-  async updateProduct ({ commit, dispatch }, payload) {
+  async updateProduct({
+    commit,
+    dispatch
+  }, payload) {
     return new Promise((resolve, reject) => {
       context.updateProduct(payload).then((x) => {
         if (x.status === 200) {
@@ -121,22 +144,22 @@ const actions = {
 
 // mutations
 const mutations = {
-  [types.CLEAR_PRODUCTS_AFTER_LOGOUT] (state) {
+  [types.CLEAR_PRODUCTS_AFTER_LOGOUT](state) {
     state.paid_content = null
   },
   // [types.RECIEVE_PRODUCT_FLOW] (state, payload) {
   //   state.paid_content = payload
   // },
-  [types.RECIEVE_PRODUCT_MEMBERS] (state, payload) {
+  [types.RECIEVE_PRODUCT_MEMBERS](state, payload) {
     state.members = payload
   },
-  [types.RECIEVE_PRODUCT_PRICES] (state, payload) {
+  [types.RECIEVE_PRODUCT_PRICES](state, payload) {
     state.prices = payload
   },
-  [types.RECIEVE_PRODUCT] (state, payload) {
+  [types.RECIEVE_PRODUCT](state, payload) {
     state.products = payload
   },
-  [types.RECIEVE_USER_PRODUCTS] (state, payload) {
+  [types.RECIEVE_USER_PRODUCTS](state, payload) {
     state.productsOfUser = payload
   }
 }
