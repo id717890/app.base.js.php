@@ -89,7 +89,7 @@ const state = {
       'color': 'teal',
       'url_viedo': null,
       'url_file': 'https://www.dropbox.com/s/62uafhw2mk6y31s/%D0%A2%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%207.pdf?dl=1',
-      'googledisk': 'https://drive.google.com/file/d/1xhJhtus5engUwbaxHVFwnHXHOIq4b5Aq/preview',
+      'googledisk': 'https://drive.google.com/file/d/19r-Gp5TJEUvT6AUUbqMPU1drBloLENin/preview',
       'loading': true,
       'yadisk': null
     },
@@ -100,7 +100,7 @@ const state = {
       'color': 'teal',
       'url_viedo': null,
       'url_file': 'https://www.dropbox.com/s/aidk747fljs9og5/%D0%A2%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%208.pdf?dl=1',
-      'googledisk': 'https://drive.google.com/file/d/1_00rXc8njHHLskeCvKzXNFLehisRWZGT/preview',
+      'googledisk': 'https://drive.google.com/file/d/1YZRYIEP4hgnaSDwxpE67nHqxpd1ifnuC/preview',
       'loading': true,
       'yadisk': null
     },
@@ -111,7 +111,7 @@ const state = {
       'color': 'teal',
       'url_viedo': null,
       'url_file': 'https://www.dropbox.com/s/w31ssapbrsnias6/%D0%A2%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%209.pdf?dl=1',
-      'googledisk': 'https://drive.google.com/file/d/17x3YGBNle1fpVnyj45bs06uASik_UA5Y/preview',
+      'googledisk': 'https://drive.google.com/file/d/1eCgOsHJMsS6IOFymguX7jIAxEiTaBSPF/preview',
       'loading': true,
       'yadisk': null
     },
@@ -122,7 +122,7 @@ const state = {
       'color': 'teal',
       'url_viedo': null,
       'url_file': 'https://www.dropbox.com/s/86zmjlcz1ckbbqg/%D0%A2%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%2010.pdf?dl=1',
-      'googledisk': 'https://drive.google.com/file/d/1Y1XDNl9mOB6INtn7YtM9BCrn1-1bqpyw/preview',
+      'googledisk': 'https://drive.google.com/file/d/1wS3eptEMEF-Ye9x4BUkdRqJHDVyampON/preview',
       'loading': true,
       'yadisk': null
     },
@@ -188,7 +188,7 @@ const state = {
       'color': 'teal',
       'url_viedo': null,
       'url_file': 'https://www.dropbox.com/s/44lcan1221nbozq/%D0%A2%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%2016.pdf?dl=1',
-      'googledisk': 'https://drive.google.com/file/d/1PKw3-JFDeHCJvGxjXwaN_SlvZ3Jv681p/preview',
+      'googledisk': 'https://drive.google.com/file/d/109Qn1kL3thJOtzrjFqMgN7vLprjY1ExE/preview',
       'loading': true,
       'yadisk': null
     },
@@ -199,7 +199,7 @@ const state = {
       'color': 'teal',
       'url_viedo': null,
       'url_file': 'https://www.dropbox.com/s/9j3kl0asxihs6ih/%D0%A2%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%2018.pdf?dl=1',
-      'googledisk': 'https://drive.google.com/file/d/1JUDkc4hjBL8CEHb0iRjvaC6fvEfAIxDe/preview',
+      'googledisk': 'https://drive.google.com/file/d/1aa4Je6e9WzFMLOeOLYgn8ZF5Ls22Wy5m/preview',
       'loading': true,
       'yadisk': null
     },
@@ -210,7 +210,7 @@ const state = {
       'color': 'teal',
       'url_viedo': null,
       'url_file': 'https://www.dropbox.com/s/gjst9xn7fxpyy0z/%D0%A2%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%2019.pdf?dl=1',
-      'googledisk': 'https://drive.google.com/file/d/1gY8X_5FBalr8gJHYSkbq38GXBhk22O3F/preview',
+      'googledisk': 'https://drive.google.com/file/d/1cZ4LJIqB34jeGDdsfV8W5xkLdLjlk2zp/preview',
       'loading': true,
       'yadisk': null
     },
@@ -221,7 +221,7 @@ const state = {
       'color': 'teal',
       'url_viedo': null,
       'url_file': 'https://www.dropbox.com/s/cbh1ky676x8kipn/%D0%A2%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%2020.pdf?dl=1',
-      'googledisk': 'https://drive.google.com/file/d/19TPOk-91DNhT1Q3baEXKkGquDyiiuSCF/preview',
+      'googledisk': 'https://drive.google.com/file/d/1dMPtuUk65IPkrvQf5wBpahpbR5q7spme/preview',
       'loading': true,
       'yadisk': null
     },
