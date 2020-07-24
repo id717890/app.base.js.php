@@ -1,8 +1,7 @@
 {
-  "name": "app-base",
-  "short_name": "app-base",
-  "icons": [
-    {
+  "name": "animal-flow",
+  "short_name": "animal-flow",
+  "icons": [{
       "src": "./img/icons/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
