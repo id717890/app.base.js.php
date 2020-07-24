@@ -43,7 +43,7 @@ export default {
   components: {
     'tteditor': TtEditor
   },
-  data () {
+  data() {
     return {
       valid: false,
       title: '',
@@ -55,14 +55,14 @@ export default {
       ]
     }
   },
-  mounted () {
+  mounted() {
   },
   methods: {
-    textChanged (event) {
+    textChanged(event) {
       this.text = event
     },
     ...mapActions(['saveNews']),
-    save () {
+    save() {
       if (this.text === '' || this.text === null || this.title === '' || this.title === null) {
         alert('Заголовок и текст статьи не должны быть пустыми')
       } else {

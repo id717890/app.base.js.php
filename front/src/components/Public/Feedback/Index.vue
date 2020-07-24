@@ -75,7 +75,7 @@ import moment from '../../../packages/moment'
 import TextareaEmojiPicker from '../../Shared/TextareaEmojiPicker'
 export default {
   components: { TextareaEmojiPicker },
-  data () {
+  data() {
     return {
       loading: false,
       showCommentForm: false,
@@ -106,7 +106,7 @@ export default {
   },
   methods: {
     ...mapActions(['getUserFeedbacks', 'saveUserFeedback']),
-    toggleCommentForm (value) {
+    toggleCommentForm(value) {
       if (value === false) {
         this.form.email = ''
         this.form.name = ''
@@ -114,15 +114,15 @@ export default {
       }
       this.showCommentForm = value
     },
-    date (e, format) {
+    date(e, format) {
       return moment.getDateFormat(e, format)
     },
-    resetForm () {
+    resetForm() {
       this.$refs.form.reset()
       this.loading = false
       this.showCommentForm = false
     },
-    addComment (e) {
+    addComment(e) {
       this.loading = true
       this.$store.dispatch('clearAllMessages')
       e.preventDefault()
@@ -137,7 +137,7 @@ export default {
       } else this.loading = false
     }
   },
-  async created () {
+  async created() {
     this.getUserFeedbacks()
   }
 }

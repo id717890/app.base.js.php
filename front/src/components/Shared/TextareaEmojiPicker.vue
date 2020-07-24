@@ -27,7 +27,7 @@
 import { Picker } from 'emoji-mart-vue'
 export default {
   components: { Picker },
-  data () {
+  data() {
     return {
       showEmojiPicker: false,
       exclude: ['places', 'flags', 'symbols', 'objects']
@@ -40,7 +40,7 @@ export default {
     }
   },
   methods: {
-    addEmoji (emoji) {
+    addEmoji(emoji) {
       const textarea = this.$refs.textarea
       const cursorPosition = textarea.selectionEnd
       const start = this.value.substring(0, textarea.selectionStart)
@@ -53,7 +53,7 @@ export default {
         textarea.selectionEnd = cursorPosition + emoji.native.length
       })
     },
-    toggleEmojiPicker () {
+    toggleEmojiPicker() {
       this.showEmojiPicker = !this.showEmojiPicker
     }
   }

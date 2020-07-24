@@ -133,7 +133,7 @@ const state = {
       'color': 'teal',
       'url_viedo': null,
       'url_file': 'https://www.dropbox.com/s/m7m544xpigwi29f/%D0%A2%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%2011.pdf?dl=1',
-      'googledisk': 'https://drive.google.com/file/d/193ZZuaisnGu68pMSrNVRIoZQwq0e6ctQ/preview',
+      'googledisk': 'https://drive.google.com/file/d/1Ieu90GY3LZUiv0Yzrh2ek8nh2Te1CnCi/preview',
       'loading': true,
       'yadisk': null
     },
@@ -144,7 +144,7 @@ const state = {
       'color': 'teal',
       'url_viedo': null,
       'url_file': 'https://www.dropbox.com/s/kn0dgosnpilot8a/%D0%A2%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%2012.pdf?dl=1',
-      'googledisk': 'https://drive.google.com/file/d/1EQ09_9rXz3qeupHhQAi6iLPgzGkO0GQo/preview',
+      'googledisk': 'https://drive.google.com/file/d/1hBFOzqM63IKHZfteCIa5B3N-Tz8Zd6XM/preview',
       'loading': true,
       'yadisk': null
     },
@@ -155,7 +155,7 @@ const state = {
       'color': 'teal',
       'url_viedo': null,
       'url_file': 'https://www.dropbox.com/s/r6rfjtjjm7chg6u/%D0%A2%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%2013.pdf?dl=1',
-      'googledisk': 'https://drive.google.com/file/d/1xX3tInix_LVrJ8SIYXyiTykwAVxQw0Gb/preview',
+      'googledisk': 'https://drive.google.com/file/d/16ZOPHRaFWyM7SD41M-CT9G1bHcfvybCy/preview',
       'loading': true,
       'yadisk': null
     },
@@ -166,7 +166,7 @@ const state = {
       'color': 'teal',
       'url_viedo': null,
       'url_file': 'https://www.dropbox.com/s/gvku8jw1y7bykel/%D0%A2%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%2014.pdf?dl=1',
-      'googledisk': 'https://drive.google.com/file/d/1QY-M0FbuI77PabxtQwMJqI05YWcGatk1/preview',
+      'googledisk': 'https://drive.google.com/file/d/1itHd4Vw7_S5AvxoOMPgOovyHOLxorFLX/preview',
       'loading': true,
       'yadisk': null
     },
@@ -177,7 +177,7 @@ const state = {
       'color': 'teal',
       'url_viedo': null,
       'url_file': 'https://www.dropbox.com/s/ikbgwix40sg45bd/%D0%A2%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%2015.pdf?dl=1',
-      'googledisk': 'https://drive.google.com/file/d/1LhnHCjliP0qqjziUn3vEOqO4Xg3v4ADt/preview',
+      'googledisk': 'https://drive.google.com/file/d/1uRruJ0xP8ir_x8MJxiF1Zsx0mhVozLU1/preview',
       'loading': true,
       'yadisk': null
     },
