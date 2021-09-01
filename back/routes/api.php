@@ -20,6 +20,7 @@ Route::get('product/{id}', 'ProductController@index');
 Route::post('register', 'AuthController@register');
 Route::get('verifyUser/{verification_code}', 'AuthController@verifyUser');
 Route::post('auth/Login', 'AuthController@login');
+Route::get('auth/me', 'AuthController@me');
 Route::post('recover', 'AuthController@recover');
 Route::post('reset1', 'AuthController@resetSendToken');
 Route::post('reset2', 'AuthController@reset');

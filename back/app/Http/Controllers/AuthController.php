@@ -25,6 +25,38 @@ class AuthController extends Controller
         $this->mailerService = $mailerService;
     }
 
+    public function me(Request $request) {
+//        $credentials = $request->only('email', 'password');
+//        $rules = [
+//            'email' => 'required|email',
+//            'password' => 'required',
+//        ];
+//        $validator = Validator::make($credentials, $rules);
+//        if($validator->fails()) {
+//            return response()->json(['success'=> false, 'error'=> $validator->messages()]);
+//        }
+//
+//        $user = User::where('email', Input::get('email'))->first();
+//        if ($user !== null && $user->is_verified === 0) {
+//            return response()->json(['success' => false, 'error' => ['code'=> 401, 'message'=>'Ваша учетная запись не подтверждена' ]], 401);
+//        }
+//
+//        try {
+//            // attempt to verify the credentials and create a token for the user
+//            if (!$token = JWTAuth::attempt($credentials)) {
+//                return response()->json(['success' => false, 'error' => ['code'=> 401, 'message'=>'We cant find an account with this credentials.' ]], 401);
+//            }
+//        } catch (JWTException $e) {
+//            // something went wrong whilst attempting to encode the token
+//            return response()->json(['success' => false, 'error' => 'Failed to login, please try again.'], 500);
+//        }
+//        // all good so return the token
+//        dd(Auth::user()->toJson());
+
+        return response()->json(['success' => true, 'user' => Auth::user() ]);
+
+    }
+
     /**
      * API Register
      *
