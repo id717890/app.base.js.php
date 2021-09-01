@@ -13,6 +13,9 @@
 |
 */
 
+// REACT API
+Route::get('/catalog/getArticleGroups', 'CatalogController@getAllArticleGroups');
+
 
 
 Route::get('product', 'ProductController@index');
