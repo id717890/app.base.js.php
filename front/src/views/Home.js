@@ -1,12 +1,6 @@
-import { useDispatch } from 'react-redux'
-import './assets/scss/_app.scss'
 import logo from './logo.svg'
-import { getCatalog } from './store/catalog/slice'
 
-function App() {
-  const dispatch = useDispatch()
-
-  dispatch(getCatalog())
+function Home() {
   return (
     <div className="App">
       <header className="App-header">
@@ -27,4 +21,4 @@ function App() {
   )
 }
 
-export default App
+export default Home
